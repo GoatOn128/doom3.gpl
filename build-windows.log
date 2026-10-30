@@ -1,7 +1,7 @@
 ==== windows-latest-x86-debug (failure) ====
 
 Filesystem      Size  Used Avail Use% Mounted on
-C:              150G  120G   31G  80% /c
+C:              150G  123G   28G  82% /c
 -- Building for: Visual Studio 18 2026
 -- The C compiler identification is MSVC 19.51.36260.0
 -- The CXX compiler identification is MSVC 19.51.36260.0
@@ -15,7 +15,7 @@ C:              150G  120G   31G  80% /c
 -- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/18/Enterprise/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x86/cl.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Configuring done (13.6s)
+-- Configuring done (14.5s)
 -- Generating done (0.1s)
 -- Build files have been written to: D:/a/doom3.gpl/doom3.gpl/build
 MSBuild version 18.11.1-1.26513.3+940033be3 for .NET Framework
@@ -139,16 +139,7 @@ C:\Program Files\Microsoft Visual Studio\18\Enterprise\MSBuild\Microsoft\VC\v180
   SaveGame.cpp
   SysCmds.cpp
   SysCvar.cpp
-D:\a\doom3.gpl\doom3.gpl\neo\d3xp\gamesys\SysCmds.cpp(338,31): warning C4293: '<<': shift count negative or too big, undefined behavior [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
   TypeInfo.cpp
-C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h(321,9): warning C4005: 'private': macro redefinition [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
-  (compiling source file '../../neo/d3xp/gamesys/TypeInfo.cpp')
-      D:\a\doom3.gpl\doom3.gpl\neo\d3xp\gamesys\TypeInfo.cpp(30,9):
-      see previous definition of 'private'
-  
-C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h(322,1): error C1189: #error:  The C++ Standard Library forbids macroizing the keyword "private". Enable warning C4005 to find the forbidden define. [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
-  (compiling source file '../../neo/d3xp/gamesys/TypeInfo.cpp')
-  
   Clip.cpp
   Generating Code...
   Compiling...
@@ -170,10 +161,6 @@ C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231
   Physics_StaticMulti.cpp
   Push.cpp
   Script_Compiler.cpp
-D:\a\doom3.gpl\doom3.gpl\neo\d3xp\script\Script_Compiler.cpp(233,13): error C2440: '=': cannot convert from 'const char *[37]' to 'char **' [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
-      D:\a\doom3.gpl\doom3.gpl\neo\d3xp\script\Script_Compiler.cpp(233,13):
-      Conversion loses qualifiers
-  
   Script_Interpreter.cpp
   Script_Program.cpp
   Generating Code...
@@ -213,6 +200,8 @@ D:\a\doom3.gpl\doom3.gpl\neo\d3xp\script\Script_Compiler.cpp(233,13): error C244
   WorldSpawn.cpp
   precompiled.cpp
   Generating Code...
+     Creating library D:/a/doom3.gpl/doom3.gpl/build/d3xp/Debug/gamex86.lib and object D:/a/doom3.gpl/doom3.gpl/build/d3xp/Debug/gamex86.exp
+  d3xp.vcxproj -> D:\a\doom3.gpl\doom3.gpl\gamex86.dll
   Running typeinfo to generate GameTypeInfo.h
   ------ Initializing File System ------
   Current search path:
@@ -263,14 +252,6 @@ CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game\Actor.cpp
   SysCmds.cpp
   SysCvar.cpp
   TypeInfo.cpp
-C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h(321,9): warning C4005: 'private': macro redefinition [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
-  (compiling source file '../../neo/game/gamesys/TypeInfo.cpp')
-      D:\a\doom3.gpl\doom3.gpl\neo\game\gamesys\TypeInfo.cpp(30,9):
-      see previous definition of 'private'
-  
-C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h(322,1): error C1189: #error:  The C++ Standard Library forbids macroizing the keyword "private". Enable warning C4005 to find the forbidden define. [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
-  (compiling source file '../../neo/game/gamesys/TypeInfo.cpp')
-  
   Clip.cpp
   Generating Code...
   Compiling...
@@ -328,6 +309,530 @@ C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231
   Weapon.cpp
   WorldSpawn.cpp
   Generating Code...
+     Creating library D:/a/doom3.gpl/doom3.gpl/build/game/Debug/gamex86.lib and object D:/a/doom3.gpl/doom3.gpl/build/game/Debug/gamex86.exp
+  game.vcxproj -> D:\a\doom3.gpl\doom3.gpl\gamex86.dll
+  Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/third-party/curl/CMakeLists.txt
+  altsvc.c
+  amigaos.c
+  api.c
+  bufq.c
+  bufref.c
+  cf-h1-proxy.c
+  cf-h2-proxy.c
+  cf-haproxy.c
+  cf-https-connect.c
+  cf-ip-happy.c
+  cf-recvbuf.c
+  cf-setup.c
+  cf-socket.c
+  cfilters.c
+  conncache.c
+  connect.c
+  content_encoding.c
+  cookie.c
+  creds.c
+  cshutdn.c
+  Generating Code...
+  Compiling...
+  curl_addrinfo.c
+  curl_ed25519.c
+  curl_endian.c
+  curl_fnmatch.c
+  curl_fopen.c
+  curl_get_line.c
+  curl_gethostname.c
+  curl_gssapi.c
+  curl_memrchr.c
+  curl_ntlm_core.c
+  curl_range.c
+  curl_sasl.c
+  curl_sha512_256.c
+  curl_share.c
+  curl_sspi.c
+  curl_threads.c
+  curl_trc.c
+  cw-out.c
+  cw-pause.c
+  dict.c
+  Generating Code...
+  Compiling...
+  dllmain.c
+  dynhds.c
+  easy.c
+  easygetopt.c
+  easyoptions.c
+  escape.c
+  fake_addrinfo.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/altsvc.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/amigaos.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/api.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/bufq.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/bufref.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/cf-h1-proxy.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/cf-h2-proxy.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/cf-haproxy.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/cf-https-connect.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/cf-ip-happy.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/cf-recvbuf.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/cf-setup.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/cf-socket.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/cfilters.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/conncache.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/connect.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/content_encoding.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/cookie.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/creds.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/cshutdn.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/curl_addrinfo.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/curl_ed25519.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/curl_endian.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/curl_fnmatch.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/curl_fopen.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/curl_get_line.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/curl_gethostname.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/curl_gssapi.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/curl_memrchr.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/curl_ntlm_core.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/curl_range.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/curl_sasl.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/curl_sha512_256.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/curl_share.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/curl_sspi.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/curl_threads.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/curl_trc.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/cw-out.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/cw-pause.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/dict.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/dllmain.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/dynhds.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/easy.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/easygetopt.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/easyoptions.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/escape.c')
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/fake_addrinfo.c')
+  
+  file.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/file.c')
+  
+  fileinfo.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/fileinfo.c')
+  
+  formdata.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/formdata.c')
+  
+  ftp.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/ftp.c')
+  
+  ftplistparser.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/ftplistparser.c')
+  
+  getenv.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/getenv.c')
+  
+  getinfo.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/getinfo.c')
+  
+  gopher.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/gopher.c')
+  
+  hash.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/hash.c')
+  
+  headers.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/headers.c')
+  
+  hmac.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/hmac.c')
+  
+  hsts.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/hsts.c')
+  
+  http.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/http.c')
+  
+  Generating Code...
+  Compiling...
+  http1.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/http1.c')
+  
+  http2.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/http2.c')
+  
+  http_aws_sigv4.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/http_aws_sigv4.c')
+  
+  http_chunks.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/http_chunks.c')
+  
+  http_digest.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/http_digest.c')
+  
+  http_httpsig.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/http_httpsig.c')
+  
+  http_negotiate.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/http_negotiate.c')
+  
+  http_ntlm.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/http_ntlm.c')
+  
+  http_proxy.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/http_proxy.c')
+  
+  idn.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/idn.c')
+  
+  if2ip.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/if2ip.c')
+  
+  imap.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/imap.c')
+  
+  ldap.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/ldap.c')
+  
+  llist.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/llist.c')
+  
+  macos.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/macos.c')
+  
+  md4.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/md4.c')
+  
+  md5.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/md5.c')
+  
+  memdebug.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/memdebug.c')
+  
+  mime.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/mime.c')
+  
+  mprintf.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/mprintf.c')
+  
+  Generating Code...
+  Compiling...
+  mqtt.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/mqtt.c')
+  
+  multi.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/multi.c')
+  
+  multi_ev.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/multi_ev.c')
+  
+  multi_ntfy.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/multi_ntfy.c')
+  
+  netrc.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/netrc.c')
+  
+  openldap.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/openldap.c')
+  
+  parsedate.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/parsedate.c')
+  
+  peer.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/peer.c')
+  
+  pingpong.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/pingpong.c')
+  
+  pop3.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/pop3.c')
+  
+  progress.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/progress.c')
+  
+  protocol.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/protocol.c')
+  
+  proxy.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/proxy.c')
+  
+  psl.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/psl.c')
+  
+  ptrarray.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/ptrarray.c')
+  
+  rand.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/rand.c')
+  
+  ratelimit.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/ratelimit.c')
+  
+  request.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/request.c')
+  
+  rtsp.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/rtsp.c')
+  
+  select.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/select.c')
+  
+  Generating Code...
+  Compiling...
+  sendf.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/sendf.c')
+  
+  setopt.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/setopt.c')
+  
+  sha256.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/sha256.c')
+  
+  slist.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/slist.c')
+  
+  smtp.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/smtp.c')
+  
+  socketpair.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/socketpair.c')
+  
+  socks.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/socks.c')
+  
+  socks_gssapi.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/socks_gssapi.c')
+  
+  socks_sspi.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/socks_sspi.c')
+  
+  splay.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/splay.c')
+  
+  strcase.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/strcase.c')
+  
+  strequal.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/strequal.c')
+  
+  strerror.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/strerror.c')
+  
+  telnet.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/telnet.c')
+  
+  tftp.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/tftp.c')
+  
+  thrdpool.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/thrdpool.c')
+  
+  thrdqueue.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/thrdqueue.c')
+  
+  transfer.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/transfer.c')
+  
+  u32_ptrset.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/u32_ptrset.c')
+  
+  u8_strset.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/u8_strset.c')
+  
+  Generating Code...
+  Compiling...
+  uint-bset.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/uint-bset.c')
+  
+  uint-spbset.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/uint-spbset.c')
+  
+  uint-table.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/uint-table.c')
+  
+  url.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/url.c')
+  
+  urlapi.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/urlapi.c')
+  
+  version.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/version.c')
+  
+  ws.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  (compiling source file '../../../neo/third-party/curl/lib/ws.c')
+  
+  Generating Code...
 
 
 ==== windows-latest-x86-release (cancelled) ====
@@ -347,7 +852,7 @@ C:              150G  120G   31G  80% /c
 -- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/18/Enterprise/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x86/cl.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Configuring done (13.5s)
+-- Configuring done (13.7s)
 -- Generating done (0.1s)
 -- Build files have been written to: D:/a/doom3.gpl/doom3.gpl/build
 MSBuild version 18.11.1-1.26513.3+940033be3 for .NET Framework
@@ -471,16 +976,7 @@ C:\Program Files\Microsoft Visual Studio\18\Enterprise\MSBuild\Microsoft\VC\v180
   SaveGame.cpp
   SysCmds.cpp
   SysCvar.cpp
-D:\a\doom3.gpl\doom3.gpl\neo\d3xp\gamesys\SysCmds.cpp(338,31): warning C4293: '<<': shift count negative or too big, undefined behavior [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
   TypeInfo.cpp
-C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h(321,9): warning C4005: 'private': macro redefinition [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
-  (compiling source file '../../neo/d3xp/gamesys/TypeInfo.cpp')
-      D:\a\doom3.gpl\doom3.gpl\neo\d3xp\gamesys\TypeInfo.cpp(30,9):
-      see previous definition of 'private'
-  
-C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h(322,1): error C1189: #error:  The C++ Standard Library forbids macroizing the keyword "private". Enable warning C4005 to find the forbidden define. [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
-  (compiling source file '../../neo/d3xp/gamesys/TypeInfo.cpp')
-  
   Clip.cpp
   Generating Code...
   Compiling...
@@ -502,10 +998,6 @@ C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231
   Physics_StaticMulti.cpp
   Push.cpp
   Script_Compiler.cpp
-D:\a\doom3.gpl\doom3.gpl\neo\d3xp\script\Script_Compiler.cpp(233,13): error C2440: '=': cannot convert from 'const char *[37]' to 'char **' [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
-      D:\a\doom3.gpl\doom3.gpl\neo\d3xp\script\Script_Compiler.cpp(233,13):
-      Conversion loses qualifiers
-  
   Script_Interpreter.cpp
   Script_Program.cpp
   Generating Code...
@@ -545,6 +1037,8 @@ D:\a\doom3.gpl\doom3.gpl\neo\d3xp\script\Script_Compiler.cpp(233,13): error C244
   WorldSpawn.cpp
   precompiled.cpp
   Generating Code...
+     Creating library D:/a/doom3.gpl/doom3.gpl/build/d3xp/Release/gamex86.lib and object D:/a/doom3.gpl/doom3.gpl/build/d3xp/Release/gamex86.exp
+  d3xp.vcxproj -> D:\a\doom3.gpl\doom3.gpl\gamex86.dll
   Running typeinfo to generate GameTypeInfo.h
   ------ Initializing File System ------
   Current search path:
@@ -595,14 +1089,6 @@ CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game\Actor.cpp
   SysCmds.cpp
   SysCvar.cpp
   TypeInfo.cpp
-C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h(321,9): warning C4005: 'private': macro redefinition [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
-  (compiling source file '../../neo/game/gamesys/TypeInfo.cpp')
-      D:\a\doom3.gpl\doom3.gpl\neo\game\gamesys\TypeInfo.cpp(30,9):
-      see previous definition of 'private'
-  
-C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h(322,1): error C1189: #error:  The C++ Standard Library forbids macroizing the keyword "private". Enable warning C4005 to find the forbidden define. [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
-  (compiling source file '../../neo/game/gamesys/TypeInfo.cpp')
-  
   Clip.cpp
   Generating Code...
   Compiling...
@@ -642,9 +1128,5 @@ C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231
   Item.cpp
   Light.cpp
   Misc.cpp
-  Moveable.cpp
-  Mover.cpp
-  MultiplayerGame.cpp
-  Player.cpp
 
 
