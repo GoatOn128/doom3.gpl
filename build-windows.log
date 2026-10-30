@@ -45,7 +45,7 @@ buildinfo.compiler.version: 19.51.36260.0
 buildinfo.sysroot: 
 
 -- Found Python3: C:/hostedtoolcache/windows/Python/3.15.1/x64/python3.exe (found version "3.15.1") found components: Interpreter
--- Configuring done (21.9s)
+-- Configuring done (24.2s)
 -- Generating done (0.2s)
 -- Build files have been written to: D:/a/doom3.gpl/doom3.gpl/build
 MSBuild version 18.11.1-1.26513.3+940033be3 for .NET Framework
@@ -117,14 +117,10 @@ MSBuild version 18.11.1-1.26513.3+940033be3 for .NET Framework
   File.cpp
   FileSystem.cpp
   Unzip.cpp
-D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3598,72): error C2039: '_file': is not a member of '_iobuf' [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\mbstring.h(24,20):
-      see declaration of '_iobuf'
-  
-D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3644,66): error C2039: '_file': is not a member of '_iobuf' [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\mbstring.h(24,20):
-      see declaration of '_iobuf'
-  
+D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(480,53): error C2061: syntax error: identifier 'curl_off_t' [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
+D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3610,61): error C2061: syntax error: identifier 'curl_off_t' [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
+D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3615,21): error C2065: 'dltotal': undeclared identifier [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
+D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3616,19): error C2065: 'dlnow': undeclared identifier [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
   Generating Code...
   Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/third-party/curl/lib/CMakeLists.txt
   altsvc.c
@@ -168,8 +164,8 @@ D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3644,66): error C2039: '_f
   dict.c
   dynhds.c
   easy.c
-  easyoptions.c
   easygetopt.c
+  easyoptions.c
   escape.c
   fake_addrinfo.c
   file.c
@@ -372,7 +368,7 @@ buildinfo.compiler.version: 19.51.36260.0
 buildinfo.sysroot: 
 
 -- Found Python3: C:/hostedtoolcache/windows/Python/3.15.1/x64/python3.exe (found version "3.15.1") found components: Interpreter
--- Configuring done (23.3s)
+-- Configuring done (35.0s)
 -- Generating done (0.2s)
 -- Build files have been written to: D:/a/doom3.gpl/doom3.gpl/build
 MSBuild version 18.11.1-1.26513.3+940033be3 for .NET Framework
@@ -444,14 +440,10 @@ MSBuild version 18.11.1-1.26513.3+940033be3 for .NET Framework
   File.cpp
   FileSystem.cpp
   Unzip.cpp
-D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3598,72): error C2039: '_file': is not a member of '_iobuf' [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\mbstring.h(24,20):
-      see declaration of '_iobuf'
-  
-D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3644,66): error C2039: '_file': is not a member of '_iobuf' [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\mbstring.h(24,20):
-      see declaration of '_iobuf'
-  
+D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(480,53): error C2061: syntax error: identifier 'curl_off_t' [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
+D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3610,61): error C2061: syntax error: identifier 'curl_off_t' [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
+D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3615,21): error C2065: 'dltotal': undeclared identifier [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
+D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3616,19): error C2065: 'dlnow': undeclared identifier [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
   Generating Code...
   Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/third-party/curl/lib/CMakeLists.txt
   altsvc.c
