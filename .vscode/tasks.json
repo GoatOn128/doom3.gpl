@@ -1,0 +1,60 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Configure (Win32)",
+            "type": "shell",
+            "command": "cmake",
+            "args": ["--preset", "visual-studio"],
+            "options": { "cwd": "${workspaceFolder}/neo" },
+            "problemMatcher": [],
+            "presentation": { "reveal": "always", "panel": "dedicated", "clear": false, "showReuseMessage": false }
+        },
+        {
+            "label": "Build (Win32 release)",
+            "type": "shell",
+            "command": "cmake",
+            "args": ["--build", "--preset", "visual-studio-release"],
+            "options": { "cwd": "${workspaceFolder}/neo" },
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": ["$msCompile"],
+            "presentation": { "reveal": "always", "panel": "dedicated", "clear": false, "showReuseMessage": false }
+        },
+        {
+            "label": "Build (Win32 debug)",
+            "type": "shell",
+            "command": "cmake",
+            "args": ["--build", "--preset", "visual-studio-debug"],
+            "options": { "cwd": "${workspaceFolder}/neo" },
+            "problemMatcher": ["$msCompile"],
+            "presentation": { "reveal": "always", "panel": "dedicated", "clear": false, "showReuseMessage": false }
+        },
+        {
+            "label": "Build (Linux x86 release)",
+            "type": "shell",
+            "command": "cmake",
+            "args": ["--build", "--preset", "linux-x86-release"],
+            "options": { "cwd": "${workspaceFolder}/neo" },
+            "problemMatcher": ["$gcc"],
+            "presentation": { "reveal": "always", "panel": "dedicated", "clear": false, "showReuseMessage": false }
+        },
+        {
+            "label": "Build (Linux x86 debug)",
+            "type": "shell",
+            "command": "cmake",
+            "args": ["--build", "--preset", "linux-x86-debug"],
+            "options": { "cwd": "${workspaceFolder}/neo" },
+            "problemMatcher": ["$gcc"],
+            "presentation": { "reveal": "always", "panel": "dedicated", "clear": false, "showReuseMessage": false }
+        },
+        {
+            "label": "Clean (Win32)",
+            "type": "shell",
+            "command": "cmake",
+            "args": ["--build", "--preset", "visual-studio-release", "--target", "clean"],
+            "options": { "cwd": "${workspaceFolder}/neo" },
+            "problemMatcher": [],
+            "presentation": { "reveal": "always", "panel": "dedicated", "clear": false, "showReuseMessage": false }
+        }
+    ]
+}

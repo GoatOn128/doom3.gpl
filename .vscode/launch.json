@@ -1,0 +1,141 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "DOOM3 (Windows, debug)",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/DOOM3.exe",
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "Build (Win32 debug)",
+            "args": [
+                "+set",
+                "r_fullscreen",
+                "0",
+                "+set",
+                "com_allowConsole",
+                "1",
+                "+set",
+                "sv_cheats",
+                "1",
+                "+set",
+                "developer",
+                "1"
+            ],
+            "terminal": "integrated",
+            "stopOnEntry": false,
+            "sourceLanguages": [
+                "c",
+                "cpp"
+            ],
+            "initCommands": [
+                "settings set target.max-children-count 256",
+                "settings set target.max-string-summary-length 2048",
+                "settings set target.x86-disassembly-flavor intel"
+            ],
+            "env": {
+                "PATH": "C:\\Program Files\\LLVM\\bin;${env:PATH}"
+            }
+        },
+        {
+            "name": "DOOM3 (Windows, release)",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/DOOM3.exe",
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "Build (Win32 release)",
+            "args": [
+                "+set",
+                "r_fullscreen",
+                "0",
+                "+set",
+                "com_allowConsole",
+                "1",
+                "+set",
+                "sv_cheats",
+                "1",
+                "+set",
+                "developer",
+                "1"
+            ],
+            "terminal": "integrated",
+            "stopOnEntry": false,
+            "sourceLanguages": [
+                "c",
+                "cpp"
+            ],
+            "initCommands": [
+                "settings set target.max-children-count 256",
+                "settings set target.max-string-summary-length 2048",
+                "settings set target.x86-disassembly-flavor intel"
+            ],
+            "env": {
+                "PATH": "C:\\Program Files\\LLVM\\bin;${env:PATH}"
+            }
+        },
+        {
+            "name": "doom.x86 (Linux, debug)",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/doom.x86",
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "Build (Linux x86 debug)",
+            "args": [
+                "+set",
+                "r_fullscreen",
+                "0",
+                "+set",
+                "com_allowConsole",
+                "1",
+                "+set",
+                "sv_cheats",
+                "1",
+                "+set",
+                "developer",
+                "1"
+            ],
+            "terminal": "integrated",
+            "stopOnEntry": false,
+            "sourceLanguages": [
+                "c",
+                "cpp"
+            ],
+            "initCommands": [
+                "settings set target.max-children-count 256",
+                "settings set target.max-string-summary-length 2048"
+            ]
+        },
+        {
+            "name": "doom.x86 (Linux, release)",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/doom.x86",
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "Build (Linux x86 release)",
+            "args": [
+                "+set",
+                "r_fullscreen",
+                "0",
+                "+set",
+                "com_allowConsole",
+                "1",
+                "+set",
+                "sv_cheats",
+                "1",
+                "+set",
+                "developer",
+                "1"
+            ],
+            "terminal": "integrated",
+            "stopOnEntry": false,
+            "sourceLanguages": [
+                "c",
+                "cpp"
+            ],
+            "initCommands": [
+                "settings set target.max-children-count 256",
+                "settings set target.max-string-summary-length 2048"
+            ]
+        }
+    ]
+}
