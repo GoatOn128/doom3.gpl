@@ -15,11 +15,93 @@ C:              150G  120G   31G  80% /c
 -- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/18/Enterprise/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x86/cl.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
-CMake Error at CMakeLists.txt:98 (add_subdirectory):
-  add_subdirectory given source "curl" which is not an existing directory.
+-- Configuring done (30.1s)
+-- Generating done (0.1s)
+-- Build files have been written to: D:/a/doom3.gpl/doom3.gpl/build
+MSBuild version 18.11.1-1.26513.3+940033be3 for .NET Framework
 
-
--- Configuring incomplete, errors occurred!
+  1>Checking Build System
+  Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/idlib/CMakeLists.txt
+  Bounds.cpp
+  Box.cpp
+  Frustum.cpp
+  Sphere.cpp
+  HashIndex.cpp
+  DrawVert.cpp
+  JointTransform.cpp
+  Surface.cpp
+  Surface_Patch.cpp
+  Surface_Polytope.cpp
+  Surface_SweptSpline.cpp
+  TraceModel.cpp
+  Winding.cpp
+  Winding2D.cpp
+  CRC32.cpp
+  MD4.cpp
+  MD5.cpp
+  Angles.cpp
+  Complex.cpp
+  Lcp.cpp
+  Generating Code...
+  Compiling...
+  Math.cpp
+  Matrix.cpp
+  Ode.cpp
+  Plane.cpp
+  Pluecker.cpp
+  Polynomial.cpp
+  Quat.cpp
+  Rotation.cpp
+  Simd.cpp
+  Simd_3DNow.cpp
+  Simd_AltiVec.cpp
+  Simd_Generic.cpp
+  Simd_MMX.cpp
+  Simd_SSE.cpp
+  Simd_SSE2.cpp
+  Simd_SSE3.cpp
+  Vector.cpp
+  Base64.cpp
+  CmdArgs.cpp
+  Lexer.cpp
+  Generating Code...
+  Compiling...
+  Parser.cpp
+  Str.cpp
+  Token.cpp
+  BitMsg.cpp
+  Dict.cpp
+  Heap.cpp
+  LangDict.cpp
+  Lib.cpp
+  MapFile.cpp
+  precompiled.cpp
+  Timer.cpp
+  Generating Code...
+  idlib.vcxproj -> D:\a\doom3.gpl\doom3.gpl\build\idlib\Debug\idlib.lib
+  Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/TypeInfo/CMakeLists.txt
+  main.cpp
+  TypeInfoGen.cpp
+D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\main.cpp(272,23): error C3688: invalid literal suffix 'SOURCE_CODE_BASE_FOLDER'; literal operator or literal operator template 'operator ""SOURCE_CODE_BASE_FOLDER' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
+D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\main.cpp(274,16): error C3688: invalid literal suffix 'SOURCE_CODE_BASE_FOLDER'; literal operator or literal operator template 'operator ""SOURCE_CODE_BASE_FOLDER' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
+D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\main.cpp(278,21): error C3688: invalid literal suffix 'SOURCE_CODE_BASE_FOLDER'; literal operator or literal operator template 'operator ""SOURCE_CODE_BASE_FOLDER' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
+D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\main.cpp(280,14): error C3688: invalid literal suffix 'SOURCE_CODE_BASE_FOLDER'; literal operator or literal operator template 'operator ""SOURCE_CODE_BASE_FOLDER' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
+D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\TypeInfoGen.cpp(805,18): error C3688: invalid literal suffix 'TYPE_INFO_GEN_VERSION'; literal operator or literal operator template 'operator ""TYPE_INFO_GEN_VERSION' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
+D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\TypeInfoGen.cpp(900,3): error C3688: invalid literal suffix 'TYPE_INFO_GEN_VERSION'; literal operator or literal operator template 'operator ""TYPE_INFO_GEN_VERSION' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
+  CmdSystem.cpp
+  CVarSystem.cpp
+  File.cpp
+  FileSystem.cpp
+D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3598,72): error C2039: '_file': is not a member of '_iobuf' [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\mbstring.h(24,20):
+      see declaration of '_iobuf'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3644,66): error C2039: '_file': is not a member of '_iobuf' [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\mbstring.h(24,20):
+      see declaration of '_iobuf'
+  
+  Unzip.cpp
+  Generating Code...
 
 
 ==== windows-latest-x86-release (failure) ====
@@ -39,10 +121,92 @@ C:              150G  120G   31G  80% /c
 -- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/18/Enterprise/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x86/cl.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
-CMake Error at CMakeLists.txt:98 (add_subdirectory):
-  add_subdirectory given source "curl" which is not an existing directory.
+-- Configuring done (14.7s)
+-- Generating done (0.1s)
+-- Build files have been written to: D:/a/doom3.gpl/doom3.gpl/build
+MSBuild version 18.11.1-1.26513.3+940033be3 for .NET Framework
 
-
--- Configuring incomplete, errors occurred!
+  1>Checking Build System
+  Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/idlib/CMakeLists.txt
+  Bounds.cpp
+  Box.cpp
+  Frustum.cpp
+  Sphere.cpp
+  HashIndex.cpp
+  DrawVert.cpp
+  JointTransform.cpp
+  Surface.cpp
+  Surface_Patch.cpp
+  Surface_Polytope.cpp
+  Surface_SweptSpline.cpp
+  TraceModel.cpp
+  Winding.cpp
+  Winding2D.cpp
+  CRC32.cpp
+  MD4.cpp
+  MD5.cpp
+  Angles.cpp
+  Complex.cpp
+  Lcp.cpp
+  Generating Code...
+  Compiling...
+  Math.cpp
+  Matrix.cpp
+  Ode.cpp
+  Plane.cpp
+  Pluecker.cpp
+  Polynomial.cpp
+  Quat.cpp
+  Rotation.cpp
+  Simd.cpp
+  Simd_3DNow.cpp
+  Simd_AltiVec.cpp
+  Simd_Generic.cpp
+  Simd_MMX.cpp
+  Simd_SSE.cpp
+  Simd_SSE2.cpp
+  Simd_SSE3.cpp
+  Vector.cpp
+  Base64.cpp
+  CmdArgs.cpp
+  Lexer.cpp
+  Generating Code...
+  Compiling...
+  Parser.cpp
+  Str.cpp
+  Token.cpp
+  BitMsg.cpp
+  Dict.cpp
+  Heap.cpp
+  LangDict.cpp
+  Lib.cpp
+  MapFile.cpp
+  precompiled.cpp
+  Timer.cpp
+  Generating Code...
+  idlib.vcxproj -> D:\a\doom3.gpl\doom3.gpl\build\idlib\Release\idlib.lib
+  Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/TypeInfo/CMakeLists.txt
+  main.cpp
+  TypeInfoGen.cpp
+D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\main.cpp(272,23): error C3688: invalid literal suffix 'SOURCE_CODE_BASE_FOLDER'; literal operator or literal operator template 'operator ""SOURCE_CODE_BASE_FOLDER' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
+D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\main.cpp(274,16): error C3688: invalid literal suffix 'SOURCE_CODE_BASE_FOLDER'; literal operator or literal operator template 'operator ""SOURCE_CODE_BASE_FOLDER' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
+D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\main.cpp(278,21): error C3688: invalid literal suffix 'SOURCE_CODE_BASE_FOLDER'; literal operator or literal operator template 'operator ""SOURCE_CODE_BASE_FOLDER' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
+D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\main.cpp(280,14): error C3688: invalid literal suffix 'SOURCE_CODE_BASE_FOLDER'; literal operator or literal operator template 'operator ""SOURCE_CODE_BASE_FOLDER' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
+D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\TypeInfoGen.cpp(805,18): error C3688: invalid literal suffix 'TYPE_INFO_GEN_VERSION'; literal operator or literal operator template 'operator ""TYPE_INFO_GEN_VERSION' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
+D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\TypeInfoGen.cpp(900,3): error C3688: invalid literal suffix 'TYPE_INFO_GEN_VERSION'; literal operator or literal operator template 'operator ""TYPE_INFO_GEN_VERSION' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
+  CmdSystem.cpp
+  CVarSystem.cpp
+  File.cpp
+  FileSystem.cpp
+D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3598,72): error C2039: '_file': is not a member of '_iobuf' [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\mbstring.h(24,20):
+      see declaration of '_iobuf'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3644,66): error C2039: '_file': is not a member of '_iobuf' [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\mbstring.h(24,20):
+      see declaration of '_iobuf'
+  
+  Unzip.cpp
+  Generating Code...
 
 
