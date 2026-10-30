@@ -1,1396 +1,796 @@
 # Build digest
 
-commit: d5e5aa58acf0
+commit: 6c0a1f8f4368
 
 - ubuntu-latest-x86-debug: failure
-- ubuntu-latest-x86-release: cancelled
+- ubuntu-latest-x86-release: failure
 - windows-latest-x86-debug: failure
-- windows-latest-x86-release: failure
+- windows-latest-x86-release: cancelled
 
 ## ubuntu-latest-x86-debug
 
 status: failure
 
-errors: 4
-warnings: 3607 in 36 kinds
+errors: 14
+warnings: 201 in 17 kinds
 
 ### errors
 
-FAILED: [code=1] /home/runner/work/doom3.gpl/doom3.gpl/typeinfo.x86
-/home/runner/work/doom3.gpl/doom3.gpl/neo/framework/FileSystem.cpp:3882:(.text+0xc188): undefined reference to `Sys_EXEPath()'
-collect2: error: ld returned 1 exit status
+FAILED: [code=1] CMakeFiles/doom3.dir/renderer/Cinematic.cpp.o
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Cinematic.cpp:34:10: fatal error: jpeg-6/jpeglib.h: No such file or directory
+FAILED: [code=1] CMakeFiles/doom3.dir/renderer/Image_files.cpp.o
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/../idlib/Str.h:42:33: error: ‘use_idStr_Cmpn’ was not declared in this scope
+FAILED: [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/codec.cpp.o
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roq.h:36:10: fatal error: ../../../renderer/jpeg-6/jpeglib.h: No such file or directory
+FAILED: [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/NSBitmapImageRep.cpp.o
+FAILED: [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/roq.cpp.o
+FAILED: [code=1] CMakeFiles/doom3.dir/sys/linux/libXNVCtrl/NVCtrl.c.o
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:44:37: error: conflicting types for ‘close_display’; have ‘int(Display *, XExtCodes *)’
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:311:13: error: conflicting types for ‘wire_to_event’; have ‘int(Display *, XEvent *, xEvent *)’ {aka ‘int(Display *, XEvent *, struct _xEvent *)’}
+FAILED: [code=1] CMakeFiles/doom3.dir/sys/linux/sound.cpp.o
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/sound.cpp:282:17: error: call of overloaded ‘abs(unsigned int)’ is ambiguous
 ninja: build stopped: cannot make progress due to previous errors.
 
 ### failure context
 
-- [code=1] /home/runner/work/doom3.gpl/doom3.gpl/typeinfo.x86
+- [code=1] CMakeFiles/doom3.dir/renderer/Cinematic.cpp.o
 
 ```
-FAILED: [code=1] /home/runner/work/doom3.gpl/doom3.gpl/typeinfo.x86 
-: && /usr/bin/c++ -m32 -g -m32 -Wl,--dependency-file=TypeInfo/CMakeFiles/typeinfo.dir/link.d TypeInfo/CMakeFiles/typeinfo.dir/main.cpp.o TypeInfo/CMakeFiles/typeinfo.dir/TypeInfoGen.cpp.o TypeInfo/CMakeFiles/typeinfo.dir/__/framework/CmdSystem.cpp.o TypeInfo/CMakeFiles/typeinfo.dir/__/framework/CVarSystem.cpp.o TypeInfo/CMakeFiles/typeinfo.dir/__/framework/File.cpp.o TypeInfo/CMakeFiles/typeinfo.d
-/usr/bin/x86_64-linux-gnu-ld.bfd: TypeInfo/CMakeFiles/typeinfo.dir/__/framework/FileSystem.cpp.o: in function `idFileSystemLocal::FindDLL(char const*, char*, bool)':
-/home/runner/work/doom3.gpl/doom3.gpl/neo/framework/FileSystem.cpp:3882:(.text+0xc188): undefined reference to `Sys_EXEPath()'
-collect2: error: ld returned 1 exit status
-[55/395] Building CXX object game/CMakeFiles/game.dir/ai/AAS_pathing.cpp.o
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/precompiled.h:183,
-                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AAS_pathing.cpp:29:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../game/Game_local.h:401:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
-  401 |         bool                                    RequirementMet( idEntity *activator, const idStr &requires, int removeItem );
-      |                                                                                                   ^~~~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/Lib.h:171,
-                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/precompiled.h:113:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-   92 |                                         ~idList<type>( void );
-      |                                         ^
-/home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/containers/List.h:92:41: note: remove the ‘< >’
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/Lib.h:179:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h: In constructor ‘idMat2::idMat2(const float (*)[2])’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  127 |         memcpy( mat, src, 2 * 2 * sizeof( float ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/Lib.h:178:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Vector.h:52:7: note: ‘class idVec2’ declared here
-   52 | class idVec2 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h: In constructor ‘idMat3::idMat3(const float (*)[3])’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  431 |         memcpy( mat, src, 3 * 3 * sizeof( float ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Vector.h:316:7: note: ‘class idVec3’ declared here
-  316 | class idVec3 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h: In member function ‘void idMat3::Zero()’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  588 |         memset( mat, 0, sizeof( idMat3 ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Vector.h:316:7: note: ‘class idVec3’ declared here
-  316 | class idVec3 {
-      |       ^~~~~~
+FAILED: [code=1] CMakeFiles/doom3.dir/renderer/Cinematic.cpp.o 
+/usr/bin/c++ -DGLIMP -DID_ENABLE_CURL=0 -DXTHREADS -D_DEBUG -D__DOOM_DLL__ -I/home/runner/work/doom3.gpl/doom3.gpl/build/generated -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/ogg -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbis -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/oss/include -I
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Cinematic.cpp:34:10: fatal error: jpeg-6/jpeglib.h: No such file or directory
+   34 | #include "jpeg-6/jpeglib.h"
+      |          ^~~~~~~~~~~~~~~~~~
+compilation terminated.
+[97/395] Building CXX object CMakeFiles/doom3.dir/framework/async/NetworkSystem.cpp.o
+[98/395] Building CXX object CMakeFiles/doom3.dir/framework/async/ServerScan.cpp.o
+[99/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_arb.cpp.o
+[100/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_arb2.cpp.o
+[101/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_common.cpp.o
+[102/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_nv10.cpp.o
+[103/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_nv20.cpp.o
+[104/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_r200.cpp.o
+[105/395] Building CXX object CMakeFiles/doom3.dir/renderer/GuiModel.cpp.o
+[106/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_files.cpp.o
+FAILED: [code=1] CMakeFiles/doom3.dir/renderer/Image_files.cpp.o 
+/usr/bin/c++ -DGLIMP -DID_ENABLE_CURL=0 -DXTHREADS -D_DEBUG -D__DOOM_DLL__ -I/home/runner/work/doom3.gpl/doom3.gpl/build/generated -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/ogg -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbis -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/oss/include -I
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/../idlib/Lib.h:210,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/precompiled.h:113,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Image_files.cpp:29:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../third-party/stb/stb_image.h: In function ‘float* stbi__hdr_load(stbi__context*, int*, int*, int*, int, stbi__result_info*)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/../idlib/Str.h:42:33: error: ‘use_idStr_Cmpn’ was not declared in this scope
+   42 | #define strncmp                 use_idStr_Cmpn
+      |                                 ^~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../third-party/stb/stb_image.h:7239:8: note: in expansion of macro ‘strncmp’
+ 7239 |    if (strncmp(token, "-Y ", 3))  return stbi__errpf("unsupported data layout", "Unsupported HDR format");
+      |        ^~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/../idlib/Str.h:42:33: error: ‘use_idStr_Cmpn’ was not declared in this scope
+   42 | #define strncmp                 use_idStr_Cmpn
+      |                                 ^~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../third-party/stb/stb_image.h:7243:8: note: in expansion of macro ‘strncmp’
+ 7243 |    if (strncmp(token, "+X ", 3))  return stbi__errpf("unsupported data layout", "Unsupported HDR format");
+      |        ^~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../third-party/stb/stb_image.h: In function ‘int stbi__hdr_info(stbi__context*, int*, int*, int*)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/../idlib/Str.h:42:33: error: ‘use_idStr_Cmpn’ was not declared in this scope
+   42 | #define strncmp                 use_idStr_Cmpn
+      |                                 ^~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../third-party/stb/stb_image.h:7369:8: note: in expansion of macro ‘strncmp’
+ 7369 |    if (strncmp(token, "-Y ", 3)) {
+```
+
+- [code=1] CMakeFiles/doom3.dir/renderer/Image_files.cpp.o
+
+```
+FAILED: [code=1] CMakeFiles/doom3.dir/renderer/Image_files.cpp.o 
+/usr/bin/c++ -DGLIMP -DID_ENABLE_CURL=0 -DXTHREADS -D_DEBUG -D__DOOM_DLL__ -I/home/runner/work/doom3.gpl/doom3.gpl/build/generated -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/ogg -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbis -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/oss/include -I
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/../idlib/Lib.h:210,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/precompiled.h:113,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Image_files.cpp:29:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../third-party/stb/stb_image.h: In function ‘float* stbi__hdr_load(stbi__context*, int*, int*, int*, int, stbi__result_info*)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/../idlib/Str.h:42:33: error: ‘use_idStr_Cmpn’ was not declared in this scope
+   42 | #define strncmp                 use_idStr_Cmpn
+      |                                 ^~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../third-party/stb/stb_image.h:7239:8: note: in expansion of macro ‘strncmp’
+ 7239 |    if (strncmp(token, "-Y ", 3))  return stbi__errpf("unsupported data layout", "Unsupported HDR format");
+      |        ^~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/../idlib/Str.h:42:33: error: ‘use_idStr_Cmpn’ was not declared in this scope
+   42 | #define strncmp                 use_idStr_Cmpn
+      |                                 ^~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../third-party/stb/stb_image.h:7243:8: note: in expansion of macro ‘strncmp’
+ 7243 |    if (strncmp(token, "+X ", 3))  return stbi__errpf("unsupported data layout", "Unsupported HDR format");
+      |        ^~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../third-party/stb/stb_image.h: In function ‘int stbi__hdr_info(stbi__context*, int*, int*, int*)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/../idlib/Str.h:42:33: error: ‘use_idStr_Cmpn’ was not declared in this scope
+   42 | #define strncmp                 use_idStr_Cmpn
+      |                                 ^~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../third-party/stb/stb_image.h:7369:8: note: in expansion of macro ‘strncmp’
+ 7369 |    if (strncmp(token, "-Y ", 3)) {
+      |        ^~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/../idlib/Str.h:42:33: error: ‘use_idStr_Cmpn’ was not declared in this scope
+   42 | #define strncmp                 use_idStr_Cmpn
+      |                                 ^~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../third-party/stb/stb_image.h:7376:8: note: in expansion of macro ‘strncmp’
+ 7376 |    if (strncmp(token, "+X ", 3)) {
+      |        ^~~~~~~
+At global scope:
+cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
+[107/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_load.cpp.o
+[108/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_init.cpp.o
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Image_init.cpp: In member function ‘void idImageManager::PrintMemInfo(MemInfo_t*)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Image_init.cpp:2214:16: warning: ‘void operator delete(void*, unsigned int)’ called on pointer returned from a mismatched allocation function [-Wmismatched-new-delete]
+ 2214 |         delete sortIndex;
+      |                ^~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Image_init.cpp:2187:41: note: returned from ‘void* operator new [](unsigned int)’
+```
+
+- [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/codec.cpp.o
+
+```
+FAILED: [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/codec.cpp.o 
+/usr/bin/c++ -DGLIMP -DID_ENABLE_CURL=0 -DXTHREADS -D_DEBUG -D__DOOM_DLL__ -I/home/runner/work/doom3.gpl/doom3.gpl/build/generated -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/ogg -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbis -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/oss/include -I
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/codec.h:42,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/codec.cpp:31:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roq.h:36:10: fatal error: ../../../renderer/jpeg-6/jpeglib.h: No such file or directory
+   36 | #include "../../../renderer/jpeg-6/jpeglib.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+[212/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/NSBitmapImageRep.cpp.o
+FAILED: [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/NSBitmapImageRep.cpp.o 
+/usr/bin/c++ -DGLIMP -DID_ENABLE_CURL=0 -DXTHREADS -D_DEBUG -D__DOOM_DLL__ -I/home/runner/work/doom3.gpl/doom3.gpl/build/generated -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/ogg -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbis -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/oss/include -I
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/NSBitmapImageRep.cpp:31:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roq.h:36:10: fatal error: ../../../renderer/jpeg-6/jpeglib.h: No such file or directory
+   36 | #include "../../../renderer/jpeg-6/jpeglib.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+[213/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/ubrush.cpp.o
+[214/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/roq.cpp.o
+FAILED: [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/roq.cpp.o 
+/usr/bin/c++ -DGLIMP -DID_ENABLE_CURL=0 -DXTHREADS -D_DEBUG -D__DOOM_DLL__ -I/home/runner/work/doom3.gpl/doom3.gpl/build/generated -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/ogg -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbis -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/oss/include -I
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roq.cpp:31:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roq.h:36:10: fatal error: ../../../renderer/jpeg-6/jpeglib.h: No such file or directory
+   36 | #include "../../../renderer/jpeg-6/jpeglib.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+[215/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/usurface.cpp.o
+[216/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/renderbump/renderbump.cpp.o
+[217/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/roqParam.cpp.o
+[218/395] Building CXX object CMakeFiles/doom3.dir/ui/BindWindow.cpp.o
+[219/395] Building CXX object CMakeFiles/doom3.dir/ui/ChoiceWindow.cpp.o
+[220/395] Building CXX object CMakeFiles/doom3.dir/ui/DeviceContext.cpp.o
+[221/395] Building CXX object CMakeFiles/doom3.dir/ui/FieldWindow.cpp.o
+[222/395] Building CXX object CMakeFiles/doom3.dir/ui/EditWindow.cpp.o
+[223/395] Building CXX object CMakeFiles/doom3.dir/ui/GameBearShootWindow.cpp.o
+[224/395] Building CXX object CMakeFiles/doom3.dir/ui/GameBustOutWindow.cpp.o
+[225/395] Building CXX object CMakeFiles/doom3.dir/ui/GuiScript.cpp.o
+[226/395] Building CXX object CMakeFiles/doom3.dir/ui/GameSSDWindow.cpp.o
+[227/395] Building CXX object CMakeFiles/doom3.dir/ui/ListGUI.cpp.o
+[228/395] Building CXX object CMakeFiles/doom3.dir/ui/ListWindow.cpp.o
+[229/395] Building CXX object CMakeFiles/doom3.dir/ui/MarkerWindow.cpp.o
+```
+
+- [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/NSBitmapImageRep.cpp.o
+
+```
+FAILED: [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/NSBitmapImageRep.cpp.o 
+/usr/bin/c++ -DGLIMP -DID_ENABLE_CURL=0 -DXTHREADS -D_DEBUG -D__DOOM_DLL__ -I/home/runner/work/doom3.gpl/doom3.gpl/build/generated -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/ogg -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbis -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/oss/include -I
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/NSBitmapImageRep.cpp:31:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roq.h:36:10: fatal error: ../../../renderer/jpeg-6/jpeglib.h: No such file or directory
+   36 | #include "../../../renderer/jpeg-6/jpeglib.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+[213/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/ubrush.cpp.o
+[214/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/roq.cpp.o
+FAILED: [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/roq.cpp.o 
+/usr/bin/c++ -DGLIMP -DID_ENABLE_CURL=0 -DXTHREADS -D_DEBUG -D__DOOM_DLL__ -I/home/runner/work/doom3.gpl/doom3.gpl/build/generated -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/ogg -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbis -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/oss/include -I
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roq.cpp:31:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roq.h:36:10: fatal error: ../../../renderer/jpeg-6/jpeglib.h: No such file or directory
+   36 | #include "../../../renderer/jpeg-6/jpeglib.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+[215/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/usurface.cpp.o
+[216/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/renderbump/renderbump.cpp.o
+[217/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/roqParam.cpp.o
+[218/395] Building CXX object CMakeFiles/doom3.dir/ui/BindWindow.cpp.o
+[219/395] Building CXX object CMakeFiles/doom3.dir/ui/ChoiceWindow.cpp.o
+[220/395] Building CXX object CMakeFiles/doom3.dir/ui/DeviceContext.cpp.o
+[221/395] Building CXX object CMakeFiles/doom3.dir/ui/FieldWindow.cpp.o
+[222/395] Building CXX object CMakeFiles/doom3.dir/ui/EditWindow.cpp.o
+[223/395] Building CXX object CMakeFiles/doom3.dir/ui/GameBearShootWindow.cpp.o
+[224/395] Building CXX object CMakeFiles/doom3.dir/ui/GameBustOutWindow.cpp.o
+[225/395] Building CXX object CMakeFiles/doom3.dir/ui/GuiScript.cpp.o
+[226/395] Building CXX object CMakeFiles/doom3.dir/ui/GameSSDWindow.cpp.o
+[227/395] Building CXX object CMakeFiles/doom3.dir/ui/ListGUI.cpp.o
+[228/395] Building CXX object CMakeFiles/doom3.dir/ui/ListWindow.cpp.o
+[229/395] Building CXX object CMakeFiles/doom3.dir/ui/MarkerWindow.cpp.o
+[230/395] Building CXX object CMakeFiles/doom3.dir/ui/RegExp.cpp.o
+[231/395] Building CXX object CMakeFiles/doom3.dir/ui/RenderWindow.cpp.o
+[232/395] Building CXX object CMakeFiles/doom3.dir/ui/SimpleWindow.cpp.o
+[233/395] Building CXX object CMakeFiles/doom3.dir/ui/SliderWindow.cpp.o
+[234/395] Building CXX object CMakeFiles/doom3.dir/ui/UserInterface.cpp.o
+[235/395] Building CXX object CMakeFiles/doom3.dir/ui/Winvar.cpp.o
+[236/395] Building CXX object CMakeFiles/doom3.dir/sys/sys_local.cpp.o
+[237/395] Building CXX object CMakeFiles/doom3.dir/ui/Window.cpp.o
+[238/395] Building CXX object CMakeFiles/doom3.dir/sys/posix/posix_net.cpp.o
+```
+
+- [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/roq.cpp.o
+
+```
+FAILED: [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/roq.cpp.o 
+/usr/bin/c++ -DGLIMP -DID_ENABLE_CURL=0 -DXTHREADS -D_DEBUG -D__DOOM_DLL__ -I/home/runner/work/doom3.gpl/doom3.gpl/build/generated -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/ogg -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbis -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/oss/include -I
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roq.cpp:31:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roq.h:36:10: fatal error: ../../../renderer/jpeg-6/jpeglib.h: No such file or directory
+   36 | #include "../../../renderer/jpeg-6/jpeglib.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+[215/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/usurface.cpp.o
+[216/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/renderbump/renderbump.cpp.o
+[217/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/roqParam.cpp.o
+[218/395] Building CXX object CMakeFiles/doom3.dir/ui/BindWindow.cpp.o
+[219/395] Building CXX object CMakeFiles/doom3.dir/ui/ChoiceWindow.cpp.o
+[220/395] Building CXX object CMakeFiles/doom3.dir/ui/DeviceContext.cpp.o
+[221/395] Building CXX object CMakeFiles/doom3.dir/ui/FieldWindow.cpp.o
+[222/395] Building CXX object CMakeFiles/doom3.dir/ui/EditWindow.cpp.o
+[223/395] Building CXX object CMakeFiles/doom3.dir/ui/GameBearShootWindow.cpp.o
+[224/395] Building CXX object CMakeFiles/doom3.dir/ui/GameBustOutWindow.cpp.o
+[225/395] Building CXX object CMakeFiles/doom3.dir/ui/GuiScript.cpp.o
+[226/395] Building CXX object CMakeFiles/doom3.dir/ui/GameSSDWindow.cpp.o
+[227/395] Building CXX object CMakeFiles/doom3.dir/ui/ListGUI.cpp.o
+[228/395] Building CXX object CMakeFiles/doom3.dir/ui/ListWindow.cpp.o
+[229/395] Building CXX object CMakeFiles/doom3.dir/ui/MarkerWindow.cpp.o
+[230/395] Building CXX object CMakeFiles/doom3.dir/ui/RegExp.cpp.o
+[231/395] Building CXX object CMakeFiles/doom3.dir/ui/RenderWindow.cpp.o
+[232/395] Building CXX object CMakeFiles/doom3.dir/ui/SimpleWindow.cpp.o
+[233/395] Building CXX object CMakeFiles/doom3.dir/ui/SliderWindow.cpp.o
+[234/395] Building CXX object CMakeFiles/doom3.dir/ui/UserInterface.cpp.o
+[235/395] Building CXX object CMakeFiles/doom3.dir/ui/Winvar.cpp.o
+[236/395] Building CXX object CMakeFiles/doom3.dir/sys/sys_local.cpp.o
+[237/395] Building CXX object CMakeFiles/doom3.dir/ui/Window.cpp.o
+[238/395] Building CXX object CMakeFiles/doom3.dir/sys/posix/posix_net.cpp.o
+[239/395] Building CXX object CMakeFiles/doom3.dir/sys/posix/posix_signal.cpp.o
+[240/395] Building CXX object CMakeFiles/doom3.dir/sys/posix/posix_main.cpp.o
+[241/395] Building CXX object CMakeFiles/doom3.dir/sys/posix/posix_threads.cpp.o
+[242/395] Building CXX object CMakeFiles/doom3.dir/sys/linux/stack.cpp.o
+[243/395] Building CXX object CMakeFiles/doom3.dir/sys/stub/util_stub.cpp.o
+[244/395] Building CXX object CMakeFiles/doom3.dir/sys/linux/main.cpp.o
+[245/395] Building CXX object CMakeFiles/doom3.dir/tools/guied/GEWindowWrapper_stub.cpp.o
+[246/395] Building CXX object CMakeFiles/doom3.dir/TypeInfo/TypeInfoGen.cpp.o
+[247/395] Building C object CMakeFiles/doom3.dir/sys/linux/libXNVCtrl/NVCtrl.c.o
+```
+
+- [code=1] CMakeFiles/doom3.dir/sys/linux/libXNVCtrl/NVCtrl.c.o
+
+```
+FAILED: [code=1] CMakeFiles/doom3.dir/sys/linux/libXNVCtrl/NVCtrl.c.o 
+/usr/bin/cc -DGLIMP -DID_ENABLE_CURL=0 -DXTHREADS -D_DEBUG -D__DOOM_DLL__ -I/home/runner/work/doom3.gpl/doom3.gpl/build/generated -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/ogg -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbis -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/oss/include -I/
+cc1: warning: command-line option ‘-Wno-class-memaccess’ is valid for C++/ObjC++ but not for C
+cc1: warning: command-line option ‘-Wno-c++20-compat’ is valid for C++/ObjC++ but not for C
+cc1: warning: command-line option ‘-Wno-conversion-null’ is valid for C++/ObjC++ but not for C
+cc1: warning: command-line option ‘-Wno-delete-non-virtual-dtor’ is valid for C++/ObjC++ but not for C
+cc1: warning: command-line option ‘-Wno-overloaded-virtual=0’ is valid for C++/ObjC++ but not for C
+cc1: warning: command-line option ‘-Wno-register’ is valid for C++/ObjC++ but not for C
+cc1: warning: command-line option ‘-Wno-template-id-cdtor’ is valid for C++/ObjC++ but not for C
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:11:2: warning: #warning XTRHEADS not defined -- this libXNVCtrl.a will not be thread safe! [-Wcpp]
+   11 | #warning XTRHEADS not defined -- this libXNVCtrl.a will not be thread safe!
+      |  ^~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:32:5: warning: initialization of ‘int (*)(Display *, XExtCodes *)’ from incompatible pointer type ‘int (*)(void)’ [-Wincompatible-pointer-types]
+   32 |     close_display,                      /* close_display */
+      |     ^~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:32:5: note: (near initialization for ‘nvctrl_extension_hooks.close_display’)
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:23:12: note: ‘close_display’ declared here
+   23 | static int close_display();
+      |            ^~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:33:5: warning: initialization of ‘int (*)(Display *, XEvent *, xEvent *)’ {aka ‘int (*)(Display *, XEvent *, struct _xEvent *)’} from incompatible pointer type ‘int (*)(void)’ [-Wincompatible-pointer-types]
+   33 |     wire_to_event,                      /* wire_to_event */
+      |     ^~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:33:5: note: (near initialization for ‘nvctrl_extension_hooks.wire_to_event’)
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:24:13: note: ‘wire_to_event’ declared here
+   24 | static Bool wire_to_event();
+      |             ^~~~~~~~~~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:6:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:44:37: error: conflicting types for ‘close_display’; have ‘int(Display *, XExtCodes *)’
+   44 | static XEXT_GENERATE_CLOSE_DISPLAY (close_display, nvctrl_ext_info)
+      |                                     ^~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/extutil.h:201:5: note: in definition of macro ‘XEXT_GENERATE_CLOSE_DISPLAY’
+  201 | int proc (Display *dpy, XExtCodes *codes) \
+      |     ^~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:23:12: note: previous declaration of ‘close_display’ with type ‘int(void)’
+   23 | static int close_display();
+      |            ^~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:311:13: error: conflicting types for ‘wire_to_event’; have ‘int(Display *, XEvent *, xEvent *)’ {aka ‘int(Display *, XEvent *, struct _xEvent *)’}
+  311 | static Bool wire_to_event (Display *dpy, XEvent *host, xEvent *wire)
+      |             ^~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:24:13: note: previous declaration of ‘wire_to_event’ with type ‘int(void)’
+```
+
+- [code=1] CMakeFiles/doom3.dir/sys/linux/sound.cpp.o
+
+```
+FAILED: [code=1] CMakeFiles/doom3.dir/sys/linux/sound.cpp.o 
+/usr/bin/c++ -DGLIMP -DID_ENABLE_CURL=0 -DXTHREADS -D_DEBUG -D__DOOM_DLL__ -I/home/runner/work/doom3.gpl/doom3.gpl/build/generated -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/ogg -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbis -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/oss/include -I
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/sound.cpp: In member function ‘virtual bool idAudioHardwareOSS::Initialize()’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/sound.cpp:282:17: error: call of overloaded ‘abs(unsigned int)’ is ambiguous
+  282 |         if ( abs( m_speed - PRIMARYFREQ ) > 5 ) {
+      |              ~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/sound.cpp:282:17: note: there are 7 candidates
+In file included from /usr/include/c++/15/cstdlib:83,
+                 from /usr/include/c++/15/stdlib.h:36,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/../../idlib/precompiled.h:97,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/sound.cpp:39:
+/usr/include/stdlib.h:1008:12: note: candidate 1: ‘int abs(int)’
+ 1008 | extern int abs (int __x) __THROW __attribute__ ((__const__)) __wur;
+      |            ^~~
+In file included from /usr/include/c++/15/cstdlib:87:
+/usr/include/c++/15/bits/std_abs.h:143:3: note: candidate 2: ‘constexpr __float128 std::abs(__float128)’
+  143 |   abs(__float128 __x)
+      |   ^~~
+/usr/include/c++/15/bits/std_abs.h:85:3: note: candidate 3: ‘constexpr long double std::abs(long double)’
+   85 |   abs(long double __x)
+      |   ^~~
+/usr/include/c++/15/bits/std_abs.h:81:3: note: candidate 4: ‘constexpr float std::abs(float)’
+   81 |   abs(float __x)
+      |   ^~~
+/usr/include/c++/15/bits/std_abs.h:77:3: note: candidate 5: ‘constexpr double std::abs(double)’
+   77 |   abs(double __x)
+      |   ^~~
+/usr/include/c++/15/bits/std_abs.h:67:3: note: candidate 6: ‘long long int std::abs(long long int)’
+   67 |   abs(long long __x) { return __builtin_llabs (__x); }
+      |   ^~~
+/usr/include/c++/15/bits/std_abs.h:62:3: note: candidate 7: ‘long int std::abs(long int)’
+   62 |   abs(long __i) { return __builtin_labs(__i); }
+      |   ^~~
+At global scope:
+cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
+[252/395] Building CXX object CMakeFiles/doom3.dir/openal/stubs.cpp.o
+[253/395] Building CXX object CMakeFiles/doom3.dir/sys/linux/sound_alsa.cpp.o
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/sound_alsa.cpp: In member function ‘virtual bool idAudioHardwareALSA::Flush()’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/sound_alsa.cpp:284:14: warning: control reaches end of non-void function [-Wreturn-type]
+  284 |         Write( true );
 ```
 
 
 ### warning kinds
 
-- [2115x] -class-memaccess
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/TraceModel.cpp:1413:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct volumeIntegrals_s’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI.cpp:336:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI.cpp:947:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI.cpp:3281:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘particleEmitter_t’ {aka ‘struct particleEmitter_s’}; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI_pathing.cpp:1035:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct pathTrace_s’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/anim/../../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/anim/../../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/anim/../../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/anim/../../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/anim/../../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/anim/../../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/anim/../../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/anim/../../idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/anim/../../idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/anim/../../idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/anim/Anim_Blend.cpp:4973:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/../../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/../../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/../../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/../../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/../../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/../../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/../../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/../../idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/../../idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/../../idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Clip.cpp:971:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct contactInfo_t’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Clip.cpp:1075:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Clip.cpp:1144:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Clip.cpp:1236:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Clip.cpp:1296:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Physics_Base.cpp:250:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘impactInfo_t’ {aka ‘struct impactInfo_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Physics_Base.cpp:447:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Physics_Base.cpp:456:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Physics_Monster.cpp:252:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘monsterPState_t’ {aka ‘struct monsterPState_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Physics_Parametric.cpp:124:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Extrapolate.h:89:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Extrapolate.h:90:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Extrapolate.h:91:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Extrapolate.h:89:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idAngles’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Extrapolate.h:90:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idAngles’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Extrapolate.h:91:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idAngles’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Interpolate.h:172:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Interpolate.h:172:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idAngles’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Physics_Player.cpp:941:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Physics_Player.cpp:1502:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘playerPState_t’ {aka ‘struct playerPState_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Physics_Player.cpp:1517:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Physics_AF.cpp:3905:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Physics_AF.cpp:6601:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘AFPState_t’ {aka ‘struct AFPState_s’}; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Physics_AF.cpp:7392:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘impactInfo_t’ {aka ‘struct impactInfo_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Physics_AF.cpp:7474:23: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘AFBodyPState_t’ {aka ‘struct AFBodyPState_s’} with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Physics_RigidBody.cpp:443:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘rigidBodyPState_t’ {aka ‘struct rigidBodyPState_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Physics_Static.cpp:289:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘impactInfo_t’ {aka ‘struct impactInfo_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Physics_Static.cpp:648:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct contactInfo_t’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Physics_StaticMulti.cpp:401:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘impactInfo_t’ {aka ‘struct impactInfo_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Physics_StaticMulti.cpp:720:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Physics_StaticMulti.cpp:730:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Physics_StaticMulti.cpp:841:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct contactInfo_t’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Push.cpp:728:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct contactInfo_t’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Push.cpp:885:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct contactInfo_t’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Push.cpp:1060:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct contactInfo_t’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Push.cpp:1241:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct contactInfo_t’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Push.cpp:1402:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct contactInfo_t’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/../../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/../../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/../../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/../../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/../../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/../../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/../../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/../../idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/../../idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/../../idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Thread.cpp:527:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/../idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/../idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/../idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/AFEntity.cpp:2271:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/AFEntity.cpp:2341:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/AFEntity.cpp:2747:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/AFEntity.cpp:2818:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/AFEntity.cpp:2820:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idMat3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Fx.cpp:116:31: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Fx.cpp:125:31: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Fx.cpp:166:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct idFXLocalAction’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Fx.cpp:411:55: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Fx.cpp:497:47: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Entity.cpp:220:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Entity.cpp:311:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct refSound_t’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Entity.cpp:418:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Entity.cpp:420:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct refSound_t’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Entity.cpp:1489:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderView_t’ {aka ‘struct renderView_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Entity.cpp:3598:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Light.cpp:85:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Light.cpp:193:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Moveable.cpp:750:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Moveable.cpp:751:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Moveable.cpp:829:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Moveable.cpp:830:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Moveable.cpp:886:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Moveable.cpp:920:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Mover.cpp:140:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct idMover::moveState_t’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Mover.cpp:141:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct idMover::rotationState_t’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/PlayerIcon.cpp:145:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/PlayerView.cpp:42:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderView_t’ {aka ‘struct renderView_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Pvs.cpp:134:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct pvsArea_s’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Projectile.cpp:80:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Projectile.cpp:216:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Projectile.cpp:689:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Projectile.cpp:976:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Projectile.cpp:1008:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Projectile.cpp:1134:47: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Projectile.cpp:1197:31: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Projectile.cpp:1680:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Projectile.cpp:1706:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Projectile.cpp:1887:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Projectile.cpp:1927:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Player.cpp:1061:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idAngles’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Player.cpp:1062:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct loggedAccel_t’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Player.cpp:7307:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderView_t’ {aka ‘struct renderView_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Player.cpp:7991:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderView_t’ {aka ‘struct renderView_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/SmokeParticles.cpp:43:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/SmokeParticles.cpp:45:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘singleSmoke_t’ {aka ‘struct singleSmoke_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/SmokeParticles.cpp:71:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Weapon.cpp:130:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Weapon.cpp:131:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Weapon.cpp:132:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Weapon.cpp:133:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Weapon.cpp:572:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Weapon.cpp:592:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct refSound_t’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Weapon.cpp:816:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Weapon.cpp:882:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Weapon.cpp:1594:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/../../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/../../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/../../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/../../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/../../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/../../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/../../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/../../idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/../../idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/../../idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/AI_pathing.cpp:1036:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct pathTrace_s’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/AI.cpp:336:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/AI.cpp:1022:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/AI.cpp:3366:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘particleEmitter_t’ {aka ‘struct particleEmitter_s’}; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/anim/../../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/anim/../../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/anim/../../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/anim/../../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/anim/../../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/anim/../../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/anim/../../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/anim/../../idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/anim/../../idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/anim/../../idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/anim/Anim_Blend.cpp:5059:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/gamesys/../../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/gamesys/../../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/gamesys/../../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/gamesys/../../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/gamesys/../../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/gamesys/../../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/gamesys/../../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/gamesys/../../idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/gamesys/../../idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/gamesys/../../idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Clip.cpp:977:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct contactInfo_t’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Clip.cpp:1080:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Clip.cpp:1149:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Clip.cpp:1241:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Clip.cpp:1301:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_Base.cpp:250:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘impactInfo_t’ {aka ‘struct impactInfo_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_Base.cpp:447:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_Base.cpp:456:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_Monster.cpp:252:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘monsterPState_t’ {aka ‘struct monsterPState_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_Parametric.cpp:124:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Extrapolate.h:89:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Extrapolate.h:90:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Extrapolate.h:91:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Extrapolate.h:89:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idAngles’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Extrapolate.h:90:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idAngles’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Extrapolate.h:91:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idAngles’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Interpolate.h:172:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Interpolate.h:172:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idAngles’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:3906:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:6602:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘AFPState_t’ {aka ‘struct AFPState_s’}; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:7393:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘impactInfo_t’ {aka ‘struct impactInfo_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:7475:23: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘AFBodyPState_t’ {aka ‘struct AFBodyPState_s’} with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_Player.cpp:941:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_Player.cpp:1502:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘playerPState_t’ {aka ‘struct playerPState_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_Player.cpp:1517:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_RigidBody.cpp:443:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘rigidBodyPState_t’ {aka ‘struct rigidBodyPState_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_Static.cpp:289:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘impactInfo_t’ {aka ‘struct impactInfo_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_Static.cpp:648:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct contactInfo_t’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_StaticMulti.cpp:401:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘impactInfo_t’ {aka ‘struct impactInfo_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_StaticMulti.cpp:720:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_StaticMulti.cpp:730:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_StaticMulti.cpp:841:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct contactInfo_t’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Push.cpp:728:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct contactInfo_t’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Push.cpp:885:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct contactInfo_t’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Push.cpp:1060:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct contactInfo_t’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Push.cpp:1241:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct contactInfo_t’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Push.cpp:1402:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct contactInfo_t’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/script/../../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/script/../../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/script/../../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/script/../../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/script/../../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/script/../../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/script/../../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/script/../../idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/script/../../idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/script/../../idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/script/Script_Thread.cpp:549:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/AFEntity.cpp:2549:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/AFEntity.cpp:2619:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/AFEntity.cpp:3025:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/AFEntity.cpp:3096:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/AFEntity.cpp:3098:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idMat3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Fx.cpp:116:31: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Fx.cpp:125:31: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Fx.cpp:166:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct idFXLocalAction’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Fx.cpp:411:55: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Fx.cpp:497:47: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Entity.cpp:236:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Entity.cpp:327:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct refSound_t’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Entity.cpp:434:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Entity.cpp:436:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct refSound_t’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Entity.cpp:441:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Entity.cpp:1581:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderView_t’ {aka ‘struct renderView_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Entity.cpp:3703:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘trace_t’ {aka ‘struct trace_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Light.cpp:85:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Light.cpp:193:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Moveable.cpp:839:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Moveable.cpp:840:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Moveable.cpp:937:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Moveable.cpp:938:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Moveable.cpp:1026:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Moveable.cpp:1045:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Moveable.cpp:1082:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/PlayerIcon.cpp:160:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Mover.cpp:142:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct idMover::moveState_t’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Mover.cpp:143:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct idMover::rotationState_t’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/PlayerView.cpp:53:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderView_t’ {aka ‘struct renderView_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Pvs.cpp:134:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct pvsArea_s’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Player.cpp:1341:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idAngles’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Player.cpp:1342:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct loggedAccel_t’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Player.cpp:2506:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct WeaponToggle_t’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Player.cpp:8678:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderView_t’ {aka ‘struct renderView_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Player.cpp:9512:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderView_t’ {aka ‘struct renderView_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Projectile.cpp:91:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-- [518x] -write-strings
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../game/script/Script_Interpreter.h:127:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../game/script/Script_Interpreter.h:140:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../game/script/Script_Interpreter.h:153:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/anim/../../idlib/../game/script/Script_Interpreter.h:127:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/anim/../../idlib/../game/script/Script_Interpreter.h:140:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/anim/../../idlib/../game/script/Script_Interpreter.h:153:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/../../idlib/../game/script/Script_Interpreter.h:127:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/../../idlib/../game/script/Script_Interpreter.h:140:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/../../idlib/../game/script/Script_Interpreter.h:153:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/SysCmds.cpp:408:23: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/SysCmds.cpp:411:23: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/SysCmds.cpp:437:23: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/SysCmds.cpp:440:23: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/SysCmds.cpp:463:23: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/SysCmds.cpp:465:23: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../game/script/Script_Interpreter.h:127:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../game/script/Script_Interpreter.h:140:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../game/script/Script_Interpreter.h:153:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/../../idlib/../game/script/Script_Interpreter.h:127:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/../../idlib/../game/script/Script_Interpreter.h:140:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/../../idlib/../game/script/Script_Interpreter.h:153:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:42:9: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:42:15: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:42:21: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:42:27: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:42:33: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:42:39: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:42:45: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:42:51: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:42:57: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:43:9: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:43:15: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:43:21: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:43:27: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:43:33: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:43:39: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:43:45: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:43:51: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:43:57: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:44:9: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:44:15: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:44:21: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:44:27: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:44:33: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:44:39: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:44:46: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:44:52: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:44:57: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:45:9: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:45:15: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:45:21: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:45:27: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:45:33: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:45:39: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:45:46: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:45:52: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:45:57: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:49:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:49:23: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:51:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:51:17: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:52:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:52:17: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:53:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:53:17: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:54:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:54:17: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:56:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:56:16: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:58:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:58:16: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:59:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:59:16: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:60:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:60:16: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:61:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:61:16: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:63:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:63:16: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:64:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:64:16: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:66:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:66:16: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:67:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:67:16: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:68:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:68:16: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:69:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:69:16: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:70:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:70:16: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:71:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:71:16: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:72:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:72:16: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:74:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:74:16: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:75:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:75:16: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:77:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:77:17: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:78:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:78:17: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:79:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:79:17: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:80:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:80:17: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:81:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:81:17: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:82:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:82:17: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:83:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:83:17: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:85:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:85:17: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:86:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:86:17: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:87:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:87:17: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:88:7: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:88:13: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:89:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:89:17: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:90:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:90:17: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:91:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:91:17: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:93:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:93:17: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:94:11: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:94:17: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:202:1: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Interpreter.cpp:567:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Interpreter.cpp:582:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Interpreter.cpp:604:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Interpreter.cpp:628:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Interpreter.cpp:694:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Interpreter.cpp:707:34: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Interpreter.cpp:769:42: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Interpreter.cpp:782:32: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Interpreter.cpp:786:32: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Interpreter.cpp:814:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Interpreter.cpp:818:32: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Interpreter.cpp:834:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Interpreter.cpp:865:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Interpreter.cpp:899:42: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Interpreter.cpp:912:32: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Interpreter.cpp:916:32: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Interpreter.cpp:964:32: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Interpreter.cpp:1137:42: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Interpreter.cpp:1150:42: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Interpreter.cpp:1403:42: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Interpreter.cpp:1415:42: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Interpreter.cpp:1427:42: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Interpreter.cpp:1829:32: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/../idlib/../game/script/Script_Interpreter.h:127:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/../idlib/../game/script/Script_Interpreter.h:140:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/../idlib/../game/script/Script_Interpreter.h:153:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-- [382x] -template-id-cdtor
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/anim/../../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/anim/../../idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/../../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/../../idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/../../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/../../idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/../idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/../../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/../../idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/anim/../../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/anim/../../idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/gamesys/../../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/gamesys/../../idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/script/../../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/script/../../idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-- [191x] ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/anim/../../idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/../../idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/../../idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/../idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/../../idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/anim/../../idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/gamesys/../../idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/script/../../idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-- [141x] identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../game/Game_local.h:401:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/anim/../../idlib/../game/Game_local.h:401:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/../../idlib/../game/Game_local.h:401:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../game/Game_local.h:401:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/../../idlib/../game/Game_local.h:401:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/../idlib/../game/Game_local.h:401:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/../../idlib/../d3xp/Game_local.h:460:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/anim/../../idlib/../d3xp/Game_local.h:460:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/gamesys/../../idlib/../d3xp/Game_local.h:460:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../d3xp/Game_local.h:460:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/script/../../idlib/../d3xp/Game_local.h:460:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../d3xp/Game_local.h:460:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../d3xp/Game_local.h:460:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
-- [45x] -format-security
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd.cpp:318:30: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/Parser.cpp:326:47: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/Parser.cpp:343:49: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/CVarSystem.cpp:1206:47: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/File.cpp:109:65: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/FileSystem.cpp:1991:47: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/FileSystem.cpp:3962:24: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/SysCmds.cpp:614:37: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/SysCmds.cpp:1216:27: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Thread.cpp:795:28: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Thread.cpp:811:30: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Game_network.cpp:717:27: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Game_local.cpp:1071:23: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Game_local.cpp:2383:23: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Game_local.cpp:2395:23: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Game_local.cpp:2432:23: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/MultiplayerGame.cpp:2220:36: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/MultiplayerGame.cpp:2223:36: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/MultiplayerGame.cpp:2235:36: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/MultiplayerGame.cpp:2250:36: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/MultiplayerGame.cpp:2569:20: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/MultiplayerGame.cpp:2609:36: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/MultiplayerGame.cpp:2616:36: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/MultiplayerGame.cpp:2625:36: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/MultiplayerGame.cpp:3121:53: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/gamesys/SysCmds.cpp:683:37: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/gamesys/SysCmds.cpp:1285:27: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/script/Script_Thread.cpp:817:28: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/script/Script_Thread.cpp:833:30: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Game_network.cpp:731:27: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Game_local.cpp:1207:23: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Game_local.cpp:2647:23: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Game_local.cpp:2659:23: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Game_local.cpp:2696:23: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/MultiplayerGame.cpp:2845:36: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/MultiplayerGame.cpp:2848:36: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/MultiplayerGame.cpp:2860:36: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/MultiplayerGame.cpp:2875:36: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/MultiplayerGame.cpp:2901:44: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/MultiplayerGame.cpp:2903:44: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/MultiplayerGame.cpp:3260:20: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/MultiplayerGame.cpp:3300:36: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/MultiplayerGame.cpp:3307:36: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/MultiplayerGame.cpp:3316:36: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/MultiplayerGame.cpp:3854:53: warning: format not a string literal and no format arguments [-Wformat-security]
-- [44x] -unused-but-set-variable
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/Winding2D.cpp:152:41: warning: variable ‘maxpts’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Matrix.cpp:5395:27: warning: variable ‘y’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd_Generic.cpp:2619:35: warning: variable ‘d3’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd_Generic.cpp:2620:35: warning: variable ‘d8’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/MapFile.cpp:49:30: warning: variable ‘ptr’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/MapFile.cpp:410:16: warning: variable ‘shift’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/MapFile.cpp:410:26: warning: variable ‘rotate’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/MapFile.cpp:411:15: warning: variable ‘scale’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/Parser.cpp:1380:13: warning: variable ‘lastoperatortype’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/CmdSystem.cpp:226:25: warning: variable ‘len’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/File.cpp:262:13: warning: variable ‘length’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AAS_pathing.cpp:140:25: warning: variable ‘lastAreaNum’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI.cpp:2629:33: warning: variable ‘moveResult’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI.cpp:2631:16: warning: variable ‘org’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI.cpp:2652:33: warning: variable ‘moveResult’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI.cpp:2771:33: warning: variable ‘moveResult’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI.cpp:2775:16: warning: variable ‘oldaxis’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/anim/Anim_Testmodel.cpp:529:26: warning: variable ‘newanim’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:2012:33: warning: variable ‘num’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Compiler.cpp:2117:26: warning: variable ‘parm’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Thread.cpp:926:19: warning: variable ‘thread’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Program.cpp:1721:17: warning: variable ‘numdefs’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Fx.cpp:787:15: warning: variable ‘angle’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Projectile.cpp:291:41: warning: variable ‘thrust_start’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Player.cpp:2695:17: warning: variable ‘fallspeed’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Player.cpp:4335:29: warning: variable ‘oldVehicle’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Player.cpp:6403:21: warning: variable ‘command’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/AAS_pathing.cpp:140:25: warning: variable ‘lastAreaNum’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/AI.cpp:2711:33: warning: variable ‘moveResult’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/AI.cpp:2713:16: warning: variable ‘org’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/AI.cpp:2734:33: warning: variable ‘moveResult’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/AI.cpp:2856:33: warning: variable ‘moveResult’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/AI.cpp:2860:16: warning: variable ‘oldaxis’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/anim/Anim_Testmodel.cpp:529:26: warning: variable ‘newanim’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/script/Script_Compiler.cpp:2012:33: warning: variable ‘num’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/script/Script_Compiler.cpp:2117:26: warning: variable ‘parm’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/script/Script_Program.cpp:1721:17: warning: variable ‘numdefs’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/script/Script_Thread.cpp:948:19: warning: variable ‘thread’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Fx.cpp:817:15: warning: variable ‘angle’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/PlayerView.cpp:1759:14: warning: variable ‘atLeastOneFX’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Player.cpp:3291:17: warning: variable ‘fallspeed’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Player.cpp:5306:29: warning: variable ‘oldVehicle’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Player.cpp:7713:21: warning: variable ‘command’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Projectile.cpp:322:41: warning: variable ‘thrust_start’ set but not used [-Wunused-but-set-variable]
-- [36x] -switch
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI_events.cpp:1978:15: warning: enumeration value ‘NUM_MOVE_COMMANDS’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI.cpp:1079:31: warning: enumeration value ‘NUM_MOVETYPES’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI.cpp:2205:15: warning: enumeration value ‘NUM_NONMOVING_COMMANDS’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI.cpp:2205:15: warning: enumeration value ‘MOVE_TO_ENEMY’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI.cpp:2205:15: warning: enumeration value ‘MOVE_TO_ENEMYHEIGHT’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI.cpp:2205:15: warning: enumeration value ‘MOVE_TO_ENTITY’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI.cpp:2205:15: warning: enumeration value ‘MOVE_OUT_OF_RANGE’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI.cpp:2205:15: warning: enumeration value ‘MOVE_TO_ATTACK_POSITION’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI.cpp:2205:15: warning: enumeration value ‘MOVE_TO_COVER’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI.cpp:2205:15: warning: enumeration value ‘MOVE_TO_POSITION’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI.cpp:2205:15: warning: enumeration value ‘MOVE_WANDER’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI.cpp:2205:15: warning: enumeration value ‘NUM_MOVE_COMMANDS’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Clip.cpp:1563:23: warning: enumeration value ‘CONTACT_NONE’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/AF.cpp:629:15: warning: enumeration value ‘DECLAF_CONSTRAINT_INVALID’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/MultiplayerGame.cpp:1201:16: warning: enumeration value ‘VOTE_COUNT’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/MultiplayerGame.cpp:1201:16: warning: enumeration value ‘VOTE_NONE’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/MultiplayerGame.cpp:1345:15: warning: enumeration value ‘INACTIVE’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/MultiplayerGame.cpp:1345:15: warning: enumeration value ‘STATE_COUNT’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/AI_events.cpp:2132:15: warning: enumeration value ‘NUM_MOVE_COMMANDS’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/AI.cpp:1154:31: warning: enumeration value ‘NUM_MOVETYPES’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/AI.cpp:2287:15: warning: enumeration value ‘NUM_NONMOVING_COMMANDS’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/AI.cpp:2287:15: warning: enumeration value ‘MOVE_TO_ENEMY’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/AI.cpp:2287:15: warning: enumeration value ‘MOVE_TO_ENEMYHEIGHT’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/AI.cpp:2287:15: warning: enumeration value ‘MOVE_TO_ENTITY’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/AI.cpp:2287:15: warning: enumeration value ‘MOVE_OUT_OF_RANGE’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/AI.cpp:2287:15: warning: enumeration value ‘MOVE_TO_ATTACK_POSITION’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/AI.cpp:2287:15: warning: enumeration value ‘MOVE_TO_COVER’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/AI.cpp:2287:15: warning: enumeration value ‘MOVE_TO_POSITION’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/AI.cpp:2287:15: warning: enumeration value ‘MOVE_WANDER’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/AI.cpp:2287:15: warning: enumeration value ‘NUM_MOVE_COMMANDS’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Clip.cpp:1568:23: warning: enumeration value ‘CONTACT_NONE’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/AF.cpp:629:15: warning: enumeration value ‘DECLAF_CONSTRAINT_INVALID’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/MultiplayerGame.cpp:1660:16: warning: enumeration value ‘VOTE_COUNT’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/MultiplayerGame.cpp:1660:16: warning: enumeration value ‘VOTE_NONE’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/MultiplayerGame.cpp:1810:15: warning: enumeration value ‘INACTIVE’ not handled in switch [-Wswitch]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/MultiplayerGame.cpp:1810:15: warning: enumeration value ‘STATE_COUNT’ not handled in switch [-Wswitch]
-- [20x] -unused-variable
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd.cpp:3127:25: warning: unused variable ‘texCoords1’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd.cpp:3128:25: warning: unused variable ‘texCoords2’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd.cpp:3194:25: warning: unused variable ‘lightVectors1’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd.cpp:3195:25: warning: unused variable ‘lightVectors2’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AAS_debug.cpp:76:52: warning: unused variable ‘walk’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/NoGameTypeInfo.h:71:23: warning: ‘constantInfo’ defined but not used [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Push.cpp:805:22: warning: unused variable ‘shit’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Player.cpp:6819:21: warning: unused variable ‘oldHealth’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Target.cpp:907:14: warning: unused variable ‘demonicOnly’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Target.cpp:1761:13: warning: unused variable ‘fadeClass’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/AAS_debug.cpp:76:52: warning: unused variable ‘walk’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/gamesys/NoGameTypeInfo.h:71:23: warning: ‘constantInfo’ defined but not used [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Push.cpp:805:22: warning: unused variable ‘shit’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Game_local.cpp:4766:13: warning: unused variable ‘i’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Player.cpp:8184:21: warning: unused variable ‘oldHealth’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Target.cpp:927:14: warning: unused variable ‘demonicOnly’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Target.cpp:1797:13: warning: unused variable ‘fadeClass’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Trigger.cpp:1256:14: warning: unused variable ‘bTrigger’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Weapon.cpp:3302:21: warning: unused variable ‘ammoAvail’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Weapon.cpp:3503:21: warning: unused variable ‘ammoAvail’ [-Wunused-variable]
-- [19x] -register
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/MD5.cpp:56:27: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/MD5.cpp:56:30: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/MD5.cpp:56:33: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/MD5.cpp:56:36: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd_Generic.cpp:1801:25: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd_Generic.cpp:1801:29: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd_Generic.cpp:1801:33: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd_Generic.cpp:1801:37: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd_Generic.cpp:1927:25: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd_Generic.cpp:1927:29: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd_Generic.cpp:1927:33: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd_Generic.cpp:1927:37: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/Lib.cpp:383:33: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/Lib.cpp:383:37: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:3204:17: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:3205:17: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:3206:16: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:3209:18: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:3213:16: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-- [17x] -sign-compare
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/BitMsg.cpp:806:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/BitMsg.cpp:949:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/Str.cpp:1473:18: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/CmdArgs.cpp:158:41: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/Event.cpp:668:30: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘unsigned int’} [-Wsign-compare]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/Event.cpp:717:30: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘unsigned int’} [-Wsign-compare]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/Event.cpp:759:38: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘unsigned int’} [-Wsign-compare]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/TypeInfo.cpp:200:24: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Program.cpp:935:19: warning: comparison of integer expressions of different signedness: ‘size_t’ {aka ‘unsigned int’} and ‘int’ [-Wsign-compare]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/script/Script_Program.cpp:1322:35: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/gamesys/Event.cpp:802:30: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘unsigned int’} [-Wsign-compare]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/gamesys/Event.cpp:868:30: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘unsigned int’} [-Wsign-compare]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/gamesys/Event.cpp:910:38: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘unsigned int’} [-Wsign-compare]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/gamesys/Event.cpp:949:30: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘unsigned int’} [-Wsign-compare]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/gamesys/TypeInfo.cpp:200:24: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/script/Script_Program.cpp:935:19: warning: comparison of integer expressions of different signedness: ‘size_t’ {aka ‘unsigned int’} and ‘int’ [-Wsign-compare]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/script/Script_Program.cpp:1322:35: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
-- [8x] -literal-suffix
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/main.cpp:272:37: warning: invalid suffix on literal; C++11 requires a space between literal and string macro [-Wliteral-suffix]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/main.cpp:274:30: warning: invalid suffix on literal; C++11 requires a space between literal and string macro [-Wliteral-suffix]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/main.cpp:278:35: warning: invalid suffix on literal; C++11 requires a space between literal and string macro [-Wliteral-suffix]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/main.cpp:280:28: warning: invalid suffix on literal; C++11 requires a space between literal and string macro [-Wliteral-suffix]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/TypeInfoGen.cpp:805:25: warning: invalid suffix on literal; C++11 requires a space between literal and string macro [-Wliteral-suffix]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/TypeInfoGen.cpp:907:17: warning: invalid suffix on literal; C++11 requires a space between literal and string macro [-Wliteral-suffix]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/SysCmds.cpp:132:35: warning: invalid suffix on literal; C++11 requires a space between literal and string macro [-Wliteral-suffix]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/gamesys/SysCmds.cpp:132:35: warning: invalid suffix on literal; C++11 requires a space between literal and string macro [-Wliteral-suffix]
-- [8x] -misleading-indentation
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:1411:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:1729:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:1804:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:1868:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Item.cpp:835:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/MultiplayerGame.cpp:187:5: warning: this ‘else’ clause does not guard... [-Wmisleading-indentation]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/MultiplayerGame.cpp:640:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Projectile.cpp:951:9: warning: this ‘else’ clause does not guard... [-Wmisleading-indentation]
-- [5x] -pointer-arith
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Actor.cpp:3066:46: warning: NULL used in arithmetic [-Wpointer-arith]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Player.cpp:3284:49: warning: NULL used in arithmetic [-Wpointer-arith]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Player.cpp:3321:49: warning: NULL used in arithmetic [-Wpointer-arith]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Player.cpp:3348:45: warning: NULL used in arithmetic [-Wpointer-arith]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Player.cpp:5252:43: warning: NULL used in arithmetic [-Wpointer-arith]
-- [4x] -enum-compare
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/Surface_SweptSpline.cpp:162:57: warning: comparison between ‘enum idCurve_Spline<idVec4>::boundary_t’ and ‘enum idCurve_Spline<idVec3>::boundary_t’ [-Wenum-compare]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/Surface_SweptSpline.cpp:175:47: warning: comparison between ‘enum idCurve_Spline<idVec4>::boundary_t’ and ‘enum idCurve_Spline<idVec3>::boundary_t’ [-Wenum-compare]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/AF.cpp:895:68: warning: comparison between ‘enum declAFConstraintType_t’ and ‘enum constraintType_t’ [-Wenum-compare]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/AF.cpp:895:68: warning: comparison between ‘enum declAFConstraintType_t’ and ‘enum constraintType_t’ [-Wenum-compare]
-- [4x] -unused-value
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Matrix.cpp:7092:23: warning: right operand of comma operator has no effect [-Wunused-value]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Matrix.cpp:7117:23: warning: right operand of comma operator has no effect [-Wunused-value]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Player.cpp:6061:40: warning: left operand of comma operator has no effect [-Wunused-value]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Player.cpp:7167:40: warning: left operand of comma operator has no effect [-Wunused-value]
-- [4x] -dangling-else
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:1480:12: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:1560:20: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:1585:20: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:1784:12: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
-- [4x] -conversion-null
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI_events.cpp:2338:59: warning: passing NULL to non-pointer argument 1 of ‘idEventArg::idEventArg(int)’ [-Wconversion-null]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI_events.cpp:2359:53: warning: passing NULL to non-pointer argument 1 of ‘idEventArg::idEventArg(int)’ [-Wconversion-null]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Actor.cpp:445:43: warning: converting to non-pointer type ‘int’ from NULL [-Wconversion-null]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Item.cpp:297:49: warning: passing NULL to non-pointer argument 1 of ‘idEventArg::idEventArg(int)’ [-Wconversion-null]
-- [4x] -address
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/anim/Anim_Blend.cpp:166:20: warning: the address of ‘idAnim::anims’ will never be NULL [-Waddress]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Pvs.cpp:874:14: warning: the address of ‘idPVS::currentPVS’ will never be NULL [-Waddress]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/anim/Anim_Blend.cpp:166:20: warning: the address of ‘idAnim::anims’ will never be NULL [-Waddress]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Pvs.cpp:874:14: warning: the address of ‘idPVS::currentPVS’ will never be NULL [-Waddress]
-- [4x] -char-subscripts
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/SysCmds.cpp:1213:21: warning: array subscript has type ‘char’ [-Wchar-subscripts]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/SysCmds.cpp:1215:13: warning: array subscript has type ‘char’ [-Wchar-subscripts]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/gamesys/SysCmds.cpp:1282:21: warning: array subscript has type ‘char’ [-Wchar-subscripts]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/gamesys/SysCmds.cpp:1284:13: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+- [26x] command-line option ‘-Wno-class-memaccess’ is valid for C++/ObjC++ but not for C
+  - cc1: warning: command-line option ‘-Wno-class-memaccess’ is valid for C++/ObjC++ but not for C
+- [26x] command-line option ‘-Wno-c++20-compat’ is valid for C++/ObjC++ but not for C
+  - cc1: warning: command-line option ‘-Wno-c++20-compat’ is valid for C++/ObjC++ but not for C
+- [26x] command-line option ‘-Wno-conversion-null’ is valid for C++/ObjC++ but not for C
+  - cc1: warning: command-line option ‘-Wno-conversion-null’ is valid for C++/ObjC++ but not for C
+- [26x] command-line option ‘-Wno-delete-non-virtual-dtor’ is valid for C++/ObjC++ but not for C
+  - cc1: warning: command-line option ‘-Wno-delete-non-virtual-dtor’ is valid for C++/ObjC++ but not for C
+- [26x] command-line option ‘-Wno-overloaded-virtual=0’ is valid for C++/ObjC++ but not for C
+  - cc1: warning: command-line option ‘-Wno-overloaded-virtual=0’ is valid for C++/ObjC++ but not for C
+- [26x] command-line option ‘-Wno-register’ is valid for C++/ObjC++ but not for C
+  - cc1: warning: command-line option ‘-Wno-register’ is valid for C++/ObjC++ but not for C
+- [26x] command-line option ‘-Wno-template-id-cdtor’ is valid for C++/ObjC++ but not for C
+  - cc1: warning: command-line option ‘-Wno-template-id-cdtor’ is valid for C++/ObjC++ but not for C
 - [4x] ISO C++ forbids comparison between pointer and integer [-fpermissive]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Game_local.cpp:1250:40: warning: ISO C++ forbids comparison between pointer and integer [-fpermissive]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Game_local.cpp:1619:30: warning: ISO C++ forbids comparison between pointer and integer [-fpermissive]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Game_local.cpp:1386:40: warning: ISO C++ forbids comparison between pointer and integer [-fpermissive]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Game_local.cpp:1802:30: warning: ISO C++ forbids comparison between pointer and integer [-fpermissive]
-- [3x] -nonnull-compare
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/Lib.h:147:33: warning: ‘nonnull’ argument ‘this’ compared to NULL [-Wnonnull-compare]
-- [3x] -delete-non-virtual-dtor
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd.cpp:120:17: warning: deleting object of abstract class type ‘idSIMDProcessor’ which has non-virtual destructor will cause undefined behavior [-Wdelete-non-virtual-dtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd.cpp:122:9: warning: deleting object of abstract class type ‘idSIMDProcessor’ which has non-virtual destructor will cause undefined behavior [-Wdelete-non-virtual-dtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd.cpp:4217:17: warning: deleting object of abstract class type ‘idSIMDProcessor’ which has non-virtual destructor will cause undefined behavior [-Wdelete-non-virtual-dtor]
 - [3x] invalid conversion from ‘char’ to ‘const char*’ [-fpermissive]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/Parser.cpp:712:36: warning: invalid conversion from ‘char’ to ‘const char*’ [-fpermissive]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/Parser.cpp:714:37: warning: invalid conversion from ‘char’ to ‘const char*’ [-fpermissive]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/Parser.cpp:731:36: warning: invalid conversion from ‘char’ to ‘const char*’ [-fpermissive]
-- [3x] -parentheses
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/Heap.cpp:336:47: warning: suggest parentheses around ‘+’ in operand of ‘&’ [-Wparentheses]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Target.cpp:257:34: warning: suggest parentheses around operand of ‘!’ or change ‘&’ to ‘&&’ or ‘!’ to ‘~’ [-Wparentheses]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Target.cpp:257:34: warning: suggest parentheses around operand of ‘!’ or change ‘&’ to ‘&&’ or ‘!’ to ‘~’ [-Wparentheses]
-- [2x] format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘long int’ [-Wformat=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/Parser.cpp:2117:24: warning: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘long int’ [-Wformat=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/Parser.cpp:2256:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘long int’ [-Wformat=]
-- [2x] -format-zero-length
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/main.cpp:77:87: warning: zero-length gnu_printf format string [-Wformat-zero-length]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/main.cpp:77:91: warning: zero-length gnu_printf format string [-Wformat-zero-length]
-- [2x] -unused-function
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI_pathing.cpp:1334:14: warning: ‘float HeightForTrajectory(const idVec3&, float, float)’ defined but not used [-Wunused-function]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/AI_pathing.cpp:1335:14: warning: ‘float HeightForTrajectory(const idVec3&, float, float)’ defined but not used [-Wunused-function]
-- [2x] -format-extra-args
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/gamesys/SysCvar.cpp:54:50: warning: too many arguments for format [-Wformat-extra-args]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/gamesys/SysCvar.cpp:64:50: warning: too many arguments for format [-Wformat-extra-args]
-- [2x] format ‘%ld’ expects argument of type ‘long int’, but argument 5 has type ‘int’ [-Wformat=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/MultiplayerGame.cpp:938:54: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 5 has type ‘int’ [-Wformat=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/MultiplayerGame.cpp:1367:54: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 5 has type ‘int’ [-Wformat=]
-- [2x] format ‘%ld’ expects argument of type ‘long int’, but argument 6 has type ‘int’ [-Wformat=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/MultiplayerGame.cpp:938:62: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 6 has type ‘int’ [-Wformat=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/MultiplayerGame.cpp:1367:62: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 6 has type ‘int’ [-Wformat=]
-- [2x] ‘%i’ directive writing between 1 and 8 bytes into a region of size between 3 and 13 [-Wformat-overfl
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/MultiplayerGame.cpp:554:38: warning: ‘%i’ directive writing between 1 and 8 bytes into a region of size between 3 and 13 [-Wformat-overflow=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/MultiplayerGame.cpp:854:38: warning: ‘%i’ directive writing between 1 and 8 bytes into a region of size between 3 and 13 [-Wformat-overflow=]
-- [1x] -sizeof-pointer-memaccess
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/MD5.cpp:252:21: warning: argument to ‘sizeof’ in ‘void* memset(void*, int, size_t)’ call is the same expression as the destination; did you mean to dereference it? [-Wsizeof-pointer-memaccess]
-- [1x] -sequence-point
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/FileSystem.cpp:1877:25: warning: operation on ‘((idFileSystemLocal*)this)->idFileSystemLocal::dir_cache_index’ may be undefined [-Wsequence-point]
-- [1x] -shift-count-overflow
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/gamesys/../../idlib/../idlib/Lib.h:92:53: warning: left shift count >= width of type [-Wshift-count-overflow]
+- [3x] -mismatched-new-delete
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Image_init.cpp:2214:16: warning: ‘void operator delete(void*, unsigned int)’ called on pointer returned from a mismatched allocation function [-Wmismatched-new-delete]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/ModelManager.cpp:617:16: warning: ‘void operator delete(void*, unsigned int)’ called on pointer returned from a mismatched allocation function [-Wmismatched-new-delete]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/BrushBSP.cpp:886:16: warning: ‘void operator delete(void*, unsigned int)’ called on pointer returned from a mismatched allocation function [-Wmismatched-new-delete]
+- [2x] -narrowing
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/MegaTexture.cpp:364:51: warning: narrowing conversion of ‘((255 * localX) / ((int)TILE_PER_LEVEL))’ from ‘int’ to ‘byte’ {aka ‘unsigned char’} [-Wnarrowing]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/MegaTexture.cpp:364:82: warning: narrowing conversion of ‘((255 * localY) / ((int)TILE_PER_LEVEL))’ from ‘int’ to ‘byte’ {aka ‘unsigned char’} [-Wnarrowing]
+- [2x] -incompatible-pointer-types
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:32:5: warning: initialization of ‘int (*)(Display *, XExtCodes *)’ from incompatible pointer type ‘int (*)(void)’ [-Wincompatible-pointer-types]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:33:5: warning: initialization of ‘int (*)(Display *, XEvent *, xEvent *)’ {aka ‘int (*)(Display *, XEvent *, struct _xEvent *)’} from incompatible pointer type ‘int (*)(void)’ [-Wincompatible-pointer-types]
+- [1x] -cpp
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:11:2: warning: #warning XTRHEADS not defined -- this libXNVCtrl.a will not be thread safe! [-Wcpp]
+- [1x] ‘close_display’ used but never defined
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:23:12: warning: ‘close_display’ used but never defined
+- [1x] ‘wire_to_event’ used but never defined
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:24:13: warning: ‘wire_to_event’ used but never defined
+- [1x] -return-type
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/sound_alsa.cpp:284:14: warning: control reaches end of non-void function [-Wreturn-type]
 - [1x] invalid conversion from ‘const char**’ to ‘char**’ [-fpermissive]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/script/Script_Compiler.cpp:233:20: warning: invalid conversion from ‘const char**’ to ‘char**’ [-fpermissive]
 
 ## ubuntu-latest-x86-release
 
-status: cancelled
+status: failure
 
-errors: 3
-warnings: 1552 in 30 kinds
+errors: 14
+warnings: 682 in 25 kinds
 
 ### errors
 
-FAILED: [code=1] /home/runner/work/doom3.gpl/doom3.gpl/typeinfo.x86
-FileSystem.cpp:(.text+0xaaef): undefined reference to `Sys_EXEPath()'
-collect2: error: ld returned 1 exit status
+FAILED: [code=1] CMakeFiles/doom3.dir/renderer/Cinematic.cpp.o
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Cinematic.cpp:34:10: fatal error: jpeg-6/jpeglib.h: No such file or directory
+FAILED: [code=1] CMakeFiles/doom3.dir/renderer/Image_files.cpp.o
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/../idlib/Str.h:42:33: error: ‘use_idStr_Cmpn’ was not declared in this scope
+FAILED: [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/codec.cpp.o
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roq.h:36:10: fatal error: ../../../renderer/jpeg-6/jpeglib.h: No such file or directory
+FAILED: [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/NSBitmapImageRep.cpp.o
+FAILED: [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/roq.cpp.o
+FAILED: [code=1] CMakeFiles/doom3.dir/sys/linux/libXNVCtrl/NVCtrl.c.o
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:44:37: error: conflicting types for ‘close_display’; have ‘int(Display *, XExtCodes *)’
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:311:13: error: conflicting types for ‘wire_to_event’; have ‘int(Display *, XEvent *, xEvent *)’ {aka ‘int(Display *, XEvent *, struct _xEvent *)’}
+FAILED: [code=1] CMakeFiles/doom3.dir/sys/linux/sound.cpp.o
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/sound.cpp:282:17: error: call of overloaded ‘abs(unsigned int)’ is ambiguous
+ninja: build stopped: cannot make progress due to previous errors.
 
 ### failure context
 
-- [code=1] /home/runner/work/doom3.gpl/doom3.gpl/typeinfo.x86
+- [code=1] CMakeFiles/doom3.dir/renderer/Cinematic.cpp.o
 
 ```
-FAILED: [code=1] /home/runner/work/doom3.gpl/doom3.gpl/typeinfo.x86 
-: && /usr/bin/c++ -m32 -O3 -DNDEBUG -m32 -Wl,--dependency-file=TypeInfo/CMakeFiles/typeinfo.dir/link.d TypeInfo/CMakeFiles/typeinfo.dir/main.cpp.o TypeInfo/CMakeFiles/typeinfo.dir/TypeInfoGen.cpp.o TypeInfo/CMakeFiles/typeinfo.dir/__/framework/CmdSystem.cpp.o TypeInfo/CMakeFiles/typeinfo.dir/__/framework/CVarSystem.cpp.o TypeInfo/CMakeFiles/typeinfo.dir/__/framework/File.cpp.o TypeInfo/CMakeFiles/
-/usr/bin/x86_64-linux-gnu-ld.bfd: TypeInfo/CMakeFiles/typeinfo.dir/__/framework/FileSystem.cpp.o: in function `idFileSystemLocal::FindDLL(char const*, char*, bool)':
-FileSystem.cpp:(.text+0xaaef): undefined reference to `Sys_EXEPath()'
-collect2: error: ld returned 1 exit status
-[57/395] Building CXX object game/CMakeFiles/game.dir/ai/AI_events.cpp.o
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/precompiled.h:183,
-                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI_events.cpp:29:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../game/Game_local.h:401:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
-  401 |         bool                                    RequirementMet( idEntity *activator, const idStr &requires, int removeItem );
-      |                                                                                                   ^~~~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/Lib.h:171,
-                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/precompiled.h:113:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-   92 |                                         ~idList<type>( void );
-      |                                         ^
-/home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/containers/List.h:92:41: note: remove the ‘< >’
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/Lib.h:179:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h: In constructor ‘idMat2::idMat2(const float (*)[2])’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  127 |         memcpy( mat, src, 2 * 2 * sizeof( float ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/Lib.h:178:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Vector.h:52:7: note: ‘class idVec2’ declared here
-   52 | class idVec2 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h: In member function ‘idMat2 idMat2::Inverse() const’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:298:13: warning: unused variable ‘r’ [-Wunused-variable]
-  298 |         int r = invMat.InverseSelf();
-      |             ^
-/home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h: In member function ‘idMat2 idMat2::InverseFast() const’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:307:13: warning: unused variable ‘r’ [-Wunused-variable]
-  307 |         int r = invMat.InverseFastSelf();
-      |             ^
-/home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h: In constructor ‘idMat3::idMat3(const float (*)[3])’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  431 |         memcpy( mat, src, 3 * 3 * sizeof( float ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Vector.h:316:7: note: ‘class idVec3’ declared here
-  316 | class idVec3 {
+FAILED: [code=1] CMakeFiles/doom3.dir/renderer/Cinematic.cpp.o 
+/usr/bin/c++ -DGLIMP -DID_ENABLE_CURL=0 -DXTHREADS -D__DOOM_DLL__ -I/home/runner/work/doom3.gpl/doom3.gpl/build/generated -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/ogg -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbis -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/oss/include -I/home/run
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Cinematic.cpp:34:10: fatal error: jpeg-6/jpeglib.h: No such file or directory
+   34 | #include "jpeg-6/jpeglib.h"
+      |          ^~~~~~~~~~~~~~~~~~
+compilation terminated.
+[99/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_arb.cpp.o
+[100/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_arb2.cpp.o
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/draw_arb2.cpp: In function ‘void R_LoadARBProgram(int)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/draw_arb2.cpp:418:9: warning: ‘start’ may be used uninitialized [-Wmaybe-uninitialized]
+  418 |         if ( !start ) {
+      |         ^~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/draw_arb2.cpp:372:18: note: ‘start’ was declared here
+  372 |         char    *start, *end;
+      |                  ^~~~~
+At global scope:
+cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
+[101/395] Building CXX object CMakeFiles/doom3.dir/framework/async/AsyncServer.cpp.o
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/../../idlib/../idlib/Lib.h:238,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/../../idlib/precompiled.h:113,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/AsyncServer.cpp:29:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/../../idlib/../idlib/Dict.h: In member function ‘void idAsyncServer::ProcessReliableClientMessages(int)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/../../idlib/../idlib/Dict.h:173:11: warning: inlining failed in call to ‘idDict::~idDict() noexcept’: call is unlikely and code size would grow [-Winline]
+  173 | ID_INLINE idDict::~idDict( void ) {
+      |           ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/AsyncServer.cpp:1368:25: note: called from here
+ 1368 |                         }
+      |                         ^
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/../../idlib/../idlib/Lib.h:171:
+In destructor ‘idList<type>::~idList() [with type = idStr]’,
+    inlined from ‘void idAsyncServer::ProcessDownloadRequestMessage(netadr_t, const idBitMsg&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/AsyncServer.cpp:2825:1:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/../../idlib/../idlib/containers/List.h:184:16: warning: inlining failed in call to ‘void idList<type>::Clear() [with type = idStr]’: call is unlikely and code size would grow [-Winline]
+  184 | ID_INLINE void idList<type>::Clear( void ) {
+      |                ^~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/../../idlib/../idlib/containers/List.h:173:14: note: called from here
+  173 |         Clear();
+      |         ~~~~~^~
+In destructor ‘idList<type>::~idList() [with type = idStr]’,
+    inlined from ‘void idAsyncServer::ProcessDownloadRequestMessage(netadr_t, const idBitMsg&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/AsyncServer.cpp:2825:1:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/../../idlib/../idlib/containers/List.h:184:16: warning: inlining failed in call to ‘void idList<type>::Clear() [with type = idStr]’: call is unlikely and code size would grow [-Winline]
+```
+
+- [code=1] CMakeFiles/doom3.dir/renderer/Image_files.cpp.o
+
+```
+FAILED: [code=1] CMakeFiles/doom3.dir/renderer/Image_files.cpp.o 
+/usr/bin/c++ -DGLIMP -DID_ENABLE_CURL=0 -DXTHREADS -D__DOOM_DLL__ -I/home/runner/work/doom3.gpl/doom3.gpl/build/generated -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/ogg -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbis -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/oss/include -I/home/run
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/../idlib/Lib.h:210,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/precompiled.h:113,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Image_files.cpp:29:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../third-party/stb/stb_image.h: In function ‘float* stbi__hdr_load(stbi__context*, int*, int*, int*, int, stbi__result_info*)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/../idlib/Str.h:42:33: error: ‘use_idStr_Cmpn’ was not declared in this scope
+   42 | #define strncmp                 use_idStr_Cmpn
+      |                                 ^~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../third-party/stb/stb_image.h:7239:8: note: in expansion of macro ‘strncmp’
+ 7239 |    if (strncmp(token, "-Y ", 3))  return stbi__errpf("unsupported data layout", "Unsupported HDR format");
+      |        ^~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/../idlib/Str.h:42:33: error: ‘use_idStr_Cmpn’ was not declared in this scope
+   42 | #define strncmp                 use_idStr_Cmpn
+      |                                 ^~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../third-party/stb/stb_image.h:7243:8: note: in expansion of macro ‘strncmp’
+ 7243 |    if (strncmp(token, "+X ", 3))  return stbi__errpf("unsupported data layout", "Unsupported HDR format");
+      |        ^~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../third-party/stb/stb_image.h: In function ‘int stbi__hdr_info(stbi__context*, int*, int*, int*)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/../idlib/Str.h:42:33: error: ‘use_idStr_Cmpn’ was not declared in this scope
+   42 | #define strncmp                 use_idStr_Cmpn
+      |                                 ^~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../third-party/stb/stb_image.h:7369:8: note: in expansion of macro ‘strncmp’
+ 7369 |    if (strncmp(token, "-Y ", 3)) {
+      |        ^~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/../idlib/Str.h:42:33: error: ‘use_idStr_Cmpn’ was not declared in this scope
+   42 | #define strncmp                 use_idStr_Cmpn
+      |                                 ^~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../third-party/stb/stb_image.h:7376:8: note: in expansion of macro ‘strncmp’
+ 7376 |    if (strncmp(token, "+X ", 3)) {
+      |        ^~~~~~~
+At global scope:
+cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
+[108/395] Building CXX object CMakeFiles/doom3.dir/renderer/GuiModel.cpp.o
+[109/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_load.cpp.o
+[110/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_process.cpp.o
+[111/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_program.cpp.o
+[112/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_init.cpp.o
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Image_init.cpp: In member function ‘void idImageManager::PrintMemInfo(MemInfo_t*)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Image_init.cpp:2214:16: warning: ‘void operator delete(void*, unsigned int)’ called on pointer returned from a mismatched allocation function [-Wmismatched-new-delete]
+```
+
+- [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/codec.cpp.o
+
+```
+FAILED: [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/codec.cpp.o 
+/usr/bin/c++ -DGLIMP -DID_ENABLE_CURL=0 -DXTHREADS -D__DOOM_DLL__ -I/home/runner/work/doom3.gpl/doom3.gpl/build/generated -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/ogg -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbis -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/oss/include -I/home/run
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/codec.h:42,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/codec.cpp:31:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roq.h:36:10: fatal error: ../../../renderer/jpeg-6/jpeglib.h: No such file or directory
+   36 | #include "../../../renderer/jpeg-6/jpeglib.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+[214/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/NSBitmapImageRep.cpp.o
+FAILED: [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/NSBitmapImageRep.cpp.o 
+/usr/bin/c++ -DGLIMP -DID_ENABLE_CURL=0 -DXTHREADS -D__DOOM_DLL__ -I/home/runner/work/doom3.gpl/doom3.gpl/build/generated -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/ogg -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbis -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/oss/include -I/home/run
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/NSBitmapImageRep.cpp:31:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roq.h:36:10: fatal error: ../../../renderer/jpeg-6/jpeglib.h: No such file or directory
+   36 | #include "../../../renderer/jpeg-6/jpeglib.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+[215/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/roq.cpp.o
+FAILED: [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/roq.cpp.o 
+/usr/bin/c++ -DGLIMP -DID_ENABLE_CURL=0 -DXTHREADS -D__DOOM_DLL__ -I/home/runner/work/doom3.gpl/doom3.gpl/build/generated -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/ogg -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbis -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/oss/include -I/home/run
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roq.cpp:31:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roq.h:36:10: fatal error: ../../../renderer/jpeg-6/jpeglib.h: No such file or directory
+   36 | #include "../../../renderer/jpeg-6/jpeglib.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+[216/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/usurface.cpp.o
+[217/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/ubrush.cpp.o
+[218/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/roqParam.cpp.o
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/../../../idlib/../idlib/Lib.h:171,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/../../../idlib/precompiled.h:113,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roqParam.cpp:28:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/../../../idlib/../idlib/containers/List.h: In member function ‘void roqParam::InitFromFile(const char*)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/../../../idlib/../idlib/containers/List.h:470:16: warning: inlining failed in call to ‘void idList<type>::AssureSize(int, const type&) [with type = idStr]’: call is unlikely and code size would grow [-Winline]
+  470 | ID_INLINE void idList<type>::AssureSize( int newSize, const type &initValue ) {
+      |                ^~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roqParam.cpp:263:40: note: called from here
+  263 |                         file.AssureSize( num_files, empty );
+      |                         ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/../../../idlib/../idlib/containers/List.h:470:16: warning: inlining failed in call to ‘void idList<type>::AssureSize(int, const type&) [with type = idStr]’: call is unlikely and code size would grow [-Winline]
+  470 | ID_INLINE void idList<type>::AssureSize( int newSize, const type &initValue ) {
+      |                ^~~~~~~~~~~~
+```
+
+- [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/NSBitmapImageRep.cpp.o
+
+```
+FAILED: [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/NSBitmapImageRep.cpp.o 
+/usr/bin/c++ -DGLIMP -DID_ENABLE_CURL=0 -DXTHREADS -D__DOOM_DLL__ -I/home/runner/work/doom3.gpl/doom3.gpl/build/generated -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/ogg -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbis -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/oss/include -I/home/run
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/NSBitmapImageRep.cpp:31:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roq.h:36:10: fatal error: ../../../renderer/jpeg-6/jpeglib.h: No such file or directory
+   36 | #include "../../../renderer/jpeg-6/jpeglib.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+[215/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/roq.cpp.o
+FAILED: [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/roq.cpp.o 
+/usr/bin/c++ -DGLIMP -DID_ENABLE_CURL=0 -DXTHREADS -D__DOOM_DLL__ -I/home/runner/work/doom3.gpl/doom3.gpl/build/generated -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/ogg -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbis -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/oss/include -I/home/run
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roq.cpp:31:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roq.h:36:10: fatal error: ../../../renderer/jpeg-6/jpeglib.h: No such file or directory
+   36 | #include "../../../renderer/jpeg-6/jpeglib.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+[216/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/usurface.cpp.o
+[217/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/ubrush.cpp.o
+[218/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/roqParam.cpp.o
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/../../../idlib/../idlib/Lib.h:171,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/../../../idlib/precompiled.h:113,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roqParam.cpp:28:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/../../../idlib/../idlib/containers/List.h: In member function ‘void roqParam::InitFromFile(const char*)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/../../../idlib/../idlib/containers/List.h:470:16: warning: inlining failed in call to ‘void idList<type>::AssureSize(int, const type&) [with type = idStr]’: call is unlikely and code size would grow [-Winline]
+  470 | ID_INLINE void idList<type>::AssureSize( int newSize, const type &initValue ) {
+      |                ^~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roqParam.cpp:263:40: note: called from here
+  263 |                         file.AssureSize( num_files, empty );
+      |                         ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/../../../idlib/../idlib/containers/List.h:470:16: warning: inlining failed in call to ‘void idList<type>::AssureSize(int, const type&) [with type = idStr]’: call is unlikely and code size would grow [-Winline]
+  470 | ID_INLINE void idList<type>::AssureSize( int newSize, const type &initValue ) {
+      |                ^~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roqParam.cpp:264:40: note: called from here
+  264 |                         file.AssureSize( num_files, empty );
+      |                         ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/../../../idlib/../idlib/Lib.h:210:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/../../../idlib/../idlib/Str.h:509:16: warning: inlining failed in call to ‘void idStr::operator=(const idStr&)’: call is unlikely and code size would grow [-Winline]
+  509 | ID_INLINE void idStr::operator=( const idStr &text ) {
+      |                ^~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roqParam.cpp:273:53: note: called from here
+  273 |                                         file[field] = token;
+```
+
+- [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/roq.cpp.o
+
+```
+FAILED: [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/roq.cpp.o 
+/usr/bin/c++ -DGLIMP -DID_ENABLE_CURL=0 -DXTHREADS -D__DOOM_DLL__ -I/home/runner/work/doom3.gpl/doom3.gpl/build/generated -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/ogg -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbis -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/oss/include -I/home/run
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roq.cpp:31:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roq.h:36:10: fatal error: ../../../renderer/jpeg-6/jpeglib.h: No such file or directory
+   36 | #include "../../../renderer/jpeg-6/jpeglib.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+[216/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/usurface.cpp.o
+[217/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/ubrush.cpp.o
+[218/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/roqParam.cpp.o
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/../../../idlib/../idlib/Lib.h:171,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/../../../idlib/precompiled.h:113,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roqParam.cpp:28:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/../../../idlib/../idlib/containers/List.h: In member function ‘void roqParam::InitFromFile(const char*)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/../../../idlib/../idlib/containers/List.h:470:16: warning: inlining failed in call to ‘void idList<type>::AssureSize(int, const type&) [with type = idStr]’: call is unlikely and code size would grow [-Winline]
+  470 | ID_INLINE void idList<type>::AssureSize( int newSize, const type &initValue ) {
+      |                ^~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roqParam.cpp:263:40: note: called from here
+  263 |                         file.AssureSize( num_files, empty );
+      |                         ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/../../../idlib/../idlib/containers/List.h:470:16: warning: inlining failed in call to ‘void idList<type>::AssureSize(int, const type&) [with type = idStr]’: call is unlikely and code size would grow [-Winline]
+  470 | ID_INLINE void idList<type>::AssureSize( int newSize, const type &initValue ) {
+      |                ^~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roqParam.cpp:264:40: note: called from here
+  264 |                         file.AssureSize( num_files, empty );
+      |                         ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/../../../idlib/../idlib/Lib.h:210:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/../../../idlib/../idlib/Str.h:509:16: warning: inlining failed in call to ‘void idStr::operator=(const idStr&)’: call is unlikely and code size would grow [-Winline]
+  509 | ID_INLINE void idStr::operator=( const idStr &text ) {
+      |                ^~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roqParam.cpp:273:53: note: called from here
+  273 |                                         file[field] = token;
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/../../../idlib/../idlib/Str.h:509:16: warning: inlining failed in call to ‘void idStr::operator=(const idStr&)’: call is unlikely and code size would grow [-Winline]
+  509 | ID_INLINE void idStr::operator=( const idStr &text ) {
+      |                ^~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roqParam.cpp:278:46: note: called from here
+  278 |                                         arg1 = token;
+      |                                         ~~~~~^~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/../../../idlib/../idlib/Str.h:736:16: warning: inlining failed in call to ‘void idStr::Append(const idStr&)’: call is unlikely and code size would grow [-Winline]
+  736 | ID_INLINE void idStr::Append( const idStr &text ) {
+```
+
+- [code=1] CMakeFiles/doom3.dir/sys/linux/libXNVCtrl/NVCtrl.c.o
+
+```
+FAILED: [code=1] CMakeFiles/doom3.dir/sys/linux/libXNVCtrl/NVCtrl.c.o 
+/usr/bin/cc -DGLIMP -DID_ENABLE_CURL=0 -DXTHREADS -D__DOOM_DLL__ -I/home/runner/work/doom3.gpl/doom3.gpl/build/generated -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/ogg -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbis -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/oss/include -I/home/runn
+cc1: warning: command-line option ‘-Wno-class-memaccess’ is valid for C++/ObjC++ but not for C
+cc1: warning: command-line option ‘-Wno-c++20-compat’ is valid for C++/ObjC++ but not for C
+cc1: warning: command-line option ‘-Wno-conversion-null’ is valid for C++/ObjC++ but not for C
+cc1: warning: command-line option ‘-Wno-delete-non-virtual-dtor’ is valid for C++/ObjC++ but not for C
+cc1: warning: command-line option ‘-Wno-overloaded-virtual=0’ is valid for C++/ObjC++ but not for C
+cc1: warning: command-line option ‘-Wno-register’ is valid for C++/ObjC++ but not for C
+cc1: warning: command-line option ‘-Wno-template-id-cdtor’ is valid for C++/ObjC++ but not for C
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:11:2: warning: #warning XTRHEADS not defined -- this libXNVCtrl.a will not be thread safe! [-Wcpp]
+   11 | #warning XTRHEADS not defined -- this libXNVCtrl.a will not be thread safe!
+      |  ^~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:32:5: warning: initialization of ‘int (*)(Display *, XExtCodes *)’ from incompatible pointer type ‘int (*)(void)’ [-Wincompatible-pointer-types]
+   32 |     close_display,                      /* close_display */
+      |     ^~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:32:5: note: (near initialization for ‘nvctrl_extension_hooks.close_display’)
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:23:12: note: ‘close_display’ declared here
+   23 | static int close_display();
+      |            ^~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:33:5: warning: initialization of ‘int (*)(Display *, XEvent *, xEvent *)’ {aka ‘int (*)(Display *, XEvent *, struct _xEvent *)’} from incompatible pointer type ‘int (*)(void)’ [-Wincompatible-pointer-types]
+   33 |     wire_to_event,                      /* wire_to_event */
+      |     ^~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:33:5: note: (near initialization for ‘nvctrl_extension_hooks.wire_to_event’)
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:24:13: note: ‘wire_to_event’ declared here
+   24 | static Bool wire_to_event();
+      |             ^~~~~~~~~~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:6:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:44:37: error: conflicting types for ‘close_display’; have ‘int(Display *, XExtCodes *)’
+   44 | static XEXT_GENERATE_CLOSE_DISPLAY (close_display, nvctrl_ext_info)
+      |                                     ^~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/extutil.h:201:5: note: in definition of macro ‘XEXT_GENERATE_CLOSE_DISPLAY’
+  201 | int proc (Display *dpy, XExtCodes *codes) \
+      |     ^~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:23:12: note: previous declaration of ‘close_display’ with type ‘int(void)’
+   23 | static int close_display();
+      |            ^~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:311:13: error: conflicting types for ‘wire_to_event’; have ‘int(Display *, XEvent *, xEvent *)’ {aka ‘int(Display *, XEvent *, struct _xEvent *)’}
+  311 | static Bool wire_to_event (Display *dpy, XEvent *host, xEvent *wire)
+      |             ^~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:24:13: note: previous declaration of ‘wire_to_event’ with type ‘int(void)’
+```
+
+- [code=1] CMakeFiles/doom3.dir/sys/linux/sound.cpp.o
+
+```
+FAILED: [code=1] CMakeFiles/doom3.dir/sys/linux/sound.cpp.o 
+/usr/bin/c++ -DGLIMP -DID_ENABLE_CURL=0 -DXTHREADS -D__DOOM_DLL__ -I/home/runner/work/doom3.gpl/doom3.gpl/build/generated -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/ogg -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbis -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/oss/include -I/home/run
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/sound.cpp: In member function ‘virtual bool idAudioHardwareOSS::Initialize()’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/sound.cpp:282:17: error: call of overloaded ‘abs(unsigned int)’ is ambiguous
+  282 |         if ( abs( m_speed - PRIMARYFREQ ) > 5 ) {
+      |              ~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/sound.cpp:282:17: note: there are 7 candidates
+In file included from /usr/include/c++/15/cstdlib:83,
+                 from /usr/include/c++/15/stdlib.h:36,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/../../idlib/precompiled.h:97,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/sound.cpp:39:
+/usr/include/stdlib.h:1008:12: note: candidate 1: ‘int abs(int)’
+ 1008 | extern int abs (int __x) __THROW __attribute__ ((__const__)) __wur;
+      |            ^~~
+In file included from /usr/include/c++/15/cstdlib:87:
+/usr/include/c++/15/bits/std_abs.h:143:3: note: candidate 2: ‘constexpr __float128 std::abs(__float128)’
+  143 |   abs(__float128 __x)
+      |   ^~~
+/usr/include/c++/15/bits/std_abs.h:85:3: note: candidate 3: ‘constexpr long double std::abs(long double)’
+   85 |   abs(long double __x)
+      |   ^~~
+/usr/include/c++/15/bits/std_abs.h:81:3: note: candidate 4: ‘constexpr float std::abs(float)’
+   81 |   abs(float __x)
+      |   ^~~
+/usr/include/c++/15/bits/std_abs.h:77:3: note: candidate 5: ‘constexpr double std::abs(double)’
+   77 |   abs(double __x)
+      |   ^~~
+/usr/include/c++/15/bits/std_abs.h:67:3: note: candidate 6: ‘long long int std::abs(long long int)’
+   67 |   abs(long long __x) { return __builtin_llabs (__x); }
+      |   ^~~
+/usr/include/c++/15/bits/std_abs.h:62:3: note: candidate 7: ‘long int std::abs(long int)’
+   62 |   abs(long __i) { return __builtin_labs(__i); }
+      |   ^~~
+At global scope:
+cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
+[253/395] Building CXX object CMakeFiles/doom3.dir/TypeInfo/TypeInfoGen.cpp.o
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/Lib.h:171,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/precompiled.h:113,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/TypeInfoGen.cpp:28:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/containers/List.h: In member function ‘void idTypeInfoGen::ParseScope(const char*, bool, idParser&, idClassTypeInfo*)’:
 ```
 
 
 ### warning kinds
 
-- [689x] -unused-variable
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:298:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:307:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:703:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:712:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:1111:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:1120:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:1416:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:1425:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:1743:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:1752:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:2587:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:2623:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:298:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:307:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:703:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:712:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:1111:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:1120:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:1416:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:1425:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:1743:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:1752:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:2587:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:2623:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:298:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:307:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:703:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:712:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:1111:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:1120:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:1416:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:1425:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:1743:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:1752:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:2587:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:2623:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:298:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:307:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:703:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:712:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:1111:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:1120:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:1416:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:1425:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:1743:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:1752:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:2587:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:2623:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:298:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:307:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:703:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:712:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:1111:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:1120:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:1416:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:1425:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:1743:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:1752:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:2587:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:2623:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:298:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:307:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:703:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:712:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:1111:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:1120:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:1416:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:1425:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:1743:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:1752:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:2587:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:2623:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd.cpp:3127:25: warning: unused variable ‘texCoords1’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd.cpp:3128:25: warning: unused variable ‘texCoords2’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd.cpp:3194:25: warning: unused variable ‘lightVectors1’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd.cpp:3195:25: warning: unused variable ‘lightVectors2’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:298:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:307:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:703:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:712:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:1111:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:1120:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:1416:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:1425:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:1743:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:1752:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:2587:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:2623:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:298:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:307:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:703:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:712:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:1111:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:1120:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:1416:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:1425:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:1743:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:1752:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:2587:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:2623:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:298:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:307:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:703:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:712:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:1111:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:1120:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:1416:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:1425:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:1743:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:1752:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:2587:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:2623:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:298:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:307:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:703:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:712:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:1111:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:1120:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:1416:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:1425:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:1743:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:1752:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:2587:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:2623:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:298:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:307:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:703:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:712:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:1111:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:1120:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:1416:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:1425:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:1743:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:1752:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:2587:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:2623:13: warning: unused variable ‘r’ [-Wunused-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AAS_debug.cpp:76:52: warning: unused variable ‘walk’ [-Wunused-variable]
-- [572x] -class-memaccess
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/TraceModel.cpp:1413:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct volumeIntegrals_s’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI_pathing.cpp:1035:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘struct pathTrace_s’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-- [114x] -template-id-cdtor
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-- [57x] ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/../../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/containers/../../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-- [21x] -write-strings
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../game/script/Script_Interpreter.h:127:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../game/script/Script_Interpreter.h:140:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../game/script/Script_Interpreter.h:153:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
-- [19x] -register
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/MD5.cpp:56:27: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/MD5.cpp:56:30: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/MD5.cpp:56:33: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/MD5.cpp:56:36: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd_Generic.cpp:1801:25: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd_Generic.cpp:1801:29: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd_Generic.cpp:1801:33: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd_Generic.cpp:1801:37: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd_Generic.cpp:1927:25: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd_Generic.cpp:1927:29: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd_Generic.cpp:1927:33: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd_Generic.cpp:1927:37: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/Lib.cpp:383:33: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/Lib.cpp:383:37: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:3204:17: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:3205:17: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:3206:16: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:3209:18: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:3213:16: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
-- [13x] -unused-but-set-variable
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/Winding2D.cpp:152:41: warning: variable ‘maxpts’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Polynomial.cpp:190:25: warning: variable ‘value’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd_Generic.cpp:2619:35: warning: variable ‘d3’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd_Generic.cpp:2620:35: warning: variable ‘d8’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Matrix.cpp:5395:27: warning: variable ‘y’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/Parser.cpp:1380:13: warning: variable ‘lastoperatortype’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/MapFile.cpp:49:30: warning: variable ‘ptr’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/MapFile.cpp:410:16: warning: variable ‘shift’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/MapFile.cpp:410:26: warning: variable ‘rotate’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/MapFile.cpp:411:15: warning: variable ‘scale’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/CmdSystem.cpp:226:25: warning: variable ‘len’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/File.cpp:262:13: warning: variable ‘length’ set but not used [-Wunused-but-set-variable]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AAS_pathing.cpp:140:25: warning: variable ‘lastAreaNum’ set but not used [-Wunused-but-set-variable]
-- [10x] -maybe-uninitialized
+- [289x] -inline
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/containers/List.h:184:16: warning: inlining failed in call to ‘void idList<type>::Clear() [with type = idStr]’: call is unlikely and code size would grow [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/containers/StrList.h:65:16: warning: inlining failed in call to ‘void idList<type>::Sort(int (*)(const type*, const type*)) [with type = idStr]’: --param max-inline-insns-single limit reached [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/containers/HashTable.h:145:11: warning: inlining failed in call to ‘idHashTable<Type>::~idHashTable() noexcept [with Type = idList<idStr>]’: call is unlikely and code size would grow [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/Str.h:509:16: warning: inlining failed in call to ‘void idStr::operator=(const idStr&)’: call is unlikely and code size would grow [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/containers/List.h:646:15: warning: inlining failed in call to ‘int idList<type>::Append(const type&) [with type = idStr]’: --param max-inline-insns-single limit reached [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/DeclManager.cpp:176:7: warning: inlining failed in call to ‘idDeclManagerLocal::idDeclManagerLocal()’: call is unlikely and code size would grow [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/Str.h:387:11: warning: inlining failed in call to ‘idStr::idStr(const char*)’: call is unlikely and code size would grow [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/Dict.h:173:11: warning: inlining failed in call to ‘idDict::~idDict() noexcept’: call is unlikely and code size would grow [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Session_local.h:71:3: warning: inlining failed in call to ‘mapSpawnData_t::~mapSpawnData_t() noexcept’: call is unlikely and code size would grow [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/containers/List.h:207:16: warning: inlining failed in call to ‘void idList<type>::DeleteContents(bool) [with type = idDict*]’: --param inline-unit-growth limit reached [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/Str.h:348:11: warning: inlining failed in call to ‘idStr::idStr(const idStr&)’: call is unlikely and code size would grow [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/containers/List.h:360:16: warning: inlining failed in call to ‘void idList<type>::Resize(int) [with type = idStr]’: --param inline-unit-growth limit reached [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/containers/List.h:646:15: warning: inlining failed in call to ‘int idList<type>::Append(const type&) [with type = idStr]’: --param inline-unit-growth limit reached [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/../../idlib/../idlib/Dict.h:173:11: warning: inlining failed in call to ‘idDict::~idDict() noexcept’: call is unlikely and code size would grow [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/../../idlib/../framework/async/ServerScan.h:72:7: warning: inlining failed in call to ‘idServerScan::~idServerScan() noexcept’: call is unlikely and code size would grow [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/../../idlib/../idlib/containers/List.h:184:16: warning: inlining failed in call to ‘void idList<type>::Clear() [with type = idStr]’: call is unlikely and code size would grow [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sound/../idlib/../idlib/Str.h:387:11: warning: inlining failed in call to ‘idStr::idStr(const char*)’: call is unlikely and code size would grow [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sound/../idlib/../idlib/Str.h:509:16: warning: inlining failed in call to ‘void idStr::operator=(const idStr&)’: call is unlikely and code size would grow [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/../idlib/containers/BTree.h:203:16: warning: inlining failed in call to ‘void idBTree<objType, keyType, maxChildrenPerNode>::Remove(idBTreeNode<objType, keyType>*) [with objType = idDynamicBlock<idDrawVert>; keyType = int; int maxChildrenPerNode = 4]’: --param inline-unit-growth limit reached [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/../idlib/containers/BTree.h:203:16: warning: inlining failed in call to ‘void idBTree<objType, keyType, maxChildrenPerNode>::Remove(idBTreeNode<objType, keyType>*) [with objType = idDynamicBlock<int>; keyType = int; int maxChildrenPerNode = 4]’: --param inline-unit-growth limit reached [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/../idlib/containers/BTree.h:203:16: warning: inlining failed in call to ‘void idBTree<objType, keyType, maxChildrenPerNode>::Remove(idBTreeNode<objType, keyType>*) [with objType = idDynamicBlock<shadowCache_s>; keyType = int; int maxChildrenPerNode = 4]’: --param inline-unit-growth limit reached [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/../idlib/containers/BTree.h:203:16: warning: inlining failed in call to ‘void idBTree<objType, keyType, maxChildrenPerNode>::Remove(idBTreeNode<objType, keyType>*) [with objType = idDynamicBlock<idPlane>; keyType = int; int maxChildrenPerNode = 4]’: --param inline-unit-growth limit reached [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/../idlib/containers/BTree.h:203:16: warning: inlining failed in call to ‘void idBTree<objType, keyType, maxChildrenPerNode>::Remove(idBTreeNode<objType, keyType>*) [with objType = idDynamicBlock<silEdge_t>; keyType = int; int maxChildrenPerNode = 4]’: --param inline-unit-growth limit reached [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/../idlib/containers/BTree.h:203:16: warning: inlining failed in call to ‘void idBTree<objType, keyType, maxChildrenPerNode>::Remove(idBTreeNode<objType, keyType>*) [with objType = idDynamicBlock<dominantTri_s>; keyType = int; int maxChildrenPerNode = 4]’: --param inline-unit-growth limit reached [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/../idlib/containers/BTree.h:114:41: warning: inlining failed in call to ‘idBTreeNode<objType, keyType>* idBTree<objType, keyType, maxChildrenPerNode>::Add(objType*, keyType) [with objType = idDynamicBlock<int>; keyType = int; int maxChildrenPerNode = 4]’: --param max-inline-insns-single limit reached [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/mdct.c:317:11: warning: inlining failed in call to ‘mdct_butterflies.isra’: --param max-inline-insns-single limit reached [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/containers/PlaneSet.h:51:15: warning: inlining failed in call to ‘int idPlaneSet::FindPlane(const idPlane&, float, float)’: --param max-inline-insns-single limit reached [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/geometry/Surface.h:145:11: warning: inlining failed in call to ‘idSurface::~idSurface() noexcept’: call is unlikely and code size would grow [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/../../../idlib/../idlib/containers/List.h:470:16: warning: inlining failed in call to ‘void idList<type>::AssureSize(int, const type&) [with type = idStr]’: call is unlikely and code size would grow [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/../../../idlib/../idlib/Str.h:509:16: warning: inlining failed in call to ‘void idStr::operator=(const idStr&)’: call is unlikely and code size would grow [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/../../../idlib/../idlib/Str.h:736:16: warning: inlining failed in call to ‘void idStr::Append(const idStr&)’: call is unlikely and code size would grow [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/ui/../idlib/../idlib/containers/List.h:646:15: warning: inlining failed in call to ‘int idList<type>::Append(const type&) [with type = idStr]’: --param max-inline-insns-single limit reached [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/ui/../idlib/../idlib/containers/List.h:184:16: warning: inlining failed in call to ‘void idList<type>::Clear() [with type = idStr]’: call is unlikely and code size would grow [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/ui/../idlib/../idlib/containers/HashTable.h:145:11: warning: inlining failed in call to ‘idHashTable<Type>::~idHashTable() noexcept [with Type = const idMaterial*]’: call is unlikely and code size would grow [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/guied/../../idlib/../idlib/Dict.h:173:11: warning: inlining failed in call to ‘idDict::~idDict() noexcept’: call is unlikely and code size would grow [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/ui/RegExp.h:108:11: warning: inlining failed in call to ‘idRegisterList::~idRegisterList() noexcept’: call is unlikely and code size would grow [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/ui/../idlib/../idlib/containers/List.h:646:15: warning: inlining failed in call to ‘int idList<type>::Append(const type&) [with type = idWinVar*]’: --param inline-unit-growth limit reached [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/ui/../idlib/../idlib/Str.h:509:16: warning: inlining failed in call to ‘void idStr::operator=(const idStr&)’: --param inline-unit-growth limit reached [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/ui/../idlib/../idlib/containers/List.h:646:15: warning: inlining failed in call to ‘int idList<type>::Append(const type&) [with type = drawWin_t]’: --param inline-unit-growth limit reached [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/ui/../idlib/../idlib/containers/List.h:646:15: warning: inlining failed in call to ‘int idList<type>::Append(const type&) [with type = idWindow*]’: --param inline-unit-growth limit reached [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/ui/../idlib/../idlib/Str.h:509:16: warning: inlining failed in call to ‘void idStr::operator=(const idStr&)’: call is unlikely and code size would grow [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/ui/../idlib/../idlib/containers/List.h:646:15: warning: inlining failed in call to ‘int idList<type>::Append(const type&) [with type = idWinVar*]’: call is unlikely and code size would grow [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/ui/../idlib/../idlib/math/Extrapolate.h:119:16: warning: inlining failed in call to ‘type idExtrapolate<type>::GetCurrentValue(float) const [with type = idVec4]’: --param max-inline-insns-single limit reached [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/containers/List.h:646:15: warning: inlining failed in call to ‘int idList<type>::Append(const type&) [with type = idClassTypeInfo*]’: call is unlikely and code size would grow [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/Str.h:348:11: warning: inlining failed in call to ‘idStr::idStr(const idStr&)’: call is unlikely and code size would grow [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/Str.h:736:16: warning: inlining failed in call to ‘void idStr::Append(const idStr&)’: call is unlikely and code size would grow [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/Str.h:509:16: warning: inlining failed in call to ‘void idStr::operator=(const idStr&)’: call is unlikely and code size would grow [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/containers/List.h:646:15: warning: inlining failed in call to ‘int idList<type>::Append(const type&) [with type = idEnumTypeInfo*]’: call is unlikely and code size would grow [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/Str.h:749:16: warning: inlining failed in call to ‘void idStr::Append(const char*)’: call is unlikely and code size would grow [-Winline]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/containers/List.h:646:15: warning: inlining failed in call to ‘int idList<type>::Append(const type&) [with type = idClassVariableInfo]’: --param max-inline-insns-single limit reached [-Winline]
+- [163x] -maybe-uninitialized
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/Winding2D.cpp:95:27: warning: ‘planes’ may be used uninitialized [-Wmaybe-uninitialized]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Plane.h:325:46: warning: ‘plane.idPlane::d’ may be used uninitialized [-Wmaybe-uninitialized]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Plane.h:362:12: warning: ‘plane.idPlane::d’ may be used uninitialized [-Wmaybe-uninitialized]
@@ -1400,123 +800,281 @@ In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../id
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Vector.h:254:41: warning: ‘bestPlane.idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Vector.h:245:37: warning: ‘nextEdgeNormal.idVec2::x’ may be used uninitialized [-Wmaybe-uninitialized]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/math/Vector.h:245:37: warning: ‘nextEdgeNormal.idVec2::y’ may be used uninitialized [-Wmaybe-uninitialized]
-- [7x] -format-security
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd.cpp:318:30: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/Parser.cpp:326:47: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/Parser.cpp:343:49: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/CVarSystem.cpp:1206:47: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/File.cpp:109:65: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/FileSystem.cpp:1991:47: warning: format not a string literal and no format arguments [-Wformat-security]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/FileSystem.cpp:3962:24: warning: format not a string literal and no format arguments [-Wformat-security]
-- [7x] identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../game/Game_local.h:401:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
-- [6x] -literal-suffix
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/main.cpp:272:37: warning: invalid suffix on literal; C++11 requires a space between literal and string macro [-Wliteral-suffix]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/main.cpp:274:30: warning: invalid suffix on literal; C++11 requires a space between literal and string macro [-Wliteral-suffix]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/main.cpp:278:35: warning: invalid suffix on literal; C++11 requires a space between literal and string macro [-Wliteral-suffix]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/main.cpp:280:28: warning: invalid suffix on literal; C++11 requires a space between literal and string macro [-Wliteral-suffix]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/TypeInfoGen.cpp:805:25: warning: invalid suffix on literal; C++11 requires a space between literal and string macro [-Wliteral-suffix]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/TypeInfoGen.cpp:907:17: warning: invalid suffix on literal; C++11 requires a space between literal and string macro [-Wliteral-suffix]
-- [4x] -misleading-indentation
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:1411:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:1729:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:1804:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:1868:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
-- [4x] -dangling-else
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:1480:12: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:1560:20: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:1585:20: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:1784:12: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
-- [3x] -delete-non-virtual-dtor
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd.cpp:120:17: warning: deleting object of abstract class type ‘idSIMDProcessor’ which has non-virtual destructor will cause undefined behavior [-Wdelete-non-virtual-dtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd.cpp:122:9: warning: deleting object of abstract class type ‘idSIMDProcessor’ which has non-virtual destructor will cause undefined behavior [-Wdelete-non-virtual-dtor]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Simd.cpp:4217:17: warning: deleting object of abstract class type ‘idSIMDProcessor’ which has non-virtual destructor will cause undefined behavior [-Wdelete-non-virtual-dtor]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/cm/CollisionModel_load.cpp:2058:25: warning: ‘planeType’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/cm/CollisionModel_load.cpp:1924:46: warning: ‘planeDist’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Vector.h:439:44: warning: ‘dir.idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Vector.h:439:44: warning: ‘dir.idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Vector.h:439:44: warning: ‘dir.idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Vector.h:452:50: warning: ‘stepLeft.idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Vector.h:452:50: warning: ‘stepLeft.idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/math/Vector.h:452:50: warning: ‘stepLeft.idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/draw_arb2.cpp:418:9: warning: ‘start’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/../idlib/math/Vector.h:431:48: warning: ‘origin.idDrawVert::xyz.idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/../idlib/math/Vector.h:431:39: warning: ‘origin.idDrawVert::xyz.idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/../idlib/math/Vector.h:431:30: warning: ‘origin.idDrawVert::xyz.idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Model_lwo.cpp:402:13: warning: ‘key’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Model_lwo.cpp:2060:30: warning: ‘tex’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Model_lwo.cpp:2082:24: warning: ‘shdr’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Model_lwo.cpp:1993:23: warning: ‘i’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/../idlib/math/Vector.h:448:50: warning: ‘scale’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/RenderWorld_portals.cpp:388:52: warning: ‘firstPortalStack’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/tr_deform.cpp:539:69: warning: ‘plane.idPlane::d’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/tr_light.cpp:1085:101: warning: ‘oldBounds.idBounds::b[0].idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/tr_light.cpp:1081:93: warning: ‘oldBounds.idBounds::b[0].idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/tr_light.cpp:1082:101: warning: ‘oldBounds.idBounds::b[0].idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/tr_light.cpp:1083:101: warning: ‘oldBounds.idBounds::b[1].idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/tr_light.cpp:1084:101: warning: ‘oldBounds.idBounds::b[1].idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/tr_light.cpp:1085:101: warning: ‘oldBounds.idBounds::b[1].idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/tr_light.cpp:1265:47: warning: ‘oldFloatTime’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/tr_light.cpp:1266:53: warning: ‘oldTime’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/tr_light.cpp:1505:55: warning: ‘oldFloatTime’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/tr_light.cpp:1506:61: warning: ‘oldTime’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/tr_rendertools.cpp:1793:87: warning: ‘textLen’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/lpc.c:77:8: warning: ‘*aut’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/mapping0.c:601:9: warning: ‘mag_memo’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/mapping0.c:601:9: warning: ‘mag_sort’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/psy.c:633:12: warning: ‘A’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/psy.c:633:16: warning: ‘B’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/psy.c:633:7: warning: ‘D’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/psy.c:783:3: warning: ‘work’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/vorbisfile.c:1011:17: warning: ‘eosflag’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:424:11: warning: ‘area.aasArea_s::bounds.idBounds::b[0].idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:425:11: warning: ‘area.aasArea_s::bounds.idBounds::b[0].idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:426:11: warning: ‘area.aasArea_s::bounds.idBounds::b[0].idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:424:11: warning: ‘area.aasArea_s::bounds.idBounds::b[1].idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:425:11: warning: ‘area.aasArea_s::bounds.idBounds::b[1].idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:426:11: warning: ‘area.aasArea_s::bounds.idBounds::b[1].idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:424:11: warning: ‘area.aasArea_s::center.idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:425:11: warning: ‘area.aasArea_s::center.idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:426:11: warning: ‘area.aasArea_s::center.idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../tools/compilers/aas/AASFile.h:155:16: warning: ‘area.aasArea_s::travelFlags’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:424:15: warning: ‘*(const __vector(4) float*)((char*)&area + offsetof(aasArea_t, aasArea_s::bounds.idBounds::b[0].idVec3::x))’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:424:15: warning: ‘area’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:426:15: warning: ‘area.aasArea_s::center.idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../tools/compilers/aas/AASFile.h:155:16: warning: ‘area.aasArea_s::reach’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../tools/compilers/aas/AASFile.h:155:16: warning: ‘area.aasArea_s::rev_reach’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASReach.cpp:297:48: warning: ‘floor_bestNormal.idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASReach.cpp:297:48: warning: ‘floor_bestNormal.idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASReach.cpp:297:48: warning: ‘floor_bestNormal.idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASReach.cpp:297:16: warning: ‘floor_bestStart.idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASReach.cpp:297:16: warning: ‘floor_bestStart.idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASReach.cpp:297:16: warning: ‘floor_bestStart.idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASReach.cpp:297:33: warning: ‘floor_bestEnd.idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASReach.cpp:668:67: warning: ‘floor_bestArea1FloorEdgeNum’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:452:50: warning: ‘floor_bestEnd.idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:452:50: warning: ‘floor_bestEnd.idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:424:11: warning: ‘water_bestStart.idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:425:11: warning: ‘water_bestStart.idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:426:11: warning: ‘water_bestStart.idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:452:50: warning: ‘water_bestEnd.idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:452:50: warning: ‘water_bestEnd.idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:452:50: warning: ‘water_bestEnd.idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:448:50: warning: ‘water_bestNormal.idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:448:50: warning: ‘water_bestNormal.idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:448:50: warning: ‘water_bestNormal.idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/BrushBSP.cpp:1124:44: warning: ‘side’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/BrushBSP.cpp:1185:38: warning: ‘side’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/BrushBSP.cpp:1401:35: warning: ‘nextPortal’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/dmap/leakfile.cpp:100:35: warning: ‘nextportal’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/dmap/leakfile.cpp:79:22: warning: ‘nextnode’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/dmap/optimize.cpp:1141:38: warning: ‘second’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/dmap/optimize.cpp:1160:45: warning: ‘third’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/dmap/../../../idlib/../idlib/math/Vector.h:431:24: warning: ‘middle’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/dmap/optimize.cpp:1171:59: warning: ‘checkNext’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/dmap/../../../idlib/../idlib/math/Vector.h:431:24: warning: ‘second’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/dmap/../../../idlib/../idlib/math/Vector.h:431:24: warning: ‘third’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/dmap/optimize.cpp:665:9: warning: ‘v1’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/dmap/optimize.cpp:665:9: warning: ‘v3’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/dmap/../../../idlib/../idlib/math/Vector.h:424:11: warning: ‘split.idDrawVert::tangents[0].idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/dmap/../../../idlib/../idlib/math/Vector.h:425:11: warning: ‘split.idDrawVert::tangents[0].idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/dmap/../../../idlib/../idlib/math/Vector.h:426:11: warning: ‘split.idDrawVert::tangents[0].idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/dmap/../../../idlib/../idlib/math/Vector.h:424:11: warning: ‘split.idDrawVert::tangents[1].idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/dmap/../../../idlib/../idlib/math/Vector.h:425:11: warning: ‘split.idDrawVert::tangents[1].idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/dmap/../../../idlib/../idlib/math/Vector.h:426:11: warning: ‘split.idDrawVert::tangents[1].idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/dmap/../../../idlib/../idlib/geometry/DrawVert.h:40:7: warning: ‘split.idDrawVert::color[0]’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/dmap/../../../idlib/../idlib/geometry/DrawVert.h:40:7: warning: ‘split.idDrawVert::color[1]’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/dmap/../../../idlib/../idlib/geometry/DrawVert.h:40:7: warning: ‘split.idDrawVert::color[2]’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/dmap/../../../idlib/../idlib/geometry/DrawVert.h:40:7: warning: ‘split.idDrawVert::color[3]’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/renderbump/renderbump.cpp:844:38: warning: ‘sampledColor[0]’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/renderbump/renderbump.cpp:845:38: warning: ‘sampledColor[1]’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/renderbump/renderbump.cpp:846:38: warning: ‘sampledColor[2]’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/renderbump/renderbump.cpp:847:38: warning: ‘sampledColor[3]’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/ui/../idlib/../idlib/containers/List.h:661:9: warning: ‘fontInfo’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Vector.h:439:44: warning: ‘force.idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Vector.h:439:44: warning: ‘force.idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Vector.h:439:44: warning: ‘force.idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Vector.h:439:44: warning: ‘torque.idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Vector.h:439:44: warning: ‘torque.idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Vector.h:439:44: warning: ‘torque.idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Matrix.h:1821:75: warning: ‘child’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Vector.h:424:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[0].idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Vector.h:425:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[0].idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Vector.h:426:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[0].idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Vector.h:424:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[1].idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Vector.h:425:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[1].idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Vector.h:426:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[1].idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Vector.h:424:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[2].idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Vector.h:425:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[2].idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Vector.h:426:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[2].idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Matrix.h:742:92: warning: ‘a2.idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Matrix.h:742:92: warning: ‘a2.idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/math/Matrix.h:742:92: warning: ‘a2.idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/IK.cpp:609:48: warning: ‘newPivotFoot’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/SmokeParticles.cpp:274:40: warning: ‘active’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/../../idlib/../idlib/math/Vector.h:254:41: warning: ‘bestPlane.idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/../../idlib/../idlib/math/Vector.h:254:41: warning: ‘bestPlane.idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/../../idlib/../idlib/math/Vector.h:245:37: warning: ‘nextEdgeNormal.idVec2::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/ai/../../idlib/../idlib/math/Vector.h:245:37: warning: ‘nextEdgeNormal.idVec2::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:439:44: warning: ‘force.idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:439:44: warning: ‘force.idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:439:44: warning: ‘force.idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:439:44: warning: ‘torque.idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:439:44: warning: ‘torque.idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:439:44: warning: ‘torque.idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:1821:75: warning: ‘child’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:424:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[0].idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:425:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[0].idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:426:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[0].idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:424:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[1].idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:425:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[1].idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:426:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[1].idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:424:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[2].idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:425:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[2].idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:426:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[2].idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:742:92: warning: ‘a2.idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:742:92: warning: ‘a2.idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:742:92: warning: ‘a2.idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../d3xp/Entity.h:607:22: warning: ‘*(unsigned char*)((char*)&ts + offsetof(SetTimeState, SetTimeState::previousFast))’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/AFEntity.cpp:3227:9: warning: ‘head’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/AFEntity.cpp:3370:9: warning: ‘head’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/IK.cpp:609:48: warning: ‘newPivotFoot’ may be used uninitialized [-Wmaybe-uninitialized]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/SmokeParticles.cpp:291:40: warning: ‘active’ may be used uninitialized [-Wmaybe-uninitialized]
+- [26x] command-line option ‘-Wno-class-memaccess’ is valid for C++/ObjC++ but not for C
+  - cc1: warning: command-line option ‘-Wno-class-memaccess’ is valid for C++/ObjC++ but not for C
+- [26x] command-line option ‘-Wno-c++20-compat’ is valid for C++/ObjC++ but not for C
+  - cc1: warning: command-line option ‘-Wno-c++20-compat’ is valid for C++/ObjC++ but not for C
+- [26x] command-line option ‘-Wno-conversion-null’ is valid for C++/ObjC++ but not for C
+  - cc1: warning: command-line option ‘-Wno-conversion-null’ is valid for C++/ObjC++ but not for C
+- [26x] command-line option ‘-Wno-delete-non-virtual-dtor’ is valid for C++/ObjC++ but not for C
+  - cc1: warning: command-line option ‘-Wno-delete-non-virtual-dtor’ is valid for C++/ObjC++ but not for C
+- [26x] command-line option ‘-Wno-overloaded-virtual=0’ is valid for C++/ObjC++ but not for C
+  - cc1: warning: command-line option ‘-Wno-overloaded-virtual=0’ is valid for C++/ObjC++ but not for C
+- [26x] command-line option ‘-Wno-register’ is valid for C++/ObjC++ but not for C
+  - cc1: warning: command-line option ‘-Wno-register’ is valid for C++/ObjC++ but not for C
+- [26x] command-line option ‘-Wno-template-id-cdtor’ is valid for C++/ObjC++ but not for C
+  - cc1: warning: command-line option ‘-Wno-template-id-cdtor’ is valid for C++/ObjC++ but not for C
+- [17x] -unused-result
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:1134:14: warning: ignoring return value of ‘size_t fread(void*, size_t, size_t, FILE*)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:1105:14: warning: ignoring return value of ‘size_t fread(void*, size_t, size_t, FILE*)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/FileSystem.cpp:3646:38: warning: ignoring return value of ‘size_t fread(void*, size_t, size_t, FILE*)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/posix/posix_main.cpp:340:15: warning: ignoring return value of ‘char* getcwd(char*, size_t)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/posix/posix_main.cpp:638:14: warning: ignoring return value of ‘ssize_t write(int, const void*, size_t)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/posix/posix_main.cpp:640:14: warning: ignoring return value of ‘ssize_t write(int, const void*, size_t)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/posix/posix_main.cpp:642:14: warning: ignoring return value of ‘ssize_t write(int, const void*, size_t)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/posix/posix_main.cpp:647:14: warning: ignoring return value of ‘ssize_t write(int, const void*, size_t)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/posix/posix_main.cpp:652:14: warning: ignoring return value of ‘ssize_t write(int, const void*, size_t)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/posix/posix_main.cpp:653:14: warning: ignoring return value of ‘ssize_t write(int, const void*, size_t)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/posix/posix_main.cpp:692:30: warning: ignoring return value of ‘ssize_t write(int, const void*, size_t)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/posix/posix_main.cpp:742:38: warning: ignoring return value of ‘ssize_t write(int, const void*, size_t)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/main.cpp:391:39: warning: ignoring return value of ‘int system(const char*)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/main.cpp:404:31: warning: ignoring return value of ‘int system(const char*)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+- [7x] -stringop-truncation
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Session.cpp:1445:16: warning: ‘char* __builtin_strncpy(char*, const char*, unsigned int)’ specified bound 1024 equals destination size [-Wstringop-truncation]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/posix/posix_signal.cpp:165:16: warning: ‘char* __builtin_strncpy(char*, const char*, unsigned int)’ specified bound 1024 equals destination size [-Wstringop-truncation]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Game_network.cpp:1518:24: warning: ‘char* __builtin_strncpy(char*, const char*, unsigned int)’ specified bound 1024 equals destination size [-Wstringop-truncation]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Game_local.cpp:2335:32: warning: ‘char* __builtin_strncpy(char*, const char*, unsigned int)’ specified bound 1024 equals destination size [-Wstringop-truncation]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Game_network.cpp:1563:24: warning: ‘char* __builtin_strncpy(char*, const char*, unsigned int)’ specified bound 1024 equals destination size [-Wstringop-truncation]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Game_local.cpp:4795:16: warning: ‘char* __builtin_strncpy(char*, const char*, unsigned int)’ specified bound 1024 equals destination size [-Wstringop-truncation]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Game_local.cpp:2599:32: warning: ‘char* __builtin_strncpy(char*, const char*, unsigned int)’ specified bound 1024 equals destination size [-Wstringop-truncation]
+- [4x] ISO C++ forbids comparison between pointer and integer [-fpermissive]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Game_local.cpp:1250:40: warning: ISO C++ forbids comparison between pointer and integer [-fpermissive]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Game_local.cpp:1619:30: warning: ISO C++ forbids comparison between pointer and integer [-fpermissive]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Game_local.cpp:1386:40: warning: ISO C++ forbids comparison between pointer and integer [-fpermissive]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Game_local.cpp:1802:30: warning: ISO C++ forbids comparison between pointer and integer [-fpermissive]
 - [3x] invalid conversion from ‘char’ to ‘const char*’ [-fpermissive]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/Parser.cpp:712:36: warning: invalid conversion from ‘char’ to ‘const char*’ [-fpermissive]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/Parser.cpp:714:37: warning: invalid conversion from ‘char’ to ‘const char*’ [-fpermissive]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/Parser.cpp:731:36: warning: invalid conversion from ‘char’ to ‘const char*’ [-fpermissive]
-- [3x] -unused-result
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:1134:14: warning: ignoring return value of ‘size_t fread(void*, size_t, size_t, FILE*)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:1105:14: warning: ignoring return value of ‘size_t fread(void*, size_t, size_t, FILE*)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/FileSystem.cpp:3646:38: warning: ignoring return value of ‘size_t fread(void*, size_t, size_t, FILE*)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
-- [2x] -enum-compare
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/Surface_SweptSpline.cpp:162:57: warning: comparison between ‘enum idCurve_Spline<idVec4>::boundary_t’ and ‘enum idCurve_Spline<idVec3>::boundary_t’ [-Wenum-compare]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/Surface_SweptSpline.cpp:175:47: warning: comparison between ‘enum idCurve_Spline<idVec4>::boundary_t’ and ‘enum idCurve_Spline<idVec3>::boundary_t’ [-Wenum-compare]
-- [2x] -sign-compare
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/Str.cpp:1473:18: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/CmdArgs.cpp:158:41: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
-- [2x] -unused-value
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Matrix.cpp:7092:23: warning: right operand of comma operator has no effect [-Wunused-value]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/Matrix.cpp:7117:23: warning: right operand of comma operator has no effect [-Wunused-value]
-- [2x] format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘long int’ [-Wformat=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/Parser.cpp:2117:24: warning: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘long int’ [-Wformat=]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/Parser.cpp:2256:25: warning: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘long int’ [-Wformat=]
-- [2x] -format-zero-length
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/main.cpp:77:87: warning: zero-length gnu_printf format string [-Wformat-zero-length]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/main.cpp:77:91: warning: zero-length gnu_printf format string [-Wformat-zero-length]
-- [2x] -conversion-null
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI_events.cpp:2338:59: warning: passing NULL to non-pointer argument 1 of ‘idEventArg::idEventArg(int)’ [-Wconversion-null]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI_events.cpp:2359:53: warning: passing NULL to non-pointer argument 1 of ‘idEventArg::idEventArg(int)’ [-Wconversion-null]
-- [1x] -sizeof-pointer-memaccess
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/hashing/MD5.cpp:252:21: warning: argument to ‘sizeof’ in ‘void* memset(void*, int, size_t)’ call is the same expression as the destination; did you mean to dereference it? [-Wsizeof-pointer-memaccess]
+- [3x] -mismatched-new-delete
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Image_init.cpp:2214:16: warning: ‘void operator delete(void*, unsigned int)’ called on pointer returned from a mismatched allocation function [-Wmismatched-new-delete]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/ModelManager.cpp:617:16: warning: ‘void operator delete(void*, unsigned int)’ called on pointer returned from a mismatched allocation function [-Wmismatched-new-delete]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/BrushBSP.cpp:886:16: warning: ‘void operator delete(void*, unsigned int)’ called on pointer returned from a mismatched allocation function [-Wmismatched-new-delete]
+- [2x] -narrowing
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/MegaTexture.cpp:364:51: warning: narrowing conversion of ‘((255 * localX) / ((int)TILE_PER_LEVEL))’ from ‘int’ to ‘byte’ {aka ‘unsigned char’} [-Wnarrowing]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/MegaTexture.cpp:364:82: warning: narrowing conversion of ‘((255 * localY) / ((int)TILE_PER_LEVEL))’ from ‘int’ to ‘byte’ {aka ‘unsigned char’} [-Wnarrowing]
+- [2x] array subscript -1 is below array bounds of ‘char [1024]’ [-Warray-bounds=]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/main.cpp:142:26: warning: array subscript -1 is below array bounds of ‘char [1024]’ [-Warray-bounds=]
+- [2x] -incompatible-pointer-types
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:32:5: warning: initialization of ‘int (*)(Display *, XExtCodes *)’ from incompatible pointer type ‘int (*)(void)’ [-Wincompatible-pointer-types]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:33:5: warning: initialization of ‘int (*)(Display *, XEvent *, xEvent *)’ {aka ‘int (*)(Display *, XEvent *, struct _xEvent *)’} from incompatible pointer type ‘int (*)(void)’ [-Wincompatible-pointer-types]
 - [1x] array subscript 8 is outside array bounds of ‘void [76]’ [-Warray-bounds=]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/Token.h:121:37: warning: array subscript 8 is outside array bounds of ‘void [76]’ [-Warray-bounds=]
 - [1x] array subscript 7 is outside array bounds of ‘void [76]’ [-Warray-bounds=]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/Token.h:121:37: warning: array subscript 7 is outside array bounds of ‘void [76]’ [-Warray-bounds=]
 - [1x] array subscript 10 is outside array bounds of ‘void [76]’ [-Warray-bounds=]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/Token.h:121:37: warning: array subscript 10 is outside array bounds of ‘void [76]’ [-Warray-bounds=]
-- [1x] -parentheses
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/Heap.cpp:336:47: warning: suggest parentheses around ‘+’ in operand of ‘&’ [-Wparentheses]
-- [1x] -sequence-point
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/FileSystem.cpp:1877:25: warning: operation on ‘((idFileSystemLocal*)this)->idFileSystemLocal::dir_cache_index’ may be undefined [-Wsequence-point]
-- [1x] -switch
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI_events.cpp:1978:15: warning: enumeration value ‘NUM_MOVE_COMMANDS’ not handled in switch [-Wswitch]
-- [1x] -unused-function
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI_pathing.cpp:1334:14: warning: ‘float HeightForTrajectory(const idVec3&, float, float)’ defined but not used [-Wunused-function]
+- [1x] -cpp
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:11:2: warning: #warning XTRHEADS not defined -- this libXNVCtrl.a will not be thread safe! [-Wcpp]
+- [1x] ‘close_display’ used but never defined
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:23:12: warning: ‘close_display’ used but never defined
+- [1x] ‘wire_to_event’ used but never defined
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/libXNVCtrl/NVCtrl.c:24:13: warning: ‘wire_to_event’ used but never defined
+- [1x] -return-type
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/sound_alsa.cpp:284:14: warning: control reaches end of non-void function [-Wreturn-type]
+- [1x] invalid conversion from ‘const char**’ to ‘char**’ [-fpermissive]
+  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/script/Script_Compiler.cpp:233:20: warning: invalid conversion from ‘const char**’ to ‘char**’ [-fpermissive]
 
 ## windows-latest-x86-debug
 
 status: failure
 
-errors: 8
-warnings: 0 in 0 kinds
+errors: 3
+warnings: 5 in 3 kinds
 
 ### errors
 
-D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\main.cpp(272,23): error C3688: invalid literal suffix 'SOURCE_CODE_BASE_FOLDER'; literal operator or literal operator template 'operator ""SOURCE_CODE_BASE_FOLDER' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\main.cpp(274,16): error C3688: invalid literal suffix 'SOURCE_CODE_BASE_FOLDER'; literal operator or literal operator template 'operator ""SOURCE_CODE_BASE_FOLDER' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\main.cpp(278,21): error C3688: invalid literal suffix 'SOURCE_CODE_BASE_FOLDER'; literal operator or literal operator template 'operator ""SOURCE_CODE_BASE_FOLDER' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\main.cpp(280,14): error C3688: invalid literal suffix 'SOURCE_CODE_BASE_FOLDER'; literal operator or literal operator template 'operator ""SOURCE_CODE_BASE_FOLDER' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\TypeInfoGen.cpp(805,18): error C3688: invalid literal suffix 'TYPE_INFO_GEN_VERSION'; literal operator or literal operator template 'operator ""TYPE_INFO_GEN_VERSION' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\TypeInfoGen.cpp(900,3): error C3688: invalid literal suffix 'TYPE_INFO_GEN_VERSION'; literal operator or literal operator template 'operator ""TYPE_INFO_GEN_VERSION' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3598,72): error C2039: '_file': is not a member of '_iobuf' [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3644,66): error C2039: '_file': is not a member of '_iobuf' [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
+C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h(322,1): error C1189: #error:  The C++ Standard Library forbids macroizing the keyword "private". Enable warning C4005 to find the forbidden define. [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+D:\a\doom3.gpl\doom3.gpl\neo\d3xp\script\Script_Compiler.cpp(233,13): error C2440: '=': cannot convert from 'const char *[37]' to 'char **' [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h(322,1): error C1189: #error:  The C++ Standard Library forbids macroizing the keyword "private". Enable warning C4005 to find the forbidden define. [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
 
 ### failure context
 
 
 ### warning kinds
+
+- [2x] C4005
+  - C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h(321,9): warning C4005: 'private': macro redefinition [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+  - C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h(321,9): warning C4005: 'private': macro redefinition [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+- [2x] C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h
+  - C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h(322,1): error C1189: #error:  The C++ Standard Library forbids macroizing the keyword "private". Enable warning C4005 to find the forbidden define. [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+  - C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h(322,1): error C1189: #error:  The C++ Standard Library forbids macroizing the keyword "private". Enable warning C4005 to find the forbidden define. [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+- [1x] C4293
+  - D:\a\doom3.gpl\doom3.gpl\neo\d3xp\gamesys\SysCmds.cpp(338,31): warning C4293: '<<': shift count negative or too big, undefined behavior [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
 
 ## windows-latest-x86-release
 
-status: failure
+status: cancelled
 
-errors: 8
-warnings: 0 in 0 kinds
+errors: 3
+warnings: 5 in 3 kinds
 
 ### errors
 
-D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\main.cpp(272,23): error C3688: invalid literal suffix 'SOURCE_CODE_BASE_FOLDER'; literal operator or literal operator template 'operator ""SOURCE_CODE_BASE_FOLDER' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\main.cpp(274,16): error C3688: invalid literal suffix 'SOURCE_CODE_BASE_FOLDER'; literal operator or literal operator template 'operator ""SOURCE_CODE_BASE_FOLDER' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\main.cpp(278,21): error C3688: invalid literal suffix 'SOURCE_CODE_BASE_FOLDER'; literal operator or literal operator template 'operator ""SOURCE_CODE_BASE_FOLDER' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\main.cpp(280,14): error C3688: invalid literal suffix 'SOURCE_CODE_BASE_FOLDER'; literal operator or literal operator template 'operator ""SOURCE_CODE_BASE_FOLDER' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\TypeInfoGen.cpp(805,18): error C3688: invalid literal suffix 'TYPE_INFO_GEN_VERSION'; literal operator or literal operator template 'operator ""TYPE_INFO_GEN_VERSION' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\TypeInfoGen.cpp(900,3): error C3688: invalid literal suffix 'TYPE_INFO_GEN_VERSION'; literal operator or literal operator template 'operator ""TYPE_INFO_GEN_VERSION' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3598,72): error C2039: '_file': is not a member of '_iobuf' [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3644,66): error C2039: '_file': is not a member of '_iobuf' [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
+C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h(322,1): error C1189: #error:  The C++ Standard Library forbids macroizing the keyword "private". Enable warning C4005 to find the forbidden define. [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+D:\a\doom3.gpl\doom3.gpl\neo\d3xp\script\Script_Compiler.cpp(233,13): error C2440: '=': cannot convert from 'const char *[37]' to 'char **' [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h(322,1): error C1189: #error:  The C++ Standard Library forbids macroizing the keyword "private". Enable warning C4005 to find the forbidden define. [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
 
 ### failure context
 
 
 ### warning kinds
+
+- [2x] C4005
+  - C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h(321,9): warning C4005: 'private': macro redefinition [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+  - C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h(321,9): warning C4005: 'private': macro redefinition [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+- [2x] C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h
+  - C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h(322,1): error C1189: #error:  The C++ Standard Library forbids macroizing the keyword "private". Enable warning C4005 to find the forbidden define. [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+  - C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h(322,1): error C1189: #error:  The C++ Standard Library forbids macroizing the keyword "private". Enable warning C4005 to find the forbidden define. [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+- [1x] C4293
+  - D:\a\doom3.gpl\doom3.gpl\neo\d3xp\gamesys\SysCmds.cpp(338,31): warning C4293: '<<': shift count negative or too big, undefined behavior [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
 
