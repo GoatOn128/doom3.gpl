@@ -1304,9 +1304,6 @@ int JPEGBlit( byte *wStatus, byte *data, int datasize ) {
 	stbi_image_free( pic );
 	return 1;
 }
-  /* And we're done! */
-  return 1;
-}
 
 /*
 ==============
