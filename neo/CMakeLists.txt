@@ -114,9 +114,10 @@ else()
 		-fno-strict-aliasing )
 endif()
 
-# products are placed in the repository root, the game dlls into the
-# base/ and d3xp/ folders next to them
-set( DOOM3_OUTPUT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/.. )
+# products are placed under bin/, the game dlls into bin/base and
+# bin/d3xp
+set( REPO_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/.. )
+set( DOOM3_OUTPUT_DIR ${REPO_ROOT}/bin )
 
 # multi-config generators append the config name to the output directory,
 # pin every config to the same folder so products stay flat
@@ -181,9 +182,9 @@ if( NOT WIN32 AND NOT DEDICATED )
 	add_custom_command(
 		OUTPUT ${GLIMP_GEN_DIR}/glimp_logfuncs.cpp
 		COMMAND ${CMAKE_COMMAND} -E make_directory ${GLIMP_GEN_DIR}
-		COMMAND ${PYTHON_EXECUTABLE} ${DOOM3_OUTPUT_DIR}/tools/gen_logfuncs.py ${CMAKE_CURRENT_SOURCE_DIR}/sys/gllog ${GLIMP_GEN_DIR}/glimp_logfuncs.cpp
+		COMMAND ${PYTHON_EXECUTABLE} ${REPO_ROOT}/tools/gen_logfuncs.py ${CMAKE_CURRENT_SOURCE_DIR}/sys/gllog ${GLIMP_GEN_DIR}/glimp_logfuncs.cpp
 		DEPENDS sys/gllog/logfunc.py sys/gllog/read.py sys/gllog/gl.api sys/gllog/glX.api sys/gllog/wgl.api
-			${DOOM3_OUTPUT_DIR}/tools/gen_logfuncs.py
+			${REPO_ROOT}/tools/gen_logfuncs.py
 		COMMENT "python: glimp_logfuncs.cpp" )
 
 	add_custom_command(
@@ -473,6 +474,13 @@ if( MSVC )
 		target_link_libraries( doom3 PRIVATE libcurl_static )
 	endif()
 	set_target_properties( doom3 PROPERTIES WIN32_EXECUTABLE TRUE )
+	# the engine dlopens openal32.dll, ship the soft_oal binary under that name
+	if( EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/third-party/openal-soft/bin/Win32/soft_oal.dll )
+		add_custom_command( TARGET doom3 POST_BUILD
+			COMMAND ${CMAKE_COMMAND} -E copy_if_different
+				${CMAKE_CURRENT_SOURCE_DIR}/third-party/openal-soft/bin/Win32/soft_oal.dll
+				$<TARGET_FILE_DIR:doom3>/openal32.dll )
+	endif()
 else()
 	# threading define for X11 and the hidden visibility from the SCons build
 	target_compile_definitions( doom3 PRIVATE XTHREADS )
@@ -493,4 +501,19 @@ else()
 	if( CMAKE_SIZEOF_VOID_P EQUAL 4 )
 		target_compile_options( doom3 PRIVATE "$<$<CONFIG:Release>:-march=pentium3>" )
 	endif()
+endif()
+
+# ---------------------------------------------------------------------------
+# Source sdk
+#
+# The old sdk builder packed up the sdk assets, this one packs the source
+# tree into a deterministic zip instead ( see tools/make_source_sdk.py ).
+# ---------------------------------------------------------------------------
+
+find_package( Python3 COMPONENTS Interpreter )
+if( Python3_FOUND )
+	add_custom_target( sdk
+		COMMAND ${Python3_EXECUTABLE} ${REPO_ROOT}/tools/make_source_sdk.py
+		WORKING_DIRECTORY ${REPO_ROOT}
+		COMMENT "Packing the source sdk" )
 endif()

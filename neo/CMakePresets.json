@@ -9,7 +9,7 @@
     {
       "name": "visual-studio",
       "displayName": "Visual Studio Win32",
-      "description": "Visual Studio build tree in ../build; products in the repository root.",
+      "description": "Visual Studio build tree in ../build; products in bin/.",
       "generator": "Visual Studio 17 2022",
       "architecture": "Win32",
       "binaryDir": "${sourceDir}/../build"
@@ -17,7 +17,7 @@
     {
       "name": "command-line",
       "displayName": "Command Line Win32",
-      "description": "Command-line build tree in ../out; products in the repository root.",
+      "description": "Command-line build tree in ../out; products in bin/.",
       "generator": "Visual Studio 17 2022",
       "architecture": "Win32",
       "binaryDir": "${sourceDir}/../out"
@@ -25,7 +25,7 @@
     {
       "name": "linux-debug",
       "displayName": "Linux x64 Debug",
-      "description": "Ninja build tree in ../build/linux/debug; products in the repository root.",
+      "description": "Ninja build tree in ../build/linux/debug; products in bin/.",
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/../build/linux/debug",
       "cacheVariables": {
@@ -40,7 +40,7 @@
     {
       "name": "linux-release",
       "displayName": "Linux x64 Release",
-      "description": "Ninja build tree in ../build/linux/release; products in the repository root.",
+      "description": "Ninja build tree in ../build/linux/release; products in bin/.",
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/../build/linux/release",
       "cacheVariables": {
@@ -55,7 +55,7 @@
     {
       "name": "linux-x86-debug",
       "displayName": "Linux x86 Debug",
-      "description": "Ninja 32-bit build tree in ../build/linux-x86/debug; products in the repository root. The linux sys code is 32-bit only.",
+      "description": "Ninja 32-bit build tree in ../build/linux-x86/debug; products in bin/. The linux sys code is 32-bit only.",
       "inherits": "linux-debug",
       "binaryDir": "${sourceDir}/../build/linux-x86/debug",
       "cacheVariables": {
@@ -69,7 +69,7 @@
     {
       "name": "linux-x86-release",
       "displayName": "Linux x86 Release",
-      "description": "Ninja 32-bit build tree in ../build/linux-x86/release; products in the repository root. The linux sys code is 32-bit only.",
+      "description": "Ninja 32-bit build tree in ../build/linux-x86/release; products in bin/. The linux sys code is 32-bit only.",
       "inherits": "linux-release",
       "binaryDir": "${sourceDir}/../build/linux-x86/release",
       "cacheVariables": {
