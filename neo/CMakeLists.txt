@@ -16,14 +16,55 @@ option( WITH_INLINES "Enable inline debugging ( Debug with inlines / Dedicated D
 option( WITH_MEMORY_LOG "Log every memory allocation ( Debug with inlines and memory log )" OFF )
 option( MAYA_IMPORT "Build the MayaImport plugin ( requires the Maya SDK folders in the tree, like the original solution it is off by default )" OFF )
 
-# The Windows build links the bundled curl the same way the curllib project
-# did. On Linux the original build ran curl's configure script ( see
-# sys/scons/SConscript.curl ), which is not reproduced here, so downloads are
-# compiled out instead ( the same as SCons NOCURL=1 / ID_ENABLE_CURL=0 ).
-option( ID_ENABLE_CURL "Enable curl based http/ftp downloads ( ID_ENABLE_CURL )" ON )
-if( NOT WIN32 AND ID_ENABLE_CURL )
-	message( STATUS "curl: the bundled curl needs its configure run, disabling for this platform ( NOCURL=1 behavior )" )
-	set( ID_ENABLE_CURL OFF )
+# The curl 8.23 tree under third-party/curl builds with its own upstream
+# CMake files, as a small HTTP only static library. The old curllib project
+# built the ancient 7.9 tree, which is gone.
+option( ID_ENABLE_CURL "Enable curl based http downloads ( ID_ENABLE_CURL )" ON )
+if( ID_ENABLE_CURL )
+	# no curl tool, no examples and no tests, only the static library, and
+	# only the http protocol the download code actually uses
+	set( BUILD_CURL_EXE OFF CACHE BOOL "" FORCE )
+	set( BUILD_EXAMPLES OFF CACHE BOOL "" FORCE )
+	set( BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE )
+	set( BUILD_STATIC_LIBS ON CACHE BOOL "" FORCE )
+	set( BUILD_TESTING OFF CACHE BOOL "" FORCE )
+	set( BUILD_LIBCURL_DOCS OFF CACHE BOOL "" FORCE )
+	set( BUILD_MISC_DOCS OFF CACHE BOOL "" FORCE )
+	set( ENABLE_CURL_MANUAL OFF CACHE BOOL "" FORCE )
+	set( CURL_DISABLE_INSTALL ON CACHE BOOL "" FORCE )
+	set( CURL_DISABLE_FTP ON CACHE BOOL "" FORCE )
+	set( CURL_DISABLE_FILE ON CACHE BOOL "" FORCE )
+	set( CURL_DISABLE_TELNET ON CACHE BOOL "" FORCE )
+	set( CURL_DISABLE_TFTP ON CACHE BOOL "" FORCE )
+	set( CURL_DISABLE_LDAP ON CACHE BOOL "" FORCE )
+	set( CURL_DISABLE_DICT ON CACHE BOOL "" FORCE )
+	set( CURL_DISABLE_GOPHER ON CACHE BOOL "" FORCE )
+	set( CURL_DISABLE_POP3 ON CACHE BOOL "" FORCE )
+	set( CURL_DISABLE_IMAP ON CACHE BOOL "" FORCE )
+	set( CURL_DISABLE_SMTP ON CACHE BOOL "" FORCE )
+	set( CURL_DISABLE_RTSP ON CACHE BOOL "" FORCE )
+	set( CURL_DISABLE_MQTT ON CACHE BOOL "" FORCE )
+	set( CURL_DISABLE_WEBSOCKETS ON CACHE BOOL "" FORCE )
+	# third-party code, its warnings stay out of the build digest
+	set( PICKY_COMPILER OFF CACHE BOOL "" FORCE )
+	set( CURL_ZLIB OFF CACHE BOOL "" FORCE )
+	set( CURL_USE_GSSAPI OFF CACHE BOOL "" FORCE )
+	set( USE_LIBIDN2 OFF CACHE BOOL "" FORCE )
+	set( CURL_USE_LIBPSL OFF CACHE BOOL "" FORCE )
+	set( CURL_USE_LIBSSH2 OFF CACHE BOOL "" FORCE )
+	set( CURL_BROTLI OFF CACHE BOOL "" FORCE )
+	set( CURL_ZSTD OFF CACHE BOOL "" FORCE )
+	set( USE_NGHTTP2 OFF CACHE BOOL "" FORCE )
+	if( WIN32 )
+		# schannel gives https on Windows without any extra dependency
+		set( CURL_USE_SCHANNEL ON CACHE BOOL "" FORCE )
+	else()
+		# https through OpenSSL, the i386 libraries for the -m32 build
+		set( CURL_USE_OPENSSL ON CACHE BOOL "" FORCE )
+		set( OPENSSL_SSL_LIBRARY /usr/lib/i386-linux-gnu/libssl.so CACHE FILEPATH "" FORCE )
+		set( OPENSSL_CRYPTO_LIBRARY /usr/lib/i386-linux-gnu/libcrypto.so CACHE FILEPATH "" FORCE )
+		set( OPENSSL_INCLUDE_DIR /usr/include CACHE PATH "" FORCE )
+	endif()
 endif()
 
 # ---------------------------------------------------------------------------
@@ -101,6 +142,12 @@ endif()
 add_subdirectory( idlib )
 if( ID_ENABLE_CURL )
 	add_subdirectory( third-party/curl )
+	# third-party code, its warnings stay out of the build digest
+	if( MSVC )
+		target_compile_options( libcurl_static PRIVATE /W0 )
+	else()
+		target_compile_options( libcurl_static PRIVATE -w )
+	endif()
 endif()
 add_subdirectory( TypeInfo )
 add_subdirectory( game )
@@ -419,12 +466,11 @@ if( MSVC )
 		opengl32
 		winmm
 		wsock32 )
-	# openal import library from the third-party tree, the EAX GUIDs the engine
-	# references are defined in openal/eaxguid.cpp instead of the old eaxguid.lib
+	# openal import library from the third-party tree
 	target_link_libraries( doom3 PRIVATE
 		${CMAKE_CURRENT_SOURCE_DIR}/third-party/openal-soft/libs/Win32/OpenAL32.lib )
 	if( ID_ENABLE_CURL )
-		target_link_libraries( doom3 PRIVATE curllib )
+		target_link_libraries( doom3 PRIVATE libcurl_static )
 	endif()
 	set_target_properties( doom3 PROPERTIES WIN32_EXECUTABLE TRUE )
 else()

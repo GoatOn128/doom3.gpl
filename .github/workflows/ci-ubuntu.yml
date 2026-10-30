@@ -46,8 +46,8 @@ jobs:
           sudo apt-get install -y -qq ninja-build m4 2>&1 | tee -a build.log
           # the renderer dlopens libGL, so only X11, ALSA and zlib are
           # needed at link time, all in 32-bit for the -m32 build, plus the
-          # GL and OpenAL headers the engine includes
-          sudo apt-get install -y -qq libx11-dev:i386 libxext-dev:i386 libxxf86vm-dev:i386 libasound2-dev:i386 zlib1g-dev:i386 libgl-dev:i386 libglx-dev:i386 libopenal-dev:i386 2>&1 | tee -a build.log
+          # GL, OpenAL and OpenSSL dev files the engine and curl include
+          sudo apt-get install -y -qq libx11-dev:i386 libxext-dev:i386 libxxf86vm-dev:i386 libasound2-dev:i386 zlib1g-dev:i386 libgl-dev:i386 libglx-dev:i386 libopenal-dev:i386 libssl-dev:i386 2>&1 | tee -a build.log
       - name: configure
         shell: bash
         run: |

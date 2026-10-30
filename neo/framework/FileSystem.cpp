@@ -45,7 +45,7 @@ If you have questions concerning this license or the applicable additional terms
 #endif
 
 #if ID_ENABLE_CURL
-	#include "../curl/include/curl/curl.h"
+	#include "../third-party/curl/include/curl/curl.h"
 #endif
 
 /*
@@ -3595,7 +3595,7 @@ size_t idFileSystemLocal::CurlWriteFunction( void *ptr, size_t size, size_t nmem
 		return size * nmemb;
 	}
 	#ifdef _WIN32
-		return _write( _fileno( static_cast<idFile_Permanent*>(bgl->f)->GetFilePtr() ), ptr, size * nmemb );
+		return _write( static_cast<idFile_Permanent*>(bgl->f)->GetFilePtr()->_file, ptr, size * nmemb );
 	#else
 		return fwrite( ptr, size, nmemb, static_cast<idFile_Permanent*>(bgl->f)->GetFilePtr() );
 	#endif
@@ -3641,7 +3641,7 @@ dword BackgroundDownloadThread( void *parms ) {
 		if ( bgl->opcode == DLTYPE_FILE ) {
 			// use the low level read function, because fread may allocate memory
 			#if defined(WIN32)
-				_read( _fileno( static_cast<idFile_Permanent*>(bgl->f)->GetFilePtr() ), bgl->file.buffer, bgl->file.length );
+				_read( static_cast<idFile_Permanent*>(bgl->f)->GetFilePtr()->_file, bgl->file.buffer, bgl->file.length );
 			#else
 				fread(  bgl->file.buffer, bgl->file.length, 1, static_cast<idFile_Permanent*>(bgl->f)->GetFilePtr() );
 			#endif
@@ -3665,6 +3665,7 @@ dword BackgroundDownloadThread( void *parms ) {
 				bgl->url.dlstatus = ret;
 				bgl->url.status = DL_FAILED;
 				bgl->completed = true;
+				curl_easy_cleanup( session );
 				continue;
 			}
 			ret = curl_easy_setopt( session, CURLOPT_URL, bgl->url.url.c_str() );
@@ -3672,6 +3673,7 @@ dword BackgroundDownloadThread( void *parms ) {
 				bgl->url.dlstatus = ret;
 				bgl->url.status = DL_FAILED;
 				bgl->completed = true;
+				curl_easy_cleanup( session );
 				continue;
 			}
 			ret = curl_easy_setopt( session, CURLOPT_FAILONERROR, 1 );
@@ -3679,6 +3681,7 @@ dword BackgroundDownloadThread( void *parms ) {
 				bgl->url.dlstatus = ret;
 				bgl->url.status = DL_FAILED;
 				bgl->completed = true;
+				curl_easy_cleanup( session );
 				continue;
 			}
 			ret = curl_easy_setopt( session, CURLOPT_WRITEFUNCTION, idFileSystemLocal::CurlWriteFunction );
@@ -3686,6 +3689,7 @@ dword BackgroundDownloadThread( void *parms ) {
 				bgl->url.dlstatus = ret;
 				bgl->url.status = DL_FAILED;
 				bgl->completed = true;
+				curl_easy_cleanup( session );
 				continue;
 			}
 			ret = curl_easy_setopt( session, CURLOPT_WRITEDATA, bgl );
@@ -3693,6 +3697,7 @@ dword BackgroundDownloadThread( void *parms ) {
 				bgl->url.dlstatus = ret;
 				bgl->url.status = DL_FAILED;
 				bgl->completed = true;
+				curl_easy_cleanup( session );
 				continue;
 			}
 			ret = curl_easy_setopt( session, CURLOPT_NOPROGRESS, 0 );
@@ -3700,6 +3705,7 @@ dword BackgroundDownloadThread( void *parms ) {
 				bgl->url.dlstatus = ret;
 				bgl->url.status = DL_FAILED;
 				bgl->completed = true;
+				curl_easy_cleanup( session );
 				continue;
 			}
 			ret = curl_easy_setopt( session, CURLOPT_PROGRESSFUNCTION, idFileSystemLocal::CurlProgressFunction );
@@ -3707,6 +3713,7 @@ dword BackgroundDownloadThread( void *parms ) {
 				bgl->url.dlstatus = ret;
 				bgl->url.status = DL_FAILED;
 				bgl->completed = true;
+				curl_easy_cleanup( session );
 				continue;
 			}
 			ret = curl_easy_setopt( session, CURLOPT_PROGRESSDATA, bgl );
@@ -3714,6 +3721,7 @@ dword BackgroundDownloadThread( void *parms ) {
 				bgl->url.dlstatus = ret;
 				bgl->url.status = DL_FAILED;
 				bgl->completed = true;
+				curl_easy_cleanup( session );
 				continue;
 			}
 			bgl->url.dlnow = 0;
@@ -3726,10 +3734,12 @@ dword BackgroundDownloadThread( void *parms ) {
 				bgl->url.dlstatus = ret;
 				bgl->url.status = DL_FAILED;
 				bgl->completed = true;
+				curl_easy_cleanup( session );
 				continue;
 			}
 			bgl->url.status = DL_DONE;
 			bgl->completed = true;
+			curl_easy_cleanup( session );
 #else
 			bgl->url.status = DL_FAILED;
 			bgl->completed = true;
@@ -4215,3 +4225,4 @@ void idFileSystemLocal::FindMapScreenshot( const char *path, char *buf, int len 
 		}
 	}
 }
+
