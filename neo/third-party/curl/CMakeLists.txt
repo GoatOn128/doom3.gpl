@@ -1,10 +1,11 @@
 # curllib ( curllib.vcxproj -> curllib.lib )
 #
-# The bundled curl 7.9 tree, built the same way as the original project: all
-# C sources under lib/, the public headers from include/, and the lib internal
+# The bundled curl tree: every C source under lib/, which also covers the
+# vtls / vauth / vquic / vssh / vdns / curlx subdirectories the modern curl
+# keeps there, the public headers from include/, and the lib internal
 # headers ( setup.h ) picked up from lib/.
 
-file( GLOB CURL_SOURCES lib/*.c )
+file( GLOB_RECURSE CURL_SOURCES lib/*.c )
 
 add_library( curllib STATIC ${CURL_SOURCES} )
 

@@ -136,9 +136,10 @@ const char *Sys_EXEPath( void ) {
 
 	buf[ 0 ] = '\0';
 	sprintf( linkpath, "/proc/%d/exe", getpid() );
-	len = readlink( linkpath.c_str(), buf, sizeof( buf ) );
+	len = readlink( linkpath.c_str(), buf, sizeof( buf ) - 1 );
 	if ( len == -1 ) {
 		Sys_Printf("couldn't stat exe path link %s\n", linkpath.c_str());
+	} else {
 		buf[ len ] = '\0';
 	}
 	return buf;
