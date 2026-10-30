@@ -115,8 +115,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          touch build-windows.log build-ubuntu.log build-digest.md build-digest-compact.md
-          git add build-windows.log build-ubuntu.log build-digest.md build-digest-compact.md
+          git add digest/
           git diff --cached --quiet && exit 0
           git commit -m "CI: publish build logs and digest [skip ci]"
           if ! git push; then
