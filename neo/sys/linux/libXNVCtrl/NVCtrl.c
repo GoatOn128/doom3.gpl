@@ -20,8 +20,8 @@ static /* const */ char *nvctrl_extension_name = NV_CONTROL_NAME;
 #define XNVCTRLSimpleCheckExtension(dpy,i) \
   XextSimpleCheckExtension (dpy, i, nvctrl_extension_name)
 
-static int close_display();
-static Bool wire_to_event();
+static int close_display(Display *dpy, XExtCodes *codes);
+static Bool wire_to_event(Display *dpy, XEvent *host, xEvent *wire);
 static /* const */ XExtensionHooks nvctrl_extension_hooks = {
     NULL,                               /* create_gc */
     NULL,                               /* copy_gc */
@@ -336,4 +336,5 @@ static Bool wire_to_event (Display *dpy, XEvent *host, xEvent *wire)
     
     return True;
 }
+
 

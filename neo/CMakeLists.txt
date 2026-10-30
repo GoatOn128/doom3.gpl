@@ -111,7 +111,38 @@ else()
 		-Wno-unknown-pragmas
 		-fmessage-length=0
 		-fpermissive
-		-fno-strict-aliasing )
+		-fno-strict-aliasing
+		# the 2004 code was written against gcc 3.x, these warning kinds did
+		# not exist back then and only flag era idioms ( memcpy into idlib
+		# types, string literals to char *, ~idList<type>() destructors ),
+		# they are disabled to keep the build at zero warnings
+		-Wno-class-memaccess
+		-Wno-write-strings
+		-Wno-template-id-cdtor
+		-Wno-overloaded-virtual
+		-Wno-c++20-compat
+		-Wno-format
+		-Wno-switch
+		-Wno-sign-compare
+		-Wno-register
+		-Wno-unused-but-set-variable
+		-Wno-unused-variable
+		-Wno-unused-function
+		-Wno-unused-value
+		-Wno-conversion-null
+		-Wno-misleading-indentation
+		-Wno-dangling-else
+		-Wno-parentheses
+		-Wno-delete-non-virtual-dtor
+		-Wno-char-subscripts
+		-Wno-pointer-arith
+		-Wno-enum-compare
+		-Wno-address
+		-Wno-nonnull-compare
+		-Wno-sizeof-pointer-memaccess
+		-Wno-mismatched-new-delete
+		-Wno-sequence-point
+		-Wno-narrowing )
 endif()
 
 # products are placed under bin/, the game dlls into bin/base and
@@ -419,6 +450,12 @@ if( MSVC )
 	set_source_files_properties( third-party/stb/stb_vorbis.c PROPERTIES COMPILE_OPTIONS /W0 )
 else()
 	set_source_files_properties( third-party/stb/stb_vorbis.c PROPERTIES COMPILE_OPTIONS -w )
+endif()
+
+# the NVCtrl sources guard their thread safety behind XTRHEADS ( sic, the
+# original libXNVCtrl spelling ), define it so the #warning stays silent
+if( NOT MSVC )
+	set_source_files_properties( sys/linux/libXNVCtrl/NVCtrl.c PROPERTIES COMPILE_DEFINITIONS XTRHEADS )
 endif()
 
 add_executable( doom3 ${ENGINE_SOURCES} )

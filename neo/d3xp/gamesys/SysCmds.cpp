@@ -335,7 +335,9 @@ void Cmd_Give_f( const idCmdArgs &args ) {
 	}
 
 	if ( give_all || idStr::Icmp( name, "weapons" ) == 0 ) {
-		player->inventory.weapons = BIT( MAX_WEAPONS ) - 1;
+		// BIT( MAX_WEAPONS ) shifts past the int width, all ones below bit
+		// MAX_WEAPONS keeps the intended weapon mask for any weapon count
+		player->inventory.weapons = ( int )( ~0u >> ( 32 - MAX_WEAPONS ) );
 		player->CacheWeapons();
 
 		if ( !give_all ) {
@@ -2508,3 +2510,4 @@ idGameLocal::ShutdownConsoleCommands
 void idGameLocal::ShutdownConsoleCommands( void ) {
 	cmdSystem->RemoveFlaggedCommands( CMD_FL_GAME );
 }
+

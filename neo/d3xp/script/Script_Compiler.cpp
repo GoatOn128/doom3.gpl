@@ -207,7 +207,7 @@ idCompiler::idCompiler()
 ================
 */
 idCompiler::idCompiler() {
-	char	**ptr;
+	const char **ptr;
 	int		id;
 
 	// make sure we have the right # of opcodes in the table
@@ -2647,3 +2647,4 @@ void idCompiler::CompileFile( const char *text, const char *filename, bool toCon
 		gameLocal.Printf( "Compiled '%s': %.1f ms\n", filename, compile_time.Milliseconds() );
 	}
 }
+

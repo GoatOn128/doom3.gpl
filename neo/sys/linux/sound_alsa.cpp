@@ -282,6 +282,7 @@ bool idAudioHardwareALSA::Flush( void ) {
 		Sys_Printf( "preparing audio device for output\n" );
 	}
 	Write( true );
+	return true;
 }
 
 /*
@@ -314,3 +315,4 @@ void idAudioHardwareALSA::Write( bool flushing ) {
 	}
 	m_remainingFrames -= frames;
 }
+

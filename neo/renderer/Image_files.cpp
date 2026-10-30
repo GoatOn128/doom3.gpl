@@ -48,7 +48,25 @@ void R_LoadImage( const char *name, byte **pic, int *width, int *height, bool ma
  */
 
 // the bundled jpeg-6 tree is gone, JPEG decoding goes through the header
-// only stb_image library from the third-party folder now
+// only stb_image library from the third-party folder now. the idStr hijack
+// macros from Str.h must not reach the plain C stb code.
+#undef strcmp
+#undef strncmp
+#undef StrCmpN
+#undef strcmpi
+#undef StrCmpI
+#undef StrCmpNI
+#undef StrCmpNI
+#undef stricmp
+#undef _stricmp
+#undef strcasecmp
+#undef strnicmp
+#undef _strnicmp
+#undef _memicmp
+#undef snprintf
+#undef _snprintf
+#undef vsnprintf
+#undef _vsnprintf
 #define STB_IMAGE_IMPLEMENTATION
 #if defined( _MSC_VER )
 #pragma warning( push, 0 )
@@ -1037,3 +1055,4 @@ bool R_LoadCubeImages( const char *imgName, cubeFiles_t extensions, byte *pics[6
 	}
 	return true;
 }
+
