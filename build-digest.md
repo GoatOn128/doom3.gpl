@@ -1,119 +1,42 @@
 # Build digest
 
-commit: a5de20eca521
+commit: b2dce1f07b14
 
 - ubuntu-latest-x86-debug: failure
-- ubuntu-latest-x86-release: failure
-- windows-latest-x86-debug: failure
-- windows-latest-x86-release: cancelled
+- ubuntu-latest-x86-release: cancelled
+- windows-latest-x86-debug: cancelled
+- windows-latest-x86-release: failure
 
 ## ubuntu-latest-x86-debug
 
 status: failure
 
-errors: 7
+errors: 5
 warnings: 0 in 0 kinds
 
 ### errors
 
-FAILED: [code=1] CMakeFiles/doom3.dir/renderer/Cinematic.cpp.o
-/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Cinematic.cpp:1308:3: error: expected unqualified-id before ‘return’
-/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Cinematic.cpp:1309:1: error: expected declaration before ‘}’ token
-FAILED: [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/codec.cpp.o
-/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/codec.cpp:324:27: error: ‘HUGE’ was not declared in this scope
-/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/codec.cpp:1513:35: error: ‘HUGE’ was not declared in this scope
+FAILED: [code=1] /home/runner/work/doom3.gpl/doom3.gpl/doom.x86
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/draw_arb2.cpp:39:(.text+0x16): undefined reference to `cgGetError'
+/usr/bin/x86_64-linux-gnu-ld.bfd: /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/draw_arb2.cpp:40:(.text+0x3a): undefined reference to `cgGetErrorString'
+collect2: error: ld returned 1 exit status
 ninja: build stopped: cannot make progress due to previous errors.
 
 ### failure context
 
-- [code=1] CMakeFiles/doom3.dir/renderer/Cinematic.cpp.o
+- [code=1] /home/runner/work/doom3.gpl/doom3.gpl/doom.x86
 
 ```
-FAILED: [code=1] CMakeFiles/doom3.dir/renderer/Cinematic.cpp.o 
-/usr/bin/c++ -DGLIMP -DID_ENABLE_CURL=0 -DXTHREADS -D_DEBUG -D__DOOM_DLL__ -I/home/runner/work/doom3.gpl/doom3.gpl/build/generated -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/ogg -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbis -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/oss/include -I
-/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Cinematic.cpp:1308:3: error: expected unqualified-id before ‘return’
- 1308 |   return 1;
-      |   ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Cinematic.cpp:1309:1: error: expected declaration before ‘}’ token
- 1309 | }
-      | ^
-cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[98/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_arb.cpp.o
-[99/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_arb2.cpp.o
-[100/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_common.cpp.o
-[101/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_nv10.cpp.o
-[102/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_nv20.cpp.o
-[103/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_r200.cpp.o
-[104/395] Building CXX object CMakeFiles/doom3.dir/renderer/GuiModel.cpp.o
-[105/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_init.cpp.o
-[106/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_load.cpp.o
-[107/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_files.cpp.o
-[108/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_process.cpp.o
-[109/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_program.cpp.o
-[110/395] Building CXX object CMakeFiles/doom3.dir/renderer/Interaction.cpp.o
-[111/395] Building CXX object CMakeFiles/doom3.dir/renderer/MegaTexture.cpp.o
-[112/395] Building CXX object CMakeFiles/doom3.dir/renderer/Material.cpp.o
-[113/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_ase.cpp.o
-[114/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model.cpp.o
-[115/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_beam.cpp.o
-[116/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_liquid.cpp.o
-[117/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_md3.cpp.o
-[118/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_ma.cpp.o
-[119/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_lwo.cpp.o
-[120/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_md5.cpp.o
-[121/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_prt.cpp.o
-[122/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_sprite.cpp.o
-[123/395] Building CXX object CMakeFiles/doom3.dir/renderer/ModelDecal.cpp.o
-[124/395] Building CXX object CMakeFiles/doom3.dir/renderer/ModelManager.cpp.o
-[125/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderEntity.cpp.o
-[126/395] Building CXX object CMakeFiles/doom3.dir/renderer/ModelOverlay.cpp.o
-[127/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderSystem.cpp.o
-[128/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderSystem_init.cpp.o
-```
-
-- [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/codec.cpp.o
-
-```
-FAILED: [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/codec.cpp.o 
-/usr/bin/c++ -DGLIMP -DID_ENABLE_CURL=0 -DXTHREADS -D_DEBUG -D__DOOM_DLL__ -I/home/runner/work/doom3.gpl/doom3.gpl/build/generated -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/ogg -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbis -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/oss/include -I
-/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/codec.cpp: In member function ‘int codec::BestCodeword(unsigned char*, int, double**)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/codec.cpp:324:27: error: ‘HUGE’ was not declared in this scope
-  324 |         VQDATA bestDist = HUGE;
-      |                           ^~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/codec.cpp: In member function ‘void codec::VQ(int, int, const unsigned char*, float*, double**, bool)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/codec.cpp:1513:35: error: ‘HUGE’ was not declared in this scope
- 1513 |                 double bestDist = HUGE;
-      |                                   ^~~~
-At global scope:
-cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[213/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/renderbump/renderbump.cpp.o
-[214/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/NSBitmapImageRep.cpp.o
-[215/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/roqParam.cpp.o
-[216/395] Building CXX object CMakeFiles/doom3.dir/ui/BindWindow.cpp.o
-[217/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/roq.cpp.o
-[218/395] Building CXX object CMakeFiles/doom3.dir/ui/ChoiceWindow.cpp.o
-[219/395] Building CXX object CMakeFiles/doom3.dir/ui/FieldWindow.cpp.o
-[220/395] Building CXX object CMakeFiles/doom3.dir/ui/DeviceContext.cpp.o
-[221/395] Building CXX object CMakeFiles/doom3.dir/ui/EditWindow.cpp.o
-[222/395] Building CXX object CMakeFiles/doom3.dir/ui/GameBearShootWindow.cpp.o
-[223/395] Building CXX object CMakeFiles/doom3.dir/ui/GameBustOutWindow.cpp.o
-[224/395] Building CXX object CMakeFiles/doom3.dir/ui/GuiScript.cpp.o
-[225/395] Building CXX object CMakeFiles/doom3.dir/ui/ListGUI.cpp.o
-[226/395] Building CXX object CMakeFiles/doom3.dir/ui/GameSSDWindow.cpp.o
-[227/395] Building CXX object CMakeFiles/doom3.dir/ui/MarkerWindow.cpp.o
-[228/395] Building CXX object CMakeFiles/doom3.dir/ui/ListWindow.cpp.o
-[229/395] Building CXX object CMakeFiles/doom3.dir/ui/RegExp.cpp.o
-[230/395] Building CXX object CMakeFiles/doom3.dir/ui/RenderWindow.cpp.o
-[231/395] Building CXX object CMakeFiles/doom3.dir/ui/SliderWindow.cpp.o
-[232/395] Building CXX object CMakeFiles/doom3.dir/ui/SimpleWindow.cpp.o
-[233/395] Building CXX object CMakeFiles/doom3.dir/ui/UserInterface.cpp.o
-[234/395] Building CXX object CMakeFiles/doom3.dir/ui/Winvar.cpp.o
-[235/395] Building CXX object CMakeFiles/doom3.dir/sys/sys_local.cpp.o
-[236/395] Building CXX object CMakeFiles/doom3.dir/sys/posix/posix_net.cpp.o
-[237/395] Building CXX object CMakeFiles/doom3.dir/ui/Window.cpp.o
-[238/395] Building CXX object CMakeFiles/doom3.dir/sys/posix/posix_signal.cpp.o
-[239/395] Building CXX object CMakeFiles/doom3.dir/sys/posix/posix_main.cpp.o
-[240/395] Building CXX object CMakeFiles/doom3.dir/sys/linux/stack.cpp.o
+FAILED: [code=1] /home/runner/work/doom3.gpl/doom3.gpl/doom.x86 
+: && /usr/bin/c++ -m32 -g -m32 -Wl,--dependency-file=CMakeFiles/doom3.dir/link.d CMakeFiles/doom3.dir/cm/CollisionModel_contacts.cpp.o CMakeFiles/doom3.dir/cm/CollisionModel_contents.cpp.o CMakeFiles/doom3.dir/cm/CollisionModel_debug.cpp.o CMakeFiles/doom3.dir/cm/CollisionModel_files.cpp.o CMakeFiles/doom3.dir/cm/CollisionModel_load.cpp.o CMakeFiles/doom3.dir/cm/CollisionModel_rotate.cpp.o CMakeFi
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/doom3.dir/sys/linux/main.cpp.o: in function `main':
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/main.cpp:545: multiple definition of `main'; CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/barkmel.c.o:/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/barkmel.c:20: first defined here
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/doom3.dir/renderer/draw_arb2.cpp.o: in function `cg_error_callback()':
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/draw_arb2.cpp:39:(.text+0x16): undefined reference to `cgGetError'
+/usr/bin/x86_64-linux-gnu-ld.bfd: /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/draw_arb2.cpp:40:(.text+0x3a): undefined reference to `cgGetErrorString'
+collect2: error: ld returned 1 exit status
+[395/395] Linking CXX shared library /home/runner/work/doom3.gpl/doom3.gpl/libgamex86-d3xp.so
+ninja: build stopped: cannot make progress due to previous errors.
 ```
 
 
@@ -121,112 +44,15 @@ cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have b
 
 ## ubuntu-latest-x86-release
 
-status: failure
+status: cancelled
 
-errors: 7
-warnings: 522 in 5 kinds
+errors: 0
+warnings: 501 in 5 kinds
 
 ### errors
 
-FAILED: [code=1] CMakeFiles/doom3.dir/renderer/Cinematic.cpp.o
-/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Cinematic.cpp:1308:3: error: expected unqualified-id before ‘return’
-/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Cinematic.cpp:1309:1: error: expected declaration before ‘}’ token
-FAILED: [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/codec.cpp.o
-/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/codec.cpp:324:27: error: ‘HUGE’ was not declared in this scope
-/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/codec.cpp:1513:35: error: ‘HUGE’ was not declared in this scope
-ninja: build stopped: cannot make progress due to previous errors.
 
 ### failure context
-
-- [code=1] CMakeFiles/doom3.dir/renderer/Cinematic.cpp.o
-
-```
-FAILED: [code=1] CMakeFiles/doom3.dir/renderer/Cinematic.cpp.o 
-/usr/bin/c++ -DGLIMP -DID_ENABLE_CURL=0 -DXTHREADS -D__DOOM_DLL__ -I/home/runner/work/doom3.gpl/doom3.gpl/build/generated -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/ogg -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbis -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/oss/include -I/home/run
-/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Cinematic.cpp:1308:3: error: expected unqualified-id before ‘return’
- 1308 |   return 1;
-      |   ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Cinematic.cpp:1309:1: error: expected declaration before ‘}’ token
- 1309 | }
-      | ^
-cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[101/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_arb.cpp.o
-[102/395] Building CXX object CMakeFiles/doom3.dir/framework/async/AsyncServer.cpp.o
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/../../idlib/../idlib/Lib.h:238,
-                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/../../idlib/precompiled.h:113,
-                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/AsyncServer.cpp:29:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/../../idlib/../idlib/Dict.h: In member function ‘void idAsyncServer::ProcessReliableClientMessages(int)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/../../idlib/../idlib/Dict.h:173:11: warning: inlining failed in call to ‘idDict::~idDict() noexcept’: call is unlikely and code size would grow [-Winline]
-  173 | ID_INLINE idDict::~idDict( void ) {
-      |           ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/AsyncServer.cpp:1368:25: note: called from here
- 1368 |                         }
-      |                         ^
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/../../idlib/../idlib/Lib.h:171:
-In destructor ‘idList<type>::~idList() [with type = idStr]’,
-    inlined from ‘void idAsyncServer::ProcessDownloadRequestMessage(netadr_t, const idBitMsg&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/AsyncServer.cpp:2825:1:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/../../idlib/../idlib/containers/List.h:184:16: warning: inlining failed in call to ‘void idList<type>::Clear() [with type = idStr]’: call is unlikely and code size would grow [-Winline]
-  184 | ID_INLINE void idList<type>::Clear( void ) {
-      |                ^~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/../../idlib/../idlib/containers/List.h:173:14: note: called from here
-  173 |         Clear();
-      |         ~~~~~^~
-In destructor ‘idList<type>::~idList() [with type = idStr]’,
-    inlined from ‘void idAsyncServer::ProcessDownloadRequestMessage(netadr_t, const idBitMsg&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/AsyncServer.cpp:2825:1:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/../../idlib/../idlib/containers/List.h:184:16: warning: inlining failed in call to ‘void idList<type>::Clear() [with type = idStr]’: call is unlikely and code size would grow [-Winline]
-  184 | ID_INLINE void idList<type>::Clear( void ) {
-      |                ^~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/../../idlib/../idlib/containers/List.h:173:14: note: called from here
-  173 |         Clear();
-      |         ~~~~~^~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/../../idlib/../idlib/Dict.h: In member function ‘void idAsyncServer::RunFrame()’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/../../idlib/../idlib/Dict.h:173:11: warning: inlining failed in call to ‘idDict::~idDict() noexcept’: call is unlikely and code size would grow [-Winline]
-```
-
-- [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/codec.cpp.o
-
-```
-FAILED: [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/codec.cpp.o 
-/usr/bin/c++ -DGLIMP -DID_ENABLE_CURL=0 -DXTHREADS -D__DOOM_DLL__ -I/home/runner/work/doom3.gpl/doom3.gpl/build/generated -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/ogg -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbis -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/oss/include -I/home/run
-/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/codec.cpp: In member function ‘int codec::BestCodeword(unsigned char*, int, double**)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/codec.cpp:324:27: error: ‘HUGE’ was not declared in this scope
-  324 |         VQDATA bestDist = HUGE;
-      |                           ^~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/codec.cpp: In member function ‘void codec::VQ(int, int, const unsigned char*, float*, double**, bool)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/codec.cpp:1513:35: error: ‘HUGE’ was not declared in this scope
- 1513 |                 double bestDist = HUGE;
-      |                                   ^~~~
-At global scope:
-cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[216/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/usurface.cpp.o
-[217/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/ubrush.cpp.o
-[218/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/NSBitmapImageRep.cpp.o
-[219/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/renderbump/renderbump.cpp.o
-In function ‘void RasterizeTriangle(const srfTriangles_t*, const idVec3*, int, renderBump_t*)’,
-    inlined from ‘void RenderBumpTriangles(srfTriangles_t*, renderBump_t*)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/renderbump/renderbump.cpp:976:20,
-    inlined from ‘void RenderBump_f(const idCmdArgs&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/renderbump/renderbump.cpp:1308:22:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/renderbump/renderbump.cpp:844:38: warning: ‘sampledColor[0]’ may be used uninitialized [-Wmaybe-uninitialized]
-  844 |                         colorDest[0] = sampledColor[0];
-      |                         ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/renderbump/renderbump.cpp: In function ‘void RenderBump_f(const idCmdArgs&)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/renderbump/renderbump.cpp:640:17: note: ‘sampledColor[0]’ was declared here
-  640 |         byte    sampledColor[4];
-      |                 ^~~~~~~~~~~~
-In function ‘void RasterizeTriangle(const srfTriangles_t*, const idVec3*, int, renderBump_t*)’,
-    inlined from ‘void RenderBumpTriangles(srfTriangles_t*, renderBump_t*)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/renderbump/renderbump.cpp:976:20,
-    inlined from ‘void RenderBump_f(const idCmdArgs&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/renderbump/renderbump.cpp:1308:22:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/renderbump/renderbump.cpp:845:38: warning: ‘sampledColor[1]’ may be used uninitialized [-Wmaybe-uninitialized]
-  845 |                         colorDest[1] = sampledColor[1];
-      |                         ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/renderbump/renderbump.cpp: In function ‘void RenderBump_f(const idCmdArgs&)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/renderbump/renderbump.cpp:640:17: note: ‘sampledColor[1]’ was declared here
-  640 |         byte    sampledColor[4];
-      |                 ^~~~~~~~~~~~
-In function ‘void RasterizeTriangle(const srfTriangles_t*, const idVec3*, int, renderBump_t*)’,
-    inlined from ‘void RenderBumpTriangles(srfTriangles_t*, renderBump_t*)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/renderbump/renderbump.cpp:976:20,
-    inlined from ‘void RenderBump_f(const idCmdArgs&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/renderbump/renderbump.cpp:1308:22:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/renderbump/renderbump.cpp:846:38: warning: ‘sampledColor[2]’ may be used uninitialized [-Wmaybe-uninitialized]
-```
 
 
 ### warning kinds
@@ -284,7 +110,7 @@ In function ‘void RasterizeTriangle(const srfTriangles_t*, const idVec3*, int,
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/containers/List.h:646:15: warning: inlining failed in call to ‘int idList<type>::Append(const type&) [with type = idEnumTypeInfo*]’: call is unlikely and code size would grow [-Winline]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/Str.h:749:16: warning: inlining failed in call to ‘void idStr::Append(const char*)’: call is unlikely and code size would grow [-Winline]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/containers/List.h:646:15: warning: inlining failed in call to ‘int idList<type>::Append(const type&) [with type = idClassVariableInfo]’: --param max-inline-insns-single limit reached [-Winline]
-- [163x] -maybe-uninitialized
+- [145x] -maybe-uninitialized
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/Winding2D.cpp:95:27: warning: ‘planes’ may be used uninitialized [-Wmaybe-uninitialized]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Plane.h:325:46: warning: ‘plane.idPlane::d’ may be used uninitialized [-Wmaybe-uninitialized]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/geometry/../../idlib/math/Plane.h:362:12: warning: ‘plane.idPlane::d’ may be used uninitialized [-Wmaybe-uninitialized]
@@ -425,24 +251,6 @@ In function ‘void RasterizeTriangle(const srfTriangles_t*, const idVec3*, int,
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:439:44: warning: ‘torque.idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:439:44: warning: ‘torque.idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:439:44: warning: ‘torque.idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:1821:75: warning: ‘child’ may be used uninitialized [-Wmaybe-uninitialized]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:424:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[0].idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:425:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[0].idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:426:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[0].idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:424:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[1].idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:425:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[1].idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:426:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[1].idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:424:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[2].idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:425:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[2].idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:426:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[2].idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:742:92: warning: ‘a2.idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:742:92: warning: ‘a2.idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:742:92: warning: ‘a2.idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../d3xp/Entity.h:607:22: warning: ‘*(unsigned char*)((char*)&ts + offsetof(SetTimeState, SetTimeState::previousFast))’ may be used uninitialized [-Wmaybe-uninitialized]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/AFEntity.cpp:3227:9: warning: ‘head’ may be used uninitialized [-Wmaybe-uninitialized]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/AFEntity.cpp:3370:9: warning: ‘head’ may be used uninitialized [-Wmaybe-uninitialized]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/IK.cpp:609:48: warning: ‘newPivotFoot’ may be used uninitialized [-Wmaybe-uninitialized]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/SmokeParticles.cpp:291:40: warning: ‘active’ may be used uninitialized [-Wmaybe-uninitialized]
 - [17x] -unused-result
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:1134:14: warning: ignoring return value of ‘size_t fread(void*, size_t, size_t, FILE*)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:1105:14: warning: ignoring return value of ‘size_t fread(void*, size_t, size_t, FILE*)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
@@ -458,34 +266,15 @@ In function ‘void RasterizeTriangle(const srfTriangles_t*, const idVec3*, int,
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/posix/posix_main.cpp:742:38: warning: ignoring return value of ‘ssize_t write(int, const void*, size_t)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/main.cpp:391:39: warning: ignoring return value of ‘int system(const char*)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/main.cpp:404:31: warning: ignoring return value of ‘int system(const char*)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
-- [7x] -stringop-truncation
+- [4x] -stringop-truncation
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Session.cpp:1445:16: warning: ‘char* __builtin_strncpy(char*, const char*, unsigned int)’ specified bound 1024 equals destination size [-Wstringop-truncation]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/posix/posix_signal.cpp:165:16: warning: ‘char* __builtin_strncpy(char*, const char*, unsigned int)’ specified bound 1024 equals destination size [-Wstringop-truncation]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Game_network.cpp:1518:24: warning: ‘char* __builtin_strncpy(char*, const char*, unsigned int)’ specified bound 1024 equals destination size [-Wstringop-truncation]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/game/Game_local.cpp:2335:32: warning: ‘char* __builtin_strncpy(char*, const char*, unsigned int)’ specified bound 1024 equals destination size [-Wstringop-truncation]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Game_network.cpp:1563:24: warning: ‘char* __builtin_strncpy(char*, const char*, unsigned int)’ specified bound 1024 equals destination size [-Wstringop-truncation]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Game_local.cpp:4795:16: warning: ‘char* __builtin_strncpy(char*, const char*, unsigned int)’ specified bound 1024 equals destination size [-Wstringop-truncation]
-  - /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Game_local.cpp:2599:32: warning: ‘char* __builtin_strncpy(char*, const char*, unsigned int)’ specified bound 1024 equals destination size [-Wstringop-truncation]
 - [2x] array subscript -1 is below array bounds of ‘char [1024]’ [-Warray-bounds=]
   - /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/main.cpp:142:26: warning: array subscript -1 is below array bounds of ‘char [1024]’ [-Warray-bounds=]
 
 ## windows-latest-x86-debug
-
-status: failure
-
-errors: 1
-warnings: 0 in 0 kinds
-
-### errors
-
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-
-### failure context
-
-
-### warning kinds
-
-## windows-latest-x86-release
 
 status: cancelled
 
@@ -499,4 +288,121 @@ warnings: 0 in 0 kinds
 
 
 ### warning kinds
+
+## windows-latest-x86-release
+
+status: failure
+
+errors: 1
+warnings: 99 in 1 kinds
+
+### errors
+
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\ws.c(1963,22): error C2491: 'curl_ws_start_frame': definition of dllimport function not allowed [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+
+### failure context
+
+
+### warning kinds
+
+- [99x] C4273
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\curl_share.c(71,9): warning C4273: 'curl_share_init': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\curl_share.c(194,12): warning C4273: 'curl_share_setopt': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\curl_share.c(359,12): warning C4273: 'curl_share_cleanup': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(233,10): warning C4273: 'curl_global_init': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(249,10): warning C4273: 'curl_global_init_mem': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(289,6): warning C4273: 'curl_global_cleanup': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(330,10): warning C4273: 'curl_global_trace': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(350,12): warning C4273: 'curl_global_sslset': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(368,7): warning C4273: 'curl_easy_init': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(849,10): warning C4273: 'curl_easy_perform': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(883,6): warning C4273: 'curl_easy_cleanup': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(902,10): warning C4273: 'curl_easy_getinfo': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(1002,7): warning C4273: 'curl_easy_duphandle': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(1142,6): warning C4273: 'curl_easy_reset': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(1194,10): warning C4273: 'curl_easy_pause': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(1300,10): warning C4273: 'curl_easy_recv': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(1371,10): warning C4273: 'curl_easy_send': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(1396,10): warning C4273: 'curl_easy_upkeep': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(1409,10): warning C4273: 'curl_easy_ssls_import': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(1437,10): warning C4273: 'curl_easy_ssls_export': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easygetopt.c(53,31): warning C4273: 'curl_easy_option_by_name': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easygetopt.c(59,31): warning C4273: 'curl_easy_option_by_id': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easygetopt.c(65,31): warning C4273: 'curl_easy_option_next': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\escape.c(36,7): warning C4273: 'curl_escape': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\escape.c(42,7): warning C4273: 'curl_unescape': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\escape.c(156,7): warning C4273: 'curl_easy_escape': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\escape.c(312,7): warning C4273: 'curl_easy_unescape': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\escape.c(339,6): warning C4273: 'curl_free': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\formdata.c(615,14): warning C4273: 'curl_formadd': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\formdata.c(633,5): warning C4273: 'curl_formget': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\formdata.c(671,6): warning C4273: 'curl_formfree': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\getenv.c(26,7): warning C4273: 'curl_getenv': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\headers.c(56,11): warning C4273: 'curl_easy_header': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\headers.c(218,21): warning C4273: 'curl_easy_nextheader': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\http2.c(3002,7): warning C4273: 'curl_pushheader_bynum': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\http2.c(3009,7): warning C4273: 'curl_pushheader_byname': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mime.c(1094,6): warning C4273: 'curl_mime_free': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mime.c(1246,12): warning C4273: 'curl_mime_init': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mime.c(1278,16): warning C4273: 'curl_mime_addpart': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mime.c(1303,10): warning C4273: 'curl_mime_name': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mime.c(1320,10): warning C4273: 'curl_mime_filename': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mime.c(1337,10): warning C4273: 'curl_mime_data': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mime.c(1364,10): warning C4273: 'curl_mime_filedata': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mime.c(1412,10): warning C4273: 'curl_mime_type': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mime.c(1438,10): warning C4273: 'curl_mime_encoder': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mime.c(1461,10): warning C4273: 'curl_mime_headers': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mime.c(1479,10): warning C4273: 'curl_mime_data_cb': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mime.c(1553,10): warning C4273: 'curl_mime_subparts': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mprintf.c(1247,5): warning C4273: 'curl_mvsnprintf': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mprintf.c(1272,5): warning C4273: 'curl_msnprintf': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mprintf.c(1395,7): warning C4273: 'curl_mvaprintf': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mprintf.c(1417,7): warning C4273: 'curl_maprintf': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mprintf.c(1444,5): warning C4273: 'curl_msprintf': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mprintf.c(1476,5): warning C4273: 'curl_mvfprintf': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mprintf.c(1488,5): warning C4273: 'curl_mfprintf': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mprintf.c(1498,5): warning C4273: 'curl_mprintf': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mprintf.c(1508,5): warning C4273: 'curl_mvsprintf': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mprintf.c(1515,5): warning C4273: 'curl_mvprintf': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(377,8): warning C4273: 'curl_multi_init': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(573,11): warning C4273: 'curl_multi_add_handle': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(884,11): warning C4273: 'curl_multi_remove_handle': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(1240,11): warning C4273: 'curl_multi_fdset': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(1295,11): warning C4273: 'curl_multi_waitfds': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(1644,11): warning C4273: 'curl_multi_wait': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(1660,11): warning C4273: 'curl_multi_poll': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(1676,11): warning C4273: 'curl_multi_wakeup': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(2972,11): warning C4273: 'curl_multi_perform': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(2984,11): warning C4273: 'curl_multi_cleanup': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(3094,10): warning C4273: 'curl_multi_info_read': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(3330,11): warning C4273: 'curl_multi_setopt': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(3464,11): warning C4273: 'curl_multi_socket': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(3476,11): warning C4273: 'curl_multi_socket_action': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(3489,11): warning C4273: 'curl_multi_socket_all': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(3562,11): warning C4273: 'curl_multi_timeout': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(3835,11): warning C4273: 'curl_multi_assign': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(3916,8): warning C4273: 'curl_multi_get_handles': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(3946,11): warning C4273: 'curl_multi_get_offt': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(4214,11): warning C4273: 'curl_multi_notify_enable': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(4226,11): warning C4273: 'curl_multi_notify_disable': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\parsedate.c(718,8): warning C4273: 'curl_getdate': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\setopt.c(2932,10): warning C4273: 'curl_easy_setopt': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\slist.c(85,20): warning C4273: 'curl_slist_append': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\slist.c(124,6): warning C4273: 'curl_slist_free_all': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\strequal.c(76,5): warning C4273: 'curl_strequal': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\strequal.c(87,5): warning C4273: 'curl_strnequal': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\strerror.c(34,13): warning C4273: 'curl_easy_strerror': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\strerror.c(326,13): warning C4273: 'curl_multi_strerror': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\strerror.c(385,13): warning C4273: 'curl_share_strerror': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\strerror.c(420,13): warning C4273: 'curl_url_strerror': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\urlapi.c(1412,8): warning C4273: 'curl_url': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\urlapi.c(1417,6): warning C4273: 'curl_url_cleanup': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\urlapi.c(1434,8): warning C4273: 'curl_url_dup': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\urlapi.c(1682,11): warning C4273: 'curl_url_get': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\urlapi.c(2090,11): warning C4273: 'curl_url_set': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\version.c(140,7): warning C4273: 'curl_version': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\version.c(574,25): warning C4273: 'curl_version_info': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\ws.c(1596,10): warning C4273: 'curl_ws_recv': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\ws.c(1855,10): warning C4273: 'curl_ws_send': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  - D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\ws.c(1948,29): warning C4273: 'curl_ws_meta': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
 

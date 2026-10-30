@@ -630,7 +630,7 @@ No VM guests are running outdated hypervisor (qemu) binaries on this host.
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- curl: the bundled curl needs its configure run, disabling for this platform ( NOCURL=1 behavior )
--- Configuring done (0.5s)
+-- Configuring done (1.7s)
 -- Generating done (0.0s)
 -- Build files have been written to: /home/runner/work/doom3.gpl/doom3.gpl/build
 [1/395] Building CXX object idlib/CMakeFiles/idlib.dir/bv/Sphere.cpp.o
@@ -643,8 +643,8 @@ No VM guests are running outdated hypervisor (qemu) binaries on this host.
 [8/395] Building CXX object idlib/CMakeFiles/idlib.dir/geometry/Winding.cpp.o
 [9/395] Building CXX object idlib/CMakeFiles/idlib.dir/geometry/Surface.cpp.o
 [10/395] Building CXX object idlib/CMakeFiles/idlib.dir/geometry/Surface_Patch.cpp.o
-[11/395] Building CXX object idlib/CMakeFiles/idlib.dir/geometry/TraceModel.cpp.o
-[12/395] Building CXX object idlib/CMakeFiles/idlib.dir/geometry/JointTransform.cpp.o
+[11/395] Building CXX object idlib/CMakeFiles/idlib.dir/geometry/JointTransform.cpp.o
+[12/395] Building CXX object idlib/CMakeFiles/idlib.dir/geometry/TraceModel.cpp.o
 [13/395] Building CXX object idlib/CMakeFiles/idlib.dir/hashing/CRC32.cpp.o
 [14/395] Building CXX object idlib/CMakeFiles/idlib.dir/hashing/MD4.cpp.o
 [15/395] Building CXX object idlib/CMakeFiles/idlib.dir/hashing/MD5.cpp.o
@@ -659,13 +659,13 @@ No VM guests are running outdated hypervisor (qemu) binaries on this host.
 [24/395] Building CXX object idlib/CMakeFiles/idlib.dir/math/Rotation.cpp.o
 [25/395] Building CXX object idlib/CMakeFiles/idlib.dir/math/Matrix.cpp.o
 [26/395] Building CXX object idlib/CMakeFiles/idlib.dir/math/Vector.cpp.o
-[27/395] Building CXX object idlib/CMakeFiles/idlib.dir/math/Simd.cpp.o
-[28/395] Building CXX object idlib/CMakeFiles/idlib.dir/math/Simd_Generic.cpp.o
-[29/395] Building CXX object idlib/CMakeFiles/idlib.dir/BitMsg.cpp.o
+[27/395] Building CXX object idlib/CMakeFiles/idlib.dir/math/Simd_Generic.cpp.o
+[28/395] Building CXX object idlib/CMakeFiles/idlib.dir/BitMsg.cpp.o
+[29/395] Building CXX object idlib/CMakeFiles/idlib.dir/math/Simd.cpp.o
 [30/395] Building CXX object idlib/CMakeFiles/idlib.dir/LangDict.cpp.o
-[31/395] Building CXX object idlib/CMakeFiles/idlib.dir/Lib.cpp.o
-[32/395] Building CXX object idlib/CMakeFiles/idlib.dir/containers/HashIndex.cpp.o
-[33/395] Building CXX object idlib/CMakeFiles/idlib.dir/Lexer.cpp.o
+[31/395] Building CXX object idlib/CMakeFiles/idlib.dir/Lexer.cpp.o
+[32/395] Building CXX object idlib/CMakeFiles/idlib.dir/Lib.cpp.o
+[33/395] Building CXX object idlib/CMakeFiles/idlib.dir/containers/HashIndex.cpp.o
 [34/395] Building CXX object idlib/CMakeFiles/idlib.dir/Dict.cpp.o
 [35/395] Building CXX object idlib/CMakeFiles/idlib.dir/Str.cpp.o
 [36/395] Building CXX object idlib/CMakeFiles/idlib.dir/Parser.cpp.o
@@ -679,240 +679,219 @@ No VM guests are running outdated hypervisor (qemu) binaries on this host.
 [44/395] Building CXX object TypeInfo/CMakeFiles/typeinfo.dir/main.cpp.o
 [45/395] Building CXX object TypeInfo/CMakeFiles/typeinfo.dir/TypeInfoGen.cpp.o
 [46/395] Building CXX object TypeInfo/CMakeFiles/typeinfo.dir/__/framework/CmdSystem.cpp.o
-[47/395] Building CXX object TypeInfo/CMakeFiles/typeinfo.dir/__/framework/CVarSystem.cpp.o
-[48/395] Building CXX object TypeInfo/CMakeFiles/typeinfo.dir/__/framework/File.cpp.o
-[49/395] Linking CXX static library idlib/libidlib.a
-[50/395] Building CXX object TypeInfo/CMakeFiles/typeinfo.dir/__/framework/FileSystem.cpp.o
-[51/395] Building CXX object TypeInfo/CMakeFiles/typeinfo.dir/__/framework/Unzip.cpp.o
-[52/395] Linking CXX executable /home/runner/work/doom3.gpl/doom3.gpl/typeinfo.x86
-[53/395] Building CXX object game/CMakeFiles/game.dir/ai/AAS.cpp.o
-[54/395] m4: gl_extensions.cpp
-[55/395] python: glimp_logfuncs.cpp
-[56/395] m4: glimp platform code
-[57/395] Building CXX object game/CMakeFiles/game.dir/ai/AAS_debug.cpp.o
-[58/395] Building CXX object game/CMakeFiles/game.dir/ai/AAS_pathing.cpp.o
-[59/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_contacts.cpp.o
-[60/395] Building CXX object game/CMakeFiles/game.dir/ai/AAS_routing.cpp.o
+[47/395] Linking CXX static library idlib/libidlib.a
+[48/395] Building CXX object TypeInfo/CMakeFiles/typeinfo.dir/__/framework/CVarSystem.cpp.o
+[49/395] Building CXX object TypeInfo/CMakeFiles/typeinfo.dir/__/framework/File.cpp.o
+[50/395] Building CXX object TypeInfo/CMakeFiles/typeinfo.dir/__/framework/Unzip.cpp.o
+[51/395] Building CXX object TypeInfo/CMakeFiles/typeinfo.dir/__/framework/FileSystem.cpp.o
+[52/395] Building CXX object game/CMakeFiles/game.dir/ai/AAS.cpp.o
+[53/395] Linking CXX executable /home/runner/work/doom3.gpl/doom3.gpl/typeinfo.x86
+[54/395] Building CXX object game/CMakeFiles/game.dir/ai/AAS_debug.cpp.o
+[55/395] m4: gl_extensions.cpp
+[56/395] Building CXX object game/CMakeFiles/game.dir/ai/AAS_pathing.cpp.o
+[57/395] python: glimp_logfuncs.cpp
+[58/395] m4: glimp platform code
+[59/395] Building CXX object game/CMakeFiles/game.dir/ai/AAS_routing.cpp.o
+[60/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_contacts.cpp.o
 [61/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_contents.cpp.o
-[62/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_debug.cpp.o
-[63/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_files.cpp.o
-[64/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_rotate.cpp.o
-[65/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_trace.cpp.o
-[66/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_load.cpp.o
-[67/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_translate.cpp.o
-[68/395] Building CXX object CMakeFiles/doom3.dir/framework/CmdSystem.cpp.o
-[69/395] Building CXX object CMakeFiles/doom3.dir/framework/Compressor.cpp.o
-[70/395] Building CXX object CMakeFiles/doom3.dir/framework/Common.cpp.o
-[71/395] Building CXX object CMakeFiles/doom3.dir/framework/Console.cpp.o
-[72/395] Building CXX object CMakeFiles/doom3.dir/framework/CVarSystem.cpp.o
-[73/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclEntityDef.cpp.o
-[74/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclAF.cpp.o
-[75/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclFX.cpp.o
-[76/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclManager.cpp.o
-[77/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclSkin.cpp.o
+[62/395] Building CXX object game/CMakeFiles/game.dir/ai/AI_events.cpp.o
+[63/395] Building CXX object game/CMakeFiles/game.dir/ai/AI.cpp.o
+[64/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_debug.cpp.o
+[65/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_files.cpp.o
+[66/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_rotate.cpp.o
+[67/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_trace.cpp.o
+[68/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_load.cpp.o
+[69/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_translate.cpp.o
+[70/395] Building CXX object CMakeFiles/doom3.dir/framework/CmdSystem.cpp.o
+[71/395] Building CXX object CMakeFiles/doom3.dir/framework/Compressor.cpp.o
+[72/395] Building CXX object CMakeFiles/doom3.dir/framework/Common.cpp.o
+[73/395] Building CXX object CMakeFiles/doom3.dir/framework/Console.cpp.o
+[74/395] Building CXX object CMakeFiles/doom3.dir/framework/CVarSystem.cpp.o
+[75/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclEntityDef.cpp.o
+[76/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclAF.cpp.o
+[77/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclFX.cpp.o
 [78/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclPDA.cpp.o
-[79/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclParticle.cpp.o
-[80/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclTable.cpp.o
-[81/395] Building CXX object CMakeFiles/doom3.dir/framework/EditField.cpp.o
-[82/395] Building CXX object CMakeFiles/doom3.dir/framework/DemoFile.cpp.o
-[83/395] Building CXX object CMakeFiles/doom3.dir/framework/EventLoop.cpp.o
-[84/395] Building CXX object CMakeFiles/doom3.dir/framework/KeyInput.cpp.o
-[85/395] Building CXX object CMakeFiles/doom3.dir/framework/File.cpp.o
-[86/395] Building CXX object CMakeFiles/doom3.dir/framework/Session.cpp.o
-[87/395] Building CXX object CMakeFiles/doom3.dir/framework/FileSystem.cpp.o
-[88/395] Building CXX object CMakeFiles/doom3.dir/framework/Unzip.cpp.o
-[89/395] Building CXX object CMakeFiles/doom3.dir/framework/Session_menu.cpp.o
-[90/395] Building CXX object CMakeFiles/doom3.dir/framework/UsercmdGen.cpp.o
-[91/395] Building CXX object CMakeFiles/doom3.dir/framework/async/AsyncClient.cpp.o
-[92/395] Building CXX object CMakeFiles/doom3.dir/framework/async/AsyncNetwork.cpp.o
-[93/395] Building CXX object CMakeFiles/doom3.dir/framework/async/MsgChannel.cpp.o
-[94/395] Building CXX object CMakeFiles/doom3.dir/framework/async/AsyncServer.cpp.o
-[95/395] Building CXX object CMakeFiles/doom3.dir/framework/async/NetworkSystem.cpp.o
-[96/395] Building CXX object CMakeFiles/doom3.dir/framework/async/ServerScan.cpp.o
-[97/395] Building CXX object CMakeFiles/doom3.dir/renderer/Cinematic.cpp.o
-FAILED: [code=1] CMakeFiles/doom3.dir/renderer/Cinematic.cpp.o 
-/usr/bin/c++ -DGLIMP -DID_ENABLE_CURL=0 -DXTHREADS -D_DEBUG -D__DOOM_DLL__ -I/home/runner/work/doom3.gpl/doom3.gpl/build/generated -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/ogg -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbis -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/oss/include -I/home/runner/work/doom3.gpl/doom3.gpl/neo -m32 -g -fvisibility=hidden -pipe -Wall -Wno-unknown-pragmas -fmessage-length=0 -fpermissive -fno-strict-aliasing -Wno-address -Wno-char-subscripts -Wno-class-memaccess -Wno-c++20-compat -Wno-conversion-null -Wno-dangling-else -Wno-delete-non-virtual-dtor -Wno-enum-compare -Wno-format -Wno-misleading-indentation -Wno-nonnull-compare -Wno-overloaded-virtual -Wno-parentheses -Wno-permissive -Wno-pointer-arith -Wno-register -Wno-sequence-point -Wno-shift-count-overflow -Wno-sign-compare -Wno-sizeof-pointer-memaccess -Wno-switch -Wno-template-id-cdtor -Wno-unused-but-set-variable -Wno-unused-function -Wno-unused-value -Wno-unused-variable -Wno-write-strings -MD -MT CMakeFiles/doom3.dir/renderer/Cinematic.cpp.o -MF CMakeFiles/doom3.dir/renderer/Cinematic.cpp.o.d -o CMakeFiles/doom3.dir/renderer/Cinematic.cpp.o -c /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Cinematic.cpp
-/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Cinematic.cpp:1308:3: error: expected unqualified-id before ‘return’
- 1308 |   return 1;
-      |   ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Cinematic.cpp:1309:1: error: expected declaration before ‘}’ token
- 1309 | }
-      | ^
-cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[98/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_arb.cpp.o
-[99/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_arb2.cpp.o
-[100/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_common.cpp.o
-[101/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_nv10.cpp.o
-[102/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_nv20.cpp.o
-[103/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_r200.cpp.o
-[104/395] Building CXX object CMakeFiles/doom3.dir/renderer/GuiModel.cpp.o
-[105/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_init.cpp.o
-[106/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_load.cpp.o
-[107/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_files.cpp.o
-[108/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_process.cpp.o
-[109/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_program.cpp.o
-[110/395] Building CXX object CMakeFiles/doom3.dir/renderer/Interaction.cpp.o
-[111/395] Building CXX object CMakeFiles/doom3.dir/renderer/MegaTexture.cpp.o
-[112/395] Building CXX object CMakeFiles/doom3.dir/renderer/Material.cpp.o
-[113/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_ase.cpp.o
-[114/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model.cpp.o
-[115/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_beam.cpp.o
-[116/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_liquid.cpp.o
-[117/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_md3.cpp.o
-[118/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_ma.cpp.o
+[79/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclManager.cpp.o
+[80/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclParticle.cpp.o
+[81/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclSkin.cpp.o
+[82/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclTable.cpp.o
+[83/395] Building CXX object CMakeFiles/doom3.dir/framework/DemoFile.cpp.o
+[84/395] Building CXX object CMakeFiles/doom3.dir/framework/EventLoop.cpp.o
+[85/395] Building CXX object CMakeFiles/doom3.dir/framework/EditField.cpp.o
+[86/395] Building CXX object CMakeFiles/doom3.dir/framework/File.cpp.o
+[87/395] Building CXX object CMakeFiles/doom3.dir/framework/KeyInput.cpp.o
+[88/395] Building CXX object CMakeFiles/doom3.dir/framework/Session.cpp.o
+[89/395] Building CXX object CMakeFiles/doom3.dir/framework/FileSystem.cpp.o
+[90/395] Building CXX object CMakeFiles/doom3.dir/framework/Unzip.cpp.o
+[91/395] Building CXX object CMakeFiles/doom3.dir/framework/Session_menu.cpp.o
+[92/395] Building CXX object CMakeFiles/doom3.dir/framework/UsercmdGen.cpp.o
+[93/395] Building CXX object CMakeFiles/doom3.dir/framework/async/AsyncClient.cpp.o
+[94/395] Building CXX object CMakeFiles/doom3.dir/framework/async/AsyncNetwork.cpp.o
+[95/395] Building CXX object CMakeFiles/doom3.dir/framework/async/MsgChannel.cpp.o
+[96/395] Building CXX object CMakeFiles/doom3.dir/framework/async/AsyncServer.cpp.o
+[97/395] Building CXX object CMakeFiles/doom3.dir/framework/async/NetworkSystem.cpp.o
+[98/395] Building CXX object CMakeFiles/doom3.dir/framework/async/ServerScan.cpp.o
+[99/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_arb.cpp.o
+[100/395] Building CXX object CMakeFiles/doom3.dir/renderer/Cinematic.cpp.o
+[101/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_arb2.cpp.o
+[102/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_common.cpp.o
+[103/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_nv20.cpp.o
+[104/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_nv10.cpp.o
+[105/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_r200.cpp.o
+[106/395] Building CXX object CMakeFiles/doom3.dir/renderer/GuiModel.cpp.o
+[107/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_init.cpp.o
+[108/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_load.cpp.o
+[109/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_files.cpp.o
+[110/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_process.cpp.o
+[111/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_program.cpp.o
+[112/395] Building CXX object CMakeFiles/doom3.dir/renderer/Interaction.cpp.o
+[113/395] Building CXX object CMakeFiles/doom3.dir/renderer/MegaTexture.cpp.o
+[114/395] Building CXX object CMakeFiles/doom3.dir/renderer/Material.cpp.o
+[115/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_ase.cpp.o
+[116/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model.cpp.o
+[117/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_beam.cpp.o
+[118/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_liquid.cpp.o
 [119/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_lwo.cpp.o
-[120/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_md5.cpp.o
-[121/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_prt.cpp.o
-[122/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_sprite.cpp.o
-[123/395] Building CXX object CMakeFiles/doom3.dir/renderer/ModelDecal.cpp.o
-[124/395] Building CXX object CMakeFiles/doom3.dir/renderer/ModelManager.cpp.o
-[125/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderEntity.cpp.o
-[126/395] Building CXX object CMakeFiles/doom3.dir/renderer/ModelOverlay.cpp.o
-[127/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderSystem.cpp.o
-[128/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderSystem_init.cpp.o
-[129/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderWorld_demo.cpp.o
-[130/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderWorld.cpp.o
-[131/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderWorld_load.cpp.o
-[132/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderWorld_portals.cpp.o
-[133/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_backend.cpp.o
-[134/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_font.cpp.o
-[135/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_deform.cpp.o
-[136/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_guisurf.cpp.o
-[137/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_light.cpp.o
-[138/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_lightrun.cpp.o
-[139/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_main.cpp.o
-[140/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_orderIndexes.cpp.o
-[141/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_polytope.cpp.o
-[142/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_render.cpp.o
-[143/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_rendertools.cpp.o
-[144/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_shadowbounds.cpp.o
-[145/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_stencilshadow.cpp.o
-[146/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_subview.cpp.o
-[147/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_trace.cpp.o
-[148/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_turboshadow.cpp.o
-[149/395] Building CXX object CMakeFiles/doom3.dir/renderer/VertexCache.cpp.o
-[150/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_trisurf.cpp.o
-[151/395] Building CXX object CMakeFiles/doom3.dir/sound/snd_cache.cpp.o
-[152/395] Building CXX object CMakeFiles/doom3.dir/sound/snd_decoder.cpp.o
-[153/395] Building CXX object CMakeFiles/doom3.dir/sound/snd_efxfile.cpp.o
-[154/395] Building CXX object CMakeFiles/doom3.dir/sound/snd_emitter.cpp.o
-[155/395] Building CXX object CMakeFiles/doom3.dir/sound/snd_shader.cpp.o
-[156/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/oggsrc/bitwise.c.o
-[157/395] Building CXX object CMakeFiles/doom3.dir/sound/snd_wavefile.cpp.o
-[158/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/oggsrc/framing.c.o
-[159/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/analysis.c.o
-[160/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/barkmel.c.o
-[161/395] Building CXX object CMakeFiles/doom3.dir/sound/snd_system.cpp.o
-[162/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/bitrate.c.o
-[163/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/codebook.c.o
-[164/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/block.c.o
-[165/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/envelope.c.o
-[166/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/floor0.c.o
-[167/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/lookup.c.o
-[168/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/floor1.c.o
-[169/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/info.c.o
-[170/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/lpc.c.o
-[171/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/lsp.c.o
-[172/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/mapping0.c.o
-[173/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/mdct.c.o
-[174/395] Building CXX object CMakeFiles/doom3.dir/sound/snd_world.cpp.o
-[175/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/registry.c.o
-[176/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/res0.c.o
-[177/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/sharedbook.c.o
-[178/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/psy.c.o
-[179/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/synthesis.c.o
-[180/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/smallft.c.o
-[181/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/windowvb.c.o
-[182/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/vorbisfile.c.o
-[183/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/vorbisenc.c.o
-[184/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASBuild_file.cpp.o
-[185/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASBuild_gravity.cpp.o
-[186/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASBuild.cpp.o
-[187/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASBuild_ledge.cpp.o
-[188/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASBuild_merge.cpp.o
-[189/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASCluster.cpp.o
-[190/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASFile.cpp.o
-[191/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASFile_optimize.cpp.o
-[192/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASFile_sample.cpp.o
-[193/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASFileManager.cpp.o
-[194/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASReach.cpp.o
-[195/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/Brush.cpp.o
-[196/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/dmap.cpp.o
-[197/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/BrushBSP.cpp.o
-[198/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/facebsp.cpp.o
-[199/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/gldraw.cpp.o
-[200/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/glfile.cpp.o
-[201/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/leakfile.cpp.o
-[202/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/map.cpp.o
-[203/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/optimize.cpp.o
-[204/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/optimize_gcc.cpp.o
-[205/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/output.cpp.o
-[206/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/portals.cpp.o
-[207/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/shadowopt3.cpp.o
-[208/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/tritjunction.cpp.o
-[209/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/tritools.cpp.o
-[210/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/ubrush.cpp.o
-[211/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/usurface.cpp.o
-[212/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/codec.cpp.o
-FAILED: [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/codec.cpp.o 
-/usr/bin/c++ -DGLIMP -DID_ENABLE_CURL=0 -DXTHREADS -D_DEBUG -D__DOOM_DLL__ -I/home/runner/work/doom3.gpl/doom3.gpl/build/generated -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/ogg -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbis -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/oss/include -I/home/runner/work/doom3.gpl/doom3.gpl/neo -m32 -g -fvisibility=hidden -pipe -Wall -Wno-unknown-pragmas -fmessage-length=0 -fpermissive -fno-strict-aliasing -Wno-address -Wno-char-subscripts -Wno-class-memaccess -Wno-c++20-compat -Wno-conversion-null -Wno-dangling-else -Wno-delete-non-virtual-dtor -Wno-enum-compare -Wno-format -Wno-misleading-indentation -Wno-nonnull-compare -Wno-overloaded-virtual -Wno-parentheses -Wno-permissive -Wno-pointer-arith -Wno-register -Wno-sequence-point -Wno-shift-count-overflow -Wno-sign-compare -Wno-sizeof-pointer-memaccess -Wno-switch -Wno-template-id-cdtor -Wno-unused-but-set-variable -Wno-unused-function -Wno-unused-value -Wno-unused-variable -Wno-write-strings -MD -MT CMakeFiles/doom3.dir/tools/compilers/roqvq/codec.cpp.o -MF CMakeFiles/doom3.dir/tools/compilers/roqvq/codec.cpp.o.d -o CMakeFiles/doom3.dir/tools/compilers/roqvq/codec.cpp.o -c /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/codec.cpp
-/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/codec.cpp: In member function ‘int codec::BestCodeword(unsigned char*, int, double**)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/codec.cpp:324:27: error: ‘HUGE’ was not declared in this scope
-  324 |         VQDATA bestDist = HUGE;
-      |                           ^~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/codec.cpp: In member function ‘void codec::VQ(int, int, const unsigned char*, float*, double**, bool)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/codec.cpp:1513:35: error: ‘HUGE’ was not declared in this scope
- 1513 |                 double bestDist = HUGE;
-      |                                   ^~~~
-At global scope:
-cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[213/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/renderbump/renderbump.cpp.o
-[214/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/NSBitmapImageRep.cpp.o
-[215/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/roqParam.cpp.o
-[216/395] Building CXX object CMakeFiles/doom3.dir/ui/BindWindow.cpp.o
+[120/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_md3.cpp.o
+[121/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_ma.cpp.o
+[122/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_md5.cpp.o
+[123/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_prt.cpp.o
+[124/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_sprite.cpp.o
+[125/395] Building CXX object CMakeFiles/doom3.dir/renderer/ModelDecal.cpp.o
+[126/395] Building CXX object CMakeFiles/doom3.dir/renderer/ModelManager.cpp.o
+[127/395] Building CXX object CMakeFiles/doom3.dir/renderer/ModelOverlay.cpp.o
+[128/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderEntity.cpp.o
+[129/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderSystem.cpp.o
+[130/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderWorld_demo.cpp.o
+[131/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderSystem_init.cpp.o
+[132/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderWorld.cpp.o
+[133/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderWorld_load.cpp.o
+[134/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_backend.cpp.o
+[135/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderWorld_portals.cpp.o
+[136/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_font.cpp.o
+[137/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_deform.cpp.o
+[138/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_guisurf.cpp.o
+[139/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_light.cpp.o
+[140/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_lightrun.cpp.o
+[141/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_main.cpp.o
+[142/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_orderIndexes.cpp.o
+[143/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_polytope.cpp.o
+[144/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_render.cpp.o
+[145/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_rendertools.cpp.o
+[146/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_shadowbounds.cpp.o
+[147/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_stencilshadow.cpp.o
+[148/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_subview.cpp.o
+[149/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_trace.cpp.o
+[150/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_turboshadow.cpp.o
+[151/395] Building CXX object CMakeFiles/doom3.dir/renderer/VertexCache.cpp.o
+[152/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_trisurf.cpp.o
+[153/395] Building CXX object CMakeFiles/doom3.dir/sound/snd_cache.cpp.o
+[154/395] Building CXX object CMakeFiles/doom3.dir/sound/snd_decoder.cpp.o
+[155/395] Building CXX object CMakeFiles/doom3.dir/sound/snd_efxfile.cpp.o
+[156/395] Building CXX object CMakeFiles/doom3.dir/sound/snd_emitter.cpp.o
+[157/395] Building CXX object CMakeFiles/doom3.dir/sound/snd_shader.cpp.o
+[158/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/oggsrc/bitwise.c.o
+[159/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/oggsrc/framing.c.o
+[160/395] Building CXX object CMakeFiles/doom3.dir/sound/snd_wavefile.cpp.o
+[161/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/analysis.c.o
+[162/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/barkmel.c.o
+[163/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/bitrate.c.o
+[164/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/codebook.c.o
+[165/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/block.c.o
+[166/395] Building CXX object CMakeFiles/doom3.dir/sound/snd_system.cpp.o
+[167/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/floor0.c.o
+[168/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/envelope.c.o
+[169/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/lookup.c.o
+[170/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/floor1.c.o
+[171/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/info.c.o
+[172/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/lpc.c.o
+[173/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/lsp.c.o
+[174/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/mdct.c.o
+[175/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/mapping0.c.o
+[176/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/registry.c.o
+[177/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/res0.c.o
+[178/395] Building CXX object CMakeFiles/doom3.dir/sound/snd_world.cpp.o
+[179/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/sharedbook.c.o
+[180/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/psy.c.o
+[181/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/synthesis.c.o
+[182/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/windowvb.c.o
+[183/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/smallft.c.o
+[184/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/vorbisfile.c.o
+[185/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/vorbisenc.c.o
+[186/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASBuild_file.cpp.o
+[187/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASBuild_gravity.cpp.o
+[188/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASBuild.cpp.o
+[189/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASBuild_ledge.cpp.o
+[190/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASBuild_merge.cpp.o
+[191/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASCluster.cpp.o
+[192/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASFile.cpp.o
+[193/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASFile_optimize.cpp.o
+[194/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASFileManager.cpp.o
+[195/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASFile_sample.cpp.o
+[196/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASReach.cpp.o
+[197/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/Brush.cpp.o
+[198/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/dmap.cpp.o
+[199/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/BrushBSP.cpp.o
+[200/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/facebsp.cpp.o
+[201/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/gldraw.cpp.o
+[202/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/glfile.cpp.o
+[203/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/leakfile.cpp.o
+[204/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/map.cpp.o
+[205/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/optimize_gcc.cpp.o
+[206/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/optimize.cpp.o
+[207/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/output.cpp.o
+[208/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/portals.cpp.o
+[209/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/shadowopt3.cpp.o
+[210/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/tritjunction.cpp.o
+[211/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/tritools.cpp.o
+[212/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/ubrush.cpp.o
+[213/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/usurface.cpp.o
+[214/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/renderbump/renderbump.cpp.o
+[215/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/codec.cpp.o
+[216/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/NSBitmapImageRep.cpp.o
 [217/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/roq.cpp.o
-[218/395] Building CXX object CMakeFiles/doom3.dir/ui/ChoiceWindow.cpp.o
-[219/395] Building CXX object CMakeFiles/doom3.dir/ui/FieldWindow.cpp.o
-[220/395] Building CXX object CMakeFiles/doom3.dir/ui/DeviceContext.cpp.o
-[221/395] Building CXX object CMakeFiles/doom3.dir/ui/EditWindow.cpp.o
-[222/395] Building CXX object CMakeFiles/doom3.dir/ui/GameBearShootWindow.cpp.o
-[223/395] Building CXX object CMakeFiles/doom3.dir/ui/GameBustOutWindow.cpp.o
-[224/395] Building CXX object CMakeFiles/doom3.dir/ui/GuiScript.cpp.o
-[225/395] Building CXX object CMakeFiles/doom3.dir/ui/ListGUI.cpp.o
-[226/395] Building CXX object CMakeFiles/doom3.dir/ui/GameSSDWindow.cpp.o
-[227/395] Building CXX object CMakeFiles/doom3.dir/ui/MarkerWindow.cpp.o
-[228/395] Building CXX object CMakeFiles/doom3.dir/ui/ListWindow.cpp.o
-[229/395] Building CXX object CMakeFiles/doom3.dir/ui/RegExp.cpp.o
-[230/395] Building CXX object CMakeFiles/doom3.dir/ui/RenderWindow.cpp.o
-[231/395] Building CXX object CMakeFiles/doom3.dir/ui/SliderWindow.cpp.o
-[232/395] Building CXX object CMakeFiles/doom3.dir/ui/SimpleWindow.cpp.o
-[233/395] Building CXX object CMakeFiles/doom3.dir/ui/UserInterface.cpp.o
-[234/395] Building CXX object CMakeFiles/doom3.dir/ui/Winvar.cpp.o
-[235/395] Building CXX object CMakeFiles/doom3.dir/sys/sys_local.cpp.o
-[236/395] Building CXX object CMakeFiles/doom3.dir/sys/posix/posix_net.cpp.o
-[237/395] Building CXX object CMakeFiles/doom3.dir/ui/Window.cpp.o
-[238/395] Building CXX object CMakeFiles/doom3.dir/sys/posix/posix_signal.cpp.o
-[239/395] Building CXX object CMakeFiles/doom3.dir/sys/posix/posix_main.cpp.o
-[240/395] Building CXX object CMakeFiles/doom3.dir/sys/linux/stack.cpp.o
-[241/395] Building CXX object CMakeFiles/doom3.dir/sys/posix/posix_threads.cpp.o
-[242/395] Building CXX object CMakeFiles/doom3.dir/sys/linux/main.cpp.o
-[243/395] Building CXX object CMakeFiles/doom3.dir/sys/stub/util_stub.cpp.o
-[244/395] Building CXX object CMakeFiles/doom3.dir/tools/guied/GEWindowWrapper_stub.cpp.o
-[245/395] Building CXX object CMakeFiles/doom3.dir/TypeInfo/TypeInfoGen.cpp.o
-[246/395] Building C object CMakeFiles/doom3.dir/sys/linux/libXNVCtrl/NVCtrl.c.o
-[247/395] Building CXX object CMakeFiles/doom3.dir/sys/posix/posix_input.cpp.o
-[248/395] Building CXX object CMakeFiles/doom3.dir/sys/linux/glimp.cpp.o
-[249/395] Building CXX object CMakeFiles/doom3.dir/sys/linux/input.cpp.o
-[250/395] Building CXX object CMakeFiles/doom3.dir/sys/linux/sound.cpp.o
-[251/395] Building CXX object CMakeFiles/doom3.dir/openal/stubs.cpp.o
-[252/395] Building CXX object CMakeFiles/doom3.dir/sys/linux/sound_alsa.cpp.o
-[253/395] Building CXX object CMakeFiles/doom3.dir/generated/gl_extensions.cpp.o
-[254/395] Building CXX object CMakeFiles/doom3.dir/generated/glimp_dlopen.cpp.o
-[255/395] Building CXX object CMakeFiles/doom3.dir/generated/glimp_logging.cpp.o
-[256/395] Building CXX object game/CMakeFiles/game.dir/ai/AI_events.cpp.o
-[257/395] Building CXX object game/CMakeFiles/game.dir/ai/AI.cpp.o
-[258/395] Building CXX object game/CMakeFiles/game.dir/ai/AI_pathing.cpp.o
-[259/395] Building CXX object game/CMakeFiles/game.dir/ai/AI_Vagary.cpp.o
+[218/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/roqParam.cpp.o
+[219/395] Building CXX object CMakeFiles/doom3.dir/ui/BindWindow.cpp.o
+[220/395] Building CXX object CMakeFiles/doom3.dir/ui/ChoiceWindow.cpp.o
+[221/395] Building CXX object CMakeFiles/doom3.dir/ui/FieldWindow.cpp.o
+[222/395] Building CXX object CMakeFiles/doom3.dir/ui/EditWindow.cpp.o
+[223/395] Building CXX object CMakeFiles/doom3.dir/ui/DeviceContext.cpp.o
+[224/395] Building CXX object CMakeFiles/doom3.dir/ui/GameBearShootWindow.cpp.o
+[225/395] Building CXX object CMakeFiles/doom3.dir/ui/GameBustOutWindow.cpp.o
+[226/395] Building CXX object CMakeFiles/doom3.dir/ui/GuiScript.cpp.o
+[227/395] Building CXX object CMakeFiles/doom3.dir/ui/GameSSDWindow.cpp.o
+[228/395] Building CXX object CMakeFiles/doom3.dir/ui/ListGUI.cpp.o
+[229/395] Building CXX object CMakeFiles/doom3.dir/ui/MarkerWindow.cpp.o
+[230/395] Building CXX object CMakeFiles/doom3.dir/ui/ListWindow.cpp.o
+[231/395] Building CXX object CMakeFiles/doom3.dir/ui/RegExp.cpp.o
+[232/395] Building CXX object CMakeFiles/doom3.dir/ui/RenderWindow.cpp.o
+[233/395] Building CXX object CMakeFiles/doom3.dir/ui/SliderWindow.cpp.o
+[234/395] Building CXX object CMakeFiles/doom3.dir/ui/SimpleWindow.cpp.o
+[235/395] Building CXX object CMakeFiles/doom3.dir/ui/UserInterface.cpp.o
+[236/395] Building CXX object CMakeFiles/doom3.dir/sys/sys_local.cpp.o
+[237/395] Building CXX object CMakeFiles/doom3.dir/ui/Winvar.cpp.o
+[238/395] Building CXX object CMakeFiles/doom3.dir/ui/Window.cpp.o
+[239/395] Building CXX object CMakeFiles/doom3.dir/sys/posix/posix_net.cpp.o
+[240/395] Building CXX object CMakeFiles/doom3.dir/sys/posix/posix_signal.cpp.o
+[241/395] Building CXX object CMakeFiles/doom3.dir/sys/posix/posix_main.cpp.o
+[242/395] Building CXX object CMakeFiles/doom3.dir/sys/posix/posix_threads.cpp.o
+[243/395] Building CXX object CMakeFiles/doom3.dir/sys/linux/stack.cpp.o
+[244/395] Building CXX object CMakeFiles/doom3.dir/sys/linux/main.cpp.o
+[245/395] Building CXX object CMakeFiles/doom3.dir/sys/stub/util_stub.cpp.o
+[246/395] Building CXX object CMakeFiles/doom3.dir/tools/guied/GEWindowWrapper_stub.cpp.o
+[247/395] Building CXX object CMakeFiles/doom3.dir/TypeInfo/TypeInfoGen.cpp.o
+[248/395] Building C object CMakeFiles/doom3.dir/sys/linux/libXNVCtrl/NVCtrl.c.o
+[249/395] Building CXX object CMakeFiles/doom3.dir/sys/posix/posix_input.cpp.o
+[250/395] Building CXX object CMakeFiles/doom3.dir/sys/linux/glimp.cpp.o
+[251/395] Building CXX object CMakeFiles/doom3.dir/sys/linux/input.cpp.o
+[252/395] Building CXX object CMakeFiles/doom3.dir/sys/linux/sound.cpp.o
+[253/395] Building CXX object CMakeFiles/doom3.dir/openal/stubs.cpp.o
+[254/395] Building CXX object CMakeFiles/doom3.dir/sys/linux/sound_alsa.cpp.o
+[255/395] Building CXX object CMakeFiles/doom3.dir/generated/gl_extensions.cpp.o
+[256/395] Building CXX object CMakeFiles/doom3.dir/generated/glimp_dlopen.cpp.o
+[257/395] Building CXX object CMakeFiles/doom3.dir/generated/glimp_logging.cpp.o
+[258/395] Building CXX object game/CMakeFiles/game.dir/ai/AI_Vagary.cpp.o
+[259/395] Building CXX object game/CMakeFiles/game.dir/ai/AI_pathing.cpp.o
 [260/395] Building CXX object game/CMakeFiles/game.dir/anim/Anim.cpp.o
 [261/395] Building CXX object game/CMakeFiles/game.dir/anim/Anim_Import.cpp.o
 [262/395] Building CXX object game/CMakeFiles/game.dir/anim/Anim_Testmodel.cpp.o
@@ -925,33 +904,33 @@ cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have b
 [269/395] Building CXX object game/CMakeFiles/game.dir/gamesys/SysCmds.cpp.o
 [270/395] Building CXX object game/CMakeFiles/game.dir/gamesys/TypeInfo.cpp.o
 [271/395] Building CXX object game/CMakeFiles/game.dir/physics/Force.cpp.o
-[272/395] Building CXX object game/CMakeFiles/game.dir/physics/Force_Constant.cpp.o
-[273/395] Building CXX object game/CMakeFiles/game.dir/physics/Clip.cpp.o
+[272/395] Building CXX object game/CMakeFiles/game.dir/physics/Clip.cpp.o
+[273/395] Building CXX object game/CMakeFiles/game.dir/physics/Force_Constant.cpp.o
 [274/395] Building CXX object game/CMakeFiles/game.dir/physics/Force_Drag.cpp.o
 [275/395] Building CXX object game/CMakeFiles/game.dir/physics/Force_Field.cpp.o
-[276/395] Building CXX object game/CMakeFiles/game.dir/physics/Physics.cpp.o
-[277/395] Building CXX object game/CMakeFiles/game.dir/physics/Force_Spring.cpp.o
+[276/395] Building CXX object game/CMakeFiles/game.dir/physics/Force_Spring.cpp.o
+[277/395] Building CXX object game/CMakeFiles/game.dir/physics/Physics.cpp.o
 [278/395] Building CXX object game/CMakeFiles/game.dir/physics/Physics_Actor.cpp.o
 [279/395] Building CXX object game/CMakeFiles/game.dir/physics/Physics_Base.cpp.o
 [280/395] Building CXX object game/CMakeFiles/game.dir/physics/Physics_Monster.cpp.o
 [281/395] Building CXX object game/CMakeFiles/game.dir/physics/Physics_Parametric.cpp.o
 [282/395] Building CXX object game/CMakeFiles/game.dir/physics/Physics_Player.cpp.o
-[283/395] Building CXX object game/CMakeFiles/game.dir/physics/Physics_RigidBody.cpp.o
-[284/395] Building CXX object game/CMakeFiles/game.dir/physics/Physics_AF.cpp.o
+[283/395] Building CXX object game/CMakeFiles/game.dir/physics/Physics_AF.cpp.o
+[284/395] Building CXX object game/CMakeFiles/game.dir/physics/Physics_RigidBody.cpp.o
 [285/395] Building CXX object game/CMakeFiles/game.dir/physics/Physics_Static.cpp.o
-[286/395] Building CXX object game/CMakeFiles/game.dir/physics/Push.cpp.o
-[287/395] Building CXX object game/CMakeFiles/game.dir/physics/Physics_StaticMulti.cpp.o
-[288/395] Building CXX object game/CMakeFiles/game.dir/script/Script_Compiler.cpp.o
-[289/395] Building CXX object game/CMakeFiles/game.dir/script/Script_Interpreter.cpp.o
-[290/395] Building CXX object game/CMakeFiles/game.dir/script/Script_Thread.cpp.o
-[291/395] Building CXX object game/CMakeFiles/game.dir/script/Script_Program.cpp.o
-[292/395] Building CXX object game/CMakeFiles/game.dir/Actor.cpp.o
-[293/395] Building CXX object game/CMakeFiles/game.dir/AF.cpp.o
-[294/395] Building CXX object game/CMakeFiles/game.dir/BrittleFracture.cpp.o
-[295/395] Building CXX object game/CMakeFiles/game.dir/Camera.cpp.o
+[286/395] Building CXX object game/CMakeFiles/game.dir/physics/Physics_StaticMulti.cpp.o
+[287/395] Building CXX object game/CMakeFiles/game.dir/physics/Push.cpp.o
+[288/395] Building CXX object game/CMakeFiles/game.dir/script/Script_Interpreter.cpp.o
+[289/395] Building CXX object game/CMakeFiles/game.dir/script/Script_Compiler.cpp.o
+[290/395] Building CXX object game/CMakeFiles/game.dir/script/Script_Program.cpp.o
+[291/395] Building CXX object game/CMakeFiles/game.dir/script/Script_Thread.cpp.o
+[292/395] Building CXX object game/CMakeFiles/game.dir/AF.cpp.o
+[293/395] Building CXX object game/CMakeFiles/game.dir/Actor.cpp.o
+[294/395] Building CXX object game/CMakeFiles/game.dir/Camera.cpp.o
+[295/395] Building CXX object game/CMakeFiles/game.dir/BrittleFracture.cpp.o
 [296/395] Building CXX object game/CMakeFiles/game.dir/AFEntity.cpp.o
-[297/395] Building CXX object game/CMakeFiles/game.dir/Fx.cpp.o
-[298/395] Building CXX object game/CMakeFiles/game.dir/Entity.cpp.o
+[297/395] Building CXX object game/CMakeFiles/game.dir/Entity.cpp.o
+[298/395] Building CXX object game/CMakeFiles/game.dir/Fx.cpp.o
 [299/395] Building CXX object game/CMakeFiles/game.dir/Game_network.cpp.o
 [300/395] Building CXX object game/CMakeFiles/game.dir/Game_local.cpp.o
 [301/395] Building CXX object game/CMakeFiles/game.dir/GameEdit.cpp.o
@@ -960,12 +939,12 @@ cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have b
 [304/395] Building CXX object game/CMakeFiles/game.dir/Light.cpp.o
 [305/395] Building CXX object game/CMakeFiles/game.dir/Moveable.cpp.o
 [306/395] Building CXX object game/CMakeFiles/game.dir/Misc.cpp.o
-[307/395] Building CXX object game/CMakeFiles/game.dir/MultiplayerGame.cpp.o
-[308/395] Building CXX object game/CMakeFiles/game.dir/Mover.cpp.o
+[307/395] Building CXX object game/CMakeFiles/game.dir/Mover.cpp.o
+[308/395] Building CXX object game/CMakeFiles/game.dir/MultiplayerGame.cpp.o
 [309/395] Building CXX object game/CMakeFiles/game.dir/PlayerIcon.cpp.o
 [310/395] Building CXX object game/CMakeFiles/game.dir/PlayerView.cpp.o
-[311/395] Building CXX object game/CMakeFiles/game.dir/Projectile.cpp.o
-[312/395] Building CXX object game/CMakeFiles/game.dir/Pvs.cpp.o
+[311/395] Building CXX object game/CMakeFiles/game.dir/Pvs.cpp.o
+[312/395] Building CXX object game/CMakeFiles/game.dir/Projectile.cpp.o
 [313/395] Building CXX object game/CMakeFiles/game.dir/Player.cpp.o
 [314/395] Building CXX object game/CMakeFiles/game.dir/SecurityCamera.cpp.o
 [315/395] Building CXX object game/CMakeFiles/game.dir/SmokeParticles.cpp.o
@@ -982,8 +961,8 @@ cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have b
 [326/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/ai/AI_pathing.cpp.o
 [327/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/ai/AI.cpp.o
 [328/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/ai/AI_Vagary.cpp.o
-[329/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/anim/Anim.cpp.o
-[330/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/anim/Anim_Import.cpp.o
+[329/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/anim/Anim_Import.cpp.o
+[330/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/anim/Anim.cpp.o
 [331/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/anim/Anim_Testmodel.cpp.o
 [332/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/anim/Anim_Blend.cpp.o
 [333/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/gamesys/DebugGraph.cpp.o
@@ -1027,8 +1006,8 @@ cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have b
 [371/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/GameEdit.cpp.o
 [372/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Grabber.cpp.o
 [373/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/IK.cpp.o
-[374/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Item.cpp.o
-[375/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Light.cpp.o
+[374/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Light.cpp.o
+[375/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Item.cpp.o
 [376/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Moveable.cpp.o
 [377/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Misc.cpp.o
 [378/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/MultiplayerGame.cpp.o
@@ -1042,16 +1021,25 @@ cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have b
 [386/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/SmokeParticles.cpp.o
 [387/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Sound.cpp.o
 [388/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Target.cpp.o
-[389/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Trigger.cpp.o
-[390/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/WorldSpawn.cpp.o
-[391/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Weapon.cpp.o
-[392/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/__/idlib/precompiled.cpp.o
+[389/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/WorldSpawn.cpp.o
+[390/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Trigger.cpp.o
+[391/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/__/idlib/precompiled.cpp.o
+[392/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Weapon.cpp.o
 [393/395] Linking CXX shared library /home/runner/work/doom3.gpl/doom3.gpl/libgamex86-base.so
-[394/395] Linking CXX shared library /home/runner/work/doom3.gpl/doom3.gpl/libgamex86-d3xp.so
+[394/395] Linking CXX executable /home/runner/work/doom3.gpl/doom3.gpl/doom.x86
+FAILED: [code=1] /home/runner/work/doom3.gpl/doom3.gpl/doom.x86 
+: && /usr/bin/c++ -m32 -g -m32 -Wl,--dependency-file=CMakeFiles/doom3.dir/link.d CMakeFiles/doom3.dir/cm/CollisionModel_contacts.cpp.o CMakeFiles/doom3.dir/cm/CollisionModel_contents.cpp.o CMakeFiles/doom3.dir/cm/CollisionModel_debug.cpp.o CMakeFiles/doom3.dir/cm/CollisionModel_files.cpp.o CMakeFiles/doom3.dir/cm/CollisionModel_load.cpp.o CMakeFiles/doom3.dir/cm/CollisionModel_rotate.cpp.o CMakeFiles/doom3.dir/cm/CollisionModel_trace.cpp.o CMakeFiles/doom3.dir/cm/CollisionModel_translate.cpp.o CMakeFiles/doom3.dir/framework/CmdSystem.cpp.o CMakeFiles/doom3.dir/framework/Common.cpp.o CMakeFiles/doom3.dir/framework/Compressor.cpp.o CMakeFiles/doom3.dir/framework/Console.cpp.o CMakeFiles/doom3.dir/framework/CVarSystem.cpp.o CMakeFiles/doom3.dir/framework/DeclAF.cpp.o CMakeFiles/doom3.dir/framework/DeclEntityDef.cpp.o CMakeFiles/doom3.dir/framework/DeclFX.cpp.o CMakeFiles/doom3.dir/framework/DeclManager.cpp.o CMakeFiles/doom3.dir/framework/DeclParticle.cpp.o CMakeFiles/doom3.dir/framework/DeclPDA.cpp.o CMakeFiles/doom3.dir/framework/DeclSkin.cpp.o CMakeFiles/doom3.dir/framework/DeclTable.cpp.o CMakeFiles/doom3.dir/framework/DemoFile.cpp.o CMakeFiles/doom3.dir/framework/EditField.cpp.o CMakeFiles/doom3.dir/framework/EventLoop.cpp.o CMakeFiles/doom3.dir/framework/File.cpp.o CMakeFiles/doom3.dir/framework/FileSystem.cpp.o CMakeFiles/doom3.dir/framework/KeyInput.cpp.o CMakeFiles/doom3.dir/framework/Session.cpp.o CMakeFiles/doom3.dir/framework/Session_menu.cpp.o CMakeFiles/doom3.dir/framework/Unzip.cpp.o CMakeFiles/doom3.dir/framework/UsercmdGen.cpp.o CMakeFiles/doom3.dir/framework/async/AsyncClient.cpp.o CMakeFiles/doom3.dir/framework/async/AsyncNetwork.cpp.o CMakeFiles/doom3.dir/framework/async/AsyncServer.cpp.o CMakeFiles/doom3.dir/framework/async/MsgChannel.cpp.o CMakeFiles/doom3.dir/framework/async/NetworkSystem.cpp.o CMakeFiles/doom3.dir/framework/async/ServerScan.cpp.o CMakeFiles/doom3.dir/renderer/Cinematic.cpp.o CMakeFiles/doom3.dir/renderer/draw_arb.cpp.o CMakeFiles/doom3.dir/renderer/draw_arb2.cpp.o CMakeFiles/doom3.dir/renderer/draw_common.cpp.o CMakeFiles/doom3.dir/renderer/draw_nv10.cpp.o CMakeFiles/doom3.dir/renderer/draw_nv20.cpp.o CMakeFiles/doom3.dir/renderer/draw_r200.cpp.o CMakeFiles/doom3.dir/renderer/GuiModel.cpp.o CMakeFiles/doom3.dir/renderer/Image_files.cpp.o CMakeFiles/doom3.dir/renderer/Image_init.cpp.o CMakeFiles/doom3.dir/renderer/Image_load.cpp.o CMakeFiles/doom3.dir/renderer/Image_process.cpp.o CMakeFiles/doom3.dir/renderer/Image_program.cpp.o CMakeFiles/doom3.dir/renderer/Interaction.cpp.o CMakeFiles/doom3.dir/renderer/Material.cpp.o CMakeFiles/doom3.dir/renderer/MegaTexture.cpp.o CMakeFiles/doom3.dir/renderer/Model.cpp.o CMakeFiles/doom3.dir/renderer/Model_ase.cpp.o CMakeFiles/doom3.dir/renderer/Model_beam.cpp.o CMakeFiles/doom3.dir/renderer/Model_liquid.cpp.o CMakeFiles/doom3.dir/renderer/Model_lwo.cpp.o CMakeFiles/doom3.dir/renderer/Model_ma.cpp.o CMakeFiles/doom3.dir/renderer/Model_md3.cpp.o CMakeFiles/doom3.dir/renderer/Model_md5.cpp.o CMakeFiles/doom3.dir/renderer/Model_prt.cpp.o CMakeFiles/doom3.dir/renderer/Model_sprite.cpp.o CMakeFiles/doom3.dir/renderer/ModelDecal.cpp.o CMakeFiles/doom3.dir/renderer/ModelManager.cpp.o CMakeFiles/doom3.dir/renderer/ModelOverlay.cpp.o CMakeFiles/doom3.dir/renderer/RenderEntity.cpp.o CMakeFiles/doom3.dir/renderer/RenderSystem.cpp.o CMakeFiles/doom3.dir/renderer/RenderSystem_init.cpp.o CMakeFiles/doom3.dir/renderer/RenderWorld.cpp.o CMakeFiles/doom3.dir/renderer/RenderWorld_demo.cpp.o CMakeFiles/doom3.dir/renderer/RenderWorld_load.cpp.o CMakeFiles/doom3.dir/renderer/RenderWorld_portals.cpp.o CMakeFiles/doom3.dir/renderer/tr_backend.cpp.o CMakeFiles/doom3.dir/renderer/tr_deform.cpp.o CMakeFiles/doom3.dir/renderer/tr_font.cpp.o CMakeFiles/doom3.dir/renderer/tr_guisurf.cpp.o CMakeFiles/doom3.dir/renderer/tr_light.cpp.o CMakeFiles/doom3.dir/renderer/tr_lightrun.cpp.o CMakeFiles/doom3.dir/renderer/tr_main.cpp.o CMakeFiles/doom3.dir/renderer/tr_orderIndexes.cpp.o CMakeFiles/doom3.dir/renderer/tr_polytope.cpp.o CMakeFiles/doom3.dir/renderer/tr_render.cpp.o CMakeFiles/doom3.dir/renderer/tr_rendertools.cpp.o CMakeFiles/doom3.dir/renderer/tr_shadowbounds.cpp.o CMakeFiles/doom3.dir/renderer/tr_stencilshadow.cpp.o CMakeFiles/doom3.dir/renderer/tr_subview.cpp.o CMakeFiles/doom3.dir/renderer/tr_trace.cpp.o CMakeFiles/doom3.dir/renderer/tr_trisurf.cpp.o CMakeFiles/doom3.dir/renderer/tr_turboshadow.cpp.o CMakeFiles/doom3.dir/renderer/VertexCache.cpp.o CMakeFiles/doom3.dir/sound/snd_cache.cpp.o CMakeFiles/doom3.dir/sound/snd_decoder.cpp.o CMakeFiles/doom3.dir/sound/snd_efxfile.cpp.o CMakeFiles/doom3.dir/sound/snd_emitter.cpp.o CMakeFiles/doom3.dir/sound/snd_shader.cpp.o CMakeFiles/doom3.dir/sound/snd_system.cpp.o CMakeFiles/doom3.dir/sound/snd_wavefile.cpp.o CMakeFiles/doom3.dir/sound/snd_world.cpp.o CMakeFiles/doom3.dir/sound/OggVorbis/oggsrc/bitwise.c.o CMakeFiles/doom3.dir/sound/OggVorbis/oggsrc/framing.c.o CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/analysis.c.o CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/barkmel.c.o CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/bitrate.c.o CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/block.c.o CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/codebook.c.o CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/envelope.c.o CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/floor0.c.o CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/floor1.c.o CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/info.c.o CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/lookup.c.o CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/lpc.c.o CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/lsp.c.o CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/mapping0.c.o CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/mdct.c.o CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/psy.c.o CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/registry.c.o CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/res0.c.o CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/sharedbook.c.o CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/smallft.c.o CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/synthesis.c.o CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/vorbisenc.c.o CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/vorbisfile.c.o CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/windowvb.c.o CMakeFiles/doom3.dir/tools/compilers/aas/AASBuild.cpp.o CMakeFiles/doom3.dir/tools/compilers/aas/AASBuild_file.cpp.o CMakeFiles/doom3.dir/tools/compilers/aas/AASBuild_gravity.cpp.o CMakeFiles/doom3.dir/tools/compilers/aas/AASBuild_ledge.cpp.o CMakeFiles/doom3.dir/tools/compilers/aas/AASBuild_merge.cpp.o CMakeFiles/doom3.dir/tools/compilers/aas/AASCluster.cpp.o CMakeFiles/doom3.dir/tools/compilers/aas/AASFile.cpp.o CMakeFiles/doom3.dir/tools/compilers/aas/AASFile_optimize.cpp.o CMakeFiles/doom3.dir/tools/compilers/aas/AASFile_sample.cpp.o CMakeFiles/doom3.dir/tools/compilers/aas/AASFileManager.cpp.o CMakeFiles/doom3.dir/tools/compilers/aas/AASReach.cpp.o CMakeFiles/doom3.dir/tools/compilers/aas/Brush.cpp.o CMakeFiles/doom3.dir/tools/compilers/aas/BrushBSP.cpp.o CMakeFiles/doom3.dir/tools/compilers/dmap/dmap.cpp.o CMakeFiles/doom3.dir/tools/compilers/dmap/facebsp.cpp.o CMakeFiles/doom3.dir/tools/compilers/dmap/gldraw.cpp.o CMakeFiles/doom3.dir/tools/compilers/dmap/glfile.cpp.o CMakeFiles/doom3.dir/tools/compilers/dmap/leakfile.cpp.o CMakeFiles/doom3.dir/tools/compilers/dmap/map.cpp.o CMakeFiles/doom3.dir/tools/compilers/dmap/optimize.cpp.o CMakeFiles/doom3.dir/tools/compilers/dmap/optimize_gcc.cpp.o CMakeFiles/doom3.dir/tools/compilers/dmap/output.cpp.o CMakeFiles/doom3.dir/tools/compilers/dmap/portals.cpp.o CMakeFiles/doom3.dir/tools/compilers/dmap/shadowopt3.cpp.o CMakeFiles/doom3.dir/tools/compilers/dmap/tritjunction.cpp.o CMakeFiles/doom3.dir/tools/compilers/dmap/tritools.cpp.o CMakeFiles/doom3.dir/tools/compilers/dmap/ubrush.cpp.o CMakeFiles/doom3.dir/tools/compilers/dmap/usurface.cpp.o CMakeFiles/doom3.dir/tools/compilers/renderbump/renderbump.cpp.o CMakeFiles/doom3.dir/tools/compilers/roqvq/codec.cpp.o CMakeFiles/doom3.dir/tools/compilers/roqvq/NSBitmapImageRep.cpp.o CMakeFiles/doom3.dir/tools/compilers/roqvq/roq.cpp.o CMakeFiles/doom3.dir/tools/compilers/roqvq/roqParam.cpp.o CMakeFiles/doom3.dir/ui/BindWindow.cpp.o CMakeFiles/doom3.dir/ui/ChoiceWindow.cpp.o CMakeFiles/doom3.dir/ui/DeviceContext.cpp.o CMakeFiles/doom3.dir/ui/EditWindow.cpp.o CMakeFiles/doom3.dir/ui/FieldWindow.cpp.o CMakeFiles/doom3.dir/ui/GameBearShootWindow.cpp.o CMakeFiles/doom3.dir/ui/GameBustOutWindow.cpp.o CMakeFiles/doom3.dir/ui/GameSSDWindow.cpp.o CMakeFiles/doom3.dir/ui/GuiScript.cpp.o CMakeFiles/doom3.dir/ui/ListGUI.cpp.o CMakeFiles/doom3.dir/ui/ListWindow.cpp.o CMakeFiles/doom3.dir/ui/MarkerWindow.cpp.o CMakeFiles/doom3.dir/ui/RegExp.cpp.o CMakeFiles/doom3.dir/ui/RenderWindow.cpp.o CMakeFiles/doom3.dir/ui/SimpleWindow.cpp.o CMakeFiles/doom3.dir/ui/SliderWindow.cpp.o CMakeFiles/doom3.dir/ui/UserInterface.cpp.o CMakeFiles/doom3.dir/ui/Window.cpp.o CMakeFiles/doom3.dir/ui/Winvar.cpp.o CMakeFiles/doom3.dir/sys/sys_local.cpp.o CMakeFiles/doom3.dir/sys/posix/posix_net.cpp.o CMakeFiles/doom3.dir/sys/posix/posix_main.cpp.o CMakeFiles/doom3.dir/sys/posix/posix_signal.cpp.o CMakeFiles/doom3.dir/sys/posix/posix_threads.cpp.o CMakeFiles/doom3.dir/sys/linux/stack.cpp.o CMakeFiles/doom3.dir/sys/linux/main.cpp.o CMakeFiles/doom3.dir/sys/stub/util_stub.cpp.o CMakeFiles/doom3.dir/tools/guied/GEWindowWrapper_stub.cpp.o CMakeFiles/doom3.dir/TypeInfo/TypeInfoGen.cpp.o CMakeFiles/doom3.dir/sys/linux/glimp.cpp.o CMakeFiles/doom3.dir/sys/posix/posix_input.cpp.o CMakeFiles/doom3.dir/sys/linux/input.cpp.o CMakeFiles/doom3.dir/sys/linux/libXNVCtrl/NVCtrl.c.o CMakeFiles/doom3.dir/sys/linux/sound.cpp.o CMakeFiles/doom3.dir/sys/linux/sound_alsa.cpp.o CMakeFiles/doom3.dir/openal/stubs.cpp.o CMakeFiles/doom3.dir/generated/gl_extensions.cpp.o CMakeFiles/doom3.dir/generated/glimp_dlopen.cpp.o CMakeFiles/doom3.dir/generated/glimp_logging.cpp.o -o /home/runner/work/doom3.gpl/doom3.gpl/doom.x86  idlib/libidlib.a  -lpthread  -ldl  -lz  -lX11  -lXext  -lXxf86vm && :
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/doom3.dir/sys/linux/main.cpp.o: in function `main':
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/main.cpp:545: multiple definition of `main'; CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/barkmel.c.o:/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/barkmel.c:20: first defined here
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/doom3.dir/renderer/draw_arb2.cpp.o: in function `cg_error_callback()':
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/draw_arb2.cpp:39:(.text+0x16): undefined reference to `cgGetError'
+/usr/bin/x86_64-linux-gnu-ld.bfd: /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/draw_arb2.cpp:40:(.text+0x3a): undefined reference to `cgGetErrorString'
+collect2: error: ld returned 1 exit status
+[395/395] Linking CXX shared library /home/runner/work/doom3.gpl/doom3.gpl/libgamex86-d3xp.so
 ninja: build stopped: cannot make progress due to previous errors.
 
 
-==== ubuntu-latest-x86-release (failure) ====
+==== ubuntu-latest-x86-release (cancelled) ====
 
 Selecting previously unselected package libc6-dev-i386.
 (Reading database ... 
@@ -1683,7 +1671,7 @@ No VM guests are running outdated hypervisor (qemu) binaries on this host.
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- curl: the bundled curl needs its configure run, disabling for this platform ( NOCURL=1 behavior )
--- Configuring done (0.5s)
+-- Configuring done (0.6s)
 -- Generating done (0.0s)
 -- Build files have been written to: /home/runner/work/doom3.gpl/doom3.gpl/build
 [1/395] Building CXX object idlib/CMakeFiles/idlib.dir/bv/Sphere.cpp.o
@@ -1778,29 +1766,30 @@ cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have b
 [26/395] Building CXX object idlib/CMakeFiles/idlib.dir/BitMsg.cpp.o
 [27/395] Building CXX object idlib/CMakeFiles/idlib.dir/math/Simd_Generic.cpp.o
 [28/395] Building CXX object idlib/CMakeFiles/idlib.dir/LangDict.cpp.o
-[29/395] Building CXX object idlib/CMakeFiles/idlib.dir/math/Simd.cpp.o
-[30/395] Building CXX object idlib/CMakeFiles/idlib.dir/Lib.cpp.o
-[31/395] Building CXX object idlib/CMakeFiles/idlib.dir/Lexer.cpp.o
-[32/395] Building CXX object idlib/CMakeFiles/idlib.dir/containers/HashIndex.cpp.o
+[29/395] Building CXX object idlib/CMakeFiles/idlib.dir/Lib.cpp.o
+[30/395] Building CXX object idlib/CMakeFiles/idlib.dir/containers/HashIndex.cpp.o
+[31/395] Building CXX object idlib/CMakeFiles/idlib.dir/math/Simd.cpp.o
+[32/395] Building CXX object idlib/CMakeFiles/idlib.dir/Lexer.cpp.o
 [33/395] Building CXX object idlib/CMakeFiles/idlib.dir/Dict.cpp.o
-[34/395] Building CXX object idlib/CMakeFiles/idlib.dir/math/Matrix.cpp.o
-[35/395] Building CXX object idlib/CMakeFiles/idlib.dir/CmdArgs.cpp.o
-[36/395] Building CXX object idlib/CMakeFiles/idlib.dir/Str.cpp.o
+[34/395] Building CXX object idlib/CMakeFiles/idlib.dir/Str.cpp.o
+[35/395] Building CXX object idlib/CMakeFiles/idlib.dir/math/Matrix.cpp.o
+[36/395] Building CXX object idlib/CMakeFiles/idlib.dir/CmdArgs.cpp.o
 [37/395] Building CXX object idlib/CMakeFiles/idlib.dir/Parser.cpp.o
 [38/395] Building CXX object idlib/CMakeFiles/idlib.dir/Token.cpp.o
-[39/395] Building CXX object idlib/CMakeFiles/idlib.dir/MapFile.cpp.o
-[40/395] Building CXX object idlib/CMakeFiles/idlib.dir/Base64.cpp.o
-[41/395] Building CXX object idlib/CMakeFiles/idlib.dir/Timer.cpp.o
-[42/395] Building CXX object idlib/CMakeFiles/idlib.dir/Heap.cpp.o
+[39/395] Building CXX object idlib/CMakeFiles/idlib.dir/Base64.cpp.o
+[40/395] Building CXX object idlib/CMakeFiles/idlib.dir/Timer.cpp.o
+[41/395] Building CXX object idlib/CMakeFiles/idlib.dir/Heap.cpp.o
+[42/395] Building CXX object idlib/CMakeFiles/idlib.dir/MapFile.cpp.o
 [43/395] Building CXX object idlib/CMakeFiles/idlib.dir/bv/Frustum_gcc.cpp.o
 [44/395] Building CXX object TypeInfo/CMakeFiles/typeinfo.dir/main.cpp.o
-[45/395] Building CXX object TypeInfo/CMakeFiles/typeinfo.dir/__/framework/CmdSystem.cpp.o
-[46/395] Linking CXX static library idlib/libidlib.a
-[47/395] Building CXX object TypeInfo/CMakeFiles/typeinfo.dir/TypeInfoGen.cpp.o
-[48/395] Building CXX object TypeInfo/CMakeFiles/typeinfo.dir/__/framework/CVarSystem.cpp.o
-[49/395] Building CXX object TypeInfo/CMakeFiles/typeinfo.dir/__/framework/File.cpp.o
+[45/395] Linking CXX static library idlib/libidlib.a
+[46/395] Building CXX object TypeInfo/CMakeFiles/typeinfo.dir/__/framework/CmdSystem.cpp.o
+[47/395] Building CXX object TypeInfo/CMakeFiles/typeinfo.dir/__/framework/File.cpp.o
+[48/395] Building CXX object TypeInfo/CMakeFiles/typeinfo.dir/TypeInfoGen.cpp.o
+[49/395] Building CXX object TypeInfo/CMakeFiles/typeinfo.dir/__/framework/CVarSystem.cpp.o
 [50/395] Building CXX object game/CMakeFiles/game.dir/ai/AAS.cpp.o
-[51/395] Building CXX object TypeInfo/CMakeFiles/typeinfo.dir/__/framework/Unzip.cpp.o
+[51/395] Building CXX object game/CMakeFiles/game.dir/ai/AAS_debug.cpp.o
+[52/395] Building CXX object TypeInfo/CMakeFiles/typeinfo.dir/__/framework/Unzip.cpp.o
 /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp: In function ‘int unzlocal_getLong(FILE*, uLong*)’:
 /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:1134:14: warning: ignoring return value of ‘size_t fread(void*, size_t, size_t, FILE*)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
  1134 |         fread( &v, sizeof(v), 1, fin );
@@ -1811,7 +1800,6 @@ cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have b
       |         ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[52/395] Building CXX object game/CMakeFiles/game.dir/ai/AAS_debug.cpp.o
 [53/395] Building CXX object game/CMakeFiles/game.dir/ai/AAS_pathing.cpp.o
 [54/395] Building CXX object game/CMakeFiles/game.dir/ai/AAS_routing.cpp.o
 [55/395] Building CXX object TypeInfo/CMakeFiles/typeinfo.dir/__/framework/FileSystem.cpp.o
@@ -1822,9 +1810,11 @@ cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have b
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
 [56/395] Linking CXX executable /home/runner/work/doom3.gpl/doom3.gpl/typeinfo.x86
-[57/395] Building CXX object game/CMakeFiles/game.dir/ai/AI_events.cpp.o
+[57/395] python: glimp_logfuncs.cpp
 [58/395] m4: gl_extensions.cpp
-[59/395] Building CXX object game/CMakeFiles/game.dir/ai/AI_pathing.cpp.o
+[59/395] m4: glimp platform code
+[60/395] Building CXX object game/CMakeFiles/game.dir/ai/AI_events.cpp.o
+[61/395] Building CXX object game/CMakeFiles/game.dir/ai/AI_pathing.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/../idlib/Lib.h:178,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/../../idlib/precompiled.h:113,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/game/ai/AI_pathing.cpp:29:
@@ -1866,20 +1856,17 @@ In member function ‘idVec2 idVec2::operator*(float) const’,
       |                                                                ^~~~~~~~~~~~~~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[60/395] python: glimp_logfuncs.cpp
-[61/395] m4: glimp platform code
-[62/395] Building CXX object game/CMakeFiles/game.dir/ai/AI_Vagary.cpp.o
-[63/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_contacts.cpp.o
-[64/395] Building CXX object game/CMakeFiles/game.dir/ai/AI.cpp.o
-[65/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_contents.cpp.o
-[66/395] Building CXX object game/CMakeFiles/game.dir/anim/Anim.cpp.o
-[67/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_debug.cpp.o
-[68/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_files.cpp.o
-[69/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_trace.cpp.o
-[70/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_rotate.cpp.o
-[71/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_translate.cpp.o
-[72/395] Building CXX object CMakeFiles/doom3.dir/framework/CmdSystem.cpp.o
-[73/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_load.cpp.o
+[62/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_contacts.cpp.o
+[63/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_contents.cpp.o
+[64/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_files.cpp.o
+[65/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_debug.cpp.o
+[66/395] Building CXX object game/CMakeFiles/game.dir/ai/AI.cpp.o
+[67/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_trace.cpp.o
+[68/395] Building CXX object CMakeFiles/doom3.dir/framework/CmdSystem.cpp.o
+[69/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_rotate.cpp.o
+[70/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_translate.cpp.o
+[71/395] Building CXX object CMakeFiles/doom3.dir/framework/Console.cpp.o
+[72/395] Building CXX object CMakeFiles/doom3.dir/cm/CollisionModel_load.cpp.o
 /home/runner/work/doom3.gpl/doom3.gpl/neo/cm/CollisionModel_load.cpp: In member function ‘cm_node_t* idCollisionModelManagerLocal::R_CreateAxialBSPTree(cm_model_t*, cm_node_t*, const idBounds&)’:
 /home/runner/work/doom3.gpl/doom3.gpl/neo/cm/CollisionModel_load.cpp:2058:25: warning: ‘planeType’ may be used uninitialized [-Wmaybe-uninitialized]
  2058 |         node->planeType = planeType;
@@ -1898,10 +1885,10 @@ In function ‘int CM_FindSplitter(const cm_node_t*, const idBounds&, int*, floa
       |               ^~~~~~~~~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[74/395] Building CXX object CMakeFiles/doom3.dir/framework/Console.cpp.o
-[75/395] Building CXX object CMakeFiles/doom3.dir/framework/Compressor.cpp.o
-[76/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclEntityDef.cpp.o
-[77/395] Building CXX object CMakeFiles/doom3.dir/framework/Common.cpp.o
+[73/395] Building CXX object CMakeFiles/doom3.dir/framework/Compressor.cpp.o
+[74/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclEntityDef.cpp.o
+[75/395] Building CXX object CMakeFiles/doom3.dir/framework/CVarSystem.cpp.o
+[76/395] Building CXX object CMakeFiles/doom3.dir/framework/Common.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/Lib.h:171,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/precompiled.h:113,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Common.cpp:29:
@@ -2057,8 +2044,8 @@ In destructor ‘idList<type>::~idList() [with type = idStr]’,
       | ^
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[78/395] Building CXX object CMakeFiles/doom3.dir/framework/CVarSystem.cpp.o
-[79/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclFX.cpp.o
+[77/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclAF.cpp.o
+[78/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclFX.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/Lib.h:210,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/precompiled.h:113,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/DeclFX.cpp:29:
@@ -2107,9 +2094,8 @@ In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idl
       |                         ~~~~~~~~~~~~~~^~~~~~~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[80/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclAF.cpp.o
-[81/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclSkin.cpp.o
-[82/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclPDA.cpp.o
+[79/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclSkin.cpp.o
+[80/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclPDA.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/Lib.h:171,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/precompiled.h:113,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/DeclPDA.cpp:29:
@@ -2173,7 +2159,7 @@ In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idl
       |                         ~~~~~~~~~~~~~^~~~~~~~~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[83/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclParticle.cpp.o
+[81/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclParticle.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/Lib.h:178,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/precompiled.h:113,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/DeclParticle.cpp:29:
@@ -2233,8 +2219,8 @@ In member function ‘idVec3 idVec3::operator+(const idVec3&) const’,
       |                                 ^~~~~~~~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[84/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclTable.cpp.o
-[85/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclManager.cpp.o
+[82/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclTable.cpp.o
+[83/395] Building CXX object CMakeFiles/doom3.dir/framework/DeclManager.cpp.o
 In function ‘void __static_initialization_and_destruction_0()’,
     inlined from ‘(static initializers for /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/DeclManager.cpp)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/DeclManager.cpp:2230:1:
 /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/DeclManager.cpp:176:7: warning: inlining failed in call to ‘idDeclManagerLocal::idDeclManagerLocal()’: call is unlikely and code size would grow [-Winline]
@@ -2245,12 +2231,23 @@ In function ‘void __static_initialization_and_destruction_0()’,
       |                         ^~~~~~~~~~~~~~~~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[86/395] Building CXX object CMakeFiles/doom3.dir/framework/DemoFile.cpp.o
-[87/395] Building CXX object CMakeFiles/doom3.dir/framework/EditField.cpp.o
-[88/395] Building CXX object CMakeFiles/doom3.dir/framework/EventLoop.cpp.o
-[89/395] Building CXX object CMakeFiles/doom3.dir/framework/File.cpp.o
-[90/395] Building CXX object CMakeFiles/doom3.dir/framework/KeyInput.cpp.o
-[91/395] Building CXX object CMakeFiles/doom3.dir/framework/Session_menu.cpp.o
+[84/395] Building CXX object CMakeFiles/doom3.dir/framework/DemoFile.cpp.o
+[85/395] Building CXX object CMakeFiles/doom3.dir/framework/EditField.cpp.o
+[86/395] Building CXX object CMakeFiles/doom3.dir/framework/EventLoop.cpp.o
+[87/395] Building CXX object CMakeFiles/doom3.dir/framework/KeyInput.cpp.o
+[88/395] Building CXX object CMakeFiles/doom3.dir/framework/File.cpp.o
+[89/395] Building CXX object CMakeFiles/doom3.dir/framework/Unzip.cpp.o
+/home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp: In function ‘int unzlocal_getLong(FILE*, uLong*)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:1134:14: warning: ignoring return value of ‘size_t fread(void*, size_t, size_t, FILE*)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+ 1134 |         fread( &v, sizeof(v), 1, fin );
+      |         ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp: In function ‘int unzlocal_getShort(FILE*, uLong*)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:1105:14: warning: ignoring return value of ‘size_t fread(void*, size_t, size_t, FILE*)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+ 1105 |         fread( &v, sizeof(v), 1, fin );
+      |         ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+At global scope:
+cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
+[90/395] Building CXX object CMakeFiles/doom3.dir/framework/Session_menu.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/../idlib/Lib.h:171,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idlib/precompiled.h:113,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Session_menu.cpp:29:
@@ -2304,18 +2301,7 @@ In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/../idl
       |                                                                          ^
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[92/395] Building CXX object CMakeFiles/doom3.dir/framework/Unzip.cpp.o
-/home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp: In function ‘int unzlocal_getLong(FILE*, uLong*)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:1134:14: warning: ignoring return value of ‘size_t fread(void*, size_t, size_t, FILE*)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
- 1134 |         fread( &v, sizeof(v), 1, fin );
-      |         ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp: In function ‘int unzlocal_getShort(FILE*, uLong*)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Unzip.cpp:1105:14: warning: ignoring return value of ‘size_t fread(void*, size_t, size_t, FILE*)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
- 1105 |         fread( &v, sizeof(v), 1, fin );
-      |         ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
-At global scope:
-cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[93/395] Building CXX object CMakeFiles/doom3.dir/framework/Session.cpp.o
+[91/395] Building CXX object CMakeFiles/doom3.dir/framework/Session.cpp.o
 /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Session.cpp: In member function ‘void idSessionLocal::LoadLoadingGui(const char*)’:
 /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/Session.cpp:1445:16: warning: ‘char* __builtin_strncpy(char*, const char*, unsigned int)’ specified bound 1024 equals destination size [-Wstringop-truncation]
  1445 |         strncpy( guiMap, va( "guis/map/%s.gui", stripped.c_str() ), MAX_STRING_CHARS );
@@ -2382,9 +2368,9 @@ In destructor ‘idList<type>::~idList() [with type = idStr]’,
       | ^
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[94/395] Building CXX object CMakeFiles/doom3.dir/framework/UsercmdGen.cpp.o
-[95/395] Building CXX object CMakeFiles/doom3.dir/framework/async/AsyncNetwork.cpp.o
-[96/395] Building CXX object CMakeFiles/doom3.dir/framework/FileSystem.cpp.o
+[92/395] Building CXX object CMakeFiles/doom3.dir/framework/UsercmdGen.cpp.o
+[93/395] Building CXX object CMakeFiles/doom3.dir/framework/async/AsyncNetwork.cpp.o
+[94/395] Building CXX object CMakeFiles/doom3.dir/framework/FileSystem.cpp.o
 /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/FileSystem.cpp: In function ‘dword BackgroundDownloadThread(void*)’:
 /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/FileSystem.cpp:3646:38: warning: ignoring return value of ‘size_t fread(void*, size_t, size_t, FILE*)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
  3646 |                                 fread(  bgl->file.buffer, bgl->file.length, 1, static_cast<idFile_Permanent*>(bgl->f)->GetFilePtr() );
@@ -2793,7 +2779,8 @@ In destructor ‘idList<type>::~idList() [with type = idStr]’,
       |         ~~~~~^~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[97/395] Building CXX object CMakeFiles/doom3.dir/framework/async/AsyncClient.cpp.o
+[95/395] Building CXX object CMakeFiles/doom3.dir/framework/async/NetworkSystem.cpp.o
+[96/395] Building CXX object CMakeFiles/doom3.dir/framework/async/AsyncClient.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/../../idlib/../idlib/Lib.h:238,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/../../idlib/precompiled.h:113,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/AsyncClient.cpp:29:
@@ -2837,20 +2824,8 @@ In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/
       | ^
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[98/395] Building CXX object CMakeFiles/doom3.dir/framework/async/NetworkSystem.cpp.o
-[99/395] Building CXX object CMakeFiles/doom3.dir/framework/async/MsgChannel.cpp.o
-[100/395] Building CXX object CMakeFiles/doom3.dir/renderer/Cinematic.cpp.o
-FAILED: [code=1] CMakeFiles/doom3.dir/renderer/Cinematic.cpp.o 
-/usr/bin/c++ -DGLIMP -DID_ENABLE_CURL=0 -DXTHREADS -D__DOOM_DLL__ -I/home/runner/work/doom3.gpl/doom3.gpl/build/generated -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/ogg -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbis -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/oss/include -I/home/runner/work/doom3.gpl/doom3.gpl/neo -m32 -O3 -DNDEBUG -fvisibility=hidden -ffast-math -fno-unsafe-math-optimizations -fomit-frame-pointer -Winline -march=pentium3 -pipe -Wall -Wno-unknown-pragmas -fmessage-length=0 -fpermissive -fno-strict-aliasing -Wno-address -Wno-char-subscripts -Wno-class-memaccess -Wno-c++20-compat -Wno-conversion-null -Wno-dangling-else -Wno-delete-non-virtual-dtor -Wno-enum-compare -Wno-format -Wno-misleading-indentation -Wno-nonnull-compare -Wno-overloaded-virtual -Wno-parentheses -Wno-permissive -Wno-pointer-arith -Wno-register -Wno-sequence-point -Wno-shift-count-overflow -Wno-sign-compare -Wno-sizeof-pointer-memaccess -Wno-switch -Wno-template-id-cdtor -Wno-unused-but-set-variable -Wno-unused-function -Wno-unused-value -Wno-unused-variable -Wno-write-strings -MD -MT CMakeFiles/doom3.dir/renderer/Cinematic.cpp.o -MF CMakeFiles/doom3.dir/renderer/Cinematic.cpp.o.d -o CMakeFiles/doom3.dir/renderer/Cinematic.cpp.o -c /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Cinematic.cpp
-/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Cinematic.cpp:1308:3: error: expected unqualified-id before ‘return’
- 1308 |   return 1;
-      |   ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Cinematic.cpp:1309:1: error: expected declaration before ‘}’ token
- 1309 | }
-      | ^
-cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[101/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_arb.cpp.o
-[102/395] Building CXX object CMakeFiles/doom3.dir/framework/async/AsyncServer.cpp.o
+[97/395] Building CXX object CMakeFiles/doom3.dir/framework/async/MsgChannel.cpp.o
+[98/395] Building CXX object CMakeFiles/doom3.dir/framework/async/AsyncServer.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/../../idlib/../idlib/Lib.h:238,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/../../idlib/precompiled.h:113,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/AsyncServer.cpp:29:
@@ -2893,17 +2868,9 @@ In destructor ‘idList<type>::~idList() [with type = idStr]’,
       |                 ^
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[103/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_arb2.cpp.o
-/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/draw_arb2.cpp: In function ‘void R_LoadARBProgram(int)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/draw_arb2.cpp:418:9: warning: ‘start’ may be used uninitialized [-Wmaybe-uninitialized]
-  418 |         if ( !start ) {
-      |         ^~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/draw_arb2.cpp:372:18: note: ‘start’ was declared here
-  372 |         char    *start, *end;
-      |                  ^~~~~
-At global scope:
-cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[104/395] Building CXX object CMakeFiles/doom3.dir/framework/async/ServerScan.cpp.o
+[99/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_arb.cpp.o
+[100/395] Building CXX object CMakeFiles/doom3.dir/renderer/Cinematic.cpp.o
+[101/395] Building CXX object CMakeFiles/doom3.dir/framework/async/ServerScan.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/../../idlib/../idlib/Lib.h:238,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/../../idlib/precompiled.h:113,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/framework/async/ServerScan.cpp:29:
@@ -2994,17 +2961,27 @@ In destructor ‘networkServer_t::~networkServer_t()’,
       |   ^~~~~~~~~~~~~~~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[105/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_common.cpp.o
-[106/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_nv10.cpp.o
-[107/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_r200.cpp.o
-[108/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_nv20.cpp.o
-[109/395] Building CXX object CMakeFiles/doom3.dir/renderer/GuiModel.cpp.o
-[110/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_load.cpp.o
-[111/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_process.cpp.o
-[112/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_init.cpp.o
-[113/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_program.cpp.o
-[114/395] Building CXX object CMakeFiles/doom3.dir/renderer/Interaction.cpp.o
-[115/395] Building CXX object CMakeFiles/doom3.dir/renderer/MegaTexture.cpp.o
+[102/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_arb2.cpp.o
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/draw_arb2.cpp: In function ‘void R_LoadARBProgram(int)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/draw_arb2.cpp:418:9: warning: ‘start’ may be used uninitialized [-Wmaybe-uninitialized]
+  418 |         if ( !start ) {
+      |         ^~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/draw_arb2.cpp:372:18: note: ‘start’ was declared here
+  372 |         char    *start, *end;
+      |                  ^~~~~
+At global scope:
+cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
+[103/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_common.cpp.o
+[104/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_nv10.cpp.o
+[105/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_nv20.cpp.o
+[106/395] Building CXX object CMakeFiles/doom3.dir/renderer/draw_r200.cpp.o
+[107/395] Building CXX object CMakeFiles/doom3.dir/renderer/GuiModel.cpp.o
+[108/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_load.cpp.o
+[109/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_process.cpp.o
+[110/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_init.cpp.o
+[111/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_program.cpp.o
+[112/395] Building CXX object CMakeFiles/doom3.dir/renderer/Interaction.cpp.o
+[113/395] Building CXX object CMakeFiles/doom3.dir/renderer/MegaTexture.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/../idlib/Lib.h:178,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/precompiled.h:113,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/MegaTexture.cpp:28:
@@ -3064,12 +3041,12 @@ In member function ‘idVec3 idVec3::operator-(const idVec3&) const’,
       |                         ^~~~~~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[116/395] Building CXX object CMakeFiles/doom3.dir/renderer/Material.cpp.o
-[117/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_ase.cpp.o
-[118/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_beam.cpp.o
-[119/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model.cpp.o
-[120/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_liquid.cpp.o
-[121/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_files.cpp.o
+[114/395] Building CXX object CMakeFiles/doom3.dir/renderer/Material.cpp.o
+[115/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_beam.cpp.o
+[116/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_ase.cpp.o
+[117/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model.cpp.o
+[118/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_liquid.cpp.o
+[119/395] Building CXX object CMakeFiles/doom3.dir/renderer/Image_files.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Image_files.cpp:69:
 /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../third-party/stb/stb_image.h: In function ‘float* stbi__hdr_load(stbi__context*, int*, int*, int*, int, stbi__result_info*)’:
 /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../third-party/stb/stb_image.h:1647:28: warning: inlining failed in call to ‘stbi_uc stbi__get8(stbi__context*)’: --param inline-unit-growth limit reached [-Winline]
@@ -3363,11 +3340,11 @@ In function ‘int stbi__tga_test(stbi__context*)’,
       |         ~~~~~~~~~~^~~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[122/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_md3.cpp.o
-[123/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_ma.cpp.o
-[124/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_prt.cpp.o
-[125/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_md5.cpp.o
-[126/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_lwo.cpp.o
+[120/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_md3.cpp.o
+[121/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_ma.cpp.o
+[122/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_md5.cpp.o
+[123/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_prt.cpp.o
+[124/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_lwo.cpp.o
 /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Model_lwo.cpp: In function ‘lwEnvelope* lwGetEnvelope(idFile*, int)’:
 /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/Model_lwo.cpp:402:13: warning: ‘key’ may be used uninitialized [-Wmaybe-uninitialized]
   402 |             if ( !key ) goto Fail;
@@ -3396,9 +3373,9 @@ cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have b
       |                   ^
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[127/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_sprite.cpp.o
-[128/395] Building CXX object CMakeFiles/doom3.dir/renderer/ModelManager.cpp.o
-[129/395] Building CXX object CMakeFiles/doom3.dir/renderer/ModelDecal.cpp.o
+[125/395] Building CXX object CMakeFiles/doom3.dir/renderer/Model_sprite.cpp.o
+[126/395] Building CXX object CMakeFiles/doom3.dir/renderer/ModelManager.cpp.o
+[127/395] Building CXX object CMakeFiles/doom3.dir/renderer/ModelDecal.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/../idlib/Lib.h:178,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/../idlib/precompiled.h:113,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/ModelDecal.cpp:29:
@@ -3413,13 +3390,13 @@ In function ‘idVec3 operator*(float, idVec3)’,
       |                                               ^~~~~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[130/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderEntity.cpp.o
-[131/395] Building CXX object CMakeFiles/doom3.dir/renderer/ModelOverlay.cpp.o
-[132/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderSystem.cpp.o
-[133/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderWorld_demo.cpp.o
-[134/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderWorld_load.cpp.o
-[135/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderWorld.cpp.o
-[136/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderWorld_portals.cpp.o
+[128/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderEntity.cpp.o
+[129/395] Building CXX object CMakeFiles/doom3.dir/renderer/ModelOverlay.cpp.o
+[130/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderSystem.cpp.o
+[131/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderWorld_demo.cpp.o
+[132/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderWorld_load.cpp.o
+[133/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderWorld.cpp.o
+[134/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderWorld_portals.cpp.o
 /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/RenderWorld_portals.cpp: In member function ‘void idRenderWorldLocal::FloodLightThroughArea_r(idRenderLightLocal*, int, const portalStack_s*)’:
 /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/RenderWorld_portals.cpp:388:52: warning: ‘firstPortalStack’ may be used uninitialized [-Wmaybe-uninitialized]
   388 |                 for ( j = 0; j < firstPortalStack->numPortalPlanes; j++ ) {
@@ -3429,11 +3406,11 @@ cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have b
       |                                          ^~~~~~~~~~~~~~~~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[137/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderSystem_init.cpp.o
-[138/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_backend.cpp.o
-[139/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_font.cpp.o
-[140/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_guisurf.cpp.o
-[141/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_deform.cpp.o
+[135/395] Building CXX object CMakeFiles/doom3.dir/renderer/RenderSystem_init.cpp.o
+[136/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_backend.cpp.o
+[137/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_font.cpp.o
+[138/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_guisurf.cpp.o
+[139/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_deform.cpp.o
 /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/tr_deform.cpp: In function ‘void R_FlareDeform(drawSurf_t*)’:
 /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/tr_deform.cpp:539:69: warning: ‘plane.idPlane::d’ may be used uninitialized [-Wmaybe-uninitialized]
   539 |         float distFromPlane = localViewer * plane.Normal() + plane[3];
@@ -3443,7 +3420,7 @@ cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have b
       |                 ^~~~~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[142/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_light.cpp.o
+[140/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_light.cpp.o
 /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/tr_light.cpp: In function ‘bool R_IssueEntityDefCallback(idRenderEntityLocal*)’:
 /home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/tr_light.cpp:1085:101: warning: ‘oldBounds.idBounds::b[0].idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
  1085 |                                 oldBounds[1][1] < def->referenceBounds[1][1] - CHECK_BOUNDS_EPSILON ||
@@ -3503,15 +3480,292 @@ cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have b
       |                     ^~~~~~~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[143/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_lightrun.cpp.o
-[144/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_main.cpp.o
-[145/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_orderIndexes.cpp.o
-[146/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_polytope.cpp.o
-[147/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_render.cpp.o
-[148/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_subview.cpp.o
-[149/395] Building CXX object CMakeFiles/d
+[141/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_lightrun.cpp.o
+[142/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_main.cpp.o
+[143/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_orderIndexes.cpp.o
+[144/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_polytope.cpp.o
+[145/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_render.cpp.o
+[146/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_subview.cpp.o
+[147/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_rendertools.cpp.o
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/tr_rendertools.cpp: In function ‘void RB_DrawText(const char*, const idVec3&, float, const idVec4&, const idMat3&, int)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/tr_rendertools.cpp:1793:87: warning: ‘textLen’ may be used uninitialized [-Wmaybe-uninitialized]
+ 1793 |                                                 org += viewAxis[1] * ( textLen * 0.5f );
+      |                                                                                       ^
+/home/runner/work/doom3.gpl/doom3.gpl/neo/renderer/tr_rendertools.cpp:1763:15: note: ‘textLen’ was declared here
+ 1763 |         float textLen, spacing;
+      |               ^~~~~~~
+At global scope:
+cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
+[148/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_stencilshadow.cpp.o
+[149/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_shadowbounds.cpp.o
+[150/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_turboshadow.cpp.o
+[151/395] Building CXX object CMakeFiles/doom3.dir/renderer/tr_trace.cpp.o
+[152/395] Building CXX object CMakeFiles/doom3.dir/renderer/VertexCache.cpp.o
+[153/395] Building CXX object CMakeFiles/doom3.dir/sound/snd_efxfile.cpp.o
+[154/395] Building CXX object CMakeFiles/doom3.dir/sound/snd_cache.cpp.o
+[155/395] Building CXX object CMakeFiles/doom3.dir/sound/snd_decoder.cpp.o
+[156/395] Building CXX object CMakeFiles/doom3.dir/sound/snd_shader.cpp.o
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/sound/../idlib/../idlib/Lib.h:210,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/sound/../idlib/precompiled.h:113,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/sound/snd_shader.cpp:29:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/../idlib/../idlib/Str.h: In member function ‘bool idSoundShader::ParseShader(idLexer&)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/.
 ... [truncated] ...
-ed from ‘bool idAASFileLocal::ParseAreas(idLexer&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASFile.cpp:978:15:
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/mapping0.c:512:11: note: ‘mag_sort’ was declared here
+  512 |     int **mag_sort;
+      |           ^~~~~~~~
+At top level:
+cc1: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
+[177/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/registry.c.o
+[178/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/sharedbook.c.o
+[179/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/res0.c.o
+[180/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/mdct.c.o
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/mdct.c: In function ‘mdct_backward’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/mdct.c:317:11: warning: inlining failed in call to ‘mdct_butterflies.isra’: --param max-inline-insns-single limit reached [-Winline]
+  317 | STIN void mdct_butterflies(mdct_lookup *init,
+      |           ^~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/mdct.c:432:3: note: called from here
+  432 |   mdct_butterflies(init,out+n2,n2);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/mdct.c: In function ‘mdct_forward’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/mdct.c:317:11: warning: inlining failed in call to ‘mdct_butterflies.isra’: --param max-inline-insns-single limit reached [-Winline]
+  317 | STIN void mdct_butterflies(mdct_lookup *init,
+      |           ^~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/mdct.c:548:3: note: called from here
+  548 |   mdct_butterflies(init,w+n2,n2);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+At top level:
+cc1: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
+[181/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/synthesis.c.o
+[182/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/psy.c.o
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/psy.c: In function ‘bark_noise_hybridmp’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/psy.c:633:12: warning: ‘A’ may be used uninitialized [-Wmaybe-uninitialized]
+  633 |     R = (A + x * B) / D;
+      |         ~~~^~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/psy.c:549:12: note: ‘A’ was declared here
+  549 |   float R, A, B, D;
+      |            ^
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/psy.c:633:16: warning: ‘B’ may be used uninitialized [-Wmaybe-uninitialized]
+  633 |     R = (A + x * B) / D;
+      |              ~~^~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/psy.c:549:15: note: ‘B’ was declared here
+  549 |   float R, A, B, D;
+      |               ^
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/psy.c:633:7: warning: ‘D’ may be used uninitialized [-Wmaybe-uninitialized]
+  633 |     R = (A + x * B) / D;
+      |     ~~^~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/psy.c:549:18: note: ‘D’ was declared here
+  549 |   float R, A, B, D;
+      |                  ^
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/psy.c: In function ‘_vp_noisemask’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/psy.c:783:3: warning: ‘work’ may be used uninitialized [-Wmaybe-uninitialized]
+  783 |   bark_noise_hybridmp(n,p->bark,work,logmask,0.,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  784 |                       p->vi->noisewindowfixed);
+      |                       ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/psy.c:533:13: note: by argument 3 of type ‘const float *’ to ‘bark_noise_hybridmp’ declared here
+  533 | static void bark_noise_hybridmp(int n,const long *b,
+      |             ^~~~~~~~~~~~~~~~~~~
+At top level:
+cc1: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
+[183/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/windowvb.c.o
+[184/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/vorbisenc.c.o
+[185/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/vorbisfile.c.o
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/vorbisfile.c: In function ‘ov_raw_seek’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/vorbisfile.c:1011:17: warning: ‘eosflag’ may be used uninitialized [-Wmaybe-uninitialized]
+ 1011 |               if(eosflag)
+      |                 ^
+/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc/vorbisfile.c:990:9: note: ‘eosflag’ was declared here
+  990 |     int eosflag;
+      |         ^~~~~~~
+At top level:
+cc1: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
+[186/395] Building C object CMakeFiles/doom3.dir/sound/OggVorbis/vorbissrc/smallft.c.o
+[187/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASBuild_gravity.cpp.o
+[188/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASBuild_file.cpp.o
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/Lib.h:230,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/precompiled.h:113,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp:29:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/containers/PlaneSet.h: In member function ‘bool idAASBuild::GetFaceForPortal(idBrushBSPPortal*, int, int*)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/containers/PlaneSet.h:51:15: warning: inlining failed in call to ‘int idPlaneSet::FindPlane(const idPlane&, float, float)’: --param max-inline-insns-single limit reached [-Winline]
+   51 | ID_INLINE int idPlaneSet::FindPlane( const idPlane &plane, const float normalEps, const float distEps ) {
+      |               ^~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp:265:50: note: called from here
+  265 |         face.planeNum = file->planeList.FindPlane( portal->GetPlane(), AAS_PLANE_NORMAL_EPSILON, AAS_PLANE_DIST_EPSILON );
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/Lib.h:178:
+In member function ‘idVec3& idVec3::operator=(const idVec3&)’,
+    inlined from ‘idBounds& idBounds::operator=(const idBounds&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/bv/Bounds.h:40:7,
+    inlined from ‘aasArea_s& aasArea_s::operator=(const aasArea_s&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../tools/compilers/aas/AASFile.h:155:16,
+    inlined from ‘int idList<type>::Append(const type&) [with type = aasArea_s]’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/containers/List.h:661:14,
+    inlined from ‘bool idAASBuild::GetAreaForLeafNode(idBrushBSPNode*, int*)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp:332:20:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:424:11: warning: ‘area.aasArea_s::bounds.idBounds::b[0].idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  424 |         x = a.x;
+      |         ~~^~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp: In member function ‘bool idAASBuild::GetAreaForLeafNode(idBrushBSPNode*, int*)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp:292:19: note: ‘area.aasArea_s::bounds.idBounds::b[0].idVec3::x’ was declared here
+  292 |         aasArea_t area;
+      |                   ^~~~
+In member function ‘idVec3& idVec3::operator=(const idVec3&)’,
+    inlined from ‘idBounds& idBounds::operator=(const idBounds&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/bv/Bounds.h:40:7,
+    inlined from ‘aasArea_s& aasArea_s::operator=(const aasArea_s&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../tools/compilers/aas/AASFile.h:155:16,
+    inlined from ‘int idList<type>::Append(const type&) [with type = aasArea_s]’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/containers/List.h:661:14,
+    inlined from ‘bool idAASBuild::GetAreaForLeafNode(idBrushBSPNode*, int*)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp:332:20:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:425:11: warning: ‘area.aasArea_s::bounds.idBounds::b[0].idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  425 |         y = a.y;
+      |         ~~^~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp: In member function ‘bool idAASBuild::GetAreaForLeafNode(idBrushBSPNode*, int*)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp:292:19: note: ‘area.aasArea_s::bounds.idBounds::b[0].idVec3::y’ was declared here
+  292 |         aasArea_t area;
+      |                   ^~~~
+In member function ‘idVec3& idVec3::operator=(const idVec3&)’,
+    inlined from ‘idBounds& idBounds::operator=(const idBounds&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/bv/Bounds.h:40:7,
+    inlined from ‘aasArea_s& aasArea_s::operator=(const aasArea_s&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../tools/compilers/aas/AASFile.h:155:16,
+    inlined from ‘int idList<type>::Append(const type&) [with type = aasArea_s]’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/containers/List.h:661:14,
+    inlined from ‘bool idAASBuild::GetAreaForLeafNode(idBrushBSPNode*, int*)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp:332:20:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:426:11: warning: ‘area.aasArea_s::bounds.idBounds::b[0].idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  426 |         z = a.z;
+      |         ~~^~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp: In member function ‘bool idAASBuild::GetAreaForLeafNode(idBrushBSPNode*, int*)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp:292:19: note: ‘area.aasArea_s::bounds.idBounds::b[0].idVec3::z’ was declared here
+  292 |         aasArea_t area;
+      |                   ^~~~
+In member function ‘idVec3& idVec3::operator=(const idVec3&)’,
+    inlined from ‘idBounds& idBounds::operator=(const idBounds&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/bv/Bounds.h:40:7,
+    inlined from ‘aasArea_s& aasArea_s::operator=(const aasArea_s&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../tools/compilers/aas/AASFile.h:155:16,
+    inlined from ‘int idList<type>::Append(const type&) [with type = aasArea_s]’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/containers/List.h:661:14,
+    inlined from ‘bool idAASBuild::GetAreaForLeafNode(idBrushBSPNode*, int*)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp:332:20:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:424:11: warning: ‘area.aasArea_s::bounds.idBounds::b[1].idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  424 |         x = a.x;
+      |         ~~^~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp: In member function ‘bool idAASBuild::GetAreaForLeafNode(idBrushBSPNode*, int*)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp:292:19: note: ‘area.aasArea_s::bounds.idBounds::b[1].idVec3::x’ was declared here
+  292 |         aasArea_t area;
+      |                   ^~~~
+In member function ‘idVec3& idVec3::operator=(const idVec3&)’,
+    inlined from ‘idBounds& idBounds::operator=(const idBounds&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/bv/Bounds.h:40:7,
+    inlined from ‘aasArea_s& aasArea_s::operator=(const aasArea_s&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../tools/compilers/aas/AASFile.h:155:16,
+    inlined from ‘int idList<type>::Append(const type&) [with type = aasArea_s]’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/containers/List.h:661:14,
+    inlined from ‘bool idAASBuild::GetAreaForLeafNode(idBrushBSPNode*, int*)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp:332:20:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:425:11: warning: ‘area.aasArea_s::bounds.idBounds::b[1].idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  425 |         y = a.y;
+      |         ~~^~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp: In member function ‘bool idAASBuild::GetAreaForLeafNode(idBrushBSPNode*, int*)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp:292:19: note: ‘area.aasArea_s::bounds.idBounds::b[1].idVec3::y’ was declared here
+  292 |         aasArea_t area;
+      |                   ^~~~
+In member function ‘idVec3& idVec3::operator=(const idVec3&)’,
+    inlined from ‘idBounds& idBounds::operator=(const idBounds&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/bv/Bounds.h:40:7,
+    inlined from ‘aasArea_s& aasArea_s::operator=(const aasArea_s&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../tools/compilers/aas/AASFile.h:155:16,
+    inlined from ‘int idList<type>::Append(const type&) [with type = aasArea_s]’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/containers/List.h:661:14,
+    inlined from ‘bool idAASBuild::GetAreaForLeafNode(idBrushBSPNode*, int*)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp:332:20:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:426:11: warning: ‘area.aasArea_s::bounds.idBounds::b[1].idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  426 |         z = a.z;
+      |         ~~^~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp: In member function ‘bool idAASBuild::GetAreaForLeafNode(idBrushBSPNode*, int*)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp:292:19: note: ‘area.aasArea_s::bounds.idBounds::b[1].idVec3::z’ was declared here
+  292 |         aasArea_t area;
+      |                   ^~~~
+In member function ‘idVec3& idVec3::operator=(const idVec3&)’,
+    inlined from ‘aasArea_s& aasArea_s::operator=(const aasArea_s&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../tools/compilers/aas/AASFile.h:155:16,
+    inlined from ‘int idList<type>::Append(const type&) [with type = aasArea_s]’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/containers/List.h:661:14,
+    inlined from ‘bool idAASBuild::GetAreaForLeafNode(idBrushBSPNode*, int*)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp:332:20:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:424:11: warning: ‘area.aasArea_s::center.idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
+  424 |         x = a.x;
+      |         ~~^~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp: In member function ‘bool idAASBuild::GetAreaForLeafNode(idBrushBSPNode*, int*)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp:292:19: note: ‘area.aasArea_s::center.idVec3::x’ was declared here
+  292 |         aasArea_t area;
+      |                   ^~~~
+In member function ‘idVec3& idVec3::operator=(const idVec3&)’,
+    inlined from ‘aasArea_s& aasArea_s::operator=(const aasArea_s&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../tools/compilers/aas/AASFile.h:155:16,
+    inlined from ‘int idList<type>::Append(const type&) [with type = aasArea_s]’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/containers/List.h:661:14,
+    inlined from ‘bool idAASBuild::GetAreaForLeafNode(idBrushBSPNode*, int*)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp:332:20:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:425:11: warning: ‘area.aasArea_s::center.idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
+  425 |         y = a.y;
+      |         ~~^~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp: In member function ‘bool idAASBuild::GetAreaForLeafNode(idBrushBSPNode*, int*)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp:292:19: note: ‘area.aasArea_s::center.idVec3::y’ was declared here
+  292 |         aasArea_t area;
+      |                   ^~~~
+In member function ‘idVec3& idVec3::operator=(const idVec3&)’,
+    inlined from ‘aasArea_s& aasArea_s::operator=(const aasArea_s&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../tools/compilers/aas/AASFile.h:155:16,
+    inlined from ‘int idList<type>::Append(const type&) [with type = aasArea_s]’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/containers/List.h:661:14,
+    inlined from ‘bool idAASBuild::GetAreaForLeafNode(idBrushBSPNode*, int*)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp:332:20:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:426:11: warning: ‘area.aasArea_s::center.idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
+  426 |         z = a.z;
+      |         ~~^~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp: In member function ‘bool idAASBuild::GetAreaForLeafNode(idBrushBSPNode*, int*)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp:292:19: note: ‘area.aasArea_s::center.idVec3::z’ was declared here
+  292 |         aasArea_t area;
+      |                   ^~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/precompiled.h:164:
+In member function ‘aasArea_s& aasArea_s::operator=(const aasArea_s&)’,
+    inlined from ‘int idList<type>::Append(const type&) [with type = aasArea_s]’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/containers/List.h:661:14,
+    inlined from ‘bool idAASBuild::GetAreaForLeafNode(idBrushBSPNode*, int*)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp:332:20:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../tools/compilers/aas/AASFile.h:155:16: warning: ‘area.aasArea_s::travelFlags’ may be used uninitialized [-Wmaybe-uninitialized]
+  155 | typedef struct aasArea_s {
+      |                ^~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp: In member function ‘bool idAASBuild::GetAreaForLeafNode(idBrushBSPNode*, int*)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp:292:19: note: ‘area.aasArea_s::travelFlags’ was declared here
+  292 |         aasArea_t area;
+      |                   ^~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/containers/PlaneSet.h: In member function ‘int idAASBuild::StoreTree_r(idBrushBSPNode*)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/containers/PlaneSet.h:51:15: warning: inlining failed in call to ‘int idPlaneSet::FindPlane(const idPlane&, float, float)’: --param max-inline-insns-single limit reached [-Winline]
+   51 | ID_INLINE int idPlaneSet::FindPlane( const idPlane &plane, const float normalEps, const float distEps ) {
+      |               ^~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild_file.cpp:363:53: note: called from here
+  363 |         aasNode.planeNum = file->planeList.FindPlane( node->GetPlane(), AAS_PLANE_NORMAL_EPSILON, AAS_PLANE_DIST_EPSILON );
+      |                            ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+At global scope:
+cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
+[189/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASBuild.cpp.o
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/Lib.h:203,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/precompiled.h:113,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild.cpp:29:
+In copy constructor ‘idSurface_Patch::idSurface_Patch(const idSurface_Patch&)’,
+    inlined from ‘idBrushList idAASBuild::AddBrushesForMapPatch(const idMapPatch*, const idVec3&, const idMat3&, int, int, idBrushList)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild.cpp:392:36:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/geometry/Surface.h:145:11: warning: inlining failed in call to ‘idSurface::~idSurface() noexcept’: call is unlikely and code size would grow [-Winline]
+  145 | ID_INLINE idSurface::~idSurface( void ) {
+      |           ^~~~~~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/Lib.h:204:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/geometry/Surface_Patch.h:118:1: note: called from here
+  118 | }
+      | ^
+In destructor ‘idSurface_Patch::~idSurface_Patch()’,
+    inlined from ‘idBrushList idAASBuild::AddBrushesForMapPatch(const idMapPatch*, const idVec3&, const idMat3&, int, int, idBrushList)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild.cpp:392:9:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/geometry/Surface.h:145:11: warning: inlining failed in call to ‘idSurface::~idSurface() noexcept’: call is unlikely and code size would grow [-Winline]
+  145 | ID_INLINE idSurface::~idSurface( void ) {
+      |           ^~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/geometry/Surface_Patch.h:126:1: note: called from here
+  126 | }
+      | ^
+In destructor ‘idSurface_Patch::~idSurface_Patch()’,
+    inlined from ‘idBrushList idAASBuild::AddBrushesForMapPatch(const idMapPatch*, const idVec3&, const idMat3&, int, int, idBrushList)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASBuild.cpp:496:1:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/geometry/Surface.h:145:11: warning: inlining failed in call to ‘idSurface::~idSurface() noexcept’: call is unlikely and code size would grow [-Winline]
+  145 | ID_INLINE idSurface::~idSurface( void ) {
+      |           ^~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/geometry/Surface_Patch.h:126:1: note: called from here
+  126 | }
+      | ^
+At global scope:
+cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
+[190/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASBuild_ledge.cpp.o
+[191/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASBuild_merge.cpp.o
+[192/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASCluster.cpp.o
+[193/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASFileManager.cpp.o
+[194/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASFile_sample.cpp.o
+[195/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASFile_optimize.cpp.o
+[196/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASFile.cpp.o
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/Lib.h:178,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/precompiled.h:113,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASFile.cpp:29:
+In member function ‘idVec3& idVec3::operator=(const idVec3&)’,
+    inlined from ‘idBounds& idBounds::operator=(const idBounds&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/bv/Bounds.h:40:7,
+    inlined from ‘aasArea_s& aasArea_s::operator=(const aasArea_s&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../tools/compilers/aas/AASFile.h:155:16,
+    inlined from ‘int idList<type>::Append(const type&) [with type = aasArea_s]’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/containers/List.h:661:14,
+    inlined from ‘bool idAASFileLocal::ParseAreas(idLexer&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASFile.cpp:978:15:
 /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/../../../idlib/../idlib/math/Vector.h:424:15: warning: ‘*(const __vector(4) float*)((char*)&area + offsetof(aasArea_t, aasArea_s::bounds.idBounds::b[0].idVec3::x))’ may be used uninitialized [-Wmaybe-uninitialized]
   424 |         x = a.x;
       |             ~~^
@@ -3575,7 +3829,7 @@ In member function ‘aasArea_s& aasArea_s::operator=(const aasArea_s&)’,
       |                   ^~~~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[199/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASReach.cpp.o
+[197/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/AASReach.cpp.o
 /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASReach.cpp: In member function ‘bool idAASReach::Reachability_Step_Barrier_WaterJump_WalkOffLedge(int, int)’:
 /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/AASReach.cpp:297:48: warning: ‘floor_bestNormal.idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
   297 |         idVec3 floor_bestStart, floor_bestEnd, floor_bestNormal;
@@ -3700,11 +3954,11 @@ In function ‘idVec3 operator*(float, idVec3)’,
       |                                                ^~~~~~~~~~~~~~~~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[200/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/dmap.cpp.o
-[201/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/facebsp.cpp.o
-[202/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/gldraw.cpp.o
-[203/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/Brush.cpp.o
-[204/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/BrushBSP.cpp.o
+[198/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/dmap.cpp.o
+[199/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/gldraw.cpp.o
+[200/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/facebsp.cpp.o
+[201/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/Brush.cpp.o
+[202/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/aas/BrushBSP.cpp.o
 /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/BrushBSP.cpp: In member function ‘void idBrushBSP::MakeNodePortal(idBrushBSPNode*)’:
 /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/aas/BrushBSP.cpp:1124:44: warning: ‘side’ may be used uninitialized [-Wmaybe-uninitialized]
  1124 |         for ( p = node->portals; p && w; p = p->next[side] ) {
@@ -3728,8 +3982,8 @@ cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have b
       |                               ^~~~~~~~~~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[205/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/glfile.cpp.o
-[206/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/leakfile.cpp.o
+[203/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/glfile.cpp.o
+[204/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/leakfile.cpp.o
 /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/dmap/leakfile.cpp: In function ‘void LeakFile(tree_t*)’:
 /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/dmap/leakfile.cpp:100:35: warning: ‘nextportal’ may be used uninitialized [-Wmaybe-uninitialized]
   100 |                 mid = nextportal->winding->GetCenter();
@@ -3745,10 +3999,10 @@ cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have b
       |                                  ^~~~~~~~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[207/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/optimize_gcc.cpp.o
-[208/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/map.cpp.o
-[209/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/output.cpp.o
-[210/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/optimize.cpp.o
+[205/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/optimize_gcc.cpp.o
+[206/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/map.cpp.o
+[207/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/output.cpp.o
+[208/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/optimize.cpp.o
 /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/dmap/optimize.cpp: In function ‘void BuildOptTriangles(optIsland_t*)’:
 /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/dmap/optimize.cpp:1141:38: warning: ‘second’ may be used uninitialized [-Wmaybe-uninitialized]
  1141 |                         if ( second->emited ) {
@@ -3818,10 +4072,10 @@ In member function ‘idVec3 idVec3::operator-(const idVec3&) const’,
       |                                ^~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[211/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/portals.cpp.o
-[212/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/tritools.cpp.o
-[213/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/shadowopt3.cpp.o
-[214/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/tritjunction.cpp.o
+[209/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/portals.cpp.o
+[210/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/tritools.cpp.o
+[211/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/shadowopt3.cpp.o
+[212/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/tritjunction.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/dmap/../../../idlib/../idlib/Lib.h:178,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/dmap/../../../idlib/precompiled.h:113,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/dmap/tritjunction.cpp:29:
@@ -3934,23 +4188,10 @@ In member function ‘idDrawVert& idDrawVert::operator=(const idDrawVert&)’,
       |                         ^~~~~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[215/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/codec.cpp.o
-FAILED: [code=1] CMakeFiles/doom3.dir/tools/compilers/roqvq/codec.cpp.o 
-/usr/bin/c++ -DGLIMP -DID_ENABLE_CURL=0 -DXTHREADS -D__DOOM_DLL__ -I/home/runner/work/doom3.gpl/doom3.gpl/build/generated -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/ogg -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbis -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sound/OggVorbis/vorbissrc -I/home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/oss/include -I/home/runner/work/doom3.gpl/doom3.gpl/neo -m32 -O3 -DNDEBUG -fvisibility=hidden -ffast-math -fno-unsafe-math-optimizations -fomit-frame-pointer -Winline -march=pentium3 -pipe -Wall -Wno-unknown-pragmas -fmessage-length=0 -fpermissive -fno-strict-aliasing -Wno-address -Wno-char-subscripts -Wno-class-memaccess -Wno-c++20-compat -Wno-conversion-null -Wno-dangling-else -Wno-delete-non-virtual-dtor -Wno-enum-compare -Wno-format -Wno-misleading-indentation -Wno-nonnull-compare -Wno-overloaded-virtual -Wno-parentheses -Wno-permissive -Wno-pointer-arith -Wno-register -Wno-sequence-point -Wno-shift-count-overflow -Wno-sign-compare -Wno-sizeof-pointer-memaccess -Wno-switch -Wno-template-id-cdtor -Wno-unused-but-set-variable -Wno-unused-function -Wno-unused-value -Wno-unused-variable -Wno-write-strings -MD -MT CMakeFiles/doom3.dir/tools/compilers/roqvq/codec.cpp.o -MF CMakeFiles/doom3.dir/tools/compilers/roqvq/codec.cpp.o.d -o CMakeFiles/doom3.dir/tools/compilers/roqvq/codec.cpp.o -c /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/codec.cpp
-/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/codec.cpp: In member function ‘int codec::BestCodeword(unsigned char*, int, double**)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/codec.cpp:324:27: error: ‘HUGE’ was not declared in this scope
-  324 |         VQDATA bestDist = HUGE;
-      |                           ^~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/codec.cpp: In member function ‘void codec::VQ(int, int, const unsigned char*, float*, double**, bool)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/codec.cpp:1513:35: error: ‘HUGE’ was not declared in this scope
- 1513 |                 double bestDist = HUGE;
-      |                                   ^~~~
-At global scope:
-cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[216/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/usurface.cpp.o
-[217/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/ubrush.cpp.o
-[218/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/NSBitmapImageRep.cpp.o
-[219/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/renderbump/renderbump.cpp.o
+[213/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/ubrush.cpp.o
+[214/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/dmap/usurface.cpp.o
+[215/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/NSBitmapImageRep.cpp.o
+[216/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/renderbump/renderbump.cpp.o
 In function ‘void RasterizeTriangle(const srfTriangles_t*, const idVec3*, int, renderBump_t*)’,
     inlined from ‘void RenderBumpTriangles(srfTriangles_t*, renderBump_t*)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/renderbump/renderbump.cpp:976:20,
     inlined from ‘void RenderBump_f(const idCmdArgs&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/renderbump/renderbump.cpp:1308:22:
@@ -3993,7 +4234,8 @@ In function ‘void RasterizeTriangle(const srfTriangles_t*, const idVec3*, int,
       |                 ^~~~~~~~~~~~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[220/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/roqParam.cpp.o
+[217/395] Building CXX object CMakeFiles/doom3.dir/ui/BindWindow.cpp.o
+[218/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/roqParam.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/../../../idlib/../idlib/Lib.h:171,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/../../../idlib/precompiled.h:113,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/compilers/roqvq/roqParam.cpp:28:
@@ -4067,8 +4309,9 @@ In member function ‘idStr& idStr::operator+=(const idStr&)’,
       |         ~~~~~~^~~~~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[221/395] Building CXX object CMakeFiles/doom3.dir/ui/BindWindow.cpp.o
-[222/395] Building CXX object CMakeFiles/doom3.dir/ui/ChoiceWindow.cpp.o
+[219/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/codec.cpp.o
+[220/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/roq.cpp.o
+[221/395] Building CXX object CMakeFiles/doom3.dir/ui/ChoiceWindow.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/ui/../idlib/../idlib/Lib.h:171,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/ui/../idlib/precompiled.h:113,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/ui/ChoiceWindow.cpp:29:
@@ -4125,9 +4368,9 @@ In destructor ‘idList<type>::~idList() [with type = idStr]’,
       |         ~~~~~^~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[223/395] Building CXX object CMakeFiles/doom3.dir/ui/EditWindow.cpp.o
-[224/395] Building CXX object CMakeFiles/doom3.dir/tools/compilers/roqvq/roq.cpp.o
-[225/395] Building CXX object CMakeFiles/doom3.dir/ui/DeviceContext.cpp.o
+[222/395] Building CXX object CMakeFiles/doom3.dir/ui/EditWindow.cpp.o
+[223/395] Building CXX object CMakeFiles/doom3.dir/ui/FieldWindow.cpp.o
+[224/395] Building CXX object CMakeFiles/doom3.dir/ui/DeviceContext.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/ui/../idlib/../idlib/Lib.h:171,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/ui/../idlib/precompiled.h:113,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/ui/DeviceContext.cpp:29:
@@ -4142,14 +4385,13 @@ In member function ‘int idList<type>::Append(const type&) [with type = fontInf
       |                      ^~~~~~~~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[226/395] Building CXX object CMakeFiles/doom3.dir/ui/FieldWindow.cpp.o
-[227/395] Building CXX object CMakeFiles/doom3.dir/ui/GameBearShootWindow.cpp.o
-[228/395] Building CXX object CMakeFiles/doom3.dir/ui/GuiScript.cpp.o
-[229/395] Building CXX object CMakeFiles/doom3.dir/ui/GameBustOutWindow.cpp.o
-[230/395] Building CXX object CMakeFiles/doom3.dir/ui/ListGUI.cpp.o
-[231/395] Building CXX object CMakeFiles/doom3.dir/ui/MarkerWindow.cpp.o
-[232/395] Building CXX object CMakeFiles/doom3.dir/ui/RegExp.cpp.o
-[233/395] Building CXX object CMakeFiles/doom3.dir/ui/ListWindow.cpp.o
+[225/395] Building CXX object CMakeFiles/doom3.dir/ui/GameBearShootWindow.cpp.o
+[226/395] Building CXX object CMakeFiles/doom3.dir/ui/GuiScript.cpp.o
+[227/395] Building CXX object CMakeFiles/doom3.dir/ui/GameBustOutWindow.cpp.o
+[228/395] Building CXX object CMakeFiles/doom3.dir/ui/ListGUI.cpp.o
+[229/395] Building CXX object CMakeFiles/doom3.dir/ui/MarkerWindow.cpp.o
+[230/395] Building CXX object CMakeFiles/doom3.dir/ui/RegExp.cpp.o
+[231/395] Building CXX object CMakeFiles/doom3.dir/ui/ListWindow.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/ui/../idlib/../idlib/Lib.h:171,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/ui/../idlib/precompiled.h:113,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/ui/ListWindow.cpp:29:
@@ -4186,22 +4428,22 @@ In destructor ‘idList<type>::~idList() [with type = idStr]’,
       | ^
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[234/395] Building CXX object CMakeFiles/doom3.dir/ui/GameSSDWindow.cpp.o
-[235/395] Building CXX object CMakeFiles/doom3.dir/ui/RenderWindow.cpp.o
-[236/395] Building CXX object CMakeFiles/doom3.dir/ui/SliderWindow.cpp.o
-[237/395] Building CXX object CMakeFiles/doom3.dir/ui/SimpleWindow.cpp.o
-[238/395] Building CXX object CMakeFiles/doom3.dir/ui/UserInterface.cpp.o
-[239/395] Building CXX object CMakeFiles/doom3.dir/ui/Winvar.cpp.o
-[240/395] Building CXX object CMakeFiles/doom3.dir/sys/sys_local.cpp.o
-[241/395] Building CXX object CMakeFiles/doom3.dir/sys/posix/posix_net.cpp.o
-[242/395] Building CXX object CMakeFiles/doom3.dir/sys/posix/posix_signal.cpp.o
+[232/395] Building CXX object CMakeFiles/doom3.dir/ui/GameSSDWindow.cpp.o
+[233/395] Building CXX object CMakeFiles/doom3.dir/ui/RenderWindow.cpp.o
+[234/395] Building CXX object CMakeFiles/doom3.dir/ui/SliderWindow.cpp.o
+[235/395] Building CXX object CMakeFiles/doom3.dir/ui/SimpleWindow.cpp.o
+[236/395] Building CXX object CMakeFiles/doom3.dir/ui/UserInterface.cpp.o
+[237/395] Building CXX object CMakeFiles/doom3.dir/ui/Winvar.cpp.o
+[238/395] Building CXX object CMakeFiles/doom3.dir/sys/sys_local.cpp.o
+[239/395] Building CXX object CMakeFiles/doom3.dir/sys/posix/posix_net.cpp.o
+[240/395] Building CXX object CMakeFiles/doom3.dir/sys/posix/posix_signal.cpp.o
 /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/posix/posix_signal.cpp: In function ‘void Sys_SetFatalError(const char*)’:
 /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/posix/posix_signal.cpp:165:16: warning: ‘char* __builtin_strncpy(char*, const char*, unsigned int)’ specified bound 1024 equals destination size [-Wstringop-truncation]
   165 |         strncpy( fatalError, error, sizeof( fatalError ) );
       |                ^
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[243/395] Building CXX object CMakeFiles/doom3.dir/sys/posix/posix_main.cpp.o
+[241/395] Building CXX object CMakeFiles/doom3.dir/sys/posix/posix_main.cpp.o
 /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/posix/posix_main.cpp: In function ‘const char* Posix_Cwd()’:
 /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/posix/posix_main.cpp:340:15: warning: ignoring return value of ‘char* getcwd(char*, size_t)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
   340 |         getcwd( cwd, sizeof( cwd ) - 1 );
@@ -4237,10 +4479,10 @@ cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have b
       |                                 ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[244/395] Building CXX object CMakeFiles/doom3.dir/sys/posix/posix_threads.cpp.o
-[245/395] Building CXX object CMakeFiles/doom3.dir/sys/linux/stack.cpp.o
-[246/395] Building CXX object CMakeFiles/doom3.dir/sys/stub/util_stub.cpp.o
-[247/395] Building CXX object CMakeFiles/doom3.dir/sys/linux/main.cpp.o
+[242/395] Building CXX object CMakeFiles/doom3.dir/sys/posix/posix_threads.cpp.o
+[243/395] Building CXX object CMakeFiles/doom3.dir/sys/linux/stack.cpp.o
+[244/395] Building CXX object CMakeFiles/doom3.dir/sys/stub/util_stub.cpp.o
+[245/395] Building CXX object CMakeFiles/doom3.dir/sys/linux/main.cpp.o
 /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/main.cpp: In function ‘void Sys_DoStartProcess(const char*, bool)’:
 /home/runner/work/doom3.gpl/doom3.gpl/neo/sys/linux/main.cpp:391:39: warning: ignoring return value of ‘int system(const char*)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
   391 |                                 system( exeName );
@@ -4266,7 +4508,7 @@ In function ‘const char* Sys_EXEPath()’,
       |                         ^~~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[248/395] Building CXX object CMakeFiles/doom3.dir/tools/guied/GEWindowWrapper_stub.cpp.o
+[246/395] Building CXX object CMakeFiles/doom3.dir/tools/guied/GEWindowWrapper_stub.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/guied/../../idlib/../idlib/Lib.h:238,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/guied/../../idlib/precompiled.h:113,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/guied/GEWindowWrapper_stub.cpp:28:
@@ -4285,10 +4527,10 @@ In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/tools/guied/../.
       |                                                                              ^
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[249/395] Building CXX object CMakeFiles/doom3.dir/sys/linux/glimp.cpp.o
-[250/395] Building CXX object CMakeFiles/doom3.dir/sys/posix/posix_input.cpp.o
-[251/395] Building C object CMakeFiles/doom3.dir/sys/linux/libXNVCtrl/NVCtrl.c.o
-[252/395] Building CXX object CMakeFiles/doom3.dir/ui/Window.cpp.o
+[247/395] Building CXX object CMakeFiles/doom3.dir/sys/linux/glimp.cpp.o
+[248/395] Building CXX object CMakeFiles/doom3.dir/sys/posix/posix_input.cpp.o
+[249/395] Building C object CMakeFiles/doom3.dir/sys/linux/libXNVCtrl/NVCtrl.c.o
+[250/395] Building CXX object CMakeFiles/doom3.dir/ui/Window.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/ui/Window.h:34,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/ui/Window.cpp:33:
 /home/runner/work/doom3.gpl/doom3.gpl/neo/ui/RegExp.h: In constructor ‘idWindow::idWindow(idUserInterfaceLocal*)’:
@@ -4622,8 +4864,8 @@ In member function ‘type idInterpolateAccelDecelLinear<type>::GetCurrentValue(
       |                 ~~~~~~~~~~~~~~~~~~^~~~~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[253/395] Building CXX object CMakeFiles/doom3.dir/sys/linux/input.cpp.o
-[254/395] Building CXX object CMakeFiles/doom3.dir/TypeInfo/TypeInfoGen.cpp.o
+[251/395] Building CXX object CMakeFiles/doom3.dir/sys/linux/input.cpp.o
+[252/395] Building CXX object CMakeFiles/doom3.dir/TypeInfo/TypeInfoGen.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/../idlib/Lib.h:171,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/../idlib/precompiled.h:113,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/TypeInfo/TypeInfoGen.cpp:28:
@@ -4918,28 +5160,28 @@ In member function ‘idStr& idStr::operator+=(const idStr&)’,
       |         ~~~~~~^~~~~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[255/395] Building CXX object CMakeFiles/doom3.dir/sys/linux/sound.cpp.o
-[256/395] Building CXX object CMakeFiles/doom3.dir/openal/stubs.cpp.o
-[257/395] Building CXX object CMakeFiles/doom3.dir/sys/linux/sound_alsa.cpp.o
-[258/395] Building CXX object CMakeFiles/doom3.dir/generated/gl_extensions.cpp.o
-[259/395] Building CXX object game/CMakeFiles/game.dir/anim/Anim_Import.cpp.o
-[260/395] Building CXX object CMakeFiles/doom3.dir/generated/glimp_dlopen.cpp.o
-[261/395] Building CXX object game/CMakeFiles/game.dir/anim/Anim_Testmodel.cpp.o
-[262/395] Building CXX object game/CMakeFiles/game.dir/gamesys/Class.cpp.o
-[263/395] Building CXX object CMakeFiles/doom3.dir/generated/glimp_logging.cpp.o
+[253/395] Building CXX object CMakeFiles/doom3.dir/sys/linux/sound.cpp.o
+[254/395] Building CXX object CMakeFiles/doom3.dir/sys/linux/sound_alsa.cpp.o
+[255/395] Building CXX object CMakeFiles/doom3.dir/openal/stubs.cpp.o
+[256/395] Building CXX object CMakeFiles/doom3.dir/generated/gl_extensions.cpp.o
+[257/395] Building CXX object game/CMakeFiles/game.dir/ai/AI_Vagary.cpp.o
+[258/395] Building CXX object CMakeFiles/doom3.dir/generated/glimp_dlopen.cpp.o
+[259/395] Building CXX object game/CMakeFiles/game.dir/anim/Anim.cpp.o
+[260/395] Building CXX object CMakeFiles/doom3.dir/generated/glimp_logging.cpp.o
+[261/395] Building CXX object game/CMakeFiles/game.dir/anim/Anim_Import.cpp.o
+[262/395] Building CXX object game/CMakeFiles/game.dir/anim/Anim_Testmodel.cpp.o
+[263/395] Building CXX object game/CMakeFiles/game.dir/gamesys/Class.cpp.o
 [264/395] Building CXX object game/CMakeFiles/game.dir/gamesys/DebugGraph.cpp.o
 [265/395] Building CXX object game/CMakeFiles/game.dir/anim/Anim_Blend.cpp.o
 [266/395] Building CXX object game/CMakeFiles/game.dir/gamesys/SaveGame.cpp.o
 [267/395] Building CXX object game/CMakeFiles/game.dir/gamesys/Event.cpp.o
-[268/395] Building CXX object game/CMakeFiles/game.dir/gamesys/TypeInfo.cpp.o
-[269/395] Building CXX object game/CMakeFiles/game.dir/gamesys/SysCmds.cpp.o
+[268/395] Building CXX object game/CMakeFiles/game.dir/gamesys/SysCmds.cpp.o
+[269/395] Building CXX object game/CMakeFiles/game.dir/gamesys/TypeInfo.cpp.o
 [270/395] Building CXX object game/CMakeFiles/game.dir/physics/Clip.cpp.o
 [271/395] Building CXX object game/CMakeFiles/game.dir/physics/Force.cpp.o
 [272/395] Building CXX object game/CMakeFiles/game.dir/physics/Force_Constant.cpp.o
 [273/395] Building CXX object game/CMakeFiles/game.dir/physics/Force_Drag.cpp.o
-[274/395] Building CXX object game/CMakeFiles/game.dir/gamesys/SysCvar.cpp.o
-[275/395] Building CXX object game/CMakeFiles/game.dir/physics/Force_Spring.cpp.o
-[276/395] Building CXX object game/CMakeFiles/game.dir/physics/Force_Field.cpp.o
+[274/395] Building CXX object game/CMakeFiles/game.dir/physics/Force_Field.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/Lib.h:178,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/precompiled.h:113,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Force_Field.cpp:29:
@@ -4999,21 +5241,22 @@ In member function ‘idVec3 idVec3::operator*(float) const’,
       |                       ^~~~~~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
+[275/395] Building CXX object game/CMakeFiles/game.dir/physics/Force_Spring.cpp.o
+[276/395] Building CXX object game/CMakeFiles/game.dir/gamesys/SysCvar.cpp.o
 [277/395] Building CXX object game/CMakeFiles/game.dir/physics/Physics.cpp.o
 [278/395] Building CXX object game/CMakeFiles/game.dir/physics/Physics_Actor.cpp.o
 [279/395] Building CXX object game/CMakeFiles/game.dir/physics/Physics_Base.cpp.o
 [280/395] Building CXX object game/CMakeFiles/game.dir/physics/Physics_Monster.cpp.o
-[281/395] Building CXX object game/CMakeFiles/game.dir/physics/Physics_Parametric.cpp.o
-[282/395] Building CXX object game/CMakeFiles/game.dir/physics/Physics_Player.cpp.o
+[281/395] Building CXX object game/CMakeFiles/game.dir/physics/Physics_Player.cpp.o
+[282/395] Building CXX object game/CMakeFiles/game.dir/physics/Physics_Parametric.cpp.o
 [283/395] Building CXX object game/CMakeFiles/game.dir/physics/Physics_RigidBody.cpp.o
 [284/395] Building CXX object game/CMakeFiles/game.dir/physics/Physics_Static.cpp.o
-[285/395] Building CXX object game/CMakeFiles/game.dir/physics/Push.cpp.o
-[286/395] Building CXX object game/CMakeFiles/game.dir/physics/Physics_StaticMulti.cpp.o
+[285/395] Building CXX object game/CMakeFiles/game.dir/physics/Physics_StaticMulti.cpp.o
+[286/395] Building CXX object game/CMakeFiles/game.dir/physics/Push.cpp.o
 [287/395] Building CXX object game/CMakeFiles/game.dir/script/Script_Compiler.cpp.o
 [288/395] Building CXX object game/CMakeFiles/game.dir/script/Script_Interpreter.cpp.o
 [289/395] Building CXX object game/CMakeFiles/game.dir/script/Script_Program.cpp.o
-[290/395] Building CXX object game/CMakeFiles/game.dir/script/Script_Thread.cpp.o
-[291/395] Building CXX object game/CMakeFiles/game.dir/physics/Physics_AF.cpp.o
+[290/395] Building CXX object game/CMakeFiles/game.dir/physics/Physics_AF.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/../idlib/Lib.h:179,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/../../idlib/precompiled.h:113,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/game/physics/Physics_AF.cpp:29:
@@ -5155,6 +5398,7 @@ In function ‘idMat3 SkewSymmetric(const idVec3&)’,
       |                    ^~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
+[291/395] Building CXX object game/CMakeFiles/game.dir/script/Script_Thread.cpp.o
 [292/395] Building CXX object game/CMakeFiles/game.dir/AF.cpp.o
 [293/395] Building CXX object game/CMakeFiles/game.dir/Actor.cpp.o
 [294/395] Building CXX object game/CMakeFiles/game.dir/BrittleFracture.cpp.o
@@ -5186,8 +5430,8 @@ cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have b
       |                ^~~~~~~~~~~~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[302/395] Building CXX object game/CMakeFiles/game.dir/Entity.cpp.o
-[303/395] Building CXX object game/CMakeFiles/game.dir/Item.cpp.o
+[302/395] Building CXX object game/CMakeFiles/game.dir/Item.cpp.o
+[303/395] Building CXX object game/CMakeFiles/game.dir/Entity.cpp.o
 [304/395] Building CXX object game/CMakeFiles/game.dir/Light.cpp.o
 [305/395] Building CXX object game/CMakeFiles/game.dir/Moveable.cpp.o
 [306/395] Building CXX object game/CMakeFiles/game.dir/Misc.cpp.o
@@ -5197,7 +5441,8 @@ cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have b
 [310/395] Building CXX object game/CMakeFiles/game.dir/PlayerView.cpp.o
 [311/395] Building CXX object game/CMakeFiles/game.dir/Pvs.cpp.o
 [312/395] Building CXX object game/CMakeFiles/game.dir/SecurityCamera.cpp.o
-[313/395] Building CXX object game/CMakeFiles/game.dir/SmokeParticles.cpp.o
+[313/395] Building CXX object game/CMakeFiles/game.dir/Projectile.cpp.o
+[314/395] Building CXX object game/CMakeFiles/game.dir/SmokeParticles.cpp.o
 /home/runner/work/doom3.gpl/doom3.gpl/neo/game/SmokeParticles.cpp: In member function ‘bool idSmokeParticles::EmitSmoke(const idDeclParticle*, int, float, const idVec3&, const idMat3&)’:
 /home/runner/work/doom3.gpl/doom3.gpl/neo/game/SmokeParticles.cpp:274:40: warning: ‘active’ may be used uninitialized [-Wmaybe-uninitialized]
   274 |                         active->smokes = newSmoke;
@@ -5207,13 +5452,12 @@ cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have b
       |                                          ^~~~~~
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[314/395] Building CXX object game/CMakeFiles/game.dir/Projectile.cpp.o
 [315/395] Building CXX object game/CMakeFiles/game.dir/Sound.cpp.o
 [316/395] Building CXX object game/CMakeFiles/game.dir/Trigger.cpp.o
-[317/395] Building CXX object game/CMakeFiles/game.dir/WorldSpawn.cpp.o
-[318/395] Building CXX object game/CMakeFiles/game.dir/Target.cpp.o
-[319/395] Building CXX object game/CMakeFiles/game.dir/Weapon.cpp.o
-[320/395] Building CXX object game/CMakeFiles/game.dir/Player.cpp.o
+[317/395] Building CXX object game/CMakeFiles/game.dir/Target.cpp.o
+[318/395] Building CXX object game/CMakeFiles/game.dir/WorldSpawn.cpp.o
+[319/395] Building CXX object game/CMakeFiles/game.dir/Player.cpp.o
+[320/395] Building CXX object game/CMakeFiles/game.dir/Weapon.cpp.o
 [321/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/ai/AAS.cpp.o
 [322/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/ai/AAS_debug.cpp.o
 [323/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/ai/AAS_pathing.cpp.o
@@ -5262,8 +5506,8 @@ In member function ‘idVec2 idVec2::operator*(float) const’,
 At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
 [327/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/ai/AI_events.cpp.o
-[328/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/anim/Anim.cpp.o
-[329/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/anim/Anim_Import.cpp.o
+[328/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/anim/Anim_Import.cpp.o
+[329/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/anim/Anim.cpp.o
 [330/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/ai/AI.cpp.o
 [331/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/gamesys/Class.cpp.o
 [332/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/anim/Anim_Testmodel.cpp.o
@@ -5339,260 +5583,10 @@ At global scope:
 cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
 [344/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/physics/Force_Grab.cpp.o
 [345/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/physics/Force_Spring.cpp.o
-[346/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/gamesys/SysCvar.cpp.o
-[347/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/physics/Physics.cpp.o
-[348/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/physics/Physics_Actor.cpp.o
+[346/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/physics/Physics.cpp.o
+[347/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/physics/Physics_Actor.cpp.o
+[348/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/gamesys/SysCvar.cpp.o
 [349/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/physics/Physics_Base.cpp.o
 [350/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/physics/Physics_Monster.cpp.o
-[351/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/physics/Physics_Parametric.cpp.o
-[352/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/physics/Physics_Player.cpp.o
-[353/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/physics/Physics_RigidBody.cpp.o
-[354/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/physics/Physics_Static.cpp.o
-[355/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/physics/Physics_StaticMulti.cpp.o
-[356/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/physics/Push.cpp.o
-[357/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/script/Script_Compiler.cpp.o
-[358/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/script/Script_Interpreter.cpp.o
-[359/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/script/Script_Program.cpp.o
-[360/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/script/Script_Thread.cpp.o
-[361/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/physics/Physics_AF.cpp.o
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/Lib.h:179,
-                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/precompiled.h:113,
-                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:29:
-In member function ‘int idMatX::GetNumRows() const’,
-    inlined from ‘void idAFTree::Factor() const’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:4516:22:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:1821:75: warning: ‘child’ may be used uninitialized [-Wmaybe-uninitialized]
- 1821 |         int                             GetNumRows( void ) const { return numRows; }                                    // get the number of rows
-      |                                                                           ^~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp: In member function ‘void idAFTree::Factor() const’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:4484:25: note: ‘child’ was declared here
- 4484 |         idAFConstraint *child;
-      |                         ^~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/Lib.h:178:
-In member function ‘idVec3& idVec3::operator=(const idVec3&)’,
-    inlined from ‘idMat3& idMat3::operator=(idMat3&&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:333:7,
-    inlined from ‘idRotation& idRotation::operator=(idRotation&&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Rotation.h:46:7,
-    inlined from ‘void idPhysics_AF::Evolve(float)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:5381:50:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:424:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[0].idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
-  424 |         x = a.x;
-      |             ~~^
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp: In member function ‘void idPhysics_AF::Evolve(float)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:5381:64: note: ‘<anonymous>’ declared here
- 5381 |                 rotation = idRotation( vec3_origin, vec, angle );
-      |                                                                ^
-In member function ‘idVec3& idVec3::operator=(const idVec3&)’,
-    inlined from ‘idMat3& idMat3::operator=(idMat3&&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:333:7,
-    inlined from ‘idRotation& idRotation::operator=(idRotation&&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Rotation.h:46:7,
-    inlined from ‘void idPhysics_AF::Evolve(float)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:5381:50:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:425:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[0].idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
-  425 |         y = a.y;
-      |             ~~^
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp: In member function ‘void idPhysics_AF::Evolve(float)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:5381:64: note: ‘<anonymous>’ declared here
- 5381 |                 rotation = idRotation( vec3_origin, vec, angle );
-      |                                                                ^
-In member function ‘idVec3& idVec3::operator=(const idVec3&)’,
-    inlined from ‘idMat3& idMat3::operator=(idMat3&&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:333:7,
-    inlined from ‘idRotation& idRotation::operator=(idRotation&&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Rotation.h:46:7,
-    inlined from ‘void idPhysics_AF::Evolve(float)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:5381:50:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:426:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[0].idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
-  426 |         z = a.z;
-      |             ~~^
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp: In member function ‘void idPhysics_AF::Evolve(float)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:5381:64: note: ‘<anonymous>’ declared here
- 5381 |                 rotation = idRotation( vec3_origin, vec, angle );
-      |                                                                ^
-In member function ‘idVec3& idVec3::operator=(const idVec3&)’,
-    inlined from ‘idMat3& idMat3::operator=(idMat3&&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:333:7,
-    inlined from ‘idRotation& idRotation::operator=(idRotation&&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Rotation.h:46:7,
-    inlined from ‘void idPhysics_AF::Evolve(float)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:5381:50:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:424:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[1].idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
-  424 |         x = a.x;
-      |             ~~^
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp: In member function ‘void idPhysics_AF::Evolve(float)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:5381:64: note: ‘<anonymous>’ declared here
- 5381 |                 rotation = idRotation( vec3_origin, vec, angle );
-      |                                                                ^
-In member function ‘idVec3& idVec3::operator=(const idVec3&)’,
-    inlined from ‘idMat3& idMat3::operator=(idMat3&&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:333:7,
-    inlined from ‘idRotation& idRotation::operator=(idRotation&&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Rotation.h:46:7,
-    inlined from ‘void idPhysics_AF::Evolve(float)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:5381:50:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:425:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[1].idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
-  425 |         y = a.y;
-      |             ~~^
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp: In member function ‘void idPhysics_AF::Evolve(float)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:5381:64: note: ‘<anonymous>’ declared here
- 5381 |                 rotation = idRotation( vec3_origin, vec, angle );
-      |                                                                ^
-In member function ‘idVec3& idVec3::operator=(const idVec3&)’,
-    inlined from ‘idMat3& idMat3::operator=(idMat3&&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:333:7,
-    inlined from ‘idRotation& idRotation::operator=(idRotation&&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Rotation.h:46:7,
-    inlined from ‘void idPhysics_AF::Evolve(float)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:5381:50:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:426:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[1].idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
-  426 |         z = a.z;
-      |             ~~^
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp: In member function ‘void idPhysics_AF::Evolve(float)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:5381:64: note: ‘<anonymous>’ declared here
- 5381 |                 rotation = idRotation( vec3_origin, vec, angle );
-      |                                                                ^
-In member function ‘idVec3& idVec3::operator=(const idVec3&)’,
-    inlined from ‘idMat3& idMat3::operator=(idMat3&&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:333:7,
-    inlined from ‘idRotation& idRotation::operator=(idRotation&&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Rotation.h:46:7,
-    inlined from ‘void idPhysics_AF::Evolve(float)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:5381:50:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:424:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[2].idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
-  424 |         x = a.x;
-      |             ~~^
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp: In member function ‘void idPhysics_AF::Evolve(float)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:5381:64: note: ‘<anonymous>’ declared here
- 5381 |                 rotation = idRotation( vec3_origin, vec, angle );
-      |                                                                ^
-In member function ‘idVec3& idVec3::operator=(const idVec3&)’,
-    inlined from ‘idMat3& idMat3::operator=(idMat3&&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:333:7,
-    inlined from ‘idRotation& idRotation::operator=(idRotation&&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Rotation.h:46:7,
-    inlined from ‘void idPhysics_AF::Evolve(float)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:5381:50:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:425:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[2].idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
-  425 |         y = a.y;
-      |             ~~^
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp: In member function ‘void idPhysics_AF::Evolve(float)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:5381:64: note: ‘<anonymous>’ declared here
- 5381 |                 rotation = idRotation( vec3_origin, vec, angle );
-      |                                                                ^
-In member function ‘idVec3& idVec3::operator=(const idVec3&)’,
-    inlined from ‘idMat3& idMat3::operator=(idMat3&&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:333:7,
-    inlined from ‘idRotation& idRotation::operator=(idRotation&&)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Rotation.h:46:7,
-    inlined from ‘void idPhysics_AF::Evolve(float)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:5381:50:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Vector.h:426:15: warning: ‘<unnamed>.idRotation::axis.idMat3::mat[2].idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
-  426 |         z = a.z;
-      |             ~~^
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp: In member function ‘void idPhysics_AF::Evolve(float)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:5381:64: note: ‘<anonymous>’ declared here
- 5381 |                 rotation = idRotation( vec3_origin, vec, angle );
-      |                                                                ^
-In function ‘idMat3 SkewSymmetric(const idVec3&)’,
-    inlined from ‘virtual void idAFConstraint_BallAndSocketJoint::Evaluate(float)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:644:40:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:742:92: warning: ‘a2.idVec3::x’ may be used uninitialized [-Wmaybe-uninitialized]
-  742 |         return idMat3( 0.0f, -src.z,  src.y, src.z,   0.0f, -src.x, -src.y,  src.x,   0.0f );
-      |                                                                                            ^
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp: In member function ‘virtual void idAFConstraint_BallAndSocketJoint::Evaluate(float)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:624:20: note: ‘a2.idVec3::x’ was declared here
-  624 |         idVec3 a1, a2;
-      |                    ^~
-In function ‘idMat3 SkewSymmetric(const idVec3&)’,
-    inlined from ‘virtual void idAFConstraint_BallAndSocketJoint::Evaluate(float)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:644:40:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:742:92: warning: ‘a2.idVec3::y’ may be used uninitialized [-Wmaybe-uninitialized]
-  742 |         return idMat3( 0.0f, -src.z,  src.y, src.z,   0.0f, -src.x, -src.y,  src.x,   0.0f );
-      |                                                                                            ^
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp: In member function ‘virtual void idAFConstraint_BallAndSocketJoint::Evaluate(float)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:624:20: note: ‘a2.idVec3::y’ was declared here
-  624 |         idVec3 a1, a2;
-      |                    ^~
-In function ‘idMat3 SkewSymmetric(const idVec3&)’,
-    inlined from ‘virtual void idAFConstraint_BallAndSocketJoint::Evaluate(float)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:644:40:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/../../idlib/../idlib/math/Matrix.h:742:92: warning: ‘a2.idVec3::z’ may be used uninitialized [-Wmaybe-uninitialized]
-  742 |         return idMat3( 0.0f, -src.z,  src.y, src.z,   0.0f, -src.x, -src.y,  src.x,   0.0f );
-      |                                                                                            ^
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp: In member function ‘virtual void idAFConstraint_BallAndSocketJoint::Evaluate(float)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/physics/Physics_AF.cpp:624:20: note: ‘a2.idVec3::z’ was declared here
-  624 |         idVec3 a1, a2;
-      |                    ^~
-At global scope:
-cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[362/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/AF.cpp.o
-[363/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Actor.cpp.o
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../d3xp/Game_local.h:773,
-                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:181,
-                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Actor.cpp:29:
-In destructor ‘SetTimeState::~SetTimeState()’,
-    inlined from ‘virtual void idActor::Damage(idEntity*, idEntity*, const idVec3&, const char*, float, int)’ at /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Actor.cpp:2276:1:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../d3xp/Entity.h:607:22: warning: ‘*(unsigned char*)((char*)&ts + offsetof(SetTimeState, SetTimeState::previousFast))’ may be used uninitialized [-Wmaybe-uninitialized]
-  607 |                 if ( previousFast ) {
-      |                      ^~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Actor.cpp: In member function ‘virtual void idActor::Damage(idEntity*, idEntity*, const idVec3&, const char*, float, int)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Actor.cpp:2217:22: note: ‘*(unsigned char*)((char*)&ts + offsetof(SetTimeState, SetTimeState::previousFast))’ was declared here
- 2217 |         SetTimeState ts( timeGroup );
-      |                      ^~
-At global scope:
-cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[364/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/BrittleFracture.cpp.o
-[365/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Camera.cpp.o
-[366/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Fx.cpp.o
-[367/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/AFEntity.cpp.o
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/AFEntity.cpp: In member function ‘void idHarvestable::Init(idEntity*)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/AFEntity.cpp:3227:9: warning: ‘head’ may be used uninitialized [-Wmaybe-uninitialized]
- 3227 |         if(head) {
-      |         ^~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/AFEntity.cpp:3218:19: note: ‘head’ was declared here
- 3218 |         idEntity* head;
-      |                   ^~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/AFEntity.cpp: In member function ‘void idHarvestable::BeginBurn()’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/AFEntity.cpp:3370:9: warning: ‘head’ may be used uninitialized [-Wmaybe-uninitialized]
- 3370 |         if(head) {
-      |         ^~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/AFEntity.cpp:3361:19: note: ‘head’ was declared here
- 3361 |         idEntity* head;
-      |                   ^~~~
-At global scope:
-cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[368/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/GameEdit.cpp.o
-[369/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Game_network.cpp.o
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Game_network.cpp: In member function ‘virtual gameReturn_t idGameLocal::ClientPrediction(int, const usercmd_t*, bool)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Game_network.cpp:1563:24: warning: ‘char* __builtin_strncpy(char*, const char*, unsigned int)’ specified bound 1024 equals destination size [-Wstringop-truncation]
- 1563 |                 strncpy( ret.sessionCommand, sessionCommand, sizeof( ret.sessionCommand ) );
-      |                        ^
-At global scope:
-cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[370/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Grabber.cpp.o
-[371/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Game_local.cpp.o
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Game_local.cpp: In member function ‘void idGameLocal::MapRestart()’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Game_local.cpp:4795:16: warning: ‘char* __builtin_strncpy(char*, const char*, unsigned int)’ specified bound 1024 equals destination size [-Wstringop-truncation]
- 4795 |         strncpy( buf, aux.c_str(), MAX_STRING_CHARS );
-      |                ^
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Game_local.cpp: In member function ‘virtual gameReturn_t idGameLocal::RunFrame(const usercmd_t*)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Game_local.cpp:2599:32: warning: ‘char* __builtin_strncpy(char*, const char*, unsigned int)’ specified bound 1024 equals destination size [-Wstringop-truncation]
- 2599 |                         strncpy( ret.sessionCommand, sessionCommand, sizeof( ret.sessionCommand ) );
-      |                                ^
-At global scope:
-cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[372/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/IK.cpp.o
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/IK.cpp: In member function ‘virtual void idIK_Walk::Evaluate()’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/IK.cpp:609:48: warning: ‘newPivotFoot’ may be used uninitialized [-Wmaybe-uninitialized]
-  609 |                 if ( newPivotFoot != pivotFoot || idMath::Fabs( idMath::AngleNormalize180( newPivotYaw - pivotYaw ) ) > 30.0f ) {
-      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/IK.cpp:564:16: note: ‘newPivotFoot’ was declared here
-  564 |         int i, newPivotFoot;
-      |                ^~~~~~~~~~~~
-At global scope:
-cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[373/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Entity.cpp.o
-[374/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Light.cpp.o
-[375/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Item.cpp.o
-[376/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Moveable.cpp.o
-[377/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Misc.cpp.o
-[378/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/PlayerIcon.cpp.o
-[379/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/MultiplayerGame.cpp.o
-[380/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Mover.cpp.o
-[381/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/PlayerView.cpp.o
-[382/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Pvs.cpp.o
-[383/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/SecurityCamera.cpp.o
-[384/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/SmokeParticles.cpp.o
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/SmokeParticles.cpp: In member function ‘bool idSmokeParticles::EmitSmoke(const idDeclParticle*, int, float, const idVec3&, const idMat3&, int)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/SmokeParticles.cpp:291:40: warning: ‘active’ may be used uninitialized [-Wmaybe-uninitialized]
-  291 |                         active->smokes = newSmoke;
-      |                         ~~~~~~~~~~~~~~~^~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/SmokeParticles.cpp:254:42: note: ‘active’ was declared here
-  254 |                 activeSmokeStage_t      *active;
-      |                                          ^~~~~~
-At global scope:
-cc1plus: note: unrecognized command-line option ‘-Wno-permissive’ may have been intended to silence earlier diagnostics
-[385/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Projectile.cpp.o
-[386/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Sound.cpp.o
-[387/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Trigger.cpp.o
-[388/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Target.cpp.o
-[389/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/WorldSpawn.cpp.o
-[390/395] Linking CXX shared library /home/runner/work/doom3.gpl/doom3.gpl/libgamex86-base.so
-[391/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Player.cpp.o
-[392/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/__/idlib/precompiled.cpp.o
-[393/395] Building CXX object d3xp/CMakeFiles/d3xp.dir/Weapon.cpp.o
-[394/395] Linking CXX shared library /home/runner/work/doom3.gpl/doom3.gpl/libgamex86-d3xp.so
-ninja: build stopped: cannot make progress due to previous errors.
 
 

@@ -1,7 +1,7 @@
-==== windows-latest-x86-debug (failure) ====
+==== windows-latest-x86-debug (cancelled) ====
 
 Filesystem      Size  Used Avail Use% Mounted on
-C:              150G  123G   28G  82% /c
+C:              150G  120G   31G  80% /c
 -- Building for: Visual Studio 18 2026
 -- The C compiler identification is MSVC 19.51.36260.0
 -- The CXX compiler identification is MSVC 19.51.36260.0
@@ -15,7 +15,7 @@ C:              150G  123G   28G  82% /c
 -- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/18/Enterprise/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x86/cl.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Configuring done (14.5s)
+-- Configuring done (41.5s)
 -- Generating done (0.1s)
 -- Build files have been written to: D:/a/doom3.gpl/doom3.gpl/build
 MSBuild version 18.11.1-1.26513.3+940033be3 for .NET Framework
@@ -240,602 +240,9 @@ CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game\Actor.cpp
   AI.cpp
   AI_events.cpp
   AI_pathing.cpp
-  AI_Vagary.cpp
-  Anim.cpp
-  Anim_Blend.cpp
-  Anim_Import.cpp
-  Anim_Testmodel.cpp
-  Class.cpp
-  DebugGraph.cpp
-  Event.cpp
-  SaveGame.cpp
-  SysCmds.cpp
-  SysCvar.cpp
-  TypeInfo.cpp
-  Clip.cpp
-  Generating Code...
-  Compiling...
-  Force.cpp
-  Force_Constant.cpp
-  Force_Drag.cpp
-  Force_Field.cpp
-  Force_Spring.cpp
-  Physics.cpp
-  Physics_Actor.cpp
-  Physics_AF.cpp
-  Physics_Base.cpp
-  Physics_Monster.cpp
-  Physics_Parametric.cpp
-  Physics_Player.cpp
-  Physics_RigidBody.cpp
-  Physics_Static.cpp
-  Physics_StaticMulti.cpp
-  Push.cpp
-  Script_Compiler.cpp
-  Script_Interpreter.cpp
-  Script_Program.cpp
-  Script_Thread.cpp
-  Generating Code...
-  Compiling...
-  Actor.cpp
-  AF.cpp
-  AFEntity.cpp
-  BrittleFracture.cpp
-  Camera.cpp
-  Entity.cpp
-  Fx.cpp
-  Game_local.cpp
-  Game_network.cpp
-  GameEdit.cpp
-  IK.cpp
-  Item.cpp
-  Light.cpp
-  Misc.cpp
-  Moveable.cpp
-  Mover.cpp
-  MultiplayerGame.cpp
-  Player.cpp
-  PlayerIcon.cpp
-  PlayerView.cpp
-  Generating Code...
-  Compiling...
-  Projectile.cpp
-  Pvs.cpp
-  SecurityCamera.cpp
-  SmokeParticles.cpp
-  Sound.cpp
-  Target.cpp
-  Trigger.cpp
-  Weapon.cpp
-  WorldSpawn.cpp
-  Generating Code...
-     Creating library D:/a/doom3.gpl/doom3.gpl/build/game/Debug/gamex86.lib and object D:/a/doom3.gpl/doom3.gpl/build/game/Debug/gamex86.exp
-  game.vcxproj -> D:\a\doom3.gpl\doom3.gpl\gamex86.dll
-  Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/third-party/curl/CMakeLists.txt
-  altsvc.c
-  amigaos.c
-  api.c
-  bufq.c
-  bufref.c
-  cf-h1-proxy.c
-  cf-h2-proxy.c
-  cf-haproxy.c
-  cf-https-connect.c
-  cf-ip-happy.c
-  cf-recvbuf.c
-  cf-setup.c
-  cf-socket.c
-  cfilters.c
-  conncache.c
-  connect.c
-  content_encoding.c
-  cookie.c
-  creds.c
-  cshutdn.c
-  Generating Code...
-  Compiling...
-  curl_addrinfo.c
-  curl_ed25519.c
-  curl_endian.c
-  curl_fnmatch.c
-  curl_fopen.c
-  curl_get_line.c
-  curl_gethostname.c
-  curl_gssapi.c
-  curl_memrchr.c
-  curl_ntlm_core.c
-  curl_range.c
-  curl_sasl.c
-  curl_sha512_256.c
-  curl_share.c
-  curl_sspi.c
-  curl_threads.c
-  curl_trc.c
-  cw-out.c
-  cw-pause.c
-  dict.c
-  Generating Code...
-  Compiling...
-  dllmain.c
-  dynhds.c
-  easy.c
-  easygetopt.c
-  easyoptions.c
-  escape.c
-  fake_addrinfo.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/altsvc.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/amigaos.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/api.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/bufq.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/bufref.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/cf-h1-proxy.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/cf-h2-proxy.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/cf-haproxy.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/cf-https-connect.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/cf-ip-happy.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/cf-recvbuf.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/cf-setup.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/cf-socket.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/cfilters.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/conncache.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/connect.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/content_encoding.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/cookie.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/creds.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/cshutdn.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/curl_addrinfo.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/curl_ed25519.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/curl_endian.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/curl_fnmatch.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/curl_fopen.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/curl_get_line.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/curl_gethostname.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/curl_gssapi.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/curl_memrchr.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/curl_ntlm_core.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/curl_range.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/curl_sasl.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/curl_sha512_256.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/curl_share.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/curl_sspi.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/curl_threads.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/curl_trc.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/cw-out.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/cw-pause.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/dict.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/dllmain.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/dynhds.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/easy.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/easygetopt.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/easyoptions.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/escape.c')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/fake_addrinfo.c')
-  
-  file.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/file.c')
-  
-  fileinfo.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/fileinfo.c')
-  
-  formdata.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/formdata.c')
-  
-  ftp.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/ftp.c')
-  
-  ftplistparser.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/ftplistparser.c')
-  
-  getenv.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/getenv.c')
-  
-  getinfo.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/getinfo.c')
-  
-  gopher.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/gopher.c')
-  
-  hash.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/hash.c')
-  
-  headers.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/headers.c')
-  
-  hmac.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/hmac.c')
-  
-  hsts.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/hsts.c')
-  
-  http.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/http.c')
-  
-  Generating Code...
-  Compiling...
-  http1.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/http1.c')
-  
-  http2.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/http2.c')
-  
-  http_aws_sigv4.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/http_aws_sigv4.c')
-  
-  http_chunks.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/http_chunks.c')
-  
-  http_digest.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/http_digest.c')
-  
-  http_httpsig.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/http_httpsig.c')
-  
-  http_negotiate.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/http_negotiate.c')
-  
-  http_ntlm.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/http_ntlm.c')
-  
-  http_proxy.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/http_proxy.c')
-  
-  idn.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/idn.c')
-  
-  if2ip.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/if2ip.c')
-  
-  imap.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/imap.c')
-  
-  ldap.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/ldap.c')
-  
-  llist.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/llist.c')
-  
-  macos.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/macos.c')
-  
-  md4.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/md4.c')
-  
-  md5.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/md5.c')
-  
-  memdebug.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/memdebug.c')
-  
-  mime.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/mime.c')
-  
-  mprintf.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/mprintf.c')
-  
-  Generating Code...
-  Compiling...
-  mqtt.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/mqtt.c')
-  
-  multi.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/multi.c')
-  
-  multi_ev.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/multi_ev.c')
-  
-  multi_ntfy.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/multi_ntfy.c')
-  
-  netrc.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/netrc.c')
-  
-  openldap.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/openldap.c')
-  
-  parsedate.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/parsedate.c')
-  
-  peer.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/peer.c')
-  
-  pingpong.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/pingpong.c')
-  
-  pop3.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/pop3.c')
-  
-  progress.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/progress.c')
-  
-  protocol.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/protocol.c')
-  
-  proxy.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/proxy.c')
-  
-  psl.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/psl.c')
-  
-  ptrarray.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/ptrarray.c')
-  
-  rand.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/rand.c')
-  
-  ratelimit.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/ratelimit.c')
-  
-  request.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/request.c')
-  
-  rtsp.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/rtsp.c')
-  
-  select.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/select.c')
-  
-  Generating Code...
-  Compiling...
-  sendf.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/sendf.c')
-  
-  setopt.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/setopt.c')
-  
-  sha256.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/sha256.c')
-  
-  slist.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/slist.c')
-  
-  smtp.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/smtp.c')
-  
-  socketpair.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/socketpair.c')
-  
-  socks.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/socks.c')
-  
-  socks_gssapi.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/socks_gssapi.c')
-  
-  socks_sspi.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/socks_sspi.c')
-  
-  splay.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/splay.c')
-  
-  strcase.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/strcase.c')
-  
-  strequal.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/strequal.c')
-  
-  strerror.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/strerror.c')
-  
-  telnet.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/telnet.c')
-  
-  tftp.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/tftp.c')
-  
-  thrdpool.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/thrdpool.c')
-  
-  thrdqueue.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/thrdqueue.c')
-  
-  transfer.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/transfer.c')
-  
-  u32_ptrset.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/u32_ptrset.c')
-  
-  u8_strset.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/u8_strset.c')
-  
-  Generating Code...
-  Compiling...
-  uint-bset.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/uint-bset.c')
-  
-  uint-spbset.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/uint-spbset.c')
-  
-  uint-table.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/uint-table.c')
-  
-  url.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/url.c')
-  
-  urlapi.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/urlapi.c')
-  
-  version.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/version.c')
-  
-  ws.c
-D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\config-win32.h(30,1): error C1189: #error:  This manual configuration requires MSVC 2010-2013 (IDE Project builds) [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
-  (compiling source file '../../../neo/third-party/curl/lib/ws.c')
-  
-  Generating Code...
 
 
-==== windows-latest-x86-release (cancelled) ====
+==== windows-latest-x86-release (failure) ====
 
 Filesystem      Size  Used Avail Use% Mounted on
 C:              150G  120G   31G  80% /c
@@ -852,7 +259,7 @@ C:              150G  120G   31G  80% /c
 -- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/18/Enterprise/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x86/cl.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Configuring done (13.7s)
+-- Configuring done (12.2s)
 -- Generating done (0.1s)
 -- Build files have been written to: D:/a/doom3.gpl/doom3.gpl/build
 MSBuild version 18.11.1-1.26513.3+940033be3 for .NET Framework
@@ -1128,5 +535,563 @@ CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game\Actor.cpp
   Item.cpp
   Light.cpp
   Misc.cpp
+  Moveable.cpp
+  Mover.cpp
+  MultiplayerGame.cpp
+  Player.cpp
+  PlayerIcon.cpp
+  PlayerView.cpp
+  Generating Code...
+  Compiling...
+  Projectile.cpp
+  Pvs.cpp
+  SecurityCamera.cpp
+  SmokeParticles.cpp
+  Sound.cpp
+  Target.cpp
+  Trigger.cpp
+  Weapon.cpp
+  WorldSpawn.cpp
+  Generating Code...
+     Creating library D:/a/doom3.gpl/doom3.gpl/build/game/Release/gamex86.lib and object D:/a/doom3.gpl/doom3.gpl/build/game/Release/gamex86.exp
+  game.vcxproj -> D:\a\doom3.gpl\doom3.gpl\gamex86.dll
+  Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/third-party/curl/CMakeLists.txt
+  altsvc.c
+  amigaos.c
+  api.c
+  bufq.c
+  bufref.c
+  cf-h1-proxy.c
+  cf-h2-proxy.c
+  cf-haproxy.c
+  cf-https-connect.c
+  cf-ip-happy.c
+  cf-recvbuf.c
+  cf-setup.c
+  cf-socket.c
+  cfilters.c
+  conncache.c
+  connect.c
+  content_encoding.c
+  cookie.c
+  creds.c
+  cshutdn.c
+  Generating Code...
+  Compiling...
+  curl_addrinfo.c
+  curl_ed25519.c
+  curl_endian.c
+  curl_fnmatch.c
+  curl_fopen.c
+  curl_get_line.c
+  curl_gethostname.c
+  curl_gssapi.c
+  curl_memrchr.c
+  curl_ntlm_core.c
+  curl_range.c
+  curl_sasl.c
+  curl_sha512_256.c
+  curl_share.c
+  curl_sspi.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\curl_share.c(71,9): warning C4273: 'curl_share_init': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(3109,21):
+      see previous definition of 'curl_share_init'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\curl_share.c(194,12): warning C4273: 'curl_share_setopt': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(3110,24):
+      see previous definition of 'curl_share_setopt'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\curl_share.c(359,12): warning C4273: 'curl_share_cleanup': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(3111,24):
+      see previous definition of 'curl_share_cleanup'
+  
+  curl_threads.c
+  curl_trc.c
+  cw-out.c
+  cw-pause.c
+  dict.c
+  Generating Code...
+  Compiling...
+  dllmain.c
+  dynhds.c
+  easy.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(233,10): warning C4273: 'curl_global_init': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2777,22):
+      see previous definition of 'curl_global_init'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(249,10): warning C4273: 'curl_global_init_mem': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2792,22):
+      see previous definition of 'curl_global_init_mem'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(289,6): warning C4273: 'curl_global_cleanup': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2807,18):
+      see previous definition of 'curl_global_cleanup'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(330,10): warning C4273: 'curl_global_trace': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2820,22):
+      see previous definition of 'curl_global_trace'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(350,12): warning C4273: 'curl_global_sslset': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2867,24):
+      see previous definition of 'curl_global_sslset'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(368,7): warning C4273: 'curl_easy_init': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\easy.h(41,19):
+      see previous definition of 'curl_easy_init'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(849,10): warning C4273: 'curl_easy_perform': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\easy.h(43,22):
+      see previous definition of 'curl_easy_perform'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(883,6): warning C4273: 'curl_easy_cleanup': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\easy.h(44,18):
+      see previous definition of 'curl_easy_cleanup'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(902,10): warning C4273: 'curl_easy_getinfo': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\easy.h(59,22):
+      see previous definition of 'curl_easy_getinfo'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(1002,7): warning C4273: 'curl_easy_duphandle': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\easy.h(73,19):
+      see previous definition of 'curl_easy_duphandle'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(1142,6): warning C4273: 'curl_easy_reset': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\easy.h(86,18):
+      see previous definition of 'curl_easy_reset'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(1194,10): warning C4273: 'curl_easy_pause': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(3282,22):
+      see previous definition of 'curl_easy_pause'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(1300,10): warning C4273: 'curl_easy_recv': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\easy.h(96,22):
+      see previous definition of 'curl_easy_recv'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(1371,10): warning C4273: 'curl_easy_send': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\easy.h(107,22):
+      see previous definition of 'curl_easy_send'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(1396,10): warning C4273: 'curl_easy_upkeep': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\easy.h(117,22):
+      see previous definition of 'curl_easy_upkeep'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(1409,10): warning C4273: 'curl_easy_ssls_import': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(3301,22):
+      see previous definition of 'curl_easy_ssls_import'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easy.c(1437,10): warning C4273: 'curl_easy_ssls_export': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(3332,22):
+      see previous definition of 'curl_easy_ssls_export'
+  
+  easygetopt.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easygetopt.c(53,31): warning C4273: 'curl_easy_option_by_name': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\options.h(59,1):
+      see previous definition of 'curl_easy_option_by_name'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easygetopt.c(59,31): warning C4273: 'curl_easy_option_by_id': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\options.h(62,1):
+      see previous definition of 'curl_easy_option_by_id'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\easygetopt.c(65,31): warning C4273: 'curl_easy_option_next': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\options.h(65,1):
+      see previous definition of 'curl_easy_option_next'
+  
+  easyoptions.c
+  escape.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\escape.c(36,7): warning C4273: 'curl_escape': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2733,19):
+      see previous definition of 'curl_escape'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\escape.c(42,7): warning C4273: 'curl_unescape': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2753,19):
+      see previous definition of 'curl_unescape'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\escape.c(156,7): warning C4273: 'curl_easy_escape': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2728,19):
+      see previous definition of 'curl_easy_escape'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\escape.c(312,7): warning C4273: 'curl_easy_unescape': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2747,19):
+      see previous definition of 'curl_easy_unescape'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\escape.c(339,6): warning C4273: 'curl_free': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2764,18):
+      see previous definition of 'curl_free'
+  
+  fake_addrinfo.c
+  file.c
+  fileinfo.c
+  formdata.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\formdata.c(615,14): warning C4273: 'curl_formadd': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2662,1):
+      see previous definition of 'curl_formadd'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\formdata.c(633,5): warning C4273: 'curl_formget': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2688,1):
+      see previous definition of 'curl_formget'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\formdata.c(671,6): warning C4273: 'curl_formfree': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2698,1):
+      see previous definition of 'curl_formfree'
+  
+  ftp.c
+  ftplistparser.c
+  getenv.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\getenv.c(26,7): warning C4273: 'curl_getenv': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2708,19):
+      see previous definition of 'curl_getenv'
+  
+  getinfo.c
+  gopher.c
+  hash.c
+  headers.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\headers.c(56,11): warning C4273: 'curl_easy_header': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\header.h(58,23):
+      see previous definition of 'curl_easy_header'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\headers.c(218,21): warning C4273: 'curl_easy_nextheader': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\header.h(65,33):
+      see previous definition of 'curl_easy_nextheader'
+  
+  hmac.c
+  hsts.c
+  http.c
+  Generating Code...
+  Compiling...
+  http1.c
+  http2.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\http2.c(3002,7): warning C4273: 'curl_pushheader_bynum': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\multi.h(511,19):
+      see previous definition of 'curl_pushheader_bynum'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\http2.c(3009,7): warning C4273: 'curl_pushheader_byname': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\multi.h(513,19):
+      see previous definition of 'curl_pushheader_byname'
+  
+  http_aws_sigv4.c
+  http_chunks.c
+  http_digest.c
+  http_httpsig.c
+  http_negotiate.c
+  http_ntlm.c
+  http_proxy.c
+  idn.c
+  if2ip.c
+  imap.c
+  ldap.c
+  llist.c
+  macos.c
+  md4.c
+  md5.c
+  memdebug.c
+  mime.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mime.c(1094,6): warning C4273: 'curl_mime_free': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2480,18):
+      see previous definition of 'curl_mime_free'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mime.c(1246,12): warning C4273: 'curl_mime_init': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2471,24):
+      see previous definition of 'curl_mime_init'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mime.c(1278,16): warning C4273: 'curl_mime_addpart': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2490,28):
+      see previous definition of 'curl_mime_addpart'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mime.c(1303,10): warning C4273: 'curl_mime_name': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2499,22):
+      see previous definition of 'curl_mime_name'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mime.c(1320,10): warning C4273: 'curl_mime_filename': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2508,22):
+      see previous definition of 'curl_mime_filename'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mime.c(1337,10): warning C4273: 'curl_mime_data': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2537,22):
+      see previous definition of 'curl_mime_data'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mime.c(1364,10): warning C4273: 'curl_mime_filedata': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2547,22):
+      see previous definition of 'curl_mime_filedata'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mime.c(1412,10): warning C4273: 'curl_mime_type': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2518,22):
+      see previous definition of 'curl_mime_type'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mime.c(1438,10): warning C4273: 'curl_mime_encoder': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2527,22):
+      see previous definition of 'curl_mime_encoder'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mime.c(1461,10): warning C4273: 'curl_mime_headers': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2580,22):
+      see previous definition of 'curl_mime_headers'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mime.c(1479,10): warning C4273: 'curl_mime_data_cb': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2557,22):
+      see previous definition of 'curl_mime_data_cb'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mime.c(1553,10): warning C4273: 'curl_mime_subparts': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2571,22):
+      see previous definition of 'curl_mime_subparts'
+  
+  mprintf.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mprintf.c(1247,5): warning C4273: 'curl_mvsnprintf': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\mprintf.h(71,17):
+      see previous definition of 'curl_mvsnprintf'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mprintf.c(1272,5): warning C4273: 'curl_msnprintf': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\mprintf.h(62,17):
+      see previous definition of 'curl_msnprintf'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mprintf.c(1395,7): warning C4273: 'curl_mvaprintf': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\mprintf.h(76,19):
+      see previous definition of 'curl_mvaprintf'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mprintf.c(1417,7): warning C4273: 'curl_maprintf': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\mprintf.h(74,19):
+      see previous definition of 'curl_maprintf'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mprintf.c(1444,5): warning C4273: 'curl_msprintf': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\mprintf.h(60,17):
+      see previous definition of 'curl_msprintf'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mprintf.c(1476,5): warning C4273: 'curl_mvfprintf': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\mprintf.h(67,17):
+      see previous definition of 'curl_mvfprintf'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mprintf.c(1488,5): warning C4273: 'curl_mfprintf': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\mprintf.h(58,17):
+      see previous definition of 'curl_mfprintf'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mprintf.c(1498,5): warning C4273: 'curl_mprintf': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\mprintf.h(56,17):
+      see previous definition of 'curl_mprintf'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mprintf.c(1508,5): warning C4273: 'curl_mvsprintf': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\mprintf.h(69,17):
+      see previous definition of 'curl_mvsprintf'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\mprintf.c(1515,5): warning C4273: 'curl_mvprintf': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\mprintf.h(65,17):
+      see previous definition of 'curl_mvprintf'
+  
+  Generating Code...
+  Compiling...
+  mqtt.c
+  multi.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(377,8): warning C4273: 'curl_multi_init': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\multi.h(126,20):
+      see previous definition of 'curl_multi_init'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(573,11): warning C4273: 'curl_multi_add_handle': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\multi.h(135,23):
+      see previous definition of 'curl_multi_add_handle'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(884,11): warning C4273: 'curl_multi_remove_handle': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\multi.h(145,23):
+      see previous definition of 'curl_multi_remove_handle'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(1240,11): warning C4273: 'curl_multi_fdset': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\multi.h(157,23):
+      see previous definition of 'curl_multi_fdset'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(1295,11): warning C4273: 'curl_multi_waitfds': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\multi.h(531,23):
+      see previous definition of 'curl_multi_waitfds'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(1644,11): warning C4273: 'curl_multi_wait': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\multi.h(171,23):
+      see previous definition of 'curl_multi_wait'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(1660,11): warning C4273: 'curl_multi_poll': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\multi.h(185,23):
+      see previous definition of 'curl_multi_poll'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(1676,11): warning C4273: 'curl_multi_wakeup': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\multi.h(198,23):
+      see previous definition of 'curl_multi_wakeup'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(2972,11): warning C4273: 'curl_multi_perform': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\multi.h(216,23):
+      see previous definition of 'curl_multi_perform'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(2984,11): warning C4273: 'curl_multi_cleanup': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\multi.h(229,23):
+      see previous definition of 'curl_multi_cleanup'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(3094,10): warning C4273: 'curl_multi_info_read': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\multi.h(259,22):
+      see previous definition of 'curl_multi_info_read'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(3330,11): warning C4273: 'curl_multi_setopt': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\multi.h(438,23):
+      see previous definition of 'curl_multi_setopt'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(3464,11): warning C4273: 'curl_multi_socket': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\multi.h(317,1):
+      see previous definition of 'curl_multi_socket'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(3476,11): warning C4273: 'curl_multi_socket_action': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\multi.h(319,23):
+      see previous definition of 'curl_multi_socket_action'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(3489,11): warning C4273: 'curl_multi_socket_all': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\multi.h(325,1):
+      see previous definition of 'curl_multi_socket_all'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(3562,11): warning C4273: 'curl_multi_timeout': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\multi.h(343,23):
+      see previous definition of 'curl_multi_timeout'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(3835,11): warning C4273: 'curl_multi_assign': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\multi.h(450,23):
+      see previous definition of 'curl_multi_assign'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(3916,8): warning C4273: 'curl_multi_get_handles': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\multi.h(463,20):
+      see previous definition of 'curl_multi_get_handles'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(3946,11): warning C4273: 'curl_multi_get_offt': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\multi.h(492,23):
+      see previous definition of 'curl_multi_get_offt'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(4214,11): warning C4273: 'curl_multi_notify_enable': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\multi.h(554,23):
+      see previous definition of 'curl_multi_notify_enable'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\multi.c(4226,11): warning C4273: 'curl_multi_notify_disable': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\multi.h(551,23):
+      see previous definition of 'curl_multi_notify_disable'
+  
+  multi_ev.c
+  multi_ntfy.c
+  netrc.c
+  openldap.c
+  parsedate.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\parsedate.c(718,8): warning C4273: 'curl_getdate': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2899,20):
+      see previous definition of 'curl_getdate'
+  
+  peer.c
+  pingpong.c
+  pop3.c
+  progress.c
+  protocol.c
+  proxy.c
+  psl.c
+  ptrarray.c
+  rand.c
+  ratelimit.c
+  request.c
+  rtsp.c
+  select.c
+  Generating Code...
+  Compiling...
+  sendf.c
+  setopt.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\setopt.c(2932,10): warning C4273: 'curl_easy_setopt': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\easy.h(42,22):
+      see previous definition of 'curl_easy_setopt'
+  
+  sha256.c
+  slist.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\slist.c(85,20): warning C4273: 'curl_slist_append': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2878,32):
+      see previous definition of 'curl_slist_append'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\slist.c(124,6): warning C4273: 'curl_slist_free_all': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2888,18):
+      see previous definition of 'curl_slist_free_all'
+  
+  smtp.c
+  socketpair.c
+  socks.c
+  socks_gssapi.c
+  socks_sspi.c
+  splay.c
+  strcase.c
+  strequal.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\strequal.c(76,5): warning C4273: 'curl_strequal': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2453,17):
+      see previous definition of 'curl_strequal'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\strequal.c(87,5): warning C4273: 'curl_strnequal': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2454,17):
+      see previous definition of 'curl_strnequal'
+  
+  strerror.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\strerror.c(34,13): warning C4273: 'curl_easy_strerror': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(3260,25):
+      see previous definition of 'curl_easy_strerror'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\strerror.c(326,13): warning C4273: 'curl_multi_strerror': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\multi.h(271,25):
+      see previous definition of 'curl_multi_strerror'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\strerror.c(385,13): warning C4273: 'curl_share_strerror': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(3271,25):
+      see previous definition of 'curl_share_strerror'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\strerror.c(420,13): warning C4273: 'curl_url_strerror': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\urlapi.h(150,25):
+      see previous definition of 'curl_url_strerror'
+  
+  telnet.c
+  tftp.c
+  thrdpool.c
+  thrdqueue.c
+  transfer.c
+  u32_ptrset.c
+  u8_strset.c
+  Generating Code...
+  Compiling...
+  uint-bset.c
+  uint-spbset.c
+  uint-table.c
+  url.c
+  urlapi.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\urlapi.c(1412,8): warning C4273: 'curl_url': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\urlapi.h(114,20):
+      see previous definition of 'curl_url'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\urlapi.c(1417,6): warning C4273: 'curl_url_cleanup': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\urlapi.h(121,18):
+      see previous definition of 'curl_url_cleanup'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\urlapi.c(1434,8): warning C4273: 'curl_url_dup': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\urlapi.h(127,20):
+      see previous definition of 'curl_url_dup'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\urlapi.c(1682,11): warning C4273: 'curl_url_get': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\urlapi.h(134,23):
+      see previous definition of 'curl_url_get'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\urlapi.c(2090,11): warning C4273: 'curl_url_set': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\urlapi.h(142,23):
+      see previous definition of 'curl_url_set'
+  
+  version.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\version.c(140,7): warning C4273: 'curl_version': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(2717,19):
+      see previous definition of 'curl_version'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\version.c(574,25): warning C4273: 'curl_version_info': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\curl.h(3249,37):
+      see previous definition of 'curl_version_info'
+  
+  ws.c
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\ws.c(1596,10): warning C4273: 'curl_ws_recv': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\websockets.h(55,22):
+      see previous definition of 'curl_ws_recv'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\ws.c(1855,10): warning C4273: 'curl_ws_send': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\websockets.h(70,22):
+      see previous definition of 'curl_ws_send'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\ws.c(1948,29): warning C4273: 'curl_ws_meta': inconsistent dll linkage [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\include\curl\websockets.h(92,41):
+      see previous definition of 'curl_ws_meta'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\third-party\curl\lib\ws.c(1963,22): error C2491: 'curl_ws_start_frame': definition of dllimport function not allowed [D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\curllib.vcxproj]
+  Generating Code...
 
 
