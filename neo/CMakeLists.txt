@@ -422,27 +422,17 @@ if( WIN32 )
 		sys/win32/win_syscon.cpp
 		sys/win32/win_wndproc.cpp
 		sys/win32/rc/CreateResourceIDs.cpp
-		sys/win32/rc/doom.rc
-		# BuildDefines.h turns ID_ALLOW_TOOLS on for the Win32 client, so the
-		# engine references the MFC tool entry points even though the MFC
-		# sources themselves stay excluded like in the original solution;
-		# upstream's portable stubs provide those symbols ( the SCons Linux
-		# list uses the same GEWindowWrapper stub )
-		tools/edit_stub.cpp
-		tools/guied/GEWindowWrapper_stub.cpp
-		# win_taskkeyhook.cpp needs MFC and is excluded in every configuration
-		# of the original solution, a no-op stub keeps win_notaskkeys linking
-		sys/win32/win_taskkeyhook_stub.cpp )
+		sys/win32/rc/doom.rc )
 else()
-	# sys sources from sys/scons/SConscript.core
+	# sys sources: the unified SDL platform replaces the main loop, threads,
+	# window and input code of the old posix and linux platform files
 	list( APPEND ENGINE_SOURCES
 		sys/sys_local.cpp
 		sys/posix/posix_net.cpp
-		sys/posix/posix_main.cpp
+		sys/sdl/sdl_main.cpp
 		sys/posix/posix_signal.cpp
-		sys/posix/posix_threads.cpp
+		sys/sdl/sdl_threads.cpp
 		sys/linux/stack.cpp
-		sys/linux/main.cpp
 		sys/stub/util_stub.cpp
 		tools/guied/GEWindowWrapper_stub.cpp
 		TypeInfo/TypeInfoGen.cpp )
@@ -450,9 +440,9 @@ else()
 		list( APPEND ENGINE_SOURCES sys/linux/dedicated.cpp )
 	else()
 		list( APPEND ENGINE_SOURCES
-			sys/linux/glimp.cpp
+			sys/sdl/sdl_glimp.cpp
+			sys/sdl/sdl_events.cpp
 			sys/posix/posix_input.cpp
-			sys/linux/input.cpp
 			sys/linux/libXNVCtrl/NVCtrl.c
 			sys/linux/sound.cpp
 			sys/linux/sound_alsa.cpp
@@ -544,7 +534,11 @@ else()
 		target_compile_definitions( doom3 PRIVATE GLIMP )
 	endif()
 	target_include_directories( doom3 PRIVATE sys/linux/oss/include )
-	target_link_libraries( doom3 PRIVATE pthread dl z )
+	# the unified SDL platform: the CI builds the vendored SDL3 release
+	# from source into a prefix handed over through CMAKE_PREFIX_PATH, on
+	# Windows the prebuilt third-party/sdl3 import library is used instead
+	find_package( SDL3 CONFIG REQUIRED )
+	target_link_libraries( doom3 PRIVATE pthread dl z SDL3::SDL3 )
 	if( NOT DEDICATED )
 		target_link_libraries( doom3 PRIVATE X11 Xext Xxf86vm )
 	endif()
