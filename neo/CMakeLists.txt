@@ -303,7 +303,7 @@ set( ENGINE_SOURCES
 	sound/OggVorbis/oggsrc/bitwise.c
 	sound/OggVorbis/oggsrc/framing.c
 	sound/OggVorbis/vorbissrc/analysis.c
-	// barkmel.c is a standalone bark scale test utility with its own main()
+	# barkmel.c is a standalone bark scale test utility with its own main(), not part of the engine
 	sound/OggVorbis/vorbissrc/bitrate.c
 	sound/OggVorbis/vorbissrc/block.c
 	sound/OggVorbis/vorbissrc/codebook.c
