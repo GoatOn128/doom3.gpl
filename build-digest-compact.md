@@ -1,10 +1,10 @@
 # Compact build digest
 
-commit: 4fa6a5ed2be9
+commit: d7840f2a1a36
 
 - ubuntu-latest-x86-debug: cancelled
 - ubuntu-latest-x86-release: failure
-- windows-latest-x86-debug: failure
+- windows-latest-x86-debug: cancelled
 - windows-latest-x86-release: failure
 
 ## ubuntu-latest-x86-debug
@@ -24,14 +24,13 @@ warnings: 0 in 0 kinds
 
 ## windows-latest-x86-debug
 
-status: failure
+status: cancelled
 
-errors: 1
+errors: 0
 warnings: 0 in 0 kinds
 
 ### errors
 
-CMake Error at CMakeLists.txt:427 (add_executable):
 
 ### failure context
 
