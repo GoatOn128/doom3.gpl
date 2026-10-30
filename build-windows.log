@@ -1,7 +1,7 @@
 ==== windows-latest-x86-debug (failure) ====
 
 Filesystem      Size  Used Avail Use% Mounted on
-C:              150G  120G   31G  80% /c
+C:              150G  123G   28G  82% /c
 -- Building for: Visual Studio 18 2026
 -- The C compiler identification is MSVC 19.51.36260.0
 -- The CXX compiler identification is MSVC 19.51.36260.0
@@ -15,38 +15,8 @@ C:              150G  120G   31G  80% /c
 -- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/18/Enterprise/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x86/cl.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Using CMake version 4.4.4
--- curl version=[8.23.0]
--- CMake platform flags: WIN32 MSVC-1951
--- Performing Test HAVE_WIN32_WINNT
--- Performing Test HAVE_WIN32_WINNT - Success
--- Found _WIN32_WINNT=0x0a00
--- Picky compiler options: -W4
--- Found Perl: C:/Program Files/Git/usr/bin/perl.exe (found version "5.42.3")
--- Check size of time_t
--- Check size of time_t - done
--- Protocols: http https ipfs ipns
--- Features: alt-svc AsynchDNS HSTS HTTPS-proxy IPv6 Kerberos Largefile SPNEGO SSL SSPI threadsafe UnixSockets
--- Enabled SSL backends: Schannel
--- 
-buildinfo.configure.tool: cmake
-buildinfo.configure.command: C:/Program Files/CMake/bin/cmake.exe
-buildinfo.configure.version: 4.4.4
-buildinfo.configure.args:
-buildinfo.configure.generator: Visual Studio 18 2026
-buildinfo.configure.make: C:/Program Files/Microsoft Visual Studio/18/Enterprise/MSBuild/Current/Bin/amd64/MSBuild.exe
-buildinfo.host.cpu: AMD64
-buildinfo.host.os: Windows
-buildinfo.target.cpu: AMD64
-buildinfo.target.os: Windows
-buildinfo.target.flags: WIN32 MSVC-1951
-buildinfo.compiler: MSVC
-buildinfo.compiler.version: 19.51.36260.0
-buildinfo.sysroot: 
-
--- Found Python3: C:/hostedtoolcache/windows/Python/3.15.1/x64/python3.exe (found version "3.15.1") found components: Interpreter
--- Configuring done (24.2s)
--- Generating done (0.2s)
+-- Configuring done (21.8s)
+-- Generating done (0.1s)
 -- Build files have been written to: D:/a/doom3.gpl/doom3.gpl/build
 MSBuild version 18.11.1-1.26513.3+940033be3 for .NET Framework
 
@@ -117,12 +87,231 @@ MSBuild version 18.11.1-1.26513.3+940033be3 for .NET Framework
   File.cpp
   FileSystem.cpp
   Unzip.cpp
-D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(480,53): error C2061: syntax error: identifier 'curl_off_t' [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3610,61): error C2061: syntax error: identifier 'curl_off_t' [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3615,21): error C2065: 'dltotal': undeclared identifier [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3616,19): error C2065: 'dlnow': undeclared identifier [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
   Generating Code...
-  Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/third-party/curl/lib/CMakeLists.txt
+  typeinfo.vcxproj -> D:\a\doom3.gpl\doom3.gpl\typeinfo.exe
+  Running typeinfo to generate d3xp GameTypeInfo.h
+  ------ Initializing File System ------
+  Current search path:
+  D:\a\doom3.gpl\doom3.gpl/base
+  game DLL: 0x0 in pak: 0x0
+  Addon pk4s:
+  file system initialized.
+  --------------------------------------
+CUSTOMBUILD : warning : idFileSystemLocal::StartBackgroundDownloadThread: failed [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+  Type Info Generator v1.0 (c) 2004 id Software
+  ../neo/d3xp
+  processing 'D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp\Actor.cpp' for type info...
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../idlib/Heap.h, line 174: unknown value 'blockSize' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../idlib/containers/StaticList.h, line 79: unknown value 'size' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../idlib/containers/VectorSet.h, line 64: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../idlib/containers/VectorSet.h, line 65: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../idlib/containers/VectorSet.h, line 188: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../idlib/containers/VectorSet.h, line 189: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../idlib/MapFile.h, line 117: multiple inheritance not supported for 'idMapPatch' [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../game/Game_local.h, line 116: unknown value 'idMath::BitsForInteger' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../game/Game_local.h, line 689: unknown value 'idMath::FtoiFast' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../game/Game_local.h, line 689: unknown value 'idMath::M_SEC2MS' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../game/Player.h, line 69: unknown value 'idMath::BitsForInteger' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp\Actor.cpp, line 30: #pragma directive not supported [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+  1124 constants
+  122 enums
+  509 classes/structs/unions
+  36 templates
+  6 max inheritance level for 'idPlayer'
+  writing D:\a\doom3.gpl\doom3.gpl\base\..\neo\game\gamesys\GameTypeInfo.h...
+  Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/d3xp/CMakeLists.txt
+C:\Program Files\Microsoft Visual Studio\18\Enterprise\MSBuild\Microsoft\VC\v180\Microsoft.CppCommon.targets(254,5): warning MSB8065: Custom build for item "D:\a\doom3.gpl\doom3.gpl\build\CMakeFiles\b3ce64a169b1f3c5a7a63879f4a76493\GameTypeInfo.h.rule" succeeded, but specified output "d:\a\doom3.gpl\doom3.gpl\neo\d3xp\gamesys\gametypeinfo.h" has not been created. This may cause incremental build to work incorrectly. [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+  AAS.cpp
+  AAS_debug.cpp
+  AAS_pathing.cpp
+  AAS_routing.cpp
+  AI.cpp
+  AI_events.cpp
+  AI_pathing.cpp
+  AI_Vagary.cpp
+  Anim.cpp
+  Anim_Blend.cpp
+  Anim_Import.cpp
+  Anim_Testmodel.cpp
+  Class.cpp
+  DebugGraph.cpp
+  Event.cpp
+  SaveGame.cpp
+  SysCmds.cpp
+  SysCvar.cpp
+  TypeInfo.cpp
+  Clip.cpp
+  Generating Code...
+  Compiling...
+  Force.cpp
+  Force_Constant.cpp
+  Force_Drag.cpp
+  Force_Field.cpp
+  Force_Grab.cpp
+  Force_Spring.cpp
+  Physics.cpp
+  Physics_Actor.cpp
+  Physics_AF.cpp
+  Physics_Base.cpp
+  Physics_Monster.cpp
+  Physics_Parametric.cpp
+  Physics_Player.cpp
+  Physics_RigidBody.cpp
+  Physics_Static.cpp
+  Physics_StaticMulti.cpp
+  Push.cpp
+  Script_Compiler.cpp
+  Script_Interpreter.cpp
+  Script_Program.cpp
+  Generating Code...
+  Compiling...
+  Script_Thread.cpp
+  Actor.cpp
+  AF.cpp
+  AFEntity.cpp
+  BrittleFracture.cpp
+  Camera.cpp
+  Entity.cpp
+  Fx.cpp
+  Game_local.cpp
+  Game_network.cpp
+  GameEdit.cpp
+  Grabber.cpp
+  IK.cpp
+  Item.cpp
+  Light.cpp
+  Misc.cpp
+  Moveable.cpp
+  Mover.cpp
+  MultiplayerGame.cpp
+  Player.cpp
+  Generating Code...
+  Compiling...
+  PlayerIcon.cpp
+  PlayerView.cpp
+  Projectile.cpp
+  Pvs.cpp
+  SecurityCamera.cpp
+  SmokeParticles.cpp
+  Sound.cpp
+  Target.cpp
+  Trigger.cpp
+  Weapon.cpp
+  WorldSpawn.cpp
+  precompiled.cpp
+  Generating Code...
+     Creating library D:/a/doom3.gpl/doom3.gpl/build/d3xp/Debug/gamex86.lib and object D:/a/doom3.gpl/doom3.gpl/build/d3xp/Debug/gamex86.exp
+  d3xp.vcxproj -> D:\a\doom3.gpl\doom3.gpl\gamex86.dll
+  Running typeinfo to generate GameTypeInfo.h
+  ------ Initializing File System ------
+  Current search path:
+  D:\a\doom3.gpl\doom3.gpl/base
+  game DLL: 0x0 in pak: 0x0
+  Addon pk4s:
+  file system initialized.
+  --------------------------------------
+CUSTOMBUILD : warning : idFileSystemLocal::StartBackgroundDownloadThread: failed [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+  Type Info Generator v1.0 (c) 2004 id Software
+  ../neo/game
+  processing 'D:\a\doom3.gpl\doom3.gpl\base\..\neo\game\Actor.cpp' for type info...
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../idlib/Heap.h, line 174: unknown value 'blockSize' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../idlib/containers/StaticList.h, line 79: unknown value 'size' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../idlib/containers/VectorSet.h, line 64: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../idlib/containers/VectorSet.h, line 65: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../idlib/containers/VectorSet.h, line 188: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../idlib/containers/VectorSet.h, line 189: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../idlib/MapFile.h, line 117: multiple inheritance not supported for 'idMapPatch' [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../game/Game_local.h, line 116: unknown value 'idMath::BitsForInteger' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../game/Game_local.h, line 689: unknown value 'idMath::FtoiFast' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../game/Game_local.h, line 689: unknown value 'idMath::M_SEC2MS' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../game/Player.h, line 69: unknown value 'idMath::BitsForInteger' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game\Actor.cpp, line 30: #pragma directive not supported [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+  1124 constants
+  122 enums
+  509 classes/structs/unions
+  36 templates
+  6 max inheritance level for 'idPlayer'
+  writing D:\a\doom3.gpl\doom3.gpl\base\..\neo\game\gamesys\GameTypeInfo.h...
+  Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/game/CMakeLists.txt
+  AAS.cpp
+  AAS_debug.cpp
+  AAS_pathing.cpp
+  AAS_routing.cpp
+  AI.cpp
+  AI_events.cpp
+  AI_pathing.cpp
+  AI_Vagary.cpp
+  Anim.cpp
+  Anim_Blend.cpp
+  Anim_Import.cpp
+  Anim_Testmodel.cpp
+  Class.cpp
+  DebugGraph.cpp
+  Event.cpp
+  SaveGame.cpp
+  SysCmds.cpp
+  SysCvar.cpp
+  TypeInfo.cpp
+  Clip.cpp
+  Generating Code...
+  Compiling...
+  Force.cpp
+  Force_Constant.cpp
+  Force_Drag.cpp
+  Force_Field.cpp
+  Force_Spring.cpp
+  Physics.cpp
+  Physics_Actor.cpp
+  Physics_AF.cpp
+  Physics_Base.cpp
+  Physics_Monster.cpp
+  Physics_Parametric.cpp
+  Physics_Player.cpp
+  Physics_RigidBody.cpp
+  Physics_Static.cpp
+  Physics_StaticMulti.cpp
+  Push.cpp
+  Script_Compiler.cpp
+  Script_Interpreter.cpp
+  Script_Program.cpp
+  Script_Thread.cpp
+  Generating Code...
+  Compiling...
+  Actor.cpp
+  AF.cpp
+  AFEntity.cpp
+  BrittleFracture.cpp
+  Camera.cpp
+  Entity.cpp
+  Fx.cpp
+  Game_local.cpp
+  Game_network.cpp
+  GameEdit.cpp
+  IK.cpp
+  Item.cpp
+  Light.cpp
+  Misc.cpp
+  Moveable.cpp
+  Mover.cpp
+  MultiplayerGame.cpp
+  Player.cpp
+  PlayerIcon.cpp
+  PlayerView.cpp
+  Generating Code...
+  Compiling...
+  Projectile.cpp
+  Pvs.cpp
+  SecurityCamera.cpp
+  SmokeParticles.cpp
+  Sound.cpp
+  Target.cpp
+  Trigger.cpp
+  Weapon.cpp
+  WorldSpawn.cpp
+  Generating Code...
+     Creating library D:/a/doom3.gpl/doom3.gpl/build/game/Debug/gamex86.lib and object D:/a/doom3.gpl/doom3.gpl/build/game/Debug/gamex86.exp
+  game.vcxproj -> D:\a\doom3.gpl\doom3.gpl\gamex86.dll
+  Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/third-party/curl/CMakeLists.txt
   altsvc.c
   amigaos.c
   api.c
@@ -143,7 +332,10 @@ D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3616,19): error C2065: 'dl
   cookie.c
   creds.c
   cshutdn.c
+  Generating Code...
+  Compiling...
   curl_addrinfo.c
+  curl_ed25519.c
   curl_endian.c
   curl_fnmatch.c
   curl_fopen.c
@@ -162,6 +354,9 @@ D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3616,19): error C2065: 'dl
   cw-out.c
   cw-pause.c
   dict.c
+  Generating Code...
+  Compiling...
+  dllmain.c
   dynhds.c
   easy.c
   easygetopt.c
@@ -181,13 +376,14 @@ D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3616,19): error C2065: 'dl
   hmac.c
   hsts.c
   http.c
+  Generating Code...
+  Compiling...
   http1.c
   http2.c
   http_aws_sigv4.c
-  http_httpsig.c
-  curl_ed25519.c
   http_chunks.c
   http_digest.c
+  http_httpsig.c
   http_negotiate.c
   http_ntlm.c
   http_proxy.c
@@ -202,6 +398,8 @@ D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3616,19): error C2065: 'dl
   memdebug.c
   mime.c
   mprintf.c
+  Generating Code...
+  Compiling...
   mqtt.c
   multi.c
   multi_ev.c
@@ -222,6 +420,8 @@ D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3616,19): error C2065: 'dl
   request.c
   rtsp.c
   select.c
+  Generating Code...
+  Compiling...
   sendf.c
   setopt.c
   sha256.c
@@ -240,8 +440,10 @@ D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3616,19): error C2065: 'dl
   thrdpool.c
   thrdqueue.c
   transfer.c
-  u8_strset.c
   u32_ptrset.c
+  u8_strset.c
+  Generating Code...
+  Compiling...
   uint-bset.c
   uint-spbset.c
   uint-table.c
@@ -249,79 +451,198 @@ D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3616,19): error C2065: 'dl
   urlapi.c
   version.c
   ws.c
-  cleartext.c
-  cram.c
-  digest.c
-  digest_sspi.c
-  gsasl.c
-  krb5_gssapi.c
-  krb5_sspi.c
-  ntlm.c
-  ntlm_sspi.c
-  oauth2.c
-  spnego_gssapi.c
-  spnego_sspi.c
-  vauth.c
-  asyn-ares.c
-  asyn-base.c
-  asyn-thrdd.c
-  cf-dns.c
-  dnscache.c
-  doh.c
-  hostip.c
-  hostip4.c
-  hostip6.c
-  httpsrr.c
-  apple.c
-  cipher_suite.c
-  gtls.c
-  hostcheck.c
-  keylog.c
-  mbedtls.c
-  openssl.c
-  rustls.c
-  schannel.c
-  schannel_verify.c
-  vtls.c
-  vtls_config.c
-  vtls_scache.c
-  vtls_spack.c
-  wolfssl.c
-  x509asn1.c
-  capsule.c
-  cf-capsule.c
-  cf-ngtcp2.c
-  cf-ngtcp2-cmn.c
-  cf-ngtcp2-proxy.c
-  cf-quiche.c
-  vquic.c
-  vquic-tls.c
-  libssh.c
-  libssh2.c
-  vssh.c
-  base64.c
-  basename.c
-  dynbuf.c
-  win32-fopen.c
-  inet_ntop.c
-  inet_pton.c
-  multibyte.c
-  nonblock.c
-  snprintf.c
-  strcopy.c
-  strdup.c
-  strerr.c
-  strparse.c
-  timediff.c
-  timeval.c
-  version_win32.c
-  wait.c
-  warnless.c
-  winapi.c
-  libcurl_object.vcxproj -> D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\lib\libcurl_object.dir\Debug\libcurl_object.lib
+  Generating Code...
+  curllib.vcxproj -> D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\Debug\curllib.lib
+  Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/CMakeLists.txt
+  CollisionModel_contacts.cpp
+  CollisionModel_contents.cpp
+  CollisionModel_debug.cpp
+  CollisionModel_files.cpp
+  CollisionModel_load.cpp
+  CollisionModel_rotate.cpp
+  CollisionModel_trace.cpp
+  CollisionModel_translate.cpp
+  CmdSystem.cpp
+  Common.cpp
+  Compressor.cpp
+  Console.cpp
+  CVarSystem.cpp
+  DeclAF.cpp
+  DeclEntityDef.cpp
+  DeclFX.cpp
+  DeclManager.cpp
+  DeclParticle.cpp
+  DeclPDA.cpp
+  DeclSkin.cpp
+  Generating Code...
+  Compiling...
+  DeclTable.cpp
+  DemoFile.cpp
+  EditField.cpp
+  EventLoop.cpp
+  File.cpp
+  FileSystem.cpp
+  KeyInput.cpp
+  Session.cpp
+  Session_menu.cpp
+  Unzip.cpp
+  UsercmdGen.cpp
+  AsyncClient.cpp
+  AsyncNetwork.cpp
+  AsyncServer.cpp
+  MsgChannel.cpp
+  NetworkSystem.cpp
+  ServerScan.cpp
+  cg_explicit.cpp
+  Cinematic.cpp
+  draw_arb.cpp
+  Generating Code...
+  Compiling...
+  draw_arb2.cpp
+  draw_common.cpp
+  draw_nv10.cpp
+  draw_nv20.cpp
+  draw_r200.cpp
+  GuiModel.cpp
+  Image_files.cpp
+  Image_init.cpp
+  Image_load.cpp
+  Image_process.cpp
+  Image_program.cpp
+  Interaction.cpp
+  Material.cpp
+  MegaTexture.cpp
+  Model.cpp
+  Model_ase.cpp
+  Model_beam.cpp
+  Model_liquid.cpp
+  Model_lwo.cpp
+  Model_ma.cpp
+  Generating Code...
+  Compiling...
+  Model_md3.cpp
+  Model_md5.cpp
+  Model_prt.cpp
+  Model_sprite.cpp
+  ModelDecal.cpp
+  ModelManager.cpp
+  ModelOverlay.cpp
+  RenderEntity.cpp
+  RenderSystem.cpp
+  RenderSystem_init.cpp
+  RenderWorld.cpp
+  RenderWorld_demo.cpp
+  RenderWorld_load.cpp
+  RenderWorld_portals.cpp
+  tr_backend.cpp
+  tr_deform.cpp
+  tr_font.cpp
+  tr_guisurf.cpp
+  tr_light.cpp
+  tr_lightrun.cpp
+  Generating Code...
+  Compiling...
+  tr_main.cpp
+  tr_orderIndexes.cpp
+  tr_polytope.cpp
+  tr_render.cpp
+  tr_rendertools.cpp
+  tr_shadowbounds.cpp
+  tr_stencilshadow.cpp
+  tr_subview.cpp
+  tr_trace.cpp
+  tr_trisurf.cpp
+  tr_turboshadow.cpp
+  VertexCache.cpp
+  snd_cache.cpp
+  snd_decoder.cpp
+  snd_efxfile.cpp
+  snd_emitter.cpp
+  snd_shader.cpp
+  snd_system.cpp
+  snd_wavefile.cpp
+  snd_world.cpp
+  Generating Code...
+  Compiling...
+  AASBuild.cpp
+  AASBuild_file.cpp
+  AASBuild_gravity.cpp
+  AASBuild_ledge.cpp
+  AASBuild_merge.cpp
+  AASCluster.cpp
+  AASFile.cpp
+  AASFile_optimize.cpp
+  AASFile_sample.cpp
+  AASFileManager.cpp
+  AASReach.cpp
+  Brush.cpp
+  BrushBSP.cpp
+  dmap.cpp
+  facebsp.cpp
+  gldraw.cpp
+  glfile.cpp
+  leakfile.cpp
+  map.cpp
+  optimize.cpp
+  Generating Code...
+  Compiling...
+  optimize_gcc.cpp
+  output.cpp
+  portals.cpp
+  shadowopt3.cpp
+  tritjunction.cpp
+  tritools.cpp
+  ubrush.cpp
+  usurface.cpp
+  renderbump.cpp
+  codec.cpp
+  NSBitmapImageRep.cpp
+D:\a\doom3.gpl\doom3.gpl\neo\tools\compilers\roqvq\codec.cpp(327,20): error C2065: 'INFINITY': undeclared identifier [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
+D:\a\doom3.gpl\doom3.gpl\neo\tools\compilers\roqvq\codec.cpp(1516,21): error C2065: 'INFINITY': undeclared identifier [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
+D:\a\doom3.gpl\doom3.gpl\neo\tools\compilers\roqvq\codec.cpp(1582,15): error C2065: 'INFINITY': undeclared identifier [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
+D:\a\doom3.gpl\doom3.gpl\neo\tools\compilers\roqvq\codec.cpp(1597,16): error C2065: 'INFINITY': undeclared identifier [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
+  roq.cpp
+  roqParam.cpp
+  BindWindow.cpp
+  ChoiceWindow.cpp
+  DeviceContext.cpp
+  EditWindow.cpp
+  FieldWindow.cpp
+  GameBearShootWindow.cpp
+  GameBustOutWindow.cpp
+  Generating Code...
+  Compiling...
+  GameSSDWindow.cpp
+  GuiScript.cpp
+  ListGUI.cpp
+  ListWindow.cpp
+  MarkerWindow.cpp
+  RegExp.cpp
+  RenderWindow.cpp
+  SimpleWindow.cpp
+  SliderWindow.cpp
+  UserInterface.cpp
+  Window.cpp
+  Winvar.cpp
+  sys_local.cpp
+  win_cpu.cpp
+  win_glimp.cpp
+  win_input.cpp
+  win_main.cpp
+  win_net.cpp
+  win_qgl.cpp
+  win_shared.cpp
+  Generating Code...
+  Compiling...
+  win_snd.cpp
+  win_syscon.cpp
+  win_wndproc.cpp
+  eaxguid.cpp
+  CreateResourceIDs.cpp
+  Generating Code...
 
 
-==== windows-latest-x86-release (failure) ====
+==== windows-latest-x86-release (cancelled) ====
 
 Filesystem      Size  Used Avail Use% Mounted on
 C:              150G  120G   31G  80% /c
@@ -338,38 +659,8 @@ C:              150G  120G   31G  80% /c
 -- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/18/Enterprise/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x86/cl.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Using CMake version 4.4.4
--- curl version=[8.23.0]
--- CMake platform flags: WIN32 MSVC-1951
--- Performing Test HAVE_WIN32_WINNT
--- Performing Test HAVE_WIN32_WINNT - Success
--- Found _WIN32_WINNT=0x0a00
--- Picky compiler options: -W4
--- Found Perl: C:/Program Files/Git/usr/bin/perl.exe (found version "5.42.3")
--- Check size of time_t
--- Check size of time_t - done
--- Protocols: http https ipfs ipns
--- Features: alt-svc AsynchDNS HSTS HTTPS-proxy IPv6 Kerberos Largefile SPNEGO SSL SSPI threadsafe UnixSockets
--- Enabled SSL backends: Schannel
--- 
-buildinfo.configure.tool: cmake
-buildinfo.configure.command: C:/Program Files/CMake/bin/cmake.exe
-buildinfo.configure.version: 4.4.4
-buildinfo.configure.args:
-buildinfo.configure.generator: Visual Studio 18 2026
-buildinfo.configure.make: C:/Program Files/Microsoft Visual Studio/18/Enterprise/MSBuild/Current/Bin/amd64/MSBuild.exe
-buildinfo.host.cpu: AMD64
-buildinfo.host.os: Windows
-buildinfo.target.cpu: AMD64
-buildinfo.target.os: Windows
-buildinfo.target.flags: WIN32 MSVC-1951
-buildinfo.compiler: MSVC
-buildinfo.compiler.version: 19.51.36260.0
-buildinfo.sysroot: 
-
--- Found Python3: C:/hostedtoolcache/windows/Python/3.15.1/x64/python3.exe (found version "3.15.1") found components: Interpreter
--- Configuring done (35.0s)
--- Generating done (0.2s)
+-- Configuring done (12.5s)
+-- Generating done (0.1s)
 -- Build files have been written to: D:/a/doom3.gpl/doom3.gpl/build
 MSBuild version 18.11.1-1.26513.3+940033be3 for .NET Framework
 
@@ -440,12 +731,231 @@ MSBuild version 18.11.1-1.26513.3+940033be3 for .NET Framework
   File.cpp
   FileSystem.cpp
   Unzip.cpp
-D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(480,53): error C2061: syntax error: identifier 'curl_off_t' [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3610,61): error C2061: syntax error: identifier 'curl_off_t' [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3615,21): error C2065: 'dltotal': undeclared identifier [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3616,19): error C2065: 'dlnow': undeclared identifier [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
   Generating Code...
-  Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/third-party/curl/lib/CMakeLists.txt
+  typeinfo.vcxproj -> D:\a\doom3.gpl\doom3.gpl\typeinfo.exe
+  Running typeinfo to generate d3xp GameTypeInfo.h
+  ------ Initializing File System ------
+  Current search path:
+  D:\a\doom3.gpl\doom3.gpl/base
+  game DLL: 0x0 in pak: 0x0
+  Addon pk4s:
+  file system initialized.
+  --------------------------------------
+CUSTOMBUILD : warning : idFileSystemLocal::StartBackgroundDownloadThread: failed [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+  Type Info Generator v1.0 (c) 2004 id Software
+  ../neo/d3xp
+  processing 'D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp\Actor.cpp' for type info...
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../idlib/Heap.h, line 174: unknown value 'blockSize' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../idlib/containers/StaticList.h, line 79: unknown value 'size' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../idlib/containers/VectorSet.h, line 64: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../idlib/containers/VectorSet.h, line 65: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../idlib/containers/VectorSet.h, line 188: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../idlib/containers/VectorSet.h, line 189: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../idlib/MapFile.h, line 117: multiple inheritance not supported for 'idMapPatch' [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../game/Game_local.h, line 116: unknown value 'idMath::BitsForInteger' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../game/Game_local.h, line 689: unknown value 'idMath::FtoiFast' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../game/Game_local.h, line 689: unknown value 'idMath::M_SEC2MS' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../game/Player.h, line 69: unknown value 'idMath::BitsForInteger' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp\Actor.cpp, line 30: #pragma directive not supported [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+  1124 constants
+  122 enums
+  509 classes/structs/unions
+  36 templates
+  6 max inheritance level for 'idPlayer'
+  writing D:\a\doom3.gpl\doom3.gpl\base\..\neo\game\gamesys\GameTypeInfo.h...
+  Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/d3xp/CMakeLists.txt
+C:\Program Files\Microsoft Visual Studio\18\Enterprise\MSBuild\Microsoft\VC\v180\Microsoft.CppCommon.targets(254,5): warning MSB8065: Custom build for item "D:\a\doom3.gpl\doom3.gpl\build\CMakeFiles\b3ce64a169b1f3c5a7a63879f4a76493\GameTypeInfo.h.rule" succeeded, but specified output "d:\a\doom3.gpl\doom3.gpl\neo\d3xp\gamesys\gametypeinfo.h" has not been created. This may cause incremental build to work incorrectly. [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+  AAS.cpp
+  AAS_debug.cpp
+  AAS_pathing.cpp
+  AAS_routing.cpp
+  AI.cpp
+  AI_events.cpp
+  AI_pathing.cpp
+  AI_Vagary.cpp
+  Anim.cpp
+  Anim_Blend.cpp
+  Anim_Import.cpp
+  Anim_Testmodel.cpp
+  Class.cpp
+  DebugGraph.cpp
+  Event.cpp
+  SaveGame.cpp
+  SysCmds.cpp
+  SysCvar.cpp
+  TypeInfo.cpp
+  Clip.cpp
+  Generating Code...
+  Compiling...
+  Force.cpp
+  Force_Constant.cpp
+  Force_Drag.cpp
+  Force_Field.cpp
+  Force_Grab.cpp
+  Force_Spring.cpp
+  Physics.cpp
+  Physics_Actor.cpp
+  Physics_AF.cpp
+  Physics_Base.cpp
+  Physics_Monster.cpp
+  Physics_Parametric.cpp
+  Physics_Player.cpp
+  Physics_RigidBody.cpp
+  Physics_Static.cpp
+  Physics_StaticMulti.cpp
+  Push.cpp
+  Script_Compiler.cpp
+  Script_Interpreter.cpp
+  Script_Program.cpp
+  Generating Code...
+  Compiling...
+  Script_Thread.cpp
+  Actor.cpp
+  AF.cpp
+  AFEntity.cpp
+  BrittleFracture.cpp
+  Camera.cpp
+  Entity.cpp
+  Fx.cpp
+  Game_local.cpp
+  Game_network.cpp
+  GameEdit.cpp
+  Grabber.cpp
+  IK.cpp
+  Item.cpp
+  Light.cpp
+  Misc.cpp
+  Moveable.cpp
+  Mover.cpp
+  MultiplayerGame.cpp
+  Player.cpp
+  Generating Code...
+  Compiling...
+  PlayerIcon.cpp
+  PlayerView.cpp
+  Projectile.cpp
+  Pvs.cpp
+  SecurityCamera.cpp
+  SmokeParticles.cpp
+  Sound.cpp
+  Target.cpp
+  Trigger.cpp
+  Weapon.cpp
+  WorldSpawn.cpp
+  precompiled.cpp
+  Generating Code...
+     Creating library D:/a/doom3.gpl/doom3.gpl/build/d3xp/Release/gamex86.lib and object D:/a/doom3.gpl/doom3.gpl/build/d3xp/Release/gamex86.exp
+  d3xp.vcxproj -> D:\a\doom3.gpl\doom3.gpl\gamex86.dll
+  Running typeinfo to generate GameTypeInfo.h
+  ------ Initializing File System ------
+  Current search path:
+  D:\a\doom3.gpl\doom3.gpl/base
+  game DLL: 0x0 in pak: 0x0
+  Addon pk4s:
+  file system initialized.
+  --------------------------------------
+CUSTOMBUILD : warning : idFileSystemLocal::StartBackgroundDownloadThread: failed [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+  Type Info Generator v1.0 (c) 2004 id Software
+  ../neo/game
+  processing 'D:\a\doom3.gpl\doom3.gpl\base\..\neo\game\Actor.cpp' for type info...
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../idlib/Heap.h, line 174: unknown value 'blockSize' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../idlib/containers/StaticList.h, line 79: unknown value 'size' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../idlib/containers/VectorSet.h, line 64: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../idlib/containers/VectorSet.h, line 65: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../idlib/containers/VectorSet.h, line 188: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../idlib/containers/VectorSet.h, line 189: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../idlib/MapFile.h, line 117: multiple inheritance not supported for 'idMapPatch' [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../game/Game_local.h, line 116: unknown value 'idMath::BitsForInteger' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../game/Game_local.h, line 689: unknown value 'idMath::FtoiFast' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../game/Game_local.h, line 689: unknown value 'idMath::M_SEC2MS' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../game/Player.h, line 69: unknown value 'idMath::BitsForInteger' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game\Actor.cpp, line 30: #pragma directive not supported [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+  1124 constants
+  122 enums
+  509 classes/structs/unions
+  36 templates
+  6 max inheritance level for 'idPlayer'
+  writing D:\a\doom3.gpl\doom3.gpl\base\..\neo\game\gamesys\GameTypeInfo.h...
+  Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/game/CMakeLists.txt
+  AAS.cpp
+  AAS_debug.cpp
+  AAS_pathing.cpp
+  AAS_routing.cpp
+  AI.cpp
+  AI_events.cpp
+  AI_pathing.cpp
+  AI_Vagary.cpp
+  Anim.cpp
+  Anim_Blend.cpp
+  Anim_Import.cpp
+  Anim_Testmodel.cpp
+  Class.cpp
+  DebugGraph.cpp
+  Event.cpp
+  SaveGame.cpp
+  SysCmds.cpp
+  SysCvar.cpp
+  TypeInfo.cpp
+  Clip.cpp
+  Generating Code...
+  Compiling...
+  Force.cpp
+  Force_Constant.cpp
+  Force_Drag.cpp
+  Force_Field.cpp
+  Force_Spring.cpp
+  Physics.cpp
+  Physics_Actor.cpp
+  Physics_AF.cpp
+  Physics_Base.cpp
+  Physics_Monster.cpp
+  Physics_Parametric.cpp
+  Physics_Player.cpp
+  Physics_RigidBody.cpp
+  Physics_Static.cpp
+  Physics_StaticMulti.cpp
+  Push.cpp
+  Script_Compiler.cpp
+  Script_Interpreter.cpp
+  Script_Program.cpp
+  Script_Thread.cpp
+  Generating Code...
+  Compiling...
+  Actor.cpp
+  AF.cpp
+  AFEntity.cpp
+  BrittleFracture.cpp
+  Camera.cpp
+  Entity.cpp
+  Fx.cpp
+  Game_local.cpp
+  Game_network.cpp
+  GameEdit.cpp
+  IK.cpp
+  Item.cpp
+  Light.cpp
+  Misc.cpp
+  Moveable.cpp
+  Mover.cpp
+  MultiplayerGame.cpp
+  Player.cpp
+  PlayerIcon.cpp
+  PlayerView.cpp
+  Generating Code...
+  Compiling...
+  Projectile.cpp
+  Pvs.cpp
+  SecurityCamera.cpp
+  SmokeParticles.cpp
+  Sound.cpp
+  Target.cpp
+  Trigger.cpp
+  Weapon.cpp
+  WorldSpawn.cpp
+  Generating Code...
+     Creating library D:/a/doom3.gpl/doom3.gpl/build/game/Release/gamex86.lib and object D:/a/doom3.gpl/doom3.gpl/build/game/Release/gamex86.exp
+  game.vcxproj -> D:\a\doom3.gpl\doom3.gpl\gamex86.dll
+  Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/third-party/curl/CMakeLists.txt
   altsvc.c
   amigaos.c
   api.c
@@ -466,7 +976,10 @@ D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3616,19): error C2065: 'dl
   cookie.c
   creds.c
   cshutdn.c
+  Generating Code...
+  Compiling...
   curl_addrinfo.c
+  curl_ed25519.c
   curl_endian.c
   curl_fnmatch.c
   curl_fopen.c
@@ -485,6 +998,9 @@ D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3616,19): error C2065: 'dl
   cw-out.c
   cw-pause.c
   dict.c
+  Generating Code...
+  Compiling...
+  dllmain.c
   dynhds.c
   easy.c
   easygetopt.c
@@ -504,13 +1020,14 @@ D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3616,19): error C2065: 'dl
   hmac.c
   hsts.c
   http.c
+  Generating Code...
+  Compiling...
   http1.c
   http2.c
   http_aws_sigv4.c
-  http_httpsig.c
-  curl_ed25519.c
   http_chunks.c
   http_digest.c
+  http_httpsig.c
   http_negotiate.c
   http_ntlm.c
   http_proxy.c
@@ -525,6 +1042,8 @@ D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3616,19): error C2065: 'dl
   memdebug.c
   mime.c
   mprintf.c
+  Generating Code...
+  Compiling...
   mqtt.c
   multi.c
   multi_ev.c
@@ -545,6 +1064,8 @@ D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3616,19): error C2065: 'dl
   request.c
   rtsp.c
   select.c
+  Generating Code...
+  Compiling...
   sendf.c
   setopt.c
   sha256.c
@@ -563,8 +1084,10 @@ D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3616,19): error C2065: 'dl
   thrdpool.c
   thrdqueue.c
   transfer.c
-  u8_strset.c
   u32_ptrset.c
+  u8_strset.c
+  Generating Code...
+  Compiling...
   uint-bset.c
   uint-spbset.c
   uint-table.c
@@ -572,75 +1095,127 @@ D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3616,19): error C2065: 'dl
   urlapi.c
   version.c
   ws.c
-  cleartext.c
-  cram.c
-  digest.c
-  digest_sspi.c
-  gsasl.c
-  krb5_gssapi.c
-  krb5_sspi.c
-  ntlm.c
-  ntlm_sspi.c
-  oauth2.c
-  spnego_gssapi.c
-  spnego_sspi.c
-  vauth.c
-  asyn-ares.c
-  asyn-base.c
-  asyn-thrdd.c
-  cf-dns.c
-  dnscache.c
-  doh.c
-  hostip.c
-  hostip4.c
-  hostip6.c
-  httpsrr.c
-  apple.c
-  cipher_suite.c
-  gtls.c
-  hostcheck.c
-  keylog.c
-  mbedtls.c
-  openssl.c
-  rustls.c
-  schannel.c
-  schannel_verify.c
-  vtls.c
-  vtls_config.c
-  vtls_scache.c
-  vtls_spack.c
-  wolfssl.c
-  x509asn1.c
-  capsule.c
-  cf-capsule.c
-  cf-ngtcp2.c
-  cf-ngtcp2-cmn.c
-  cf-ngtcp2-proxy.c
-  cf-quiche.c
-  vquic.c
-  vquic-tls.c
-  libssh.c
-  libssh2.c
-  vssh.c
-  base64.c
-  basename.c
-  dynbuf.c
-  win32-fopen.c
-  inet_ntop.c
-  inet_pton.c
-  multibyte.c
-  nonblock.c
-  snprintf.c
-  strcopy.c
-  strdup.c
-  strerr.c
-  strparse.c
-  timediff.c
-  timeval.c
-  version_win32.c
-  wait.c
-  warnless.c
-  winapi.c
-  libcurl_object.vcxproj -> D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\lib\libcurl_object.dir\Release\libcurl_object.lib
+  Generating Code...
+  curllib.vcxproj -> D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\Release\curllib.lib
+  Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/CMakeLists.txt
+  CollisionModel_contacts.cpp
+  CollisionModel_contents.cpp
+  CollisionModel_debug.cpp
+  CollisionModel_files.cpp
+  CollisionModel_load.cpp
+  CollisionModel_rotate.cpp
+  CollisionModel_trace.cpp
+  CollisionModel_translate.cpp
+  CmdSystem.cpp
+  Common.cpp
+  Compressor.cpp
+  Console.cpp
+  CVarSystem.cpp
+  DeclAF.cpp
+  DeclEntityDef.cpp
+  DeclFX.cpp
+  DeclManager.cpp
+  DeclParticle.cpp
+  DeclPDA.cpp
+  DeclSkin.cpp
+  Generating Code...
+  Compiling...
+  DeclTable.cpp
+  DemoFile.cpp
+  EditField.cpp
+  EventLoop.cpp
+  File.cpp
+  FileSystem.cpp
+  KeyInput.cpp
+  Session.cpp
+  Session_menu.cpp
+  Unzip.cpp
+  UsercmdGen.cpp
+  AsyncClient.cpp
+  AsyncNetwork.cpp
+  AsyncServer.cpp
+  MsgChannel.cpp
+  NetworkSystem.cpp
+  ServerScan.cpp
+  cg_explicit.cpp
+  Cinematic.cpp
+  draw_arb.cpp
+  Generating Code...
+  Compiling...
+  draw_arb2.cpp
+  draw_common.cpp
+  draw_nv10.cpp
+  draw_nv20.cpp
+  draw_r200.cpp
+  GuiModel.cpp
+  Image_files.cpp
+  Image_init.cpp
+  Image_load.cpp
+  Image_process.cpp
+  Image_program.cpp
+  Interaction.cpp
+  Material.cpp
+  MegaTexture.cpp
+  Model.cpp
+  Model_ase.cpp
+  Model_beam.cpp
+  Model_liquid.cpp
+  Model_lwo.cpp
+  Model_ma.cpp
+  Generating Code...
+  Compiling...
+  Model_md3.cpp
+  Model_md5.cpp
+  Model_prt.cpp
+  Model_sprite.cpp
+  ModelDecal.cpp
+  ModelManager.cpp
+  ModelOverlay.cpp
+  RenderEntity.cpp
+  RenderSystem.cpp
+  RenderSystem_init.cpp
+  RenderWorld.cpp
+  RenderWorld_demo.cpp
+  RenderWorld_load.cpp
+  RenderWorld_portals.cpp
+  tr_backend.cpp
+  tr_deform.cpp
+  tr_font.cpp
+  tr_guisurf.cpp
+  tr_light.cpp
+  tr_lightrun.cpp
+  Generating Code...
+  Compiling...
+  tr_main.cpp
+  tr_orderIndexes.cpp
+  tr_polytope.cpp
+  tr_render.cpp
+  tr_rendertools.cpp
+  tr_shadowbounds.cpp
+  tr_stencilshadow.cpp
+  tr_subview.cpp
+  tr_trace.cpp
+  tr_trisurf.cpp
+  tr_turboshadow.cpp
+  VertexCache.cpp
+  snd_cache.cpp
+  snd_decoder.cpp
+  snd_efxfile.cpp
+  snd_emitter.cpp
+  snd_shader.cpp
+  snd_system.cpp
+  snd_wavefile.cpp
+  snd_world.cpp
+  Generating Code...
+  Compiling...
+  AASBuild.cpp
+  AASBuild_file.cpp
+  AASBuild_gravity.cpp
+  AASBuild_ledge.cpp
+  AASBuild_merge.cpp
+  AASCluster.cpp
+  AASFile.cpp
+  AASFile_optimize.cpp
+  AASFile_sample.cpp
 
 

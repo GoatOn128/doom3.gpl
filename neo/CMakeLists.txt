@@ -16,55 +16,14 @@ option( WITH_INLINES "Enable inline debugging ( Debug with inlines / Dedicated D
 option( WITH_MEMORY_LOG "Log every memory allocation ( Debug with inlines and memory log )" OFF )
 option( MAYA_IMPORT "Build the MayaImport plugin ( requires the Maya SDK folders in the tree, like the original solution it is off by default )" OFF )
 
-# The curl 8.23 tree under third-party/curl builds with its own upstream
-# CMake files, as a small HTTP only static library. The old curllib project
-# built the ancient 7.9 tree, which is gone.
-option( ID_ENABLE_CURL "Enable curl based http downloads ( ID_ENABLE_CURL )" ON )
-if( ID_ENABLE_CURL )
-	# no curl tool, no examples and no tests, only the static library, and
-	# only the http protocol the download code actually uses
-	set( BUILD_CURL_EXE OFF CACHE BOOL "" FORCE )
-	set( BUILD_EXAMPLES OFF CACHE BOOL "" FORCE )
-	set( BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE )
-	set( BUILD_STATIC_LIBS ON CACHE BOOL "" FORCE )
-	set( BUILD_TESTING OFF CACHE BOOL "" FORCE )
-	set( BUILD_LIBCURL_DOCS OFF CACHE BOOL "" FORCE )
-	set( BUILD_MISC_DOCS OFF CACHE BOOL "" FORCE )
-	set( ENABLE_CURL_MANUAL OFF CACHE BOOL "" FORCE )
-	set( CURL_DISABLE_INSTALL ON CACHE BOOL "" FORCE )
-	set( CURL_DISABLE_FTP ON CACHE BOOL "" FORCE )
-	set( CURL_DISABLE_FILE ON CACHE BOOL "" FORCE )
-	set( CURL_DISABLE_TELNET ON CACHE BOOL "" FORCE )
-	set( CURL_DISABLE_TFTP ON CACHE BOOL "" FORCE )
-	set( CURL_DISABLE_LDAP ON CACHE BOOL "" FORCE )
-	set( CURL_DISABLE_DICT ON CACHE BOOL "" FORCE )
-	set( CURL_DISABLE_GOPHER ON CACHE BOOL "" FORCE )
-	set( CURL_DISABLE_POP3 ON CACHE BOOL "" FORCE )
-	set( CURL_DISABLE_IMAP ON CACHE BOOL "" FORCE )
-	set( CURL_DISABLE_SMTP ON CACHE BOOL "" FORCE )
-	set( CURL_DISABLE_RTSP ON CACHE BOOL "" FORCE )
-	set( CURL_DISABLE_MQTT ON CACHE BOOL "" FORCE )
-	set( CURL_DISABLE_WEBSOCKETS ON CACHE BOOL "" FORCE )
-	# third-party code, its warnings stay out of the build digest
-	set( PICKY_COMPILER OFF CACHE BOOL "" FORCE )
-	set( CURL_ZLIB OFF CACHE BOOL "" FORCE )
-	set( CURL_USE_GSSAPI OFF CACHE BOOL "" FORCE )
-	set( USE_LIBIDN2 OFF CACHE BOOL "" FORCE )
-	set( CURL_USE_LIBPSL OFF CACHE BOOL "" FORCE )
-	set( CURL_USE_LIBSSH2 OFF CACHE BOOL "" FORCE )
-	set( CURL_BROTLI OFF CACHE BOOL "" FORCE )
-	set( CURL_ZSTD OFF CACHE BOOL "" FORCE )
-	set( USE_NGHTTP2 OFF CACHE BOOL "" FORCE )
-	if( WIN32 )
-		# schannel gives https on Windows without any extra dependency
-		set( CURL_USE_SCHANNEL ON CACHE BOOL "" FORCE )
-	else()
-		# https through OpenSSL, the i386 libraries for the -m32 build
-		set( CURL_USE_OPENSSL ON CACHE BOOL "" FORCE )
-		set( OPENSSL_SSL_LIBRARY /usr/lib/i386-linux-gnu/libssl.so CACHE FILEPATH "" FORCE )
-		set( OPENSSL_CRYPTO_LIBRARY /usr/lib/i386-linux-gnu/libcrypto.so CACHE FILEPATH "" FORCE )
-		set( OPENSSL_INCLUDE_DIR /usr/include CACHE PATH "" FORCE )
-	endif()
+# The Windows build links the bundled curl the same way the curllib project
+# did. On Linux the original build ran curl's configure script ( see
+# sys/scons/SConscript.curl ), which is not reproduced here, so downloads are
+# compiled out instead ( the same as SCons NOCURL=1 / ID_ENABLE_CURL=0 ).
+option( ID_ENABLE_CURL "Enable curl based http/ftp downloads ( ID_ENABLE_CURL )" ON )
+if( NOT WIN32 AND ID_ENABLE_CURL )
+	message( STATUS "curl: the bundled curl needs its configure run, disabling for this platform ( NOCURL=1 behavior )" )
+	set( ID_ENABLE_CURL OFF )
 endif()
 
 # ---------------------------------------------------------------------------
@@ -89,8 +48,6 @@ add_library( doom_base INTERFACE )
 # the original builds had the neo root on the include path ( SCons '#',
 # generated GL code and some headers include from there )
 target_include_directories( doom_base INTERFACE ${CMAKE_CURRENT_SOURCE_DIR} )
-# OpenAL headers for <AL/al.h> and friends
-target_include_directories( doom_base INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/third-party/openal-soft/include )
 target_compile_definitions( doom_base INTERFACE ${DOOM_CONFIG_DEFINES} )
 if( MSVC )
 	target_compile_definitions( doom_base INTERFACE
@@ -102,8 +59,8 @@ if( MSVC )
 	# _Release.props turns the stack buffer check off, keep that behavior
 	target_compile_options( doom_base INTERFACE "$<$<CONFIG:Release>:/GS->" )
 	# warning kinds the VS2010 toolchain this port reproduces either did not
-	# have ( C4456 C4458 C5205 ) or had disabled in the original .props
-	target_compile_options( doom_base INTERFACE /wd4456 /wd4458 /wd4740 /wd4750 /wd5205 )
+	# have ( C4456 C4458 C4644 C4838 C5205 ) or had disabled in the original .props
+	target_compile_options( doom_base INTERFACE /wd4456 /wd4458 /wd4644 /wd4740 /wd4750 /wd4838 /wd5205 )
 else()
 	target_compile_options( doom_base INTERFACE
 		-pipe
@@ -112,43 +69,45 @@ else()
 		-fmessage-length=0
 		-fpermissive
 		-fno-strict-aliasing
-		# the 2004 code was written against gcc 3.x, these warning kinds did
-		# not exist back then and only flag era idioms ( memcpy into idlib
-		# types, string literals to char *, ~idList<type>() destructors ),
-		# they are disabled to keep the build at zero warnings
-		-Wno-class-memaccess
-		-Wno-write-strings
-		-Wno-template-id-cdtor
-		-Wno-overloaded-virtual
-		-Wno-c++20-compat
-		-Wno-format
-		-Wno-switch
-		-Wno-sign-compare
-		-Wno-register
-		-Wno-unused-but-set-variable
-		-Wno-unused-variable
-		-Wno-unused-function
-		-Wno-unused-value
-		-Wno-conversion-null
-		-Wno-misleading-indentation
-		-Wno-dangling-else
-		-Wno-parentheses
-		-Wno-delete-non-virtual-dtor
-		-Wno-char-subscripts
-		-Wno-pointer-arith
-		-Wno-enum-compare
+		# warning kinds the SCons-era GCC builds did not act on; the sources
+		# are untouched 2011-era code so the kinds are turned off wholesale.
+		# the C++-only kinds are wrapped so they stay off the C sources
 		-Wno-address
+		-Wno-array-bounds
+		-Wno-char-subscripts
+		"$<$<COMPILE_LANGUAGE:CXX>:-Wno-class-memaccess>"
+		"$<$<COMPILE_LANGUAGE:CXX>:-Wno-c++20-compat>"
+		"$<$<COMPILE_LANGUAGE:CXX>:-Wno-conversion-null>"
+		-Wno-dangling-else
+		"$<$<COMPILE_LANGUAGE:CXX>:-Wno-delete-non-virtual-dtor>"
+		-Wno-enum-compare
+		-Wno-format
+		-Wno-misleading-indentation
+		-Wno-maybe-uninitialized
 		-Wno-nonnull-compare
-		-Wno-sizeof-pointer-memaccess
-		-Wno-mismatched-new-delete
+		"$<$<COMPILE_LANGUAGE:CXX>:-Wno-overloaded-virtual>"
+		-Wno-parentheses
+		-Wno-permissive
+		-Wno-pointer-arith
+		"$<$<COMPILE_LANGUAGE:CXX>:-Wno-register>"
 		-Wno-sequence-point
-		-Wno-narrowing )
+		-Wno-shift-count-overflow
+		-Wno-sign-compare
+		-Wno-sizeof-pointer-memaccess
+		-Wno-stringop-truncation
+		-Wno-switch
+		"$<$<COMPILE_LANGUAGE:CXX>:-Wno-template-id-cdtor>"
+		-Wno-unused-but-set-variable
+		-Wno-unused-function
+		-Wno-unused-result
+		-Wno-unused-value
+		-Wno-unused-variable
+		-Wno-write-strings )
 endif()
 
-# products are placed under bin/, the game dlls into bin/base and
-# bin/d3xp
-set( REPO_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/.. )
-set( DOOM3_OUTPUT_DIR ${REPO_ROOT}/bin )
+# products are placed in the repository root, the game dlls into the
+# base/ and d3xp/ folders next to them
+set( DOOM3_OUTPUT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/.. )
 
 # multi-config generators append the config name to the output directory,
 # pin every config to the same folder so products stay flat
@@ -174,12 +133,6 @@ endif()
 add_subdirectory( idlib )
 if( ID_ENABLE_CURL )
 	add_subdirectory( third-party/curl )
-	# third-party code, its warnings stay out of the build digest
-	if( MSVC )
-		target_compile_options( libcurl_static PRIVATE /W0 )
-	else()
-		target_compile_options( libcurl_static PRIVATE -w )
-	endif()
 endif()
 add_subdirectory( TypeInfo )
 add_subdirectory( game )
@@ -213,9 +166,9 @@ if( NOT WIN32 AND NOT DEDICATED )
 	add_custom_command(
 		OUTPUT ${GLIMP_GEN_DIR}/glimp_logfuncs.cpp
 		COMMAND ${CMAKE_COMMAND} -E make_directory ${GLIMP_GEN_DIR}
-		COMMAND ${PYTHON_EXECUTABLE} ${REPO_ROOT}/tools/gen_logfuncs.py ${CMAKE_CURRENT_SOURCE_DIR}/sys/gllog ${GLIMP_GEN_DIR}/glimp_logfuncs.cpp
+		COMMAND ${PYTHON_EXECUTABLE} ${DOOM3_OUTPUT_DIR}/tools/gen_logfuncs.py ${CMAKE_CURRENT_SOURCE_DIR}/sys/gllog ${GLIMP_GEN_DIR}/glimp_logfuncs.cpp
 		DEPENDS sys/gllog/logfunc.py sys/gllog/read.py sys/gllog/gl.api sys/gllog/glX.api sys/gllog/wgl.api
-			${REPO_ROOT}/tools/gen_logfuncs.py
+			${DOOM3_OUTPUT_DIR}/tools/gen_logfuncs.py
 		COMMENT "python: glimp_logfuncs.cpp" )
 
 	add_custom_command(
@@ -284,6 +237,7 @@ set( ENGINE_SOURCES
 	framework/async/MsgChannel.cpp
 	framework/async/NetworkSystem.cpp
 	framework/async/ServerScan.cpp
+	renderer/cg_explicit.cpp
 	renderer/Cinematic.cpp
 	renderer/draw_arb.cpp
 	renderer/draw_arb2.cpp
@@ -346,7 +300,31 @@ set( ENGINE_SOURCES
 	sound/snd_system.cpp
 	sound/snd_wavefile.cpp
 	sound/snd_world.cpp
-	third-party/stb/stb_vorbis.c
+	sound/OggVorbis/oggsrc/bitwise.c
+	sound/OggVorbis/oggsrc/framing.c
+	sound/OggVorbis/vorbissrc/analysis.c
+	# barkmel.c is a standalone bark scale test utility with its own main(), not part of the engine
+	sound/OggVorbis/vorbissrc/bitrate.c
+	sound/OggVorbis/vorbissrc/block.c
+	sound/OggVorbis/vorbissrc/codebook.c
+	sound/OggVorbis/vorbissrc/envelope.c
+	sound/OggVorbis/vorbissrc/floor0.c
+	sound/OggVorbis/vorbissrc/floor1.c
+	sound/OggVorbis/vorbissrc/info.c
+	sound/OggVorbis/vorbissrc/lookup.c
+	sound/OggVorbis/vorbissrc/lpc.c
+	sound/OggVorbis/vorbissrc/lsp.c
+	sound/OggVorbis/vorbissrc/mapping0.c
+	sound/OggVorbis/vorbissrc/mdct.c
+	sound/OggVorbis/vorbissrc/psy.c
+	sound/OggVorbis/vorbissrc/registry.c
+	sound/OggVorbis/vorbissrc/res0.c
+	sound/OggVorbis/vorbissrc/sharedbook.c
+	sound/OggVorbis/vorbissrc/smallft.c
+	sound/OggVorbis/vorbissrc/synthesis.c
+	sound/OggVorbis/vorbissrc/vorbisenc.c
+	sound/OggVorbis/vorbissrc/vorbisfile.c
+	sound/OggVorbis/vorbissrc/windowvb.c
 	tools/compilers/aas/AASBuild.cpp
 	tools/compilers/aas/AASBuild_file.cpp
 	tools/compilers/aas/AASBuild_gravity.cpp
@@ -415,6 +393,7 @@ if( WIN32 )
 		sys/win32/win_snd.cpp
 		sys/win32/win_syscon.cpp
 		sys/win32/win_wndproc.cpp
+		openal/eaxguid.cpp
 		sys/win32/rc/CreateResourceIDs.cpp
 		sys/win32/rc/doom.rc )
 else()
@@ -440,22 +419,9 @@ else()
 			sys/linux/libXNVCtrl/NVCtrl.c
 			sys/linux/sound.cpp
 			sys/linux/sound_alsa.cpp
-			sound/openal_stubs.cpp
+			openal/stubs.cpp
 			${GLIMP_SOURCES} )
 	endif()
-endif()
-
-# stb_vorbis is third-party code, keep its warnings out of the build digest
-if( MSVC )
-	set_source_files_properties( third-party/stb/stb_vorbis.c PROPERTIES COMPILE_OPTIONS /W0 )
-else()
-	set_source_files_properties( third-party/stb/stb_vorbis.c PROPERTIES COMPILE_OPTIONS -w )
-endif()
-
-# the NVCtrl sources guard their thread safety behind XTRHEADS ( sic, the
-# original libXNVCtrl spelling ), define it so the #warning stays silent
-if( NOT MSVC )
-	set_source_files_properties( sys/linux/libXNVCtrl/NVCtrl.c PROPERTIES COMPILE_DEFINITIONS XTRHEADS )
 endif()
 
 add_executable( doom3 ${ENGINE_SOURCES} )
@@ -486,6 +452,10 @@ add_dependencies( doom3 typeinfo )
 if( MSVC )
 	# _DoomDLL.props
 	target_compile_definitions( doom3 PRIVATE __DOOM__ )
+	target_include_directories( doom3 PRIVATE
+		sound/OggVorbis/ogg
+		sound/OggVorbis/vorbis
+		sound/vorbis/include )
 	target_compile_options( doom3 PRIVATE /W3 )
 	# 16 MB stack and large address awareness from _DoomDLL.props
 	target_link_options( doom3 PRIVATE /STACK:16777216,16777216 )
@@ -504,20 +474,14 @@ if( MSVC )
 		opengl32
 		winmm
 		wsock32 )
-	# openal import library from the third-party tree
+	# openal import library from the third-party tree, the EAX GUIDs the engine
+	# references are defined in openal/eaxguid.cpp instead of the old eaxguid.lib
 	target_link_libraries( doom3 PRIVATE
 		${CMAKE_CURRENT_SOURCE_DIR}/third-party/openal-soft/libs/Win32/OpenAL32.lib )
 	if( ID_ENABLE_CURL )
-		target_link_libraries( doom3 PRIVATE libcurl_static )
+		target_link_libraries( doom3 PRIVATE curllib )
 	endif()
 	set_target_properties( doom3 PROPERTIES WIN32_EXECUTABLE TRUE )
-	# the engine dlopens openal32.dll, ship the soft_oal binary under that name
-	if( EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/third-party/openal-soft/bin/Win32/soft_oal.dll )
-		add_custom_command( TARGET doom3 POST_BUILD
-			COMMAND ${CMAKE_COMMAND} -E copy_if_different
-				${CMAKE_CURRENT_SOURCE_DIR}/third-party/openal-soft/bin/Win32/soft_oal.dll
-				$<TARGET_FILE_DIR:doom3>/openal32.dll )
-	endif()
 else()
 	# threading define for X11 and the hidden visibility from the SCons build
 	target_compile_definitions( doom3 PRIVATE XTHREADS )
@@ -527,30 +491,21 @@ else()
 		target_include_directories( doom3 PRIVATE ${GLIMP_GEN_DIR} )
 		target_compile_definitions( doom3 PRIVATE GLIMP )
 	endif()
-	target_include_directories( doom3 PRIVATE sys/linux/oss/include )
+	target_include_directories( doom3 PRIVATE
+		sound/OggVorbis/ogg
+		sound/OggVorbis/vorbis
+		sound/OggVorbis/vorbissrc
+		sys/linux/oss/include )
 	target_link_libraries( doom3 PRIVATE pthread dl z )
 	if( NOT DEDICATED )
 		target_link_libraries( doom3 PRIVATE X11 Xext Xxf86vm )
 	endif()
 	# release optimizations from SConstruct BUILD="release"
 	target_compile_options( doom3 PRIVATE
-		"$<$<CONFIG:Release>:-ffast-math;-fno-unsafe-math-optimizations;-fomit-frame-pointer;-Winline>" )
+		# -Winline is left off: the SCons-era GCC never printed these inlining notes and
+	# the current optimizer decisions would flood the release build with them
+		"$<$<CONFIG:Release>:-ffast-math;-fno-unsafe-math-optimizations;-fomit-frame-pointer>" )
 	if( CMAKE_SIZEOF_VOID_P EQUAL 4 )
 		target_compile_options( doom3 PRIVATE "$<$<CONFIG:Release>:-march=pentium3>" )
 	endif()
-endif()
-
-# ---------------------------------------------------------------------------
-# Source sdk
-#
-# The old sdk builder packed up the sdk assets, this one packs the source
-# tree into a deterministic zip instead ( see tools/make_source_sdk.py ).
-# ---------------------------------------------------------------------------
-
-find_package( Python3 COMPONENTS Interpreter )
-if( Python3_FOUND )
-	add_custom_target( sdk
-		COMMAND ${Python3_EXECUTABLE} ${REPO_ROOT}/tools/make_source_sdk.py
-		WORKING_DIRECTORY ${REPO_ROOT}
-		COMMENT "Packing the source sdk" )
 endif()

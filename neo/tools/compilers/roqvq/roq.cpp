@@ -31,6 +31,17 @@ If you have questions concerning this license or the applicable additional terms
 #include "roq.h"
 #include "codec.h"
 
+// the bundled jpeg library is gone, lossless RoQ frames encode through the
+// header-only stb_image_write library
+#define STB_IMAGE_WRITE_IMPLEMENTATION
+#if defined( _MSC_VER )
+#pragma warning( push, 0 )
+#endif
+#include "../../../third-party/stb/stb_image_write.h"
+#if defined( _MSC_VER )
+#pragma warning( pop )
+#endif
+
 roq		*theRoQ;				// current roq file
 
 roq::roq( void )
@@ -207,45 +218,21 @@ int roq::SizeFile( idFile *ftosize )
 	return ftosize->Length();
 }
 
+static int hackSize;
 
-// the bundled jpeg-6 tree is gone, RoQ JPEG frames encode through the header
-// only stb_image_write library from the third-party folder now. the idStr
-// hijack macros from Str.h must not reach the plain C stb code.
-#undef strcmp
-#undef strncmp
-#undef StrCmpN
-#undef strcmpi
-#undef StrCmpI
-#undef StrCmpNI
-#undef StrCmpNI
-#undef stricmp
-#undef _stricmp
-#undef strcasecmp
-#undef strnicmp
-#undef _strnicmp
-#undef _memicmp
-#undef snprintf
-#undef _snprintf
-#undef vsnprintf
-#undef _vsnprintf
-#define STB_IMAGE_WRITE_IMPLEMENTATION
-#if defined( _MSC_VER )
-#pragma warning( push, 0 )
-#endif
-#include "../../../third-party/stb/stb_image_write.h"
-#if defined( _MSC_VER )
-#pragma warning( pop )
-#endif
-
-// collects the compressed frame in memory, the RoQ header needs the size
+// stb_image_write appends the encoded chunks, keep the growing output buffer
 typedef struct {
-	byte	*data;
+	byte	*out;
 	int		size;
-} jpgMemBuffer_t;
+	int		maxSize;
+} jpgBuffer_t;
 
-static void JpegMemWrite( void *context, void *data, int size ) {
-	jpgMemBuffer_t *buf = (jpgMemBuffer_t *)context;
-	memcpy( buf->data + buf->size, data, size );
+static void JPGWriteFunc( void *context, void *data, int size ) {
+	jpgBuffer_t *buf = (jpgBuffer_t *)context;
+	if ( buf->size + size > buf->maxSize ) {
+		size = buf->maxSize - buf->size;
+	}
+	memcpy( buf->out + buf->size, data, size );
 	buf->size += size;
 }
 
@@ -253,8 +240,6 @@ void roq::WriteLossless( void ) {
 
 	word direct;
 	uint directdw;
-	byte *out;
-	jpgMemBuffer_t memBuf;
 
 	if (!dataStuff) {
 		InitRoQPatterns();
@@ -263,26 +248,39 @@ void roq::WriteLossless( void ) {
 	direct = RoQ_QUAD_JPEG;
 	Write16Word( &direct, RoQFile);
 
-	// the source image rows come in bottom up, tell stb to flip them
-	stbi_flip_vertically_on_write( 1 );
+	int		width = image->pixelsWide();
+	int		height = image->pixelsHigh();
+	int		row_stride = width * 4;
+	byte	*out;
+	jpgBuffer_t buf;
 
-	// jpeg output never exceeds the raw RGBA input
-	out = (byte *)Mem_Alloc( image->pixelsWide() * image->pixelsHigh() * 4 );
-	memBuf.data = out;
-	memBuf.size = 0;
-	stbi_write_jpg_to_func( JpegMemWrite, &memBuf, image->pixelsWide(), image->pixelsHigh(), 4,
-		image->bitmapData(), paramFile->JpegQuality() );
-	stbi_flip_vertically_on_write( 0 );
+	// libjpeg took the scanlines bottom-up, flip the image so the RoQ
+	// decoder's bottom-up blit restores the original orientation
+	byte *pixbuf = image->bitmapData();
+	byte *flipped = (byte *)Mem_Alloc( width * height * 4 );
+	for ( int y = 0; y < height; y++ ) {
+		memcpy( flipped + y * row_stride, pixbuf + ( height - 1 - y ) * row_stride, row_stride );
+	}
 
-	directdw = memBuf.size;
-	common->Printf("writeLossless: writing %d bytes to RoQ_QUAD_JPEG\n", (int)memBuf.size);
+	out = (byte *)Mem_Alloc( width * height * 4 );
+	buf.out = out;
+	buf.size = 0;
+	buf.maxSize = width * height * 4;
+
+	stbi_write_jpg_to_func( JPGWriteFunc, &buf, width, height, 4, flipped, paramFile->JpegQuality() );
+	hackSize = buf.size;
+
+	directdw = hackSize;
+	common->Printf("writeLossless: writing %d bytes to RoQ_QUAD_JPEG\n", hackSize);
 	Write32Word( &directdw, RoQFile );
 	direct = 0;		// flags
 	Write16Word( &direct, RoQFile );
 
-	RoQFile->Write( out, memBuf.size );
-	Mem_Free(out);
+	RoQFile->Write( out, hackSize );
+	Mem_Free( out );
+	Mem_Free( flipped );
 
+	/* And we're done! */
 	encoder->SetPreviousImage( "first frame", image );
 }
 
@@ -622,4 +620,3 @@ void RoQFileEncode_f( const idCmdArgs &args ) {
 	common->Printf( "total encoding time: %i second\n", ( stopMsec - startMsec ) / 1000 );
 
 }
-

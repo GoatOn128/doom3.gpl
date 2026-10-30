@@ -29,6 +29,10 @@ If you have questions concerning this license or the applicable additional terms
 #include "../idlib/precompiled.h"
 #pragma hdrstop
 
+// the bundled jpeg library is gone, JPEG frames decode through the header-only
+// stb_image library ( the implementation lives in Image_files.cpp, same binary )
+#include "../third-party/stb/stb_image.h"
+
 #include "tr_local.h"
 
 #define CIN_system	1
@@ -1279,61 +1283,25 @@ void idCinematicLocal::RoQReset() {
 }
 
 
+int JPEGBlit( byte *wStatus, byte *data, int datasize ) {
+	int		width, height, components;
+	byte	*pic;
+	int		row_stride;
 
-// the bundled jpeg-6 tree is gone, RoQ JPEG frames decode through the header
-// only stb_image library from the third-party folder now. the idStr hijack
-// macros from Str.h must not reach the plain C stb code.
-#undef strcmp
-#undef strncmp
-#undef StrCmpN
-#undef strcmpi
-#undef StrCmpI
-#undef StrCmpNI
-#undef StrCmpNI
-#undef stricmp
-#undef _stricmp
-#undef strcasecmp
-#undef strnicmp
-#undef _strnicmp
-#undef _memicmp
-#undef snprintf
-#undef _snprintf
-#undef vsnprintf
-#undef _vsnprintf
-#if defined( _MSC_VER )
-#pragma warning( push, 0 )
-#endif
-#include "../third-party/stb/stb_image.h"
-#if defined( _MSC_VER )
-#pragma warning( pop )
-#endif
-
-/*
-==============
-JPEGBlit
-
-Decodes an RoQ JPEG frame from memory into the status buffer. The rows land
-bottom up, exactly where the old jpeg-6 based code wrote them. The stb image
-implementation lives in Image_files.cpp, only the declarations come in here.
-==============
-*/
-int JPEGBlit( byte *wStatus, byte *data, int datasize )
-{
-	int	width, height, channels;
-
-	byte *decoded = stbi_load_from_memory( data, datasize, &width, &height, &channels, 0 );
-	if ( decoded == NULL ) {
+	pic = stbi_load_from_memory( data, datasize, &width, &height, &components, 0 );
+	if ( pic == NULL ) {
 		return 0;
 	}
 
-	int row_stride = width * channels;
-	byte *outRow = wStatus + ( height - 1 ) * row_stride;
+	// the RoQ frame buffer is filled bottom-up
+	row_stride = width * components;
+	wStatus += ( height - 1 ) * row_stride;
 	for ( int y = 0; y < height; y++ ) {
-		memcpy( outRow, decoded + y * row_stride, row_stride );
-		outRow -= row_stride;
+		memcpy( wStatus, pic + y * row_stride, row_stride );
+		wStatus -= row_stride;
 	}
 
-	stbi_image_free( decoded );
+	stbi_image_free( pic );
 	return 1;
 }
 
@@ -1527,4 +1495,3 @@ idSndWindow::AnimationLength
 int idSndWindow::AnimationLength() {
 	return -1;
 }
-

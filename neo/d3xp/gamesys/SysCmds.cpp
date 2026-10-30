@@ -335,9 +335,7 @@ void Cmd_Give_f( const idCmdArgs &args ) {
 	}
 
 	if ( give_all || idStr::Icmp( name, "weapons" ) == 0 ) {
-		// BIT( MAX_WEAPONS ) shifts past the int width, all ones below bit
-		// MAX_WEAPONS keeps the intended weapon mask for any weapon count
-		player->inventory.weapons = ( int )( ~0u >> ( 32 - MAX_WEAPONS ) );
+		player->inventory.weapons = ( 0xFFFFFFFF >> ( 32 - MAX_WEAPONS ) );
 		player->CacheWeapons();
 
 		if ( !give_all ) {
@@ -2482,32 +2480,3 @@ void idGameLocal::InitConsoleCommands( void ) {
 	cmdSystem->AddCommand( "clientDropWeapon",		idMultiplayerGame::DropWeapon_f, CMD_FL_GAME,			"drop current weapon" );
 	cmdSystem->AddCommand( "clientMessageMode",		idMultiplayerGame::MessageMode_f, CMD_FL_GAME,			"ingame gui message mode" );
 	// FIXME: implement
-//	cmdSystem->AddCommand( "clientVote",			idMultiplayerGame::Vote_f,	CMD_FL_GAME,				"cast your vote: clientVote yes | no" );
-//	cmdSystem->AddCommand( "clientCallVote",		idMultiplayerGame::CallVote_f,	CMD_FL_GAME,			"call a vote: clientCallVote si_.. proposed_value" );
-	cmdSystem->AddCommand( "clientVoiceChat",		idMultiplayerGame::VoiceChat_f,	CMD_FL_GAME,			"voice chats: clientVoiceChat <sound shader>" );
-	cmdSystem->AddCommand( "clientVoiceChatTeam",	idMultiplayerGame::VoiceChatTeam_f,	CMD_FL_GAME,		"team voice chats: clientVoiceChat <sound shader>" );
-
-	// multiplayer server commands
-	cmdSystem->AddCommand( "serverMapRestart",		idGameLocal::MapRestart_f,	CMD_FL_GAME,				"restart the current game" );
-	cmdSystem->AddCommand( "serverForceReady",	idMultiplayerGame::ForceReady_f,CMD_FL_GAME,				"force all players ready" );
-	cmdSystem->AddCommand( "serverNextMap",			idGameLocal::NextMap_f,		CMD_FL_GAME,				"change to the next map" );
-#endif
-
-	// localization help commands
-	cmdSystem->AddCommand( "nextGUI",				Cmd_NextGUI_f,				CMD_FL_GAME|CMD_FL_CHEAT,	"teleport the player to the next func_static with a gui" );
-	cmdSystem->AddCommand( "testid",				Cmd_TestId_f,				CMD_FL_GAME|CMD_FL_CHEAT,	"output the string for the specified id." );
-
-#ifdef _D3XP
-	cmdSystem->AddCommand( "setActorState",			Cmd_SetActorState_f,		CMD_FL_GAME|CMD_FL_CHEAT,	"Manually sets an actors script state", idGameLocal::ArgCompletion_EntityName );
-#endif
-}
-
-/*
-=================
-idGameLocal::ShutdownConsoleCommands
-=================
-*/
-void idGameLocal::ShutdownConsoleCommands( void ) {
-	cmdSystem->RemoveFlaggedCommands( CMD_FL_GAME );
-}
-
