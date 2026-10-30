@@ -1,0 +1,88 @@
+name: build-ubuntu
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# a new commit cancels the superseded run for the same branch
+concurrency:
+  group: build-ubuntu-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: ${{ matrix.os }}-${{ matrix.arch }}-${{ matrix.config }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      # one failing leg cancels the remaining legs of this OS, the other
+      # OS workflow keeps running for redundancy
+      fail-fast: true
+      matrix:
+        os: [ubuntu-latest]
+        # the linux sys code is 32-bit only ( BUILD_STRING and the inline
+        # asm assume x86 ), so the CI builds a 32-bit binary with multilib
+        arch: [x86]
+        config: [debug, release]
+    steps:
+      - uses: actions/checkout@v4
+      - name: clean stale log
+        shell: bash
+        run: rm -f build.log
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: install linux deps
+        shell: bash
+        run: |
+          set -o pipefail
+          sudo dpkg --add-architecture i386 || true
+          sudo apt-get update -qq 2>&1 | tee -a build.log
+          sudo apt-get install -y -qq gcc-multilib g++-multilib 2>&1 | tee -a build.log
+          sudo apt-get install -y -qq ninja-build m4 2>&1 | tee -a build.log
+          # the renderer dlopens libGL, so only X11, ALSA and zlib are
+          # needed at link time, all in 32-bit for the -m32 build
+          sudo apt-get install -y -qq libx11-dev:i386 libxext-dev:i386 libxxf86vm-dev:i386 libasound2-dev:i386 zlib1g-dev:i386 2>&1 | tee -a build.log
+      - name: configure
+        shell: bash
+        run: |
+          set -o pipefail
+          case "${{ matrix.config }}" in
+            debug)   config="Debug" ;;
+            release) config="Release" ;;
+          esac
+          # -m32 keeps CMake's pointer-size probe at 4 so the products get
+          # the x86 names the engine loads at runtime
+          cmake -S neo -B build -G Ninja -DCMAKE_BUILD_TYPE="$config" \
+            -DCMAKE_C_FLAGS=-m32 -DCMAKE_CXX_FLAGS=-m32 \
+            -DCMAKE_EXE_LINKER_FLAGS=-m32 -DCMAKE_SHARED_LINKER_FLAGS=-m32 \
+            2>&1 | tee -a build.log
+      - name: build
+        shell: bash
+        run: |
+          set -o pipefail
+          # -k 0 keeps going so the digest lists every failing file in one run
+          cmake --build build --parallel 4 -- -k 0 2>&1 | tee -a build.log
+      - name: digest
+        if: always()
+        shell: bash
+        env:
+          LEG: ${{ matrix.os }}-${{ matrix.arch }}-${{ matrix.config }}
+          STATUS: ${{ job.status }}
+        run: |
+          cp build.log "log-$LEG.log" 2>/dev/null || true
+          python .github/scripts/digest.py || true
+      - name: upload
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs-${{ matrix.os }}-${{ matrix.arch }}-${{ matrix.config }}
+          path: |
+            log-${{ matrix.os }}-${{ matrix.arch }}-${{ matrix.config }}.log
+            digest-fragment-${{ matrix.os }}-${{ matrix.arch }}-${{ matrix.config }}.md
+            status-${{ matrix.os }}-${{ matrix.arch }}-${{ matrix.config }}
+          if-no-files-found: ignore
