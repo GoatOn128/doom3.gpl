@@ -1326,7 +1326,7 @@ EXCEPTION_DISPOSITION __cdecl _except_handler( struct _EXCEPTION_RECORD *Excepti
 			"%s\n",
 			com_version.GetString(),
 			ExceptionRecord->ExceptionCode,
-			ExceptionRecord->ExceptionAddress,
+			(unsigned int)ExceptionRecord->ExceptionAddress,
 			GetExceptionCodeInfo( ExceptionRecord->ExceptionCode ),
 			ContextRecord->Eax, ContextRecord->Ebx,
 			ContextRecord->Ecx, ContextRecord->Edx,

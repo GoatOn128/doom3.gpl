@@ -71,7 +71,32 @@ void R_LoadImage( const char *name, byte **pic, int *width, int *height, bool ma
 #if defined( _MSC_VER )
 #pragma warning( push, 0 )
 #endif
+// Str.h renames the CRT string routines, stb must see the real ones
+#undef strcmp
+#undef strncmp
+#undef stricmp
+#undef _stricmp
+#undef strcasecmp
+#undef strnicmp
+#undef _strnicmp
+#undef _memicmp
+#undef snprintf
+#undef _snprintf
+#undef vsnprintf
+#undef _vsnprintf
 #include "../third-party/stb/stb_image.h"
+#define strcmp			idStr::Cmp		// use_idStr_Cmp
+#define strncmp			use_idStr_Cmpn
+#define stricmp			idStr::Icmp		// use_idStr_Icmp
+#define _stricmp		use_idStr_Icmp
+#define strcasecmp		use_idStr_Icmp
+#define strnicmp		use_idStr_Icmpn
+#define _strnicmp		use_idStr_Icmpn
+#define _memicmp		use_idStr_Icmpn
+#define snprintf		use_idStr_snPrintf
+#define _snprintf		use_idStr_snPrintf
+#define vsnprintf		use_idStr_vsnPrintf
+#define _vsnprintf		use_idStr_vsnPrintf
 #if defined( _MSC_VER )
 #pragma warning( pop )
 #endif
