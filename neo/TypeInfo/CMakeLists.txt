@@ -5,8 +5,8 @@
 # game/gamesys/GameTypeInfo.h ( the game and d3xp projects depend on it ).
 
 add_executable( typeinfo
-	TypeInfo/main.cpp
-	TypeInfo/TypeInfoGen.cpp
+	main.cpp
+	TypeInfoGen.cpp
 	../framework/CmdSystem.cpp
 	../framework/CVarSystem.cpp
 	../framework/File.cpp
