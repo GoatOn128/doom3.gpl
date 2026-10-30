@@ -422,7 +422,17 @@ if( WIN32 )
 		sys/win32/win_syscon.cpp
 		sys/win32/win_wndproc.cpp
 		sys/win32/rc/CreateResourceIDs.cpp
-		sys/win32/rc/doom.rc )
+		sys/win32/rc/doom.rc
+		# BuildDefines.h turns ID_ALLOW_TOOLS on for the Win32 client, so the
+		# engine references the MFC tool entry points even though the MFC
+		# sources themselves stay excluded like in the original solution;
+		# upstream's portable stubs provide those symbols ( the SCons Linux
+		# list uses the same GEWindowWrapper stub )
+		tools/edit_stub.cpp
+		tools/guied/GEWindowWrapper_stub.cpp
+		# win_taskkeyhook.cpp needs MFC and is excluded in every configuration
+		# of the original solution, a no-op stub keeps win_notaskkeys linking
+		sys/win32/win_taskkeyhook_stub.cpp )
 else()
 	# sys sources from sys/scons/SConscript.core
 	list( APPEND ENGINE_SOURCES
