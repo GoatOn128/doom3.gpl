@@ -1,0 +1,137 @@
+{
+    "version": 4,
+    "configurations": [
+        {
+            "name": "Windows x64",
+            "compilerPath": "C:/Program Files/LLVM/bin/clang-cl.exe",
+            "intelliSenseMode": "windows-clang-x64",
+            "compilerArgs": [
+                "/W4",
+                "-m64",
+                "/nologo"
+            ],
+            "includePath": [
+                "${workspaceFolder}/neo",
+                "${workspaceFolder}/neo/idlib",
+                "${workspaceFolder}/neo/framework",
+                "${workspaceFolder}/neo/renderer",
+                "${workspaceFolder}/neo/cm",
+                "${workspaceFolder}/neo/ui",
+                "${workspaceFolder}/neo/sound",
+                "${workspaceFolder}/neo/sound/OggVorbis/ogg",
+                "${workspaceFolder}/neo/sound/OggVorbis/vorbis",
+                "${workspaceFolder}/neo/sound/OggVorbis/vorbissrc",
+                "${workspaceFolder}/neo/sys/win32",
+                "${workspaceFolder}/neo/tools/compilers",
+                "${workspaceFolder}/neo/game",
+                "${workspaceFolder}/neo/d3xp"
+            ],
+            "defines": [
+                "WIN32",
+                "_WINDOWS",
+                "_CRT_SECURE_NO_DEPRECATE",
+                "_CRT_NONSTDC_NO_DEPRECATE",
+                "_USE_32BIT_TIME_T"
+            ],
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        },
+        {
+            "name": "Windows x86",
+            "compilerPath": "C:/Program Files/LLVM/bin/clang-cl.exe",
+            "intelliSenseMode": "windows-clang-x86",
+            "compilerArgs": [
+                "/W4",
+                "-m32",
+                "/nologo"
+            ],
+            "includePath": [
+                "${workspaceFolder}/neo",
+                "${workspaceFolder}/neo/idlib",
+                "${workspaceFolder}/neo/framework",
+                "${workspaceFolder}/neo/renderer",
+                "${workspaceFolder}/neo/cm",
+                "${workspaceFolder}/neo/ui",
+                "${workspaceFolder}/neo/sound",
+                "${workspaceFolder}/neo/sound/OggVorbis/ogg",
+                "${workspaceFolder}/neo/sound/OggVorbis/vorbis",
+                "${workspaceFolder}/neo/sound/OggVorbis/vorbissrc",
+                "${workspaceFolder}/neo/sys/win32",
+                "${workspaceFolder}/neo/tools/compilers",
+                "${workspaceFolder}/neo/game",
+                "${workspaceFolder}/neo/d3xp"
+            ],
+            "defines": [
+                "WIN32",
+                "_WINDOWS",
+                "_CRT_SECURE_NO_DEPRECATE",
+                "_CRT_NONSTDC_NO_DEPRECATE",
+                "_USE_32BIT_TIME_T"
+            ],
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        },
+        {
+            "name": "Linux x64",
+            "compilerPath": "/usr/bin/g++",
+            "intelliSenseMode": "linux-gcc-x64",
+            "compilerArgs": [
+                "-Wall",
+                "-fpermissive",
+                "-fno-strict-aliasing",
+                "-m64"
+            ],
+            "includePath": [
+                "${workspaceFolder}/neo",
+                "${workspaceFolder}/neo/idlib",
+                "${workspaceFolder}/neo/framework",
+                "${workspaceFolder}/neo/renderer",
+                "${workspaceFolder}/neo/cm",
+                "${workspaceFolder}/neo/ui",
+                "${workspaceFolder}/neo/sound",
+                "${workspaceFolder}/neo/sound/OggVorbis/ogg",
+                "${workspaceFolder}/neo/sound/OggVorbis/vorbis",
+                "${workspaceFolder}/neo/sound/OggVorbis/vorbissrc",
+                "${workspaceFolder}/neo/sys/linux",
+                "${workspaceFolder}/neo/sys/posix",
+                "${workspaceFolder}/neo/tools/compilers",
+                "${workspaceFolder}/neo/game",
+                "${workspaceFolder}/neo/d3xp"
+            ],
+            "defines": [],
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        },
+        {
+            "name": "Linux x86",
+            "compilerPath": "/usr/bin/g++",
+            "intelliSenseMode": "linux-gcc-x86",
+            "compilerArgs": [
+                "-Wall",
+                "-fpermissive",
+                "-fno-strict-aliasing",
+                "-m32"
+            ],
+            "includePath": [
+                "${workspaceFolder}/neo",
+                "${workspaceFolder}/neo/idlib",
+                "${workspaceFolder}/neo/framework",
+                "${workspaceFolder}/neo/renderer",
+                "${workspaceFolder}/neo/cm",
+                "${workspaceFolder}/neo/ui",
+                "${workspaceFolder}/neo/sound",
+                "${workspaceFolder}/neo/sound/OggVorbis/ogg",
+                "${workspaceFolder}/neo/sound/OggVorbis/vorbis",
+                "${workspaceFolder}/neo/sound/OggVorbis/vorbissrc",
+                "${workspaceFolder}/neo/sys/linux",
+                "${workspaceFolder}/neo/sys/posix",
+                "${workspaceFolder}/neo/tools/compilers",
+                "${workspaceFolder}/neo/game",
+                "${workspaceFolder}/neo/d3xp"
+            ],
+            "defines": [],
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ]
+}

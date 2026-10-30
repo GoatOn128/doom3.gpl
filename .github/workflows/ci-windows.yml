@@ -1,0 +1,81 @@
+name: build-windows
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# a new commit cancels the superseded run for the same branch
+concurrency:
+  group: build-windows-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: ${{ matrix.os }}-${{ matrix.arch }}-${{ matrix.config }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      # one failing leg cancels the remaining legs of this OS, the other
+      # OS workflow keeps running for redundancy
+      fail-fast: true
+      matrix:
+        os: [windows-latest]
+        # the original solution is Win32 only, keep it that way
+        arch: [x86]
+        config: [debug, release]
+    steps:
+      - uses: actions/checkout@v4
+      - name: clean stale log
+        shell: bash
+        run: rm -f build.log
+      - name: free disk space
+        if: runner.os == 'Windows'
+        shell: bash
+        run: |
+          # the Windows runners run out of disk during full builds
+          rm -rf /c/Android /c/Miniconda3 /c/vcpkg || true
+          df -h /c 2>&1 | tee -a build.log
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: setup msvc environment
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: ${{ matrix.arch }}
+      - name: configure
+        shell: bash
+        run: |
+          set -o pipefail
+          cmake -S neo -B build -A Win32 2>&1 | tee -a build.log
+      - name: build
+        shell: bash
+        run: |
+          set -o pipefail
+          case "${{ matrix.config }}" in
+            debug)   config="Debug" ;;
+            release) config="Release" ;;
+          esac
+          cmake --build build --config "$config" 2>&1 | tee -a build.log
+      - name: digest
+        if: always()
+        shell: bash
+        env:
+          LEG: ${{ matrix.os }}-${{ matrix.arch }}-${{ matrix.config }}
+          STATUS: ${{ job.status }}
+        run: |
+          cp build.log "log-$LEG.log" 2>/dev/null || true
+          python .github/scripts/digest.py || true
+      - name: upload
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs-${{ matrix.os }}-${{ matrix.arch }}-${{ matrix.config }}
+          path: |
+            log-${{ matrix.os }}-${{ matrix.arch }}-${{ matrix.config }}.log
+            digest-fragment-${{ matrix.os }}-${{ matrix.arch }}-${{ matrix.config }}.md
+            status-${{ matrix.os }}-${{ matrix.arch }}-${{ matrix.config }}
+          if-no-files-found: ignore
