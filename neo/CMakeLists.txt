@@ -58,6 +58,9 @@ if( MSVC )
 		_USE_32BIT_TIME_T )
 	# _Release.props turns the stack buffer check off, keep that behavior
 	target_compile_options( doom_base INTERFACE "$<$<CONFIG:Release>:/GS->" )
+	# warning kinds the VS2010 toolchain this port reproduces either did not
+	# have ( C4456 C4458 C5205 ) or had disabled in the original .props
+	target_compile_options( doom_base INTERFACE /wd4456 /wd4458 /wd4740 /wd4750 /wd5205 )
 else()
 	target_compile_options( doom_base INTERFACE
 		-pipe
