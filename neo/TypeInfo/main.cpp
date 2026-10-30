@@ -185,6 +185,7 @@ int Sys_ListFiles( const char *directory, const char *extension, idStrList &list
 const char *	Sys_DefaultCDPath( void ) { return ""; }
 const char *	Sys_DefaultBasePath( void ) { return ""; }
 const char *	Sys_DefaultSavePath( void ) { return ""; }
+const char *	Sys_EXEPath( void ) { return ""; }
 int				Sys_ListFiles( const char *directory, const char *extension, idStrList &list ) { return 0; }
 
 #endif
