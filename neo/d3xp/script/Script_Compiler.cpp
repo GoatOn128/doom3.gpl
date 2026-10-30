@@ -207,7 +207,7 @@ idCompiler::idCompiler()
 ================
 */
 idCompiler::idCompiler() {
-	const char	**ptr;
+	const char **ptr;
 	int		id;
 
 	// make sure we have the right # of opcodes in the table

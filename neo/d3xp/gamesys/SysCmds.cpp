@@ -335,7 +335,9 @@ void Cmd_Give_f( const idCmdArgs &args ) {
 	}
 
 	if ( give_all || idStr::Icmp( name, "weapons" ) == 0 ) {
-		player->inventory.weapons = ( 0xFFFFFFFF >> ( 32 - MAX_WEAPONS ) );
+		// BIT( MAX_WEAPONS ) shifts past the int width, all ones below bit
+		// MAX_WEAPONS keeps the intended weapon mask for any weapon count
+		player->inventory.weapons = ( int )( ~0u >> ( 32 - MAX_WEAPONS ) );
 		player->CacheWeapons();
 
 		if ( !give_all ) {
@@ -2478,5 +2480,3 @@ void idGameLocal::InitConsoleCommands( void ) {
 
 	// multiplayer client commands ( replaces old impulses stuff )
 	cmdSystem->AddCommand( "clientDropWeapon",		idMultiplayerGame::DropWeapon_f, CMD_FL_GAME,			"drop current weapon" );
-	cmdSystem->AddCommand( "clientMessageMode",		idMultiplayerGame::MessageMode_f, CMD_FL_GAME,			"ingame gui message mode" );
-	// FIXME: implement
