@@ -15,7 +15,7 @@ C:              150G  123G   28G  82% /c
 -- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/18/Enterprise/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x86/cl.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Configuring done (15.4s)
+-- Configuring done (21.8s)
 -- Generating done (0.1s)
 -- Build files have been written to: D:/a/doom3.gpl/doom3.gpl/build
 MSBuild version 18.11.1-1.26513.3+940033be3 for .NET Framework
@@ -483,7 +483,6 @@ CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game\Actor.cpp
   File.cpp
   FileSystem.cpp
   KeyInput.cpp
-D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(48,11): error C1083: Cannot open include file: '../curl/include/curl/curl.h': No such file or directory [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
   Session.cpp
   Session_menu.cpp
   Unzip.cpp
@@ -531,9 +530,6 @@ D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(48,11): error C1083: Canno
   RenderEntity.cpp
   RenderSystem.cpp
   RenderSystem_init.cpp
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_local.h(100,16): warning C5208: unnamed class used in typedef name cannot declare members other than non-static data members, member enumerations, or member classes [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-  (compiling source file '../neo/renderer/RenderSystem_init.cpp')
-  
   RenderWorld.cpp
   RenderWorld_demo.cpp
   RenderWorld_load.cpp
@@ -564,14 +560,6 @@ D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_local.h(100,16): warning C5208: unnam
   snd_emitter.cpp
   snd_shader.cpp
   snd_system.cpp
-D:\a\doom3.gpl\doom3.gpl\neo\sound\snd_system.cpp(167,93): error C2664: 'ALenum (ALubyte *)': cannot convert argument 1 from 'const char [16]' to 'ALubyte *' [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-      D:\a\doom3.gpl\doom3.gpl\neo\sound\snd_system.cpp(167,93):
-      Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast
-  
-D:\a\doom3.gpl\doom3.gpl\neo\sound\snd_system.cpp(167,147): error C2664: 'ALenum (ALubyte *)': cannot convert argument 1 from 'const char [16]' to 'ALubyte *' [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-      D:\a\doom3.gpl\doom3.gpl\neo\sound\snd_system.cpp(167,147):
-      Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast
-  
   snd_wavefile.cpp
   snd_world.cpp
   Generating Code...
@@ -607,15 +595,12 @@ D:\a\doom3.gpl\doom3.gpl\neo\sound\snd_system.cpp(167,147): error C2664: 'ALenum
   ubrush.cpp
   usurface.cpp
   renderbump.cpp
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_local.h(100,16): warning C5208: unnamed class used in typedef name cannot declare members other than non-static data members, member enumerations, or member classes [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-  (compiling source file '../neo/tools/compilers/renderbump/renderbump.cpp')
-  
   codec.cpp
-D:\a\doom3.gpl\doom3.gpl\neo\tools\compilers\roqvq\codec.cpp(324,20): error C2065: 'INFINITY': undeclared identifier [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\tools\compilers\roqvq\codec.cpp(1513,21): error C2065: 'INFINITY': undeclared identifier [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\tools\compilers\roqvq\codec.cpp(1579,15): error C2065: 'INFINITY': undeclared identifier [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\tools\compilers\roqvq\codec.cpp(1594,16): error C2065: 'INFINITY': undeclared identifier [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
   NSBitmapImageRep.cpp
+D:\a\doom3.gpl\doom3.gpl\neo\tools\compilers\roqvq\codec.cpp(327,20): error C2065: 'INFINITY': undeclared identifier [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
+D:\a\doom3.gpl\doom3.gpl\neo\tools\compilers\roqvq\codec.cpp(1516,21): error C2065: 'INFINITY': undeclared identifier [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
+D:\a\doom3.gpl\doom3.gpl\neo\tools\compilers\roqvq\codec.cpp(1582,15): error C2065: 'INFINITY': undeclared identifier [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
+D:\a\doom3.gpl\doom3.gpl\neo\tools\compilers\roqvq\codec.cpp(1597,16): error C2065: 'INFINITY': undeclared identifier [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
   roq.cpp
   roqParam.cpp
   BindWindow.cpp
@@ -641,80 +626,17 @@ D:\a\doom3.gpl\doom3.gpl\neo\tools\compilers\roqvq\codec.cpp(1594,16): error C20
   Winvar.cpp
   sys_local.cpp
   win_cpu.cpp
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_local.h(100,16): warning C5208: unnamed class used in typedef name cannot declare members other than non-static data members, member enumerations, or member classes [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-  (compiling source file '../neo/sys/win32/win_cpu.cpp')
-  
   win_glimp.cpp
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_local.h(100,16): warning C5208: unnamed class used in typedef name cannot declare members other than non-static data members, member enumerations, or member classes [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-  (compiling source file '../neo/sys/win32/win_glimp.cpp')
-  
   win_input.cpp
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_local.h(100,16): warning C5208: unnamed class used in typedef name cannot declare members other than non-static data members, member enumerations, or member classes [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-  (compiling source file '../neo/sys/win32/win_input.cpp')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(146,2): warning C4838: conversion from 'char' to 'const unsigned char' requires a narrowing conversion [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(158,33): warning C4838: conversion from 'char' to 'const unsigned char' requires a narrowing conversion [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(159,2): warning C4838: conversion from 'char' to 'const unsigned char' requires a narrowing conversion [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(159,23): warning C4838: conversion from 'char' to 'const unsigned char' requires a narrowing conversion [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(159,35): warning C4838: conversion from 'char' to 'const unsigned char' requires a narrowing conversion [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(159,48): warning C4838: conversion from 'char' to 'const unsigned char' requires a narrowing conversion [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(163,2): warning C4838: conversion from 'char' to 'const unsigned char' requires a narrowing conversion [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(180,53): warning C4838: conversion from 'char' to 'const unsigned char' requires a narrowing conversion [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(183,76): warning C4838: conversion from 'char' to 'const unsigned char' requires a narrowing conversion [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(184,2): warning C4838: conversion from 'char' to 'const unsigned char' requires a narrowing conversion [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(184,15): warning C4838: conversion from 'char' to 'const unsigned char' requires a narrowing conversion [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(184,35): warning C4838: conversion from 'char' to 'const unsigned char' requires a narrowing conversion [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(196,46): warning C4838: conversion from 'char' to 'const unsigned char' requires a narrowing conversion [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(197,52): warning C4838: conversion from 'char' to 'const unsigned char' requires a narrowing conversion [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(200,76): warning C4838: conversion from 'char' to 'const unsigned char' requires a narrowing conversion [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(201,2): warning C4838: conversion from 'char' to 'const unsigned char' requires a narrowing conversion [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(201,15): warning C4838: conversion from 'char' to 'const unsigned char' requires a narrowing conversion [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(201,35): warning C4838: conversion from 'char' to 'const unsigned char' requires a narrowing conversion [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(218,54): warning C4838: conversion from 'char' to 'const unsigned char' requires a narrowing conversion [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(220,23): warning C4838: conversion from 'char' to 'const unsigned char' requires a narrowing conversion [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(221,77): warning C4838: conversion from 'char' to 'const unsigned char' requires a narrowing conversion [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(222,3): warning C4838: conversion from 'char' to 'const unsigned char' requires a narrowing conversion [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(222,36): warning C4838: conversion from 'char' to 'const unsigned char' requires a narrowing conversion [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(234,47): warning C4838: conversion from 'char' to 'const unsigned char' requires a narrowing conversion [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(237,23): warning C4838: conversion from 'char' to 'const unsigned char' requires a narrowing conversion [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(238,77): warning C4838: conversion from 'char' to 'const unsigned char' requires a narrowing conversion [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(239,3): warning C4838: conversion from 'char' to 'const unsigned char' requires a narrowing conversion [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(239,35): warning C4838: conversion from 'char' to 'const unsigned char' requires a narrowing conversion [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(960,9): warning C4644: usage of the macro-based offsetof pattern in constant expressions is non-standard; use offsetof defined in the C++ standard library instead [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(964,9): warning C4644: usage of the macro-based offsetof pattern in constant expressions is non-standard; use offsetof defined in the C++ standard library instead [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(968,9): warning C4644: usage of the macro-based offsetof pattern in constant expressions is non-standard; use offsetof defined in the C++ standard library instead [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(1022,8): warning C4644: usage of the macro-based offsetof pattern in constant expressions is non-standard; use offsetof defined in the C++ standard library instead [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(1026,8): warning C4644: usage of the macro-based offsetof pattern in constant expressions is non-standard; use offsetof defined in the C++ standard library instead [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_input.cpp(1030,8): warning C4644: usage of the macro-based offsetof pattern in constant expressions is non-standard; use offsetof defined in the C++ standard library instead [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
   win_main.cpp
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_local.h(100,16): warning C5208: unnamed class used in typedef name cannot declare members other than non-static data members, member enumerations, or member classes [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-  (compiling source file '../neo/sys/win32/win_main.cpp')
-  
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_main.cpp(1302,3): warning C4477: 'sprintf' : format string '%08x' requires an argument of type 'unsigned int', but variadic argument 3 has type 'PVOID' [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
   win_net.cpp
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_local.h(100,16): warning C5208: unnamed class used in typedef name cannot declare members other than non-static data members, member enumerations, or member classes [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-  (compiling source file '../neo/sys/win32/win_net.cpp')
-  
   win_qgl.cpp
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_local.h(100,16): warning C5208: unnamed class used in typedef name cannot declare members other than non-static data members, member enumerations, or member classes [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-  (compiling source file '../neo/sys/win32/win_qgl.cpp')
-  
   win_shared.cpp
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_local.h(100,16): warning C5208: unnamed class used in typedef name cannot declare members other than non-static data members, member enumerations, or member classes [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-  (compiling source file '../neo/sys/win32/win_shared.cpp')
-  
   Generating Code...
   Compiling...
   win_snd.cpp
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_snd.cpp(32,10): error C1083: Cannot open include file: 'DxErr.h': No such file or directory [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
   win_syscon.cpp
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_local.h(100,16): warning C5208: unnamed class used in typedef name cannot declare members other than non-static data members, member enumerations, or member classes [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-  (compiling source file '../neo/sys/win32/win_syscon.cpp')
-  
   win_wndproc.cpp
-D:\a\doom3.gpl\doom3.gpl\neo\sys\win32\win_local.h(100,16): warning C5208: unnamed class used in typedef name cannot declare members other than non-static data members, member enumerations, or member classes [D:\a\doom3.gpl\doom3.gpl\build\doom3.vcxproj]
-  (compiling source file '../neo/sys/win32/win_wndproc.cpp')
-  
   eaxguid.cpp
   CreateResourceIDs.cpp
   Generating Code...
@@ -737,7 +659,7 @@ C:              150G  120G   31G  80% /c
 -- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/18/Enterprise/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x86/cl.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Configuring done (28.2s)
+-- Configuring done (12.5s)
 -- Generating done (0.1s)
 -- Build files have been written to: D:/a/doom3.gpl/doom3.gpl/build
 MSBuild version 18.11.1-1.26513.3+940033be3 for .NET Framework
@@ -1105,5 +1027,195 @@ CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game\Actor.cpp
   http_aws_sigv4.c
   http_chunks.c
   http_digest.c
+  http_httpsig.c
+  http_negotiate.c
+  http_ntlm.c
+  http_proxy.c
+  idn.c
+  if2ip.c
+  imap.c
+  ldap.c
+  llist.c
+  macos.c
+  md4.c
+  md5.c
+  memdebug.c
+  mime.c
+  mprintf.c
+  Generating Code...
+  Compiling...
+  mqtt.c
+  multi.c
+  multi_ev.c
+  multi_ntfy.c
+  netrc.c
+  openldap.c
+  parsedate.c
+  peer.c
+  pingpong.c
+  pop3.c
+  progress.c
+  protocol.c
+  proxy.c
+  psl.c
+  ptrarray.c
+  rand.c
+  ratelimit.c
+  request.c
+  rtsp.c
+  select.c
+  Generating Code...
+  Compiling...
+  sendf.c
+  setopt.c
+  sha256.c
+  slist.c
+  smtp.c
+  socketpair.c
+  socks.c
+  socks_gssapi.c
+  socks_sspi.c
+  splay.c
+  strcase.c
+  strequal.c
+  strerror.c
+  telnet.c
+  tftp.c
+  thrdpool.c
+  thrdqueue.c
+  transfer.c
+  u32_ptrset.c
+  u8_strset.c
+  Generating Code...
+  Compiling...
+  uint-bset.c
+  uint-spbset.c
+  uint-table.c
+  url.c
+  urlapi.c
+  version.c
+  ws.c
+  Generating Code...
+  curllib.vcxproj -> D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\Release\curllib.lib
+  Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/CMakeLists.txt
+  CollisionModel_contacts.cpp
+  CollisionModel_contents.cpp
+  CollisionModel_debug.cpp
+  CollisionModel_files.cpp
+  CollisionModel_load.cpp
+  CollisionModel_rotate.cpp
+  CollisionModel_trace.cpp
+  CollisionModel_translate.cpp
+  CmdSystem.cpp
+  Common.cpp
+  Compressor.cpp
+  Console.cpp
+  CVarSystem.cpp
+  DeclAF.cpp
+  DeclEntityDef.cpp
+  DeclFX.cpp
+  DeclManager.cpp
+  DeclParticle.cpp
+  DeclPDA.cpp
+  DeclSkin.cpp
+  Generating Code...
+  Compiling...
+  DeclTable.cpp
+  DemoFile.cpp
+  EditField.cpp
+  EventLoop.cpp
+  File.cpp
+  FileSystem.cpp
+  KeyInput.cpp
+  Session.cpp
+  Session_menu.cpp
+  Unzip.cpp
+  UsercmdGen.cpp
+  AsyncClient.cpp
+  AsyncNetwork.cpp
+  AsyncServer.cpp
+  MsgChannel.cpp
+  NetworkSystem.cpp
+  ServerScan.cpp
+  cg_explicit.cpp
+  Cinematic.cpp
+  draw_arb.cpp
+  Generating Code...
+  Compiling...
+  draw_arb2.cpp
+  draw_common.cpp
+  draw_nv10.cpp
+  draw_nv20.cpp
+  draw_r200.cpp
+  GuiModel.cpp
+  Image_files.cpp
+  Image_init.cpp
+  Image_load.cpp
+  Image_process.cpp
+  Image_program.cpp
+  Interaction.cpp
+  Material.cpp
+  MegaTexture.cpp
+  Model.cpp
+  Model_ase.cpp
+  Model_beam.cpp
+  Model_liquid.cpp
+  Model_lwo.cpp
+  Model_ma.cpp
+  Generating Code...
+  Compiling...
+  Model_md3.cpp
+  Model_md5.cpp
+  Model_prt.cpp
+  Model_sprite.cpp
+  ModelDecal.cpp
+  ModelManager.cpp
+  ModelOverlay.cpp
+  RenderEntity.cpp
+  RenderSystem.cpp
+  RenderSystem_init.cpp
+  RenderWorld.cpp
+  RenderWorld_demo.cpp
+  RenderWorld_load.cpp
+  RenderWorld_portals.cpp
+  tr_backend.cpp
+  tr_deform.cpp
+  tr_font.cpp
+  tr_guisurf.cpp
+  tr_light.cpp
+  tr_lightrun.cpp
+  Generating Code...
+  Compiling...
+  tr_main.cpp
+  tr_orderIndexes.cpp
+  tr_polytope.cpp
+  tr_render.cpp
+  tr_rendertools.cpp
+  tr_shadowbounds.cpp
+  tr_stencilshadow.cpp
+  tr_subview.cpp
+  tr_trace.cpp
+  tr_trisurf.cpp
+  tr_turboshadow.cpp
+  VertexCache.cpp
+  snd_cache.cpp
+  snd_decoder.cpp
+  snd_efxfile.cpp
+  snd_emitter.cpp
+  snd_shader.cpp
+  snd_system.cpp
+  snd_wavefile.cpp
+  snd_world.cpp
+  Generating Code...
+  Compiling...
+  AASBuild.cpp
+  AASBuild_file.cpp
+  AASBuild_gravity.cpp
+  AASBuild_ledge.cpp
+  AASBuild_merge.cpp
+  AASCluster.cpp
+  AASFile.cpp
+  AASFile_optimize.cpp
+  AASFile_sample.cpp
 
 
