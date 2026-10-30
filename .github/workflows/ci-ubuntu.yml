@@ -18,6 +18,10 @@ jobs:
   build:
     name: ${{ matrix.os }}-${{ matrix.arch }}-${{ matrix.config }}
     runs-on: ${{ matrix.os }}
+    env:
+      # the content based ccache hashing must not depend on absolute paths
+      CCACHE_BASEDIR: ${{ github.workspace }}
+      CCACHE_NOHASHDIR: 'true'
     strategy:
       # one failing leg cancels the remaining legs of this OS, the other
       # OS workflow keeps running for redundancy
@@ -36,6 +40,23 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
+      - name: ccache cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ccache
+          # the exact key misses on every new commit on purpose: the
+          # restore-keys prefix hands the previous cache over so each run
+          # starts from the newest state and saves its own
+          key: ccache-ubuntu-${{ matrix.arch }}-${{ github.sha }}
+          restore-keys: |
+            ccache-ubuntu-${{ matrix.arch }}-
+      - name: sdl3 cache
+        uses: actions/cache@v4
+        with:
+          path: sdl3
+          # the SDL3 install prefix only changes when the SDL3 version of
+          # the unified platform changes, so one key per version is enough
+          key: sdl3-ubuntu-${{ matrix.arch }}-3.4.18
       - name: install linux deps
         shell: bash
         run: |
@@ -43,11 +64,35 @@ jobs:
           sudo dpkg --add-architecture i386 || true
           sudo apt-get update -qq 2>&1 | tee -a build.log
           sudo apt-get install -y -qq gcc-multilib g++-multilib 2>&1 | tee -a build.log
-          sudo apt-get install -y -qq ninja-build m4 2>&1 | tee -a build.log
+          sudo apt-get install -y -qq ninja-build m4 ccache 2>&1 | tee -a build.log
           # the renderer dlopens libGL, so only X11, ALSA and zlib are
           # needed at link time, all in 32-bit for the -m32 build, plus the
-          # GL and OpenAL headers the engine includes
-          sudo apt-get install -y -qq libx11-dev:i386 libxext-dev:i386 libxxf86vm-dev:i386 libasound2-dev:i386 zlib1g-dev:i386 libgl-dev:i386 libglx-dev:i386 libopenal-dev:i386 2>&1 | tee -a build.log
+          # GL, OpenAL and OpenSSL dev files the engine and curl include
+          sudo apt-get install -y -qq libx11-dev:i386 libxext-dev:i386 libxxf86vm-dev:i386 libasound2-dev:i386 zlib1g-dev:i386 libgl-dev:i386 libglx-dev:i386 libopenal-dev:i386 libssl-dev:i386 2>&1 | tee -a build.log
+      - name: build sdl3
+        shell: bash
+        run: |
+          set -o pipefail
+          if [ -f sdl3/lib/libSDL3.a ]; then
+            echo "SDL3 restored from cache" | tee -a build.log
+            exit 0
+          fi
+          # ubuntu ships no 32-bit SDL3 package, the unified platform needs
+          # the same 3.4.18 release that is vendored under third-party
+          curl -fsSL https://github.com/libsdl-org/SDL/releases/download/release-3.4.18/SDL3-3.4.18.tar.gz -o SDL3-3.4.18.tar.gz 2>&1 | tee -a build.log
+          tar xzf SDL3-3.4.18.tar.gz
+          # -m32 keeps the library at the same pointer size as the engine,
+          # -w keeps the third-party warnings out of the build digest, the
+          # subsystems the engine does not use stay out of the library
+          cmake -S SDL3-3.4.18 -B sdl3-build -G Ninja -DCMAKE_BUILD_TYPE=Release \
+            -DCMAKE_C_FLAGS="-m32 -w" -DCMAKE_CXX_FLAGS="-m32 -w" \
+            -DCMAKE_EXE_LINKER_FLAGS=-m32 \
+            -DCMAKE_INSTALL_PREFIX="$PWD/sdl3" \
+            -DSDL_SHARED=OFF -DSDL_STATIC=ON -DSDL_TEST=OFF \
+            -DSDL_AUDIO=OFF -DSDL_RENDER=OFF -DSDL_CAMERA=OFF -DSDL_GPU=OFF \
+            2>&1 | tee -a build.log
+          cmake --build sdl3-build --parallel 4 2>&1 | tee -a build.log
+          cmake --install sdl3-build 2>&1 | tee -a build.log
       - name: configure
         shell: bash
         run: |
@@ -57,10 +102,15 @@ jobs:
             release) config="Release" ;;
           esac
           # -m32 keeps CMake's pointer-size probe at 4 so the products get
-          # the x86 names the engine loads at runtime
+          # the x86 names the engine loads at runtime. The compiler
+          # launchers route every compile through ccache so a redundant
+          # checkout does not rebuild the untouched objects. The SDL3
+          # prefix carries the unified platform library
           cmake -S neo -B build -G Ninja -DCMAKE_BUILD_TYPE="$config" \
             -DCMAKE_C_FLAGS=-m32 -DCMAKE_CXX_FLAGS=-m32 \
             -DCMAKE_EXE_LINKER_FLAGS=-m32 -DCMAKE_SHARED_LINKER_FLAGS=-m32 \
+            -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache \
+            -DCMAKE_PREFIX_PATH="$PWD/sdl3" \
             2>&1 | tee -a build.log
       - name: build
         shell: bash
@@ -68,6 +118,10 @@ jobs:
           set -o pipefail
           # -k 0 keeps going so the digest lists every failing file in one run
           cmake --build build --parallel 4 -- -k 0 2>&1 | tee -a build.log
+      - name: ccache stats
+        if: always()
+        shell: bash
+        run: ccache -s >> build.log 2>&1 || true
       - name: digest
         if: always()
         shell: bash

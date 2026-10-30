@@ -17,11 +17,13 @@ out/
 *.so
 
 # bundled import libraries stay tracked
-!neo/openal/lib/openal32.lib
-!neo/sys/win32/eaxguid.lib
+!neo/third-party/openal-soft/libs/Win32/OpenAL32.lib
 
-# linux engine binary ( no extension )
-/doom.x86
+# build products
+/bin/
+
+# source sdk archive
+/doom3-*-src.zip
 
 # generated game typeinfo headers
 neo/game/gamesys/GameTypeInfo.h

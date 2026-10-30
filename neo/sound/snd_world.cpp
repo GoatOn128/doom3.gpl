@@ -474,8 +474,8 @@ void idSoundWorldLocal::MixLoop( int current44kHz, int numSpeakers, float *final
 							EnvironmentParameters.lRoom = -10000;
 							EnvironmentID = -2;
 						}
-						if ( soundSystemLocal.alEAXSet ) {
-							soundSystemLocal.alEAXSet( &EAXPROPERTYID_EAX_FXSlot0, EAXREVERB_ALLPARAMETERS, 0, &EnvironmentParameters, sizeof( EnvironmentParameters ) );
+						if ( soundSystemLocal.efxAvailable ) {
+							soundSystemLocal.ApplyEFXReverb( &EnvironmentParameters );
 						}
 					}
 					listenerEnvironmentID = EnvironmentID;
@@ -1747,9 +1747,9 @@ void idSoundWorldLocal::AddChannelContribution( idSoundEmitterLocal *sound, idSo
 #endif
 			alSourcef( chan->openalSource, AL_PITCH, ( slowmoActive && !chan->disallowSlow ) ? ( slowmoSpeed ) : ( 1.0f ) );
 #if ID_OPENAL
-			long lOcclusion = ( enviroSuitActive ? -1150 : 0);
-			if ( soundSystemLocal.alEAXSet ) {
-				soundSystemLocal.alEAXSet( &EAXPROPERTYID_EAX_Source, EAXSOURCE_OCCLUSION, chan->openalSource, &lOcclusion, sizeof(lOcclusion) );
+			// route the source through the reverb slot ( the enviro suit EAX occlusion died with EAX )
+			if ( soundSystemLocal.openalReverbSlot != 0 ) {
+				alSource3i( chan->openalSource, AL_AUXILIARY_SEND_FILTER, soundSystemLocal.openalReverbSlot, 0, AL_FILTER_NULL );
 			}
 #endif
 			if ( ( !looping && chan->leadinSample->hardwareBuffer ) || ( looping && chan->soundShader->entries[0]->hardwareBuffer ) ) {
@@ -1769,9 +1769,6 @@ void idSoundWorldLocal::AddChannelContribution( idSoundEmitterLocal *sound, idSo
 					chan->lastopenalStreamingBuffer[1] = chan->openalStreamingBuffer[1];
 					chan->lastopenalStreamingBuffer[2] = chan->openalStreamingBuffer[2];
 					alGenBuffers( 3, &chan->openalStreamingBuffer[0] );
-					if ( soundSystemLocal.alEAXSetBufferMode ) {
-						soundSystemLocal.alEAXSetBufferMode( 3, &chan->openalStreamingBuffer[0], alGetEnumValue( ID_ALCHAR "AL_STORAGE_ACCESSIBLE" ) );
-					}
 					buffers[0] = chan->openalStreamingBuffer[0];
 					buffers[1] = chan->openalStreamingBuffer[1];
 					buffers[2] = chan->openalStreamingBuffer[2];
@@ -2139,3 +2136,4 @@ idSoundWorldLocal::SetEnviroSuit
 void idSoundWorldLocal::SetEnviroSuit( bool active ) {
 	enviroSuitActive = active;
 }
+

@@ -5,8 +5,8 @@
             "name": "DOOM3 (Windows, debug)",
             "type": "lldb",
             "request": "launch",
-            "program": "${workspaceFolder}/DOOM3.exe",
-            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/bin/DOOM3.exe",
+            "cwd": "${workspaceFolder}/bin",
             "preLaunchTask": "Build (Win32 debug)",
             "args": [
                 "+set",
@@ -41,8 +41,8 @@
             "name": "DOOM3 (Windows, release)",
             "type": "lldb",
             "request": "launch",
-            "program": "${workspaceFolder}/DOOM3.exe",
-            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/bin/DOOM3.exe",
+            "cwd": "${workspaceFolder}/bin",
             "preLaunchTask": "Build (Win32 release)",
             "args": [
                 "+set",
@@ -77,8 +77,8 @@
             "name": "doom.x86 (Linux, debug)",
             "type": "lldb",
             "request": "launch",
-            "program": "${workspaceFolder}/doom.x86",
-            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/bin/doom.x86",
+            "cwd": "${workspaceFolder}/bin",
             "preLaunchTask": "Build (Linux x86 debug)",
             "args": [
                 "+set",
@@ -109,8 +109,8 @@
             "name": "doom.x86 (Linux, release)",
             "type": "lldb",
             "request": "launch",
-            "program": "${workspaceFolder}/doom.x86",
-            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/bin/doom.x86",
+            "cwd": "${workspaceFolder}/bin",
             "preLaunchTask": "Build (Linux x86 release)",
             "args": [
                 "+set",

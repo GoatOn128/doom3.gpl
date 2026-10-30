@@ -45,21 +45,18 @@ public:
 						~NSBitmapImageRep();
 
 	NSBitmapImageRep &	operator=( const NSBitmapImageRep &a );
-	
 	int					samplesPerPixel( void );
 	int					pixelsWide( void );
 	int					pixelsHigh( void );
 	byte *				bitmapData( void );
 	bool				hasAlpha( void );
 	bool				isPlanar( void );
-	
 private:
 
 	byte *				bmap;
 	int					width;
 	int					height;
 	ID_TIME_T				timestamp;
-	
 };
 
 class roq {
@@ -99,7 +96,6 @@ private:
 	int					SizeFile( idFile *ftosize );
 	void				CloseRoQFile( void );
 	void				WriteCodeBookToStream( byte *codebook, int csize, word cflags );
-	
 
 	codec *				encoder;
 	roqParam *			paramFile;
@@ -121,3 +117,4 @@ private:
 extern roq *theRoQ;				// current roq 
 
 #endif /* !__roq_h__ */
+

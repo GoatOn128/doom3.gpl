@@ -45,6 +45,7 @@ idWaveFile::idWaveFile( void ) {
 	mbIsReadingFromMemory = false;
 	mpbData		= NULL;
 	ogg			= NULL;
+	oggBuffer	= NULL;
 	isOgg		= false;
 }
 

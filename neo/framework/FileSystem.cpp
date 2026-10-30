@@ -476,8 +476,10 @@ private:
 	void					FollowAddonDependencies( pack_t *pak );
 
 	static size_t			CurlWriteFunction( void *ptr, size_t size, size_t nmemb, void *stream );
-							// curl_progress_callback in curl.h
-	static int				CurlProgressFunction( void *clientp, double dltotal, double dlnow, double ultotal, double ulnow );
+#if ID_ENABLE_CURL
+							// curl_xferinfo_callback in curl.h
+	static int				CurlProgressFunction( void *clientp, curl_off_t dltotal, curl_off_t dlnow, curl_off_t ultotal, curl_off_t ulnow );
+#endif
 };
 
 idCVar	idFileSystemLocal::fs_restrict( "fs_restrict", "", CVAR_SYSTEM | CVAR_INIT | CVAR_BOOL, "" );
@@ -3595,18 +3597,20 @@ size_t idFileSystemLocal::CurlWriteFunction( void *ptr, size_t size, size_t nmem
 		return size * nmemb;
 	}
 	#ifdef _WIN32
+		// the UCRT FILE has no _file member, _fileno gives the descriptor
 		return _write( _fileno( static_cast<idFile_Permanent*>(bgl->f)->GetFilePtr() ), ptr, size * nmemb );
 	#else
 		return fwrite( ptr, size, nmemb, static_cast<idFile_Permanent*>(bgl->f)->GetFilePtr() );
 	#endif
 }
 
+#if ID_ENABLE_CURL
 /*
 =================
 idFileSystemLocal::CurlProgressFunction
 =================
 */
-int idFileSystemLocal::CurlProgressFunction( void *clientp, double dltotal, double dlnow, double ultotal, double ulnow ) {
+int idFileSystemLocal::CurlProgressFunction( void *clientp, curl_off_t dltotal, curl_off_t dlnow, curl_off_t ultotal, curl_off_t ulnow ) {
 	backgroundDownload_t *bgl = (backgroundDownload_t *)clientp;
 	if ( bgl->url.status == DL_ABORTING ) {
 		return 1;
@@ -3615,6 +3619,7 @@ int idFileSystemLocal::CurlProgressFunction( void *clientp, double dltotal, doub
 	bgl->url.dlnow = dlnow;
 	return 0;
 }
+#endif
 
 /*
 ===================
@@ -3641,6 +3646,7 @@ dword BackgroundDownloadThread( void *parms ) {
 		if ( bgl->opcode == DLTYPE_FILE ) {
 			// use the low level read function, because fread may allocate memory
 			#if defined(WIN32)
+				// the UCRT FILE has no _file member, _fileno gives the descriptor
 				_read( _fileno( static_cast<idFile_Permanent*>(bgl->f)->GetFilePtr() ), bgl->file.buffer, bgl->file.length );
 			#else
 				fread(  bgl->file.buffer, bgl->file.length, 1, static_cast<idFile_Permanent*>(bgl->f)->GetFilePtr() );
@@ -3665,6 +3671,7 @@ dword BackgroundDownloadThread( void *parms ) {
 				bgl->url.dlstatus = ret;
 				bgl->url.status = DL_FAILED;
 				bgl->completed = true;
+				curl_easy_cleanup( session );
 				continue;
 			}
 			ret = curl_easy_setopt( session, CURLOPT_URL, bgl->url.url.c_str() );
@@ -3672,6 +3679,7 @@ dword BackgroundDownloadThread( void *parms ) {
 				bgl->url.dlstatus = ret;
 				bgl->url.status = DL_FAILED;
 				bgl->completed = true;
+				curl_easy_cleanup( session );
 				continue;
 			}
 			ret = curl_easy_setopt( session, CURLOPT_FAILONERROR, 1 );
@@ -3679,6 +3687,7 @@ dword BackgroundDownloadThread( void *parms ) {
 				bgl->url.dlstatus = ret;
 				bgl->url.status = DL_FAILED;
 				bgl->completed = true;
+				curl_easy_cleanup( session );
 				continue;
 			}
 			ret = curl_easy_setopt( session, CURLOPT_WRITEFUNCTION, idFileSystemLocal::CurlWriteFunction );
@@ -3686,6 +3695,7 @@ dword BackgroundDownloadThread( void *parms ) {
 				bgl->url.dlstatus = ret;
 				bgl->url.status = DL_FAILED;
 				bgl->completed = true;
+				curl_easy_cleanup( session );
 				continue;
 			}
 			ret = curl_easy_setopt( session, CURLOPT_WRITEDATA, bgl );
@@ -3693,6 +3703,7 @@ dword BackgroundDownloadThread( void *parms ) {
 				bgl->url.dlstatus = ret;
 				bgl->url.status = DL_FAILED;
 				bgl->completed = true;
+				curl_easy_cleanup( session );
 				continue;
 			}
 			ret = curl_easy_setopt( session, CURLOPT_NOPROGRESS, 0 );
@@ -3700,20 +3711,23 @@ dword BackgroundDownloadThread( void *parms ) {
 				bgl->url.dlstatus = ret;
 				bgl->url.status = DL_FAILED;
 				bgl->completed = true;
+				curl_easy_cleanup( session );
 				continue;
 			}
-			ret = curl_easy_setopt( session, CURLOPT_PROGRESSFUNCTION, idFileSystemLocal::CurlProgressFunction );
+			ret = curl_easy_setopt( session, CURLOPT_XFERINFOFUNCTION, idFileSystemLocal::CurlProgressFunction );
 			if ( ret ) {
 				bgl->url.dlstatus = ret;
 				bgl->url.status = DL_FAILED;
 				bgl->completed = true;
+				curl_easy_cleanup( session );
 				continue;
 			}
-			ret = curl_easy_setopt( session, CURLOPT_PROGRESSDATA, bgl );
+			ret = curl_easy_setopt( session, CURLOPT_XFERINFODATA, bgl );
 			if ( ret ) {
 				bgl->url.dlstatus = ret;
 				bgl->url.status = DL_FAILED;
 				bgl->completed = true;
+				curl_easy_cleanup( session );
 				continue;
 			}
 			bgl->url.dlnow = 0;
@@ -3726,10 +3740,12 @@ dword BackgroundDownloadThread( void *parms ) {
 				bgl->url.dlstatus = ret;
 				bgl->url.status = DL_FAILED;
 				bgl->completed = true;
+				curl_easy_cleanup( session );
 				continue;
 			}
 			bgl->url.status = DL_DONE;
 			bgl->completed = true;
+			curl_easy_cleanup( session );
 #else
 			bgl->url.status = DL_FAILED;
 			bgl->completed = true;
@@ -4215,3 +4231,5 @@ void idFileSystemLocal::FindMapScreenshot( const char *path, char *buf, int len 
 		}
 	}
 }
+
+

@@ -315,3 +315,4 @@ void idAudioHardwareALSA::Write( bool flushing ) {
 	}
 	m_remainingFrames -= frames;
 }
+

@@ -1,0 +1,29 @@
+name: make-sdk
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pack:
+    name: source sdk
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Pack the source tree
+        shell: bash
+        run: python tools/make_source_sdk.py
+
+      - name: Upload the archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-sdk
+          path: doom3-*-src.zip
+          if-no-files-found: error

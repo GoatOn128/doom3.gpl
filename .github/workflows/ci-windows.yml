@@ -18,6 +18,11 @@ jobs:
   build:
     name: ${{ matrix.os }}-${{ matrix.arch }}-${{ matrix.config }}
     runs-on: ${{ matrix.os }}
+    env:
+      # sccache stores its disk cache in the workspace so the cache action
+      # can hand it to the next run, the size cap keeps the free disk room
+      SCCACHE_DIR: ${{ github.workspace }}\.sccache
+      SCCACHE_CACHE_SIZE: 2G
     strategy:
       # one failing leg cancels the remaining legs of this OS, the other
       # OS workflow keeps running for redundancy
@@ -46,11 +51,31 @@ jobs:
         uses: ilammy/msvc-dev-cmd@v1
         with:
           arch: ${{ matrix.arch }}
+      - name: sccache cache
+        uses: actions/cache@v4
+        with:
+          # the exact key misses on every new commit on purpose: the
+          # restore-keys prefix hands the previous cache over so each run
+          # starts from the newest state and saves its own
+          path: ${{ github.workspace }}\.sccache
+          key: sccache-windows-${{ matrix.arch }}-${{ github.sha }}
+          restore-keys: |
+            sccache-windows-${{ matrix.arch }}-
+      - name: install sccache
+        shell: bash
+        run: choco install -y sccache 2>&1 | tee -a build.log
+      - name: start sccache server
+        shell: bash
+        run: sccache --start-server 2>&1 | tee -a build.log || true
       - name: configure
         shell: bash
         run: |
           set -o pipefail
-          cmake -S neo -B build -A Win32 2>&1 | tee -a build.log
+          # the compiler launchers route every compile through sccache so
+          # a redundant checkout does not rebuild the untouched objects
+          cmake -S neo -B build -A Win32 \
+            -DCMAKE_C_COMPILER_LAUNCHER=sccache -DCMAKE_CXX_COMPILER_LAUNCHER=sccache \
+            2>&1 | tee -a build.log
       - name: build
         shell: bash
         run: |
@@ -60,6 +85,14 @@ jobs:
             release) config="Release" ;;
           esac
           cmake --build build --config "$config" 2>&1 | tee -a build.log
+      - name: sccache stats
+        if: always()
+        shell: bash
+        run: |
+          # stopping the server flushes the disk cache before the cache
+          # action saves it at the end of the job
+          sccache --show-adv-stats >> build.log 2>&1 || true
+          sccache --stop-server >> build.log 2>&1 || true
       - name: digest
         if: always()
         shell: bash

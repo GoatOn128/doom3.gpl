@@ -30,22 +30,22 @@ If you have questions concerning this license or the applicable additional terms
 #define __SND_LOCAL_H__
 
 // you need the OpenAL headers for build, even if AL is not enabled - http://www.openal.org/
-#ifdef _WIN32
-#include "../openal/include/al.h"
-#include "../openal/include/alc.h"
-#include "../openal/idal.h"
-// broken OpenAL SDK ?
-#define ID_ALCHAR (ALubyte *)
-#elif defined( MACOS_X )
-#include <OpenAL/al.h>
-#include <OpenAL/alc.h>
-#define ID_ALCHAR
-#else         
 #include <AL/al.h>
 #include <AL/alc.h>
-#define ID_ALCHAR
+// pull the EFX entry point prototypes along with the headers
+#define AL_ALEXT_PROTOTYPES
+#include <AL/efx.h>
+#ifdef _WIN32
+#include "idal.h"
 #endif
-#include "../openal/include/efxlib.h"
+#define ID_ALCHAR (const ALchar *)
+#include "efxlib.h"
+
+// Ogg Vorbis decoding goes through stb_vorbis, this pulls declarations only
+// ( the implementation is compiled from third-party/stb/stb_vorbis.c )
+#define STB_VORBIS_HEADER_ONLY
+#include "../third-party/stb/stb_vorbis.c"
+#undef STB_VORBIS_HEADER_ONLY
 
 // demo sound commands
 typedef enum {
@@ -211,7 +211,8 @@ private:
     short *			mpbDataCur;
     dword			mulDataSize;
 
-	void *			ogg;			// only !NULL when !s_realTimeDecoding
+	stb_vorbis *	ogg;			// decoder, only !NULL when !s_realTimeDecoding
+	byte *			oggBuffer;		// memory image the decoder reads from
 	bool			isOgg;
 
 private:
@@ -732,6 +733,9 @@ public:
 	ALuint					AllocOpenALSource( idSoundChannel *chan, bool looping, bool stereo );
 	void					FreeOpenALSource( ALuint handle );
 
+	// translate EAX reverb properties into the EFX effect
+	void					ApplyEFXReverb( const EAXREVERBPROPERTIES *reverb );
+
 	idAudioHardware *		snd_audio_hw;
 	idSoundCache *			soundCache;
 
@@ -765,10 +769,9 @@ public:
 	ALCcontext				*openalContext;
 	ALsizei					openalSourceCount;
 	openalSource_t			openalSources[256];
-	EAXSet					alEAXSet;
-	EAXGet					alEAXGet;
-	EAXSetBufferMode		alEAXSetBufferMode;
-	EAXGetBufferMode		alEAXGetBufferMode;
+	ALuint					openalReverbEffect;
+	ALuint					openalReverbSlot;
+	bool					efxAvailable;
 	idEFXFile				EFXDatabase;
 	bool					efxloaded;
 							// latches
