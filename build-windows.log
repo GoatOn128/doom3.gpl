@@ -1,7 +1,7 @@
 ==== windows-latest-x86-debug (failure) ====
 
 Filesystem      Size  Used Avail Use% Mounted on
-C:              150G  123G   28G  82% /c
+C:              150G  120G   31G  80% /c
 -- Building for: Visual Studio 18 2026
 -- The C compiler identification is MSVC 19.51.36260.0
 -- The CXX compiler identification is MSVC 19.51.36260.0
@@ -44,8 +44,9 @@ buildinfo.compiler: MSVC
 buildinfo.compiler.version: 19.51.36260.0
 buildinfo.sysroot: 
 
--- Configuring done (15.2s)
--- Generating done (0.1s)
+-- Found Python3: C:/hostedtoolcache/windows/Python/3.15.1/x64/python3.exe (found version "3.15.1") found components: Interpreter
+-- Configuring done (21.9s)
+-- Generating done (0.2s)
 -- Build files have been written to: D:/a/doom3.gpl/doom3.gpl/build
 MSBuild version 18.11.1-1.26513.3+940033be3 for .NET Framework
 
@@ -108,6 +109,333 @@ MSBuild version 18.11.1-1.26513.3+940033be3 for .NET Framework
   Timer.cpp
   Generating Code...
   idlib.vcxproj -> D:\a\doom3.gpl\doom3.gpl\build\idlib\Debug\idlib.lib
+  Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/TypeInfo/CMakeLists.txt
+  main.cpp
+  TypeInfoGen.cpp
+  CmdSystem.cpp
+  CVarSystem.cpp
+  File.cpp
+  FileSystem.cpp
+  Unzip.cpp
+D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3598,72): error C2039: '_file': is not a member of '_iobuf' [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\mbstring.h(24,20):
+      see declaration of '_iobuf'
+  
+D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3644,66): error C2039: '_file': is not a member of '_iobuf' [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\mbstring.h(24,20):
+      see declaration of '_iobuf'
+  
+  Generating Code...
+  Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/third-party/curl/lib/CMakeLists.txt
+  altsvc.c
+  amigaos.c
+  api.c
+  bufq.c
+  bufref.c
+  cf-h1-proxy.c
+  cf-h2-proxy.c
+  cf-haproxy.c
+  cf-https-connect.c
+  cf-ip-happy.c
+  cf-recvbuf.c
+  cf-setup.c
+  cf-socket.c
+  cfilters.c
+  conncache.c
+  connect.c
+  content_encoding.c
+  cookie.c
+  creds.c
+  cshutdn.c
+  curl_addrinfo.c
+  curl_endian.c
+  curl_fnmatch.c
+  curl_fopen.c
+  curl_get_line.c
+  curl_gethostname.c
+  curl_gssapi.c
+  curl_memrchr.c
+  curl_ntlm_core.c
+  curl_range.c
+  curl_sasl.c
+  curl_sha512_256.c
+  curl_share.c
+  curl_sspi.c
+  curl_threads.c
+  curl_trc.c
+  cw-out.c
+  cw-pause.c
+  dict.c
+  dynhds.c
+  easy.c
+  easyoptions.c
+  easygetopt.c
+  escape.c
+  fake_addrinfo.c
+  file.c
+  fileinfo.c
+  formdata.c
+  ftp.c
+  ftplistparser.c
+  getenv.c
+  getinfo.c
+  gopher.c
+  hash.c
+  headers.c
+  hmac.c
+  hsts.c
+  http.c
+  http1.c
+  http2.c
+  http_aws_sigv4.c
+  http_httpsig.c
+  curl_ed25519.c
+  http_chunks.c
+  http_digest.c
+  http_negotiate.c
+  http_ntlm.c
+  http_proxy.c
+  idn.c
+  if2ip.c
+  imap.c
+  ldap.c
+  llist.c
+  macos.c
+  md4.c
+  md5.c
+  memdebug.c
+  mime.c
+  mprintf.c
+  mqtt.c
+  multi.c
+  multi_ev.c
+  multi_ntfy.c
+  netrc.c
+  openldap.c
+  parsedate.c
+  peer.c
+  pingpong.c
+  pop3.c
+  progress.c
+  protocol.c
+  proxy.c
+  psl.c
+  ptrarray.c
+  rand.c
+  ratelimit.c
+  request.c
+  rtsp.c
+  select.c
+  sendf.c
+  setopt.c
+  sha256.c
+  slist.c
+  smtp.c
+  socketpair.c
+  socks.c
+  socks_gssapi.c
+  socks_sspi.c
+  splay.c
+  strcase.c
+  strequal.c
+  strerror.c
+  telnet.c
+  tftp.c
+  thrdpool.c
+  thrdqueue.c
+  transfer.c
+  u8_strset.c
+  u32_ptrset.c
+  uint-bset.c
+  uint-spbset.c
+  uint-table.c
+  url.c
+  urlapi.c
+  version.c
+  ws.c
+  cleartext.c
+  cram.c
+  digest.c
+  digest_sspi.c
+  gsasl.c
+  krb5_gssapi.c
+  krb5_sspi.c
+  ntlm.c
+  ntlm_sspi.c
+  oauth2.c
+  spnego_gssapi.c
+  spnego_sspi.c
+  vauth.c
+  asyn-ares.c
+  asyn-base.c
+  asyn-thrdd.c
+  cf-dns.c
+  dnscache.c
+  doh.c
+  hostip.c
+  hostip4.c
+  hostip6.c
+  httpsrr.c
+  apple.c
+  cipher_suite.c
+  gtls.c
+  hostcheck.c
+  keylog.c
+  mbedtls.c
+  openssl.c
+  rustls.c
+  schannel.c
+  schannel_verify.c
+  vtls.c
+  vtls_config.c
+  vtls_scache.c
+  vtls_spack.c
+  wolfssl.c
+  x509asn1.c
+  capsule.c
+  cf-capsule.c
+  cf-ngtcp2.c
+  cf-ngtcp2-cmn.c
+  cf-ngtcp2-proxy.c
+  cf-quiche.c
+  vquic.c
+  vquic-tls.c
+  libssh.c
+  libssh2.c
+  vssh.c
+  base64.c
+  basename.c
+  dynbuf.c
+  win32-fopen.c
+  inet_ntop.c
+  inet_pton.c
+  multibyte.c
+  nonblock.c
+  snprintf.c
+  strcopy.c
+  strdup.c
+  strerr.c
+  strparse.c
+  timediff.c
+  timeval.c
+  version_win32.c
+  wait.c
+  warnless.c
+  winapi.c
+  libcurl_object.vcxproj -> D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\lib\libcurl_object.dir\Debug\libcurl_object.lib
+
+
+==== windows-latest-x86-release (failure) ====
+
+Filesystem      Size  Used Avail Use% Mounted on
+C:              150G  120G   31G  80% /c
+-- Building for: Visual Studio 18 2026
+-- The C compiler identification is MSVC 19.51.36260.0
+-- The CXX compiler identification is MSVC 19.51.36260.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/18/Enterprise/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x86/cl.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/18/Enterprise/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x86/cl.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Using CMake version 4.4.4
+-- curl version=[8.23.0]
+-- CMake platform flags: WIN32 MSVC-1951
+-- Performing Test HAVE_WIN32_WINNT
+-- Performing Test HAVE_WIN32_WINNT - Success
+-- Found _WIN32_WINNT=0x0a00
+-- Picky compiler options: -W4
+-- Found Perl: C:/Program Files/Git/usr/bin/perl.exe (found version "5.42.3")
+-- Check size of time_t
+-- Check size of time_t - done
+-- Protocols: http https ipfs ipns
+-- Features: alt-svc AsynchDNS HSTS HTTPS-proxy IPv6 Kerberos Largefile SPNEGO SSL SSPI threadsafe UnixSockets
+-- Enabled SSL backends: Schannel
+-- 
+buildinfo.configure.tool: cmake
+buildinfo.configure.command: C:/Program Files/CMake/bin/cmake.exe
+buildinfo.configure.version: 4.4.4
+buildinfo.configure.args:
+buildinfo.configure.generator: Visual Studio 18 2026
+buildinfo.configure.make: C:/Program Files/Microsoft Visual Studio/18/Enterprise/MSBuild/Current/Bin/amd64/MSBuild.exe
+buildinfo.host.cpu: AMD64
+buildinfo.host.os: Windows
+buildinfo.target.cpu: AMD64
+buildinfo.target.os: Windows
+buildinfo.target.flags: WIN32 MSVC-1951
+buildinfo.compiler: MSVC
+buildinfo.compiler.version: 19.51.36260.0
+buildinfo.sysroot: 
+
+-- Found Python3: C:/hostedtoolcache/windows/Python/3.15.1/x64/python3.exe (found version "3.15.1") found components: Interpreter
+-- Configuring done (23.3s)
+-- Generating done (0.2s)
+-- Build files have been written to: D:/a/doom3.gpl/doom3.gpl/build
+MSBuild version 18.11.1-1.26513.3+940033be3 for .NET Framework
+
+  1>Checking Build System
+  Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/idlib/CMakeLists.txt
+  Bounds.cpp
+  Box.cpp
+  Frustum.cpp
+  Sphere.cpp
+  HashIndex.cpp
+  DrawVert.cpp
+  JointTransform.cpp
+  Surface.cpp
+  Surface_Patch.cpp
+  Surface_Polytope.cpp
+  Surface_SweptSpline.cpp
+  TraceModel.cpp
+  Winding.cpp
+  Winding2D.cpp
+  CRC32.cpp
+  MD4.cpp
+  MD5.cpp
+  Angles.cpp
+  Complex.cpp
+  Lcp.cpp
+  Generating Code...
+  Compiling...
+  Math.cpp
+  Matrix.cpp
+  Ode.cpp
+  Plane.cpp
+  Pluecker.cpp
+  Polynomial.cpp
+  Quat.cpp
+  Rotation.cpp
+  Simd.cpp
+  Simd_3DNow.cpp
+  Simd_AltiVec.cpp
+  Simd_Generic.cpp
+  Simd_MMX.cpp
+  Simd_SSE.cpp
+  Simd_SSE2.cpp
+  Simd_SSE3.cpp
+  Vector.cpp
+  Base64.cpp
+  CmdArgs.cpp
+  Lexer.cpp
+  Generating Code...
+  Compiling...
+  Parser.cpp
+  Str.cpp
+  Token.cpp
+  BitMsg.cpp
+  Dict.cpp
+  Heap.cpp
+  LangDict.cpp
+  Lib.cpp
+  MapFile.cpp
+  precompiled.cpp
+  Timer.cpp
+  Generating Code...
+  idlib.vcxproj -> D:\a\doom3.gpl\doom3.gpl\build\idlib\Release\idlib.lib
   Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/TypeInfo/CMakeLists.txt
   main.cpp
   TypeInfoGen.cpp
@@ -321,121 +649,6 @@ D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3644,66): error C2039: '_f
   wait.c
   warnless.c
   winapi.c
-  libcurl_object.vcxproj -> D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\lib\libcurl_object.dir\Debug\libcurl_object.lib
-
-
-==== windows-latest-x86-release (cancelled) ====
-
-Filesystem      Size  Used Avail Use% Mounted on
-C:              150G  120G   31G  80% /c
--- Building for: Visual Studio 18 2026
--- The C compiler identification is MSVC 19.51.36260.0
--- The CXX compiler identification is MSVC 19.51.36260.0
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/18/Enterprise/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x86/cl.exe - skipped
--- Detecting C compile features
--- Detecting C compile features - done
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/18/Enterprise/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x86/cl.exe - skipped
--- Detecting CXX compile features
--- Detecting CXX compile features - done
--- Using CMake version 4.4.4
--- curl version=[8.23.0]
--- CMake platform flags: WIN32 MSVC-1951
--- Performing Test HAVE_WIN32_WINNT
--- Performing Test HAVE_WIN32_WINNT - Success
--- Found _WIN32_WINNT=0x0a00
--- Picky compiler options: -W4
--- Found Perl: C:/Program Files/Git/usr/bin/perl.exe (found version "5.42.3")
--- Check size of time_t
--- Check size of time_t - done
--- Protocols: http https ipfs ipns
--- Features: alt-svc AsynchDNS HSTS HTTPS-proxy IPv6 Kerberos Largefile SPNEGO SSL SSPI threadsafe UnixSockets
--- Enabled SSL backends: Schannel
--- 
-buildinfo.configure.tool: cmake
-buildinfo.configure.command: C:/Program Files/CMake/bin/cmake.exe
-buildinfo.configure.version: 4.4.4
-buildinfo.configure.args:
-buildinfo.configure.generator: Visual Studio 18 2026
-buildinfo.configure.make: C:/Program Files/Microsoft Visual Studio/18/Enterprise/MSBuild/Current/Bin/amd64/MSBuild.exe
-buildinfo.host.cpu: AMD64
-buildinfo.host.os: Windows
-buildinfo.target.cpu: AMD64
-buildinfo.target.os: Windows
-buildinfo.target.flags: WIN32 MSVC-1951
-buildinfo.compiler: MSVC
-buildinfo.compiler.version: 19.51.36260.0
-buildinfo.sysroot: 
-
--- Configuring done (21.4s)
--- Generating done (0.2s)
--- Build files have been written to: D:/a/doom3.gpl/doom3.gpl/build
-MSBuild version 18.11.1-1.26513.3+940033be3 for .NET Framework
-
-  1>Checking Build System
-  Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/idlib/CMakeLists.txt
-  Bounds.cpp
-  Box.cpp
-  Frustum.cpp
-  Sphere.cpp
-  HashIndex.cpp
-  DrawVert.cpp
-  JointTransform.cpp
-  Surface.cpp
-  Surface_Patch.cpp
-  Surface_Polytope.cpp
-  Surface_SweptSpline.cpp
-  TraceModel.cpp
-  Winding.cpp
-  Winding2D.cpp
-  CRC32.cpp
-  MD4.cpp
-  MD5.cpp
-  Angles.cpp
-  Complex.cpp
-  Lcp.cpp
-  Generating Code...
-  Compiling...
-  Math.cpp
-  Matrix.cpp
-  Ode.cpp
-  Plane.cpp
-  Pluecker.cpp
-  Polynomial.cpp
-  Quat.cpp
-  Rotation.cpp
-  Simd.cpp
-  Simd_3DNow.cpp
-  Simd_AltiVec.cpp
-  Simd_Generic.cpp
-  Simd_MMX.cpp
-  Simd_SSE.cpp
-  Simd_SSE2.cpp
-  Simd_SSE3.cpp
-  Vector.cpp
-  Base64.cpp
-  CmdArgs.cpp
-  Lexer.cpp
-  Generating Code...
-  Compiling...
-  Parser.cpp
-  Str.cpp
-  Token.cpp
-  BitMsg.cpp
-  Dict.cpp
-  Heap.cpp
-  LangDict.cpp
-  Lib.cpp
-  MapFile.cpp
-  precompiled.cpp
-  Timer.cpp
-  Generating Code...
-  idlib.vcxproj -> D:\a\doom3.gpl\doom3.gpl\build\idlib\Release\idlib.lib
-  Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/TypeInfo/CMakeLists.txt
-  main.cpp
-  TypeInfoGen.cpp
+  libcurl_object.vcxproj -> D:\a\doom3.gpl\doom3.gpl\build\third-party\curl\lib\libcurl_object.dir\Release\libcurl_object.lib
 
 
