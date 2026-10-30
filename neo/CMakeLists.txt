@@ -265,31 +265,7 @@ set( ENGINE_SOURCES
 	sound/snd_system.cpp
 	sound/snd_wavefile.cpp
 	sound/snd_world.cpp
-	sound/OggVorbis/oggsrc/bitwise.c
-	sound/OggVorbis/oggsrc/framing.c
-	sound/OggVorbis/vorbissrc/analysis.c
-	sound/OggVorbis/vorbissrc/barkmel.c
-	sound/OggVorbis/vorbissrc/bitrate.c
-	sound/OggVorbis/vorbissrc/block.c
-	sound/OggVorbis/vorbissrc/codebook.c
-	sound/OggVorbis/vorbissrc/envelope.c
-	sound/OggVorbis/vorbissrc/floor0.c
-	sound/OggVorbis/vorbissrc/floor1.c
-	sound/OggVorbis/vorbissrc/info.c
-	sound/OggVorbis/vorbissrc/lookup.c
-	sound/OggVorbis/vorbissrc/lpc.c
-	sound/OggVorbis/vorbissrc/lsp.c
-	sound/OggVorbis/vorbissrc/mapping0.c
-	sound/OggVorbis/vorbissrc/mdct.c
-	sound/OggVorbis/vorbissrc/psy.c
-	sound/OggVorbis/vorbissrc/registry.c
-	sound/OggVorbis/vorbissrc/res0.c
-	sound/OggVorbis/vorbissrc/sharedbook.c
-	sound/OggVorbis/vorbissrc/smallft.c
-	sound/OggVorbis/vorbissrc/synthesis.c
-	sound/OggVorbis/vorbissrc/vorbisenc.c
-	sound/OggVorbis/vorbissrc/vorbisfile.c
-	sound/OggVorbis/vorbissrc/windowvb.c
+	third-party/stb/stb_vorbis.c
 	tools/compilers/aas/AASBuild.cpp
 	tools/compilers/aas/AASBuild_file.cpp
 	tools/compilers/aas/AASBuild_gravity.cpp
@@ -389,6 +365,13 @@ else()
 	endif()
 endif()
 
+# stb_vorbis is third-party code, keep its warnings out of the build digest
+if( MSVC )
+	set_source_files_properties( third-party/stb/stb_vorbis.c PROPERTIES COMPILE_OPTIONS /W0 )
+else()
+	set_source_files_properties( third-party/stb/stb_vorbis.c PROPERTIES COMPILE_OPTIONS -w )
+endif()
+
 add_executable( doom3 ${ENGINE_SOURCES} )
 
 set_target_properties( doom3 PROPERTIES
@@ -417,10 +400,6 @@ add_dependencies( doom3 typeinfo )
 if( MSVC )
 	# _DoomDLL.props
 	target_compile_definitions( doom3 PRIVATE __DOOM__ )
-	target_include_directories( doom3 PRIVATE
-		sound/OggVorbis/ogg
-		sound/OggVorbis/vorbis
-		sound/vorbis/include )
 	target_compile_options( doom3 PRIVATE /W3 )
 	# 16 MB stack and large address awareness from _DoomDLL.props
 	target_link_options( doom3 PRIVATE /STACK:16777216,16777216 )
@@ -456,11 +435,7 @@ else()
 		target_include_directories( doom3 PRIVATE ${GLIMP_GEN_DIR} )
 		target_compile_definitions( doom3 PRIVATE GLIMP )
 	endif()
-	target_include_directories( doom3 PRIVATE
-		sound/OggVorbis/ogg
-		sound/OggVorbis/vorbis
-		sound/OggVorbis/vorbissrc
-		sys/linux/oss/include )
+	target_include_directories( doom3 PRIVATE sys/linux/oss/include )
 	target_link_libraries( doom3 PRIVATE pthread dl z )
 	if( NOT DEDICATED )
 		target_link_libraries( doom3 PRIVATE X11 Xext Xxf86vm )

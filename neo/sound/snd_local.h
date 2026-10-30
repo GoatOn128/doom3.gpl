@@ -47,6 +47,12 @@ If you have questions concerning this license or the applicable additional terms
 #endif
 #include "../openal/include/efxlib.h"
 
+// Ogg Vorbis decoding goes through stb_vorbis, this pulls declarations only
+// ( the implementation is compiled from third-party/stb/stb_vorbis.c )
+#define STB_VORBIS_HEADER_ONLY
+#include "../third-party/stb/stb_vorbis.c"
+#undef STB_VORBIS_HEADER_ONLY
+
 // demo sound commands
 typedef enum {
 	SCMD_STATE,				// followed by a load game state
@@ -211,7 +217,8 @@ private:
     short *			mpbDataCur;
     dword			mulDataSize;
 
-	void *			ogg;			// only !NULL when !s_realTimeDecoding
+	stb_vorbis *	ogg;			// decoder, only !NULL when !s_realTimeDecoding
+	byte *			oggBuffer;		// memory image the decoder reads from
 	bool			isOgg;
 
 private:
