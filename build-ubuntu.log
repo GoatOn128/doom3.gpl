@@ -1,4 +1,4 @@
-==== ubuntu-latest-x86-debug (failure) ====
+==== ubuntu-latest-x86-debug (cancelled) ====
 
 Selecting previously unselected package libc6-dev-i386.
 (Reading database ... 
@@ -630,7 +630,7 @@ No VM guests are running outdated hypervisor (qemu) binaries on this host.
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- curl: the bundled curl needs its configure run, disabling for this platform ( NOCURL=1 behavior )
--- Configuring done (1.0s)
+-- Configuring done (2.4s)
 -- Generating done (0.0s)
 -- Build files have been written to: /home/runner/work/doom3.gpl/doom3.gpl/build
 [1/371] Building CXX object idlib/CMakeFiles/idlib.dir/bv/Sphere.cpp.o
@@ -2339,7 +2339,61 @@ In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/math/../..
    52 | class idVec2 {
       |  
 ... [truncated] ...
-| class idVec5 {
+eFiles/d3xp.dir/Misc.cpp.o
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:181,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Misc.cpp:34:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../d3xp/Game_local.h:460:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
+  460 |         bool                                    RequirementMet( idEntity *activator, const idStr &requires, int removeItem );
+      |                                                                                                   ^~~~~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:171,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:113:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
+   92 |                                         ~idList<type>( void );
+      |                                         ^
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/List.h:92:41: note: remove the ‘< >’
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:179:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat2::idMat2(const float (*)[2])’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
+  127 |         memcpy( mat, src, 2 * 2 * sizeof( float ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:178:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:52:7: note: ‘class idVec2’ declared here
+   52 | class idVec2 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat3::idMat3(const float (*)[3])’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
+  431 |         memcpy( mat, src, 3 * 3 * sizeof( float ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:316:7: note: ‘class idVec3’ declared here
+  316 | class idVec3 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat3::Zero()’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
+  588 |         memset( mat, 0, sizeof( idMat3 ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:316:7: note: ‘class idVec3’ declared here
+  316 | class idVec3 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat4::idMat4(const float (*)[4])’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
+  874 |         memcpy( mat, src, 4 * 4 * sizeof( float ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:808:7: note: ‘class idVec4’ declared here
+  808 | class idVec4 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat4::Zero()’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
+ 1050 |         memset( mat, 0, sizeof( idMat4 ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:808:7: note: ‘class idVec4’ declared here
+  808 | class idVec4 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat5::idMat5(const float (*)[5])’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
+ 1212 |         memcpy( mat, src, 5 * 5 * sizeof( float ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1066:7: note: ‘class idVec5’ declared here
+ 1066 | class idVec5 {
       |       ^~~~~~
 /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat5::Zero()’:
 /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
@@ -2385,54 +2439,6 @@ In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/pr
 /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../framework/DeclEntityDef.h:48:41: note:   by ‘virtual void idDeclEntityDef::Print()’
    48 |         virtual void                    Print( void );
       |                                         ^~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Moveable.cpp: In constructor ‘idExplodingBarrel::idExplodingBarrel()’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Moveable.cpp:839:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  839 |         memset( &particleRenderEntity, 0, sizeof( particleRenderEntity ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:148:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../renderer/RenderWorld.h:80:16: note: ‘renderEntity_t’ {aka ‘struct renderEntity_s’} declared here
-   80 | typedef struct renderEntity_s {
-      |                ^~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Moveable.cpp:840:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  840 |         memset( &light, 0, sizeof( light ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../renderer/RenderWorld.h:157:16: note: ‘renderLight_t’ {aka ‘struct renderLight_s’} declared here
-  157 | typedef struct renderLight_s {
-      |                ^~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Moveable.cpp: In member function ‘void idExplodingBarrel::Spawn()’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Moveable.cpp:937:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  937 |         memset( &particleRenderEntity, 0, sizeof( particleRenderEntity ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../renderer/RenderWorld.h:80:16: note: ‘renderEntity_t’ {aka ‘struct renderEntity_s’} declared here
-   80 | typedef struct renderEntity_s {
-      |                ^~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Moveable.cpp:938:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  938 |         memset( &light, 0, sizeof( light ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../renderer/RenderWorld.h:157:16: note: ‘renderLight_t’ {aka ‘struct renderLight_s’} declared here
-  157 | typedef struct renderLight_s {
-      |                ^~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Moveable.cpp: In member function ‘void idExplodingBarrel::StopBurning()’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Moveable.cpp:1026:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
- 1026 |                 memset( &particleRenderEntity, 0, sizeof( particleRenderEntity ) );
-      |                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../renderer/RenderWorld.h:80:16: note: ‘renderEntity_t’ {aka ‘struct renderEntity_s’} declared here
-   80 | typedef struct renderEntity_s {
-      |                ^~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Moveable.cpp: In member function ‘void idExplodingBarrel::AddParticles(const char*, bool)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Moveable.cpp:1045:23: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
- 1045 |                 memset( &particleRenderEntity, 0, sizeof ( particleRenderEntity ) );
-      |                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../renderer/RenderWorld.h:80:16: note: ‘renderEntity_t’ {aka ‘struct renderEntity_s’} declared here
-   80 | typedef struct renderEntity_s {
-      |                ^~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Moveable.cpp: In member function ‘void idExplodingBarrel::AddLight(const char*, bool)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Moveable.cpp:1082:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderLight_t’ {aka ‘struct renderLight_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
- 1082 |         memset( &light, 0, sizeof ( light ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../renderer/RenderWorld.h:157:16: note: ‘renderLight_t’ {aka ‘struct renderLight_s’} declared here
-  157 | typedef struct renderLight_s {
-      |                ^~~~~~~~~~~~~
 [354/371] Building CXX object d3xp/CMakeFiles/d3xp.dir/MultiplayerGame.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:181,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/MultiplayerGame.cpp:29:
@@ -2617,115 +2623,7 @@ In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/pr
 /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/MultiplayerGame.cpp:854:24: note: ‘sprintf’ output between 5 and 22 bytes into a destination of size 16
   854 |                 sprintf( buff, "%i:%i%i", m, t, s );
       |                 ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[355/371] Building CXX object d3xp/CMakeFiles/d3xp.dir/PlayerIcon.cpp.o
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:181,
-                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/PlayerIcon.cpp:29:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../d3xp/Game_local.h:460:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
-  460 |         bool                                    RequirementMet( idEntity *activator, const idStr &requires, int removeItem );
-      |                                                                                                   ^~~~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:171,
-                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:113:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-   92 |                                         ~idList<type>( void );
-      |                                         ^
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/List.h:92:41: note: remove the ‘< >’
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:179:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat2::idMat2(const float (*)[2])’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  127 |         memcpy( mat, src, 2 * 2 * sizeof( float ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:178:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:52:7: note: ‘class idVec2’ declared here
-   52 | class idVec2 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat3::idMat3(const float (*)[3])’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  431 |         memcpy( mat, src, 3 * 3 * sizeof( float ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:316:7: note: ‘class idVec3’ declared here
-  316 | class idVec3 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat3::Zero()’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  588 |         memset( mat, 0, sizeof( idMat3 ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:316:7: note: ‘class idVec3’ declared here
-  316 | class idVec3 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat4::idMat4(const float (*)[4])’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  874 |         memcpy( mat, src, 4 * 4 * sizeof( float ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:808:7: note: ‘class idVec4’ declared here
-  808 | class idVec4 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat4::Zero()’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
- 1050 |         memset( mat, 0, sizeof( idMat4 ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:808:7: note: ‘class idVec4’ declared here
-  808 | class idVec4 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat5::idMat5(const float (*)[5])’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
- 1212 |         memcpy( mat, src, 5 * 5 * sizeof( float ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1066:7: note: ‘class idVec5’ declared here
- 1066 | class idVec5 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat5::Zero()’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
- 1375 |         memset( mat, 0, sizeof( idMat5 ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1066:7: note: ‘class idVec5’ declared here
- 1066 | class idVec5 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat6::idMat6(const float (*)[6])’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
- 1529 |         memcpy( mat, src, 6 * 6 * sizeof( float ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1158:7: note: ‘class idVec6’ declared here
- 1158 | class idVec6 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat6::Zero()’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
- 1692 |         memset( mat, 0, sizeof( idMat6 ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1158:7: note: ‘class idVec6’ declared here
- 1158 | class idVec6 {
-      |       ^~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:203:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/geometry/Surface.h: In constructor ‘idSurface::idSurface(const idDrawVert*, int, const int*, int)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  122 |         memcpy( this->verts.Ptr(), verts, numVerts * sizeof( verts[0] ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:199:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/geometry/DrawVert.h:40:7: note: ‘class idDrawVert’ declared here
-   40 | class idDrawVert {
-      |       ^~~~~~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:222:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/StaticList.h: At global scope:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-   47 |                                                 ~idStaticList<type,size>( void );
-      |                                                 ^
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/StaticList.h:47:49: note: remove the ‘< >’
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:127:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  233 |         virtual void                    Print( void ) const { base->Print(); }
-      |                                         ^~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:130:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../framework/DeclEntityDef.h:48:41: note:   by ‘virtual void idDeclEntityDef::Print()’
-   48 |         virtual void                    Print( void );
-      |                                         ^~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/PlayerIcon.cpp: In member function ‘bool idPlayerIcon::CreateIcon(idPlayer*, playerIconType_t, const char*, const idVec3&, const idMat3&)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/PlayerIcon.cpp:160:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  160 |         memset( &renderEnt, 0, sizeof( renderEnt ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:148:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../renderer/RenderWorld.h:80:16: note: ‘renderEntity_t’ {aka ‘struct renderEntity_s’} declared here
-   80 | typedef struct renderEntity_s {
-      |                ^~~~~~~~~~~~~~
-[356/371] Building CXX object d3xp/CMakeFiles/d3xp.dir/Mover.cpp.o
+[355/371] Building CXX object d3xp/CMakeFiles/d3xp.dir/Mover.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:181,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Mover.cpp:29:
 /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../d3xp/Game_local.h:460:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
@@ -2839,6 +2737,114 @@ In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/..
 /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../d3xp/Mover.h:107:24: note: ‘struct idMover::rotationState_t’ declared here
   107 |         typedef struct {
       |                        ^
+[356/371] Building CXX object d3xp/CMakeFiles/d3xp.dir/PlayerIcon.cpp.o
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:181,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/PlayerIcon.cpp:29:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../d3xp/Game_local.h:460:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
+  460 |         bool                                    RequirementMet( idEntity *activator, const idStr &requires, int removeItem );
+      |                                                                                                   ^~~~~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:171,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:113:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
+   92 |                                         ~idList<type>( void );
+      |                                         ^
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/List.h:92:41: note: remove the ‘< >’
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:179:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat2::idMat2(const float (*)[2])’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
+  127 |         memcpy( mat, src, 2 * 2 * sizeof( float ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:178:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:52:7: note: ‘class idVec2’ declared here
+   52 | class idVec2 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat3::idMat3(const float (*)[3])’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
+  431 |         memcpy( mat, src, 3 * 3 * sizeof( float ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:316:7: note: ‘class idVec3’ declared here
+  316 | class idVec3 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat3::Zero()’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
+  588 |         memset( mat, 0, sizeof( idMat3 ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:316:7: note: ‘class idVec3’ declared here
+  316 | class idVec3 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat4::idMat4(const float (*)[4])’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
+  874 |         memcpy( mat, src, 4 * 4 * sizeof( float ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:808:7: note: ‘class idVec4’ declared here
+  808 | class idVec4 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat4::Zero()’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
+ 1050 |         memset( mat, 0, sizeof( idMat4 ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:808:7: note: ‘class idVec4’ declared here
+  808 | class idVec4 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat5::idMat5(const float (*)[5])’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
+ 1212 |         memcpy( mat, src, 5 * 5 * sizeof( float ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1066:7: note: ‘class idVec5’ declared here
+ 1066 | class idVec5 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat5::Zero()’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
+ 1375 |         memset( mat, 0, sizeof( idMat5 ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1066:7: note: ‘class idVec5’ declared here
+ 1066 | class idVec5 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat6::idMat6(const float (*)[6])’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
+ 1529 |         memcpy( mat, src, 6 * 6 * sizeof( float ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1158:7: note: ‘class idVec6’ declared here
+ 1158 | class idVec6 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat6::Zero()’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
+ 1692 |         memset( mat, 0, sizeof( idMat6 ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1158:7: note: ‘class idVec6’ declared here
+ 1158 | class idVec6 {
+      |       ^~~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:203:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/geometry/Surface.h: In constructor ‘idSurface::idSurface(const idDrawVert*, int, const int*, int)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
+  122 |         memcpy( this->verts.Ptr(), verts, numVerts * sizeof( verts[0] ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:199:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/geometry/DrawVert.h:40:7: note: ‘class idDrawVert’ declared here
+   40 | class idDrawVert {
+      |       ^~~~~~~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:222:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/StaticList.h: At global scope:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
+   47 |                                                 ~idStaticList<type,size>( void );
+      |                                                 ^
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/StaticList.h:47:49: note: remove the ‘< >’
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:127:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
+  233 |         virtual void                    Print( void ) const { base->Print(); }
+      |                                         ^~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:130:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../framework/DeclEntityDef.h:48:41: note:   by ‘virtual void idDeclEntityDef::Print()’
+   48 |         virtual void                    Print( void );
+      |                                         ^~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/PlayerIcon.cpp: In member function ‘bool idPlayerIcon::CreateIcon(idPlayer*, playerIconType_t, const char*, const idVec3&, const idMat3&)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/PlayerIcon.cpp:160:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘renderEntity_t’ {aka ‘struct renderEntity_s’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
+  160 |         memset( &renderEnt, 0, sizeof( renderEnt ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:148:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../renderer/RenderWorld.h:80:16: note: ‘renderEntity_t’ {aka ‘struct renderEntity_s’} declared here
+   80 | typedef struct renderEntity_s {
+      |                ^~~~~~~~~~~~~~
 [357/371] Building CXX object d3xp/CMakeFiles/d3xp.dir/PlayerView.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:181,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/PlayerView.cpp:29:
@@ -3418,7 +3424,207 @@ In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/pr
 /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../renderer/RenderWorld.h:80:16: note: ‘renderEntity_t’ {aka ‘struct renderEntity_s’} declared here
    80 | typedef struct renderEntity_s {
       |                ^~~~~~~~~~~~~~
-[361/371] Building CXX object d3xp/CMakeFiles/d3xp.dir/SmokeParticles.cpp.o
+[361/371] Building CXX object d3xp/CMakeFiles/d3xp.dir/Sound.cpp.o
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:181,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Sound.cpp:29:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../d3xp/Game_local.h:460:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
+  460 |         bool                                    RequirementMet( idEntity *activator, const idStr &requires, int removeItem );
+      |                                                                                                   ^~~~~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:171,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:113:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
+   92 |                                         ~idList<type>( void );
+      |                                         ^
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/List.h:92:41: note: remove the ‘< >’
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:179:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat2::idMat2(const float (*)[2])’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
+  127 |         memcpy( mat, src, 2 * 2 * sizeof( float ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:178:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:52:7: note: ‘class idVec2’ declared here
+   52 | class idVec2 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat3::idMat3(const float (*)[3])’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
+  431 |         memcpy( mat, src, 3 * 3 * sizeof( float ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:316:7: note: ‘class idVec3’ declared here
+  316 | class idVec3 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat3::Zero()’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
+  588 |         memset( mat, 0, sizeof( idMat3 ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:316:7: note: ‘class idVec3’ declared here
+  316 | class idVec3 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat4::idMat4(const float (*)[4])’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
+  874 |         memcpy( mat, src, 4 * 4 * sizeof( float ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:808:7: note: ‘class idVec4’ declared here
+  808 | class idVec4 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat4::Zero()’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
+ 1050 |         memset( mat, 0, sizeof( idMat4 ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:808:7: note: ‘class idVec4’ declared here
+  808 | class idVec4 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat5::idMat5(const float (*)[5])’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
+ 1212 |         memcpy( mat, src, 5 * 5 * sizeof( float ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1066:7: note: ‘class idVec5’ declared here
+ 1066 | class idVec5 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat5::Zero()’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
+ 1375 |         memset( mat, 0, sizeof( idMat5 ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1066:7: note: ‘class idVec5’ declared here
+ 1066 | class idVec5 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat6::idMat6(const float (*)[6])’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
+ 1529 |         memcpy( mat, src, 6 * 6 * sizeof( float ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1158:7: note: ‘class idVec6’ declared here
+ 1158 | class idVec6 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat6::Zero()’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
+ 1692 |         memset( mat, 0, sizeof( idMat6 ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1158:7: note: ‘class idVec6’ declared here
+ 1158 | class idVec6 {
+      |       ^~~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:203:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/geometry/Surface.h: In constructor ‘idSurface::idSurface(const idDrawVert*, int, const int*, int)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
+  122 |         memcpy( this->verts.Ptr(), verts, numVerts * sizeof( verts[0] ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:199:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/geometry/DrawVert.h:40:7: note: ‘class idDrawVert’ declared here
+   40 | class idDrawVert {
+      |       ^~~~~~~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:222:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/StaticList.h: At global scope:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
+   47 |                                                 ~idStaticList<type,size>( void );
+      |                                                 ^
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/StaticList.h:47:49: note: remove the ‘< >’
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:127:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
+  233 |         virtual void                    Print( void ) const { base->Print(); }
+      |                                         ^~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:130:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../framework/DeclEntityDef.h:48:41: note:   by ‘virtual void idDeclEntityDef::Print()’
+   48 |         virtual void                    Print( void );
+      |                                         ^~~~~
+[362/371] Building CXX object d3xp/CMakeFiles/d3xp.dir/SecurityCamera.cpp.o
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:181,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/SecurityCamera.cpp:36:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../d3xp/Game_local.h:460:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
+  460 |         bool                                    RequirementMet( idEntity *activator, const idStr &requires, int removeItem );
+      |                                                                                                   ^~~~~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:171,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:113:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
+   92 |                                         ~idList<type>( void );
+      |                                         ^
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/List.h:92:41: note: remove the ‘< >’
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:179:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat2::idMat2(const float (*)[2])’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
+  127 |         memcpy( mat, src, 2 * 2 * sizeof( float ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:178:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:52:7: note: ‘class idVec2’ declared here
+   52 | class idVec2 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat3::idMat3(const float (*)[3])’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
+  431 |         memcpy( mat, src, 3 * 3 * sizeof( float ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:316:7: note: ‘class idVec3’ declared here
+  316 | class idVec3 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat3::Zero()’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
+  588 |         memset( mat, 0, sizeof( idMat3 ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:316:7: note: ‘class idVec3’ declared here
+  316 | class idVec3 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat4::idMat4(const float (*)[4])’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
+  874 |         memcpy( mat, src, 4 * 4 * sizeof( float ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:808:7: note: ‘class idVec4’ declared here
+  808 | class idVec4 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat4::Zero()’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
+ 1050 |         memset( mat, 0, sizeof( idMat4 ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:808:7: note: ‘class idVec4’ declared here
+  808 | class idVec4 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat5::idMat5(const float (*)[5])’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
+ 1212 |         memcpy( mat, src, 5 * 5 * sizeof( float ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1066:7: note: ‘class idVec5’ declared here
+ 1066 | class idVec5 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat5::Zero()’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
+ 1375 |         memset( mat, 0, sizeof( idMat5 ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1066:7: note: ‘class idVec5’ declared here
+ 1066 | class idVec5 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat6::idMat6(const float (*)[6])’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
+ 1529 |         memcpy( mat, src, 6 * 6 * sizeof( float ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1158:7: note: ‘class idVec6’ declared here
+ 1158 | class idVec6 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat6::Zero()’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
+ 1692 |         memset( mat, 0, sizeof( idMat6 ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1158:7: note: ‘class idVec6’ declared here
+ 1158 | class idVec6 {
+      |       ^~~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:203:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/geometry/Surface.h: In constructor ‘idSurface::idSurface(const idDrawVert*, int, const int*, int)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
+  122 |         memcpy( this->verts.Ptr(), verts, numVerts * sizeof( verts[0] ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:199:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/geometry/DrawVert.h:40:7: note: ‘class idDrawVert’ declared here
+   40 | class idDrawVert {
+      |       ^~~~~~~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:222:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/StaticList.h: At global scope:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
+   47 |                                                 ~idStaticList<type,size>( void );
+      |                                                 ^
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/StaticList.h:47:49: note: remove the ‘< >’
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:127:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
+  233 |         virtual void                    Print( void ) const { base->Print(); }
+      |                                         ^~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:130:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../framework/DeclEntityDef.h:48:41: note:   by ‘virtual void idDeclEntityDef::Print()’
+   48 |         virtual void                    Print( void );
+      |                                         ^~~~~
+[363/371] Building CXX object d3xp/CMakeFiles/d3xp.dir/SmokeParticles.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:181,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/SmokeParticles.cpp:29:
 /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../d3xp/Game_local.h:460:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
@@ -3540,206 +3746,6 @@ In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/..
 /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../renderer/RenderWorld.h:80:16: note: ‘renderEntity_t’ {aka ‘struct renderEntity_s’} declared here
    80 | typedef struct renderEntity_s {
       |                ^~~~~~~~~~~~~~
-[362/371] Building CXX object d3xp/CMakeFiles/d3xp.dir/SecurityCamera.cpp.o
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:181,
-                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/SecurityCamera.cpp:36:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../d3xp/Game_local.h:460:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
-  460 |         bool                                    RequirementMet( idEntity *activator, const idStr &requires, int removeItem );
-      |                                                                                                   ^~~~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:171,
-                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:113:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-   92 |                                         ~idList<type>( void );
-      |                                         ^
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/List.h:92:41: note: remove the ‘< >’
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:179:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat2::idMat2(const float (*)[2])’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  127 |         memcpy( mat, src, 2 * 2 * sizeof( float ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:178:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:52:7: note: ‘class idVec2’ declared here
-   52 | class idVec2 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat3::idMat3(const float (*)[3])’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  431 |         memcpy( mat, src, 3 * 3 * sizeof( float ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:316:7: note: ‘class idVec3’ declared here
-  316 | class idVec3 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat3::Zero()’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  588 |         memset( mat, 0, sizeof( idMat3 ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:316:7: note: ‘class idVec3’ declared here
-  316 | class idVec3 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat4::idMat4(const float (*)[4])’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  874 |         memcpy( mat, src, 4 * 4 * sizeof( float ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:808:7: note: ‘class idVec4’ declared here
-  808 | class idVec4 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat4::Zero()’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
- 1050 |         memset( mat, 0, sizeof( idMat4 ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:808:7: note: ‘class idVec4’ declared here
-  808 | class idVec4 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat5::idMat5(const float (*)[5])’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
- 1212 |         memcpy( mat, src, 5 * 5 * sizeof( float ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1066:7: note: ‘class idVec5’ declared here
- 1066 | class idVec5 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat5::Zero()’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
- 1375 |         memset( mat, 0, sizeof( idMat5 ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1066:7: note: ‘class idVec5’ declared here
- 1066 | class idVec5 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat6::idMat6(const float (*)[6])’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
- 1529 |         memcpy( mat, src, 6 * 6 * sizeof( float ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1158:7: note: ‘class idVec6’ declared here
- 1158 | class idVec6 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat6::Zero()’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
- 1692 |         memset( mat, 0, sizeof( idMat6 ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1158:7: note: ‘class idVec6’ declared here
- 1158 | class idVec6 {
-      |       ^~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:203:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/geometry/Surface.h: In constructor ‘idSurface::idSurface(const idDrawVert*, int, const int*, int)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  122 |         memcpy( this->verts.Ptr(), verts, numVerts * sizeof( verts[0] ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:199:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/geometry/DrawVert.h:40:7: note: ‘class idDrawVert’ declared here
-   40 | class idDrawVert {
-      |       ^~~~~~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:222:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/StaticList.h: At global scope:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-   47 |                                                 ~idStaticList<type,size>( void );
-      |                                                 ^
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/StaticList.h:47:49: note: remove the ‘< >’
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:127:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  233 |         virtual void                    Print( void ) const { base->Print(); }
-      |                                         ^~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:130:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../framework/DeclEntityDef.h:48:41: note:   by ‘virtual void idDeclEntityDef::Print()’
-   48 |         virtual void                    Print( void );
-      |                                         ^~~~~
-[363/371] Building CXX object d3xp/CMakeFiles/d3xp.dir/Sound.cpp.o
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:181,
-                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Sound.cpp:29:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../d3xp/Game_local.h:460:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
-  460 |         bool                                    RequirementMet( idEntity *activator, const idStr &requires, int removeItem );
-      |                                                                                                   ^~~~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:171,
-                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:113:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-   92 |                                         ~idList<type>( void );
-      |                                         ^
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/List.h:92:41: note: remove the ‘< >’
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:179:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat2::idMat2(const float (*)[2])’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  127 |         memcpy( mat, src, 2 * 2 * sizeof( float ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:178:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:52:7: note: ‘class idVec2’ declared here
-   52 | class idVec2 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat3::idMat3(const float (*)[3])’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  431 |         memcpy( mat, src, 3 * 3 * sizeof( float ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:316:7: note: ‘class idVec3’ declared here
-  316 | class idVec3 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat3::Zero()’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  588 |         memset( mat, 0, sizeof( idMat3 ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:316:7: note: ‘class idVec3’ declared here
-  316 | class idVec3 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat4::idMat4(const float (*)[4])’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  874 |         memcpy( mat, src, 4 * 4 * sizeof( float ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:808:7: note: ‘class idVec4’ declared here
-  808 | class idVec4 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat4::Zero()’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
- 1050 |         memset( mat, 0, sizeof( idMat4 ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:808:7: note: ‘class idVec4’ declared here
-  808 | class idVec4 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat5::idMat5(const float (*)[5])’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
- 1212 |         memcpy( mat, src, 5 * 5 * sizeof( float ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1066:7: note: ‘class idVec5’ declared here
- 1066 | class idVec5 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat5::Zero()’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
- 1375 |         memset( mat, 0, sizeof( idMat5 ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1066:7: note: ‘class idVec5’ declared here
- 1066 | class idVec5 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat6::idMat6(const float (*)[6])’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
- 1529 |         memcpy( mat, src, 6 * 6 * sizeof( float ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1158:7: note: ‘class idVec6’ declared here
- 1158 | class idVec6 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat6::Zero()’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
- 1692 |         memset( mat, 0, sizeof( idMat6 ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1158:7: note: ‘class idVec6’ declared here
- 1158 | class idVec6 {
-      |       ^~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:203:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/geometry/Surface.h: In constructor ‘idSurface::idSurface(const idDrawVert*, int, const int*, int)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  122 |         memcpy( this->verts.Ptr(), verts, numVerts * sizeof( verts[0] ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:199:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/geometry/DrawVert.h:40:7: note: ‘class idDrawVert’ declared here
-   40 | class idDrawVert {
-      |       ^~~~~~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:222:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/StaticList.h: At global scope:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-   47 |                                                 ~idStaticList<type,size>( void );
-      |                                                 ^
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/StaticList.h:47:49: note: remove the ‘< >’
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:127:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  233 |         virtual void                    Print( void ) const { base->Print(); }
-      |                                         ^~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:130:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../framework/DeclEntityDef.h:48:41: note:   by ‘virtual void idDeclEntityDef::Print()’
-   48 |         virtual void                    Print( void );
-      |                                         ^~~~~
 [364/371] Building CXX object d3xp/CMakeFiles/d3xp.dir/Target.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:181,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Target.cpp:34:
@@ -3852,7 +3858,107 @@ In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/pr
 /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Target.cpp:1797:13: warning: unused variable ‘fadeClass’ [-Wunused-variable]
  1797 |         int fadeClass = spawnArgs.GetInt( "fadeClass" );
       |             ^~~~~~~~~
-[365/371] Building CXX object d3xp/CMakeFiles/d3xp.dir/Trigger.cpp.o
+[365/371] Building CXX object d3xp/CMakeFiles/d3xp.dir/WorldSpawn.cpp.o
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:181,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/WorldSpawn.cpp:35:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../d3xp/Game_local.h:460:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
+  460 |         bool                                    RequirementMet( idEntity *activator, const idStr &requires, int removeItem );
+      |                                                                                                   ^~~~~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:171,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:113:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
+   92 |                                         ~idList<type>( void );
+      |                                         ^
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/List.h:92:41: note: remove the ‘< >’
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:179:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat2::idMat2(const float (*)[2])’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
+  127 |         memcpy( mat, src, 2 * 2 * sizeof( float ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:178:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:52:7: note: ‘class idVec2’ declared here
+   52 | class idVec2 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat3::idMat3(const float (*)[3])’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
+  431 |         memcpy( mat, src, 3 * 3 * sizeof( float ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:316:7: note: ‘class idVec3’ declared here
+  316 | class idVec3 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat3::Zero()’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
+  588 |         memset( mat, 0, sizeof( idMat3 ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:316:7: note: ‘class idVec3’ declared here
+  316 | class idVec3 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat4::idMat4(const float (*)[4])’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
+  874 |         memcpy( mat, src, 4 * 4 * sizeof( float ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:808:7: note: ‘class idVec4’ declared here
+  808 | class idVec4 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat4::Zero()’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
+ 1050 |         memset( mat, 0, sizeof( idMat4 ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:808:7: note: ‘class idVec4’ declared here
+  808 | class idVec4 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat5::idMat5(const float (*)[5])’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
+ 1212 |         memcpy( mat, src, 5 * 5 * sizeof( float ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1066:7: note: ‘class idVec5’ declared here
+ 1066 | class idVec5 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat5::Zero()’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
+ 1375 |         memset( mat, 0, sizeof( idMat5 ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1066:7: note: ‘class idVec5’ declared here
+ 1066 | class idVec5 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat6::idMat6(const float (*)[6])’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
+ 1529 |         memcpy( mat, src, 6 * 6 * sizeof( float ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1158:7: note: ‘class idVec6’ declared here
+ 1158 | class idVec6 {
+      |       ^~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat6::Zero()’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
+ 1692 |         memset( mat, 0, sizeof( idMat6 ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1158:7: note: ‘class idVec6’ declared here
+ 1158 | class idVec6 {
+      |       ^~~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:203:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/geometry/Surface.h: In constructor ‘idSurface::idSurface(const idDrawVert*, int, const int*, int)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
+  122 |         memcpy( this->verts.Ptr(), verts, numVerts * sizeof( verts[0] ) );
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:199:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/geometry/DrawVert.h:40:7: note: ‘class idDrawVert’ declared here
+   40 | class idDrawVert {
+      |       ^~~~~~~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:222:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/StaticList.h: At global scope:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
+   47 |                                                 ~idStaticList<type,size>( void );
+      |                                                 ^
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/StaticList.h:47:49: note: remove the ‘< >’
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:127:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
+  233 |         virtual void                    Print( void ) const { base->Print(); }
+      |                                         ^~~~~
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:130:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../framework/DeclEntityDef.h:48:41: note:   by ‘virtual void idDeclEntityDef::Print()’
+   48 |         virtual void                    Print( void );
+      |                                         ^~~~~
+[366/371] Building CXX object d3xp/CMakeFiles/d3xp.dir/Trigger.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:181,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Trigger.cpp:29:
 /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../d3xp/Game_local.h:460:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
@@ -3956,107 +4062,107 @@ In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/pr
 /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Trigger.cpp:1256:14: warning: unused variable ‘bTrigger’ [-Wunused-variable]
  1256 |         bool bTrigger = false;
       |              ^~~~~~~~
-[366/371] Building CXX object d3xp/CMakeFiles/d3xp.dir/WorldSpawn.cpp.o
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:181,
-                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/WorldSpawn.cpp:35:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../d3xp/Game_local.h:460:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
+[367/371] Building CXX object d3xp/CMakeFiles/d3xp.dir/__/idlib/precompiled.cpp.o
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/precompiled.h:181,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/precompiled.cpp:28:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../d3xp/Game_local.h:460:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
   460 |         bool                                    RequirementMet( idEntity *activator, const idStr &requires, int removeItem );
       |                                                                                                   ^~~~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:171,
-                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:113:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/Lib.h:171,
+                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/precompiled.h:113:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
    92 |                                         ~idList<type>( void );
       |                                         ^
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/List.h:92:41: note: remove the ‘< >’
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:179:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat2::idMat2(const float (*)[2])’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/containers/List.h:92:41: note: remove the ‘< >’
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/Lib.h:179:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h: In constructor ‘idMat2::idMat2(const float (*)[2])’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
   127 |         memcpy( mat, src, 2 * 2 * sizeof( float ) );
       |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:178:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:52:7: note: ‘class idVec2’ declared here
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/Lib.h:178:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Vector.h:52:7: note: ‘class idVec2’ declared here
    52 | class idVec2 {
       |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat3::idMat3(const float (*)[3])’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h: In constructor ‘idMat3::idMat3(const float (*)[3])’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
   431 |         memcpy( mat, src, 3 * 3 * sizeof( float ) );
       |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:316:7: note: ‘class idVec3’ declared here
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Vector.h:316:7: note: ‘class idVec3’ declared here
   316 | class idVec3 {
       |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat3::Zero()’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h: In member function ‘void idMat3::Zero()’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
   588 |         memset( mat, 0, sizeof( idMat3 ) );
       |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:316:7: note: ‘class idVec3’ declared here
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Vector.h:316:7: note: ‘class idVec3’ declared here
   316 | class idVec3 {
       |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat4::idMat4(const float (*)[4])’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h: In constructor ‘idMat4::idMat4(const float (*)[4])’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
   874 |         memcpy( mat, src, 4 * 4 * sizeof( float ) );
       |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:808:7: note: ‘class idVec4’ declared here
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Vector.h:808:7: note: ‘class idVec4’ declared here
   808 | class idVec4 {
       |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat4::Zero()’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h: In member function ‘void idMat4::Zero()’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
  1050 |         memset( mat, 0, sizeof( idMat4 ) );
       |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:808:7: note: ‘class idVec4’ declared here
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Vector.h:808:7: note: ‘class idVec4’ declared here
   808 | class idVec4 {
       |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat5::idMat5(const float (*)[5])’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h: In constructor ‘idMat5::idMat5(const float (*)[5])’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
  1212 |         memcpy( mat, src, 5 * 5 * sizeof( float ) );
       |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1066:7: note: ‘class idVec5’ declared here
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Vector.h:1066:7: note: ‘class idVec5’ declared here
  1066 | class idVec5 {
       |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat5::Zero()’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h: In member function ‘void idMat5::Zero()’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
  1375 |         memset( mat, 0, sizeof( idMat5 ) );
       |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1066:7: note: ‘class idVec5’ declared here
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Vector.h:1066:7: note: ‘class idVec5’ declared here
  1066 | class idVec5 {
       |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In constructor ‘idMat6::idMat6(const float (*)[6])’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h: In constructor ‘idMat6::idMat6(const float (*)[6])’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
  1529 |         memcpy( mat, src, 6 * 6 * sizeof( float ) );
       |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1158:7: note: ‘class idVec6’ declared here
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Vector.h:1158:7: note: ‘class idVec6’ declared here
  1158 | class idVec6 {
       |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h: In member function ‘void idMat6::Zero()’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h: In member function ‘void idMat6::Zero()’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
  1692 |         memset( mat, 0, sizeof( idMat6 ) );
       |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/math/Vector.h:1158:7: note: ‘class idVec6’ declared here
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Vector.h:1158:7: note: ‘class idVec6’ declared here
  1158 | class idVec6 {
       |       ^~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:203:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/geometry/Surface.h: In constructor ‘idSurface::idSurface(const idDrawVert*, int, const int*, int)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/Lib.h:203:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/geometry/Surface.h: In constructor ‘idSurface::idSurface(const idDrawVert*, int, const int*, int)’:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
   122 |         memcpy( this->verts.Ptr(), verts, numVerts * sizeof( verts[0] ) );
       |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:199:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/geometry/DrawVert.h:40:7: note: ‘class idDrawVert’ declared here
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/Lib.h:199:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/geometry/DrawVert.h:40:7: note: ‘class idDrawVert’ declared here
    40 | class idDrawVert {
       |       ^~~~~~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/Lib.h:222:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/StaticList.h: At global scope:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/Lib.h:222:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/containers/StaticList.h: At global scope:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
    47 |                                                 ~idStaticList<type,size>( void );
       |                                                 ^
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../idlib/containers/StaticList.h:47:49: note: remove the ‘< >’
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:127:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/containers/StaticList.h:47:49: note: remove the ‘< >’
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/precompiled.h:127:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
   233 |         virtual void                    Print( void ) const { base->Print(); }
       |                                         ^~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:130:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../framework/DeclEntityDef.h:48:41: note:   by ‘virtual void idDeclEntityDef::Print()’
+In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/precompiled.h:130:
+/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../framework/DeclEntityDef.h:48:41: note:   by ‘virtual void idDeclEntityDef::Print()’
    48 |         virtual void                    Print( void );
       |                                         ^~~~~
-[367/371] Building CXX object d3xp/CMakeFiles/d3xp.dir/Weapon.cpp.o
+[368/371] Building CXX object d3xp/CMakeFiles/d3xp.dir/Weapon.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/precompiled.h:181,
                  from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Weapon.cpp:29:
 /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/../d3xp/Game_local.h:460:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
@@ -4238,106 +4344,6 @@ In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/../idlib/pr
 /home/runner/work/doom3.gpl/doom3.gpl/neo/d3xp/Weapon.cpp:3503:21: warning: unused variable ‘ammoAvail’ [-Wunused-variable]
  3503 |                 int ammoAvail = owner->inventory.HasAmmo( ammoType, ammoRequired );
       |                     ^~~~~~~~~
-[368/371] Building CXX object d3xp/CMakeFiles/d3xp.dir/__/idlib/precompiled.cpp.o
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/precompiled.h:181,
-                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/precompiled.cpp:28:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../d3xp/Game_local.h:460:99: warning: identifier ‘requires’ is a keyword in C++20 [-Wc++20-compat]
-  460 |         bool                                    RequirementMet( idEntity *activator, const idStr &requires, int removeItem );
-      |                                                                                                   ^~~~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/Lib.h:171,
-                 from /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/precompiled.h:113:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/containers/List.h:92:41: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-   92 |                                         ~idList<type>( void );
-      |                                         ^
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/containers/List.h:92:41: note: remove the ‘< >’
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/Lib.h:179:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h: In constructor ‘idMat2::idMat2(const float (*)[2])’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:127:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec2’ from an array of ‘const float [2]’ [-Wclass-memaccess]
-  127 |         memcpy( mat, src, 2 * 2 * sizeof( float ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/Lib.h:178:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Vector.h:52:7: note: ‘class idVec2’ declared here
-   52 | class idVec2 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h: In constructor ‘idMat3::idMat3(const float (*)[3])’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:431:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idVec3’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  431 |         memcpy( mat, src, 3 * 3 * sizeof( float ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Vector.h:316:7: note: ‘class idVec3’ declared here
-  316 | class idVec3 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h: In member function ‘void idMat3::Zero()’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:588:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘class idVec3’ with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-  588 |         memset( mat, 0, sizeof( idMat3 ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Vector.h:316:7: note: ‘class idVec3’ declared here
-  316 | class idVec3 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h: In constructor ‘idMat4::idMat4(const float (*)[4])’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:874:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec4’ from an array of ‘const float [4]’ [-Wclass-memaccess]
-  874 |         memcpy( mat, src, 4 * 4 * sizeof( float ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Vector.h:808:7: note: ‘class idVec4’ declared here
-  808 | class idVec4 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h: In member function ‘void idMat4::Zero()’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:1050:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec4’; use assignment or value-initialization instead [-Wclass-memaccess]
- 1050 |         memset( mat, 0, sizeof( idMat4 ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Vector.h:808:7: note: ‘class idVec4’ declared here
-  808 | class idVec4 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h: In constructor ‘idMat5::idMat5(const float (*)[5])’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:1212:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec5’ from an array of ‘const float [5]’ [-Wclass-memaccess]
- 1212 |         memcpy( mat, src, 5 * 5 * sizeof( float ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Vector.h:1066:7: note: ‘class idVec5’ declared here
- 1066 | class idVec5 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h: In member function ‘void idMat5::Zero()’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:1375:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec5’; use assignment or value-initialization instead [-Wclass-memaccess]
- 1375 |         memset( mat, 0, sizeof( idMat5 ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Vector.h:1066:7: note: ‘class idVec5’ declared here
- 1066 | class idVec5 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h: In constructor ‘idMat6::idMat6(const float (*)[6])’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:1529:15: warning: ‘void* memcpy(void*, const void*, size_t)’ copying an object of non-trivial type ‘class idVec6’ from an array of ‘const float [6]’ [-Wclass-memaccess]
- 1529 |         memcpy( mat, src, 6 * 6 * sizeof( float ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Vector.h:1158:7: note: ‘class idVec6’ declared here
- 1158 | class idVec6 {
-      |       ^~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h: In member function ‘void idMat6::Zero()’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Matrix.h:1692:15: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘class idVec6’; use assignment or value-initialization instead [-Wclass-memaccess]
- 1692 |         memset( mat, 0, sizeof( idMat6 ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/math/Vector.h:1158:7: note: ‘class idVec6’ declared here
- 1158 | class idVec6 {
-      |       ^~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/Lib.h:203:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/geometry/Surface.h: In constructor ‘idSurface::idSurface(const idDrawVert*, int, const int*, int)’:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/geometry/Surface.h:122:15: warning: ‘void* memcpy(void*, const void*, size_t)’ writing to an object of type ‘class idDrawVert’ with no trivial copy-assignment; use copy-assignment or copy-initialization instead [-Wclass-memaccess]
-  122 |         memcpy( this->verts.Ptr(), verts, numVerts * sizeof( verts[0] ) );
-      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/Lib.h:199:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/geometry/DrawVert.h:40:7: note: ‘class idDrawVert’ declared here
-   40 | class idDrawVert {
-      |       ^~~~~~~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/Lib.h:222:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/containers/StaticList.h: At global scope:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/containers/StaticList.h:47:49: warning: template-id not allowed for destructor in C++20 [-Wtemplate-id-cdtor]
-   47 |                                                 ~idStaticList<type,size>( void );
-      |                                                 ^
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../idlib/containers/StaticList.h:47:49: note: remove the ‘< >’
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/precompiled.h:127:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../framework/DeclManager.h:233:41: warning: ‘virtual void idDecl::Print() const’ was hidden [-Woverloaded-virtual=]
-  233 |         virtual void                    Print( void ) const { base->Print(); }
-      |                                         ^~~~~
-In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/precompiled.h:130:
-/home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/../framework/DeclEntityDef.h:48:41: note:   by ‘virtual void idDeclEntityDef::Print()’
-   48 |         virtual void                    Print( void );
-      |                                         ^~~~~
 [369/371] Linking CXX shared library /home/runner/work/doom3.gpl/doom3.gpl/libgamex86-base.so
 [370/371] Linking CXX shared library /home/runner/work/doom3.gpl/doom3.gpl/libgamex86-d3xp.so
 ninja: build stopped: cannot make progress due to previous errors.
@@ -4975,8 +4981,8 @@ No VM guests are running outdated hypervisor (qemu) binaries on this host.
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- curl: the bundled curl needs its configure run, disabling for this platform ( NOCURL=1 behavior )
--- Configuring done (2.2s)
--- Generating done (0.1s)
+-- Configuring done (2.6s)
+-- Generating done (0.0s)
 -- Build files have been written to: /home/runner/work/doom3.gpl/doom3.gpl/build
 [1/371] Building CXX object idlib/CMakeFiles/idlib.dir/bv/Sphere.cpp.o
 In file included from /home/runner/work/doom3.gpl/doom3.gpl/neo/idlib/bv/../../idlib/Lib.h:171,

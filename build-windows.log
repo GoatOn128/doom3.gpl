@@ -15,7 +15,7 @@ C:              150G  120G   31G  80% /c
 -- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/18/Enterprise/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x86/cl.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Configuring done (11.5s)
+-- Configuring done (13.4s)
 -- Generating done (0.1s)
 -- Build files have been written to: D:/a/doom3.gpl/doom3.gpl/build
 MSBuild version 18.11.1-1.26513.3+940033be3 for .NET Framework
@@ -330,10 +330,10 @@ C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231
   Generating Code...
 
 
-==== windows-latest-x86-release (cancelled) ====
+==== windows-latest-x86-release (failure) ====
 
 Filesystem      Size  Used Avail Use% Mounted on
-C:              150G  120G   31G  80% /c
+C:              150G  123G   28G  82% /c
 -- Building for: Visual Studio 18 2026
 -- The C compiler identification is MSVC 19.51.36260.0
 -- The CXX compiler identification is MSVC 19.51.36260.0
@@ -347,7 +347,7 @@ C:              150G  120G   31G  80% /c
 -- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/18/Enterprise/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x86/cl.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Configuring done (14.1s)
+-- Configuring done (16.7s)
 -- Generating done (0.1s)
 -- Build files have been written to: D:/a/doom3.gpl/doom3.gpl/build
 MSBuild version 18.11.1-1.26513.3+940033be3 for .NET Framework
@@ -648,6 +648,17 @@ C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231
   Player.cpp
   PlayerIcon.cpp
   PlayerView.cpp
+  Generating Code...
+  Compiling...
+  Projectile.cpp
+  Pvs.cpp
+  SecurityCamera.cpp
+  SmokeParticles.cpp
+  Sound.cpp
+  Target.cpp
+  Trigger.cpp
+  Weapon.cpp
+  WorldSpawn.cpp
   Generating Code...
 
 
