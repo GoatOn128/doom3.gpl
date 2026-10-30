@@ -163,9 +163,6 @@ void ListSounds_f( const idCmdArgs &args ) {
 	common->Printf( "%8d total sounds\n", totalSounds );
 	common->Printf( "%8d total samples loaded\n", totalSamples );
 	common->Printf( "%8d kB total system memory used\n", totalMemory >> 10 );
-#if ID_OPENAL
-	common->Printf( "%8d kB total OpenAL audio memory used\n", ( alGetInteger( alGetEnumValue( "AL_EAX_RAM_SIZE" ) ) - alGetInteger( alGetEnumValue( "AL_EAX_RAM_FREE" ) ) ) >> 10 );
-#endif
 }
 
 /*
@@ -303,6 +300,10 @@ void idSoundSystemLocal::Init() {
 	muted = false;
 	shutdown = false;
 
+	openalReverbEffect = 0;
+	openalReverbSlot = 0;
+	efxAvailable = false;
+
 	currentSoundWorld = NULL;
 	soundCache = NULL;
 
@@ -344,28 +345,24 @@ void idSoundSystemLocal::Init() {
 			alcMakeContextCurrent( openalContext );
 			common->Printf( "Done.\n" );
 
-			// try to obtain EAX extensions
-			if ( idSoundSystemLocal::s_useEAXReverb.GetBool() && alIsExtensionPresent( ID_ALCHAR "EAX4.0" ) ) {
-				idSoundSystemLocal::s_useOpenAL.SetBool( true );	// EAX presence causes AL enable
-				alEAXSet = (EAXSet)alGetProcAddress( ID_ALCHAR "EAXSet" );
-				alEAXGet = (EAXGet)alGetProcAddress( ID_ALCHAR "EAXGet" );
-				common->Printf( "OpenAL: found EAX 4.0 extension\n" );
+			// try to obtain the EFX extension for reverb ( replaces the old EAX 4.0 property sets )
+			if ( idSoundSystemLocal::s_useEAXReverb.GetBool() && alIsExtensionPresent( ID_ALCHAR "AL_EXT_EFX" ) == AL_TRUE ) {
+				idSoundSystemLocal::s_useOpenAL.SetBool( true );	// EFX presence causes AL enable
+				alGetError();
+				alGenEffects( 1, &openalReverbEffect );
+				alGenAuxiliaryEffectSlots( 1, &openalReverbSlot );
+				if ( alGetError() == AL_NO_ERROR && alIsEffect( openalReverbEffect ) && alIsAuxiliaryEffectSlot( openalReverbSlot ) ) {
+					efxAvailable = true;
+					common->Printf( "OpenAL: found EFX extension\n" );
+				} else {
+					idSoundSystemLocal::s_useEAXReverb.SetBool( false );
+					openalReverbEffect = 0;
+					openalReverbSlot = 0;
+					common->Printf( "OpenAL: EFX effect objects not available\n" );
+				}
 			} else {
-				common->Printf( "OpenAL: EAX 4.0 extension not found\n" );
 				idSoundSystemLocal::s_useEAXReverb.SetBool( false );
-				alEAXSet = (EAXSet)NULL;
-				alEAXGet = (EAXGet)NULL;
-			}
-
-			// try to obtain EAX-RAM extension - not required for operation
-			if ( alIsExtensionPresent( ID_ALCHAR "EAX-RAM" ) == AL_TRUE ) {
-				alEAXSetBufferMode = (EAXSetBufferMode)alGetProcAddress( ID_ALCHAR "EAXSetBufferMode" );
-				alEAXGetBufferMode = (EAXGetBufferMode)alGetProcAddress( ID_ALCHAR "EAXGetBufferMode" );
-				common->Printf( "OpenAL: found EAX-RAM extension, %dkB\\%dkB\n", alGetInteger( alGetEnumValue( ID_ALCHAR "AL_EAX_RAM_FREE" ) ) / 1024, alGetInteger( alGetEnumValue( ID_ALCHAR "AL_EAX_RAM_SIZE" ) ) / 1024 );
-			} else {
-				alEAXSetBufferMode = (EAXSetBufferMode)NULL;
-				alEAXGetBufferMode = (EAXGetBufferMode)NULL;
-				common->Printf( "OpenAL: no EAX-RAM extension\n" );
+				common->Printf( "OpenAL: no EFX extension\n" );
 			}
 
 			if ( !idSoundSystemLocal::s_useOpenAL.GetBool() ) {
@@ -410,7 +407,7 @@ void idSoundSystemLocal::Init() {
 				// adjust source count to allow for at least eight stereo sounds to play
 				openalSourceCount -= 8;
 
-				EAXAvailable = 1;
+				EAXAvailable = efxAvailable ? 1 : 0;
 			}
 		}
 	}
@@ -471,6 +468,17 @@ void idSoundSystemLocal::Shutdown() {
 
 	// destroy openal device and context
 	if ( useOpenAL ) {
+		// release the reverb effect objects while the context is still alive
+		if ( openalReverbEffect != 0 ) {
+			alDeleteEffects( 1, &openalReverbEffect );
+			openalReverbEffect = 0;
+		}
+		if ( openalReverbSlot != 0 ) {
+			alDeleteAuxiliaryEffectSlots( 1, &openalReverbSlot );
+			openalReverbSlot = 0;
+		}
+		efxAvailable = false;
+
 		alcMakeContextCurrent( NULL );
 		
 		alcDestroyContext( openalContext );
@@ -1244,13 +1252,6 @@ void idSoundSystemLocal::FreeOpenALSource( ALuint handle ) {
 			if ( openalSources[i].chan ) {
 				openalSources[i].chan->openalSource = NULL;
 			}
-#if ID_OPENAL
-			// Reset source EAX ROOM level when freeing stereo source
-			if ( openalSources[i].stereo && alEAXSet ) {
-				long Room = EAXSOURCE_DEFAULTROOM;
-				alEAXSet( &EAXPROPERTYID_EAX_Source, EAXSOURCE_ROOM, openalSources[i].handle, &Room, sizeof(Room));
-			}
-#endif
 			// Initialize structure
 			openalSources[i].startTime = 0;
 			openalSources[i].chan = NULL;
@@ -1445,7 +1446,7 @@ int idSoundSystemLocal::IsEAXAvailable( void ) {
 	device = alcOpenDevice( NULL );
 	context = alcCreateContext( device, NULL );
 	alcMakeContextCurrent( context );
-	if ( alIsExtensionPresent( ID_ALCHAR "EAX4.0" ) ) {
+	if ( alIsExtensionPresent( ID_ALCHAR "AL_EXT_EFX" ) ) {
 		alcMakeContextCurrent( NULL );
 		alcDestroyContext( context );
 		alcCloseDevice( device );
@@ -1457,5 +1458,60 @@ int idSoundSystemLocal::IsEAXAvailable( void ) {
 	alcCloseDevice( device );
 	EAXAvailable = 0;
 	return 0;
+#endif
+}
+
+/*
+===============
+idSoundSystemLocal::ApplyEFXReverb
+
+Translates the EAX 4.0 reverb properties of the .efx files into an OpenAL
+EFX EAX reverb effect and updates the effect slot.
+===============
+*/
+void idSoundSystemLocal::ApplyEFXReverb( const EAXREVERBPROPERTIES *reverb ) {
+#if ID_OPENAL
+	if ( !efxAvailable ) {
+		return;
+	}
+
+	// EAX 4.0 environment presets map to density 0.25 for small rooms up to 1.0
+	float density = 0.25f + ( reverb->flEnvironmentSize / 100.0f ) * 0.75f;
+	if ( density < 0.0f ) {
+		density = 0.0f;
+	} else if ( density > 1.0f ) {
+		density = 1.0f;
+	}
+
+	alGetError();
+	alEffecti( openalReverbEffect, AL_EFFECT_TYPE, AL_EFFECT_EAXREVERB );
+	alEffectf( openalReverbEffect, AL_EAXREVERB_DENSITY, density );
+	alEffectf( openalReverbEffect, AL_EAXREVERB_DIFFUSION, reverb->flEnvironmentDiffusion );
+	// EAX levels are hundredths of decibels, EFX wants linear gains
+	alEffectf( openalReverbEffect, AL_EAXREVERB_GAIN, powf( 10.0f, reverb->lRoom / 2000.0f ) );
+	alEffectf( openalReverbEffect, AL_EAXREVERB_GAINHF, powf( 10.0f, reverb->lRoomHF / 2000.0f ) );
+	alEffectf( openalReverbEffect, AL_EAXREVERB_GAINLF, powf( 10.0f, reverb->lRoomLF / 2000.0f ) );
+	alEffectf( openalReverbEffect, AL_EAXREVERB_DECAY_TIME, reverb->flDecayTime );
+	alEffectf( openalReverbEffect, AL_EAXREVERB_DECAY_HFRATIO, reverb->flDecayHFRatio );
+	alEffectf( openalReverbEffect, AL_EAXREVERB_DECAY_LFRATIO, reverb->flDecayLFRatio );
+	alEffectf( openalReverbEffect, AL_EAXREVERB_REFLECTIONS_GAIN, powf( 10.0f, reverb->lReflections / 2000.0f ) );
+	alEffectf( openalReverbEffect, AL_EAXREVERB_REFLECTIONS_DELAY, reverb->flReflectionsDelay );
+	alEffectfv( openalReverbEffect, AL_EAXREVERB_REFLECTIONS_PAN, &reverb->vReflectionsPan.x );
+	alEffectf( openalReverbEffect, AL_EAXREVERB_LATE_REVERB_GAIN, powf( 10.0f, reverb->lReverb / 2000.0f ) );
+	alEffectf( openalReverbEffect, AL_EAXREVERB_LATE_REVERB_DELAY, reverb->flReverbDelay );
+	alEffectfv( openalReverbEffect, AL_EAXREVERB_LATE_REVERB_PAN, &reverb->vReverbPan.x );
+	alEffectf( openalReverbEffect, AL_EAXREVERB_ECHO_TIME, reverb->flEchoTime );
+	alEffectf( openalReverbEffect, AL_EAXREVERB_ECHO_DEPTH, reverb->flEchoDepth );
+	alEffectf( openalReverbEffect, AL_EAXREVERB_MODULATION_TIME, reverb->flModulationTime );
+	alEffectf( openalReverbEffect, AL_EAXREVERB_MODULATION_DEPTH, reverb->flModulationDepth );
+	alEffectf( openalReverbEffect, AL_EAXREVERB_AIR_ABSORPTION_GAINHF, powf( 10.0f, reverb->flAirAbsorptionHF / 2000.0f ) );
+	alEffectf( openalReverbEffect, AL_EAXREVERB_HFREFERENCE, reverb->flHFReference );
+	alEffectf( openalReverbEffect, AL_EAXREVERB_LFREFERENCE, reverb->flLFReference );
+	alEffectf( openalReverbEffect, AL_EAXREVERB_ROOM_ROLLOFF_FACTOR, reverb->flRoomRolloffFactor );
+	alEffecti( openalReverbEffect, AL_EAXREVERB_DECAY_HFLIMIT, ( reverb->ulFlags & EAXREVERBFLAGS_DECAYHFLIMIT ) ? AL_TRUE : AL_FALSE );
+	alAuxiliaryEffectSloti( openalReverbSlot, AL_EFFECTSLOT_EFFECT, openalReverbEffect );
+	if ( alGetError() != AL_NO_ERROR ) {
+		common->Warning( "idSoundSystemLocal::ApplyEFXReverb: OpenAL error while setting the reverb effect" );
+	}
 #endif
 }

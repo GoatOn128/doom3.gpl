@@ -48,6 +48,8 @@ add_library( doom_base INTERFACE )
 # the original builds had the neo root on the include path ( SCons '#',
 # generated GL code and some headers include from there )
 target_include_directories( doom_base INTERFACE ${CMAKE_CURRENT_SOURCE_DIR} )
+# OpenAL headers for <AL/al.h> and friends
+target_include_directories( doom_base INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/third-party/openal-soft/include )
 target_compile_definitions( doom_base INTERFACE ${DOOM_CONFIG_DEFINES} )
 if( MSVC )
 	target_compile_definitions( doom_base INTERFACE
@@ -334,7 +336,6 @@ if( WIN32 )
 		sys/win32/win_snd.cpp
 		sys/win32/win_syscon.cpp
 		sys/win32/win_wndproc.cpp
-		openal/eaxguid.cpp
 		sys/win32/rc/CreateResourceIDs.cpp
 		sys/win32/rc/doom.rc )
 else()
@@ -360,7 +361,7 @@ else()
 			sys/linux/libXNVCtrl/NVCtrl.c
 			sys/linux/sound.cpp
 			sys/linux/sound_alsa.cpp
-			openal/stubs.cpp
+			sound/openal_stubs.cpp
 			${GLIMP_SOURCES} )
 	endif()
 endif()
