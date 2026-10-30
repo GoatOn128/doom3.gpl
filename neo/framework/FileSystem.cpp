@@ -476,8 +476,10 @@ private:
 	void					FollowAddonDependencies( pack_t *pak );
 
 	static size_t			CurlWriteFunction( void *ptr, size_t size, size_t nmemb, void *stream );
+#if ID_ENABLE_CURL
 							// curl_xferinfo_callback in curl.h
 	static int				CurlProgressFunction( void *clientp, curl_off_t dltotal, curl_off_t dlnow, curl_off_t ultotal, curl_off_t ulnow );
+#endif
 };
 
 idCVar	idFileSystemLocal::fs_restrict( "fs_restrict", "", CVAR_SYSTEM | CVAR_INIT | CVAR_BOOL, "" );
@@ -3602,6 +3604,7 @@ size_t idFileSystemLocal::CurlWriteFunction( void *ptr, size_t size, size_t nmem
 	#endif
 }
 
+#if ID_ENABLE_CURL
 /*
 =================
 idFileSystemLocal::CurlProgressFunction
@@ -3616,6 +3619,7 @@ int idFileSystemLocal::CurlProgressFunction( void *clientp, curl_off_t dltotal, 
 	bgl->url.dlnow = dlnow;
 	return 0;
 }
+#endif
 
 /*
 ===================
