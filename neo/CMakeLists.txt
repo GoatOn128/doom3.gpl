@@ -73,6 +73,7 @@ else()
 		# are untouched 2011-era code so the kinds are turned off wholesale.
 		# the C++-only kinds are wrapped so they stay off the C sources
 		-Wno-address
+		-Wno-array-bounds
 		-Wno-char-subscripts
 		"$<$<COMPILE_LANGUAGE:CXX>:-Wno-class-memaccess>"
 		"$<$<COMPILE_LANGUAGE:CXX>:-Wno-c++20-compat>"
@@ -82,6 +83,7 @@ else()
 		-Wno-enum-compare
 		-Wno-format
 		-Wno-misleading-indentation
+		-Wno-maybe-uninitialized
 		-Wno-nonnull-compare
 		"$<$<COMPILE_LANGUAGE:CXX>:-Wno-overloaded-virtual>"
 		-Wno-parentheses
@@ -92,10 +94,12 @@ else()
 		-Wno-shift-count-overflow
 		-Wno-sign-compare
 		-Wno-sizeof-pointer-memaccess
+		-Wno-stringop-truncation
 		-Wno-switch
 		"$<$<COMPILE_LANGUAGE:CXX>:-Wno-template-id-cdtor>"
 		-Wno-unused-but-set-variable
 		-Wno-unused-function
+		-Wno-unused-result
 		-Wno-unused-value
 		-Wno-unused-variable
 		-Wno-write-strings )
@@ -233,6 +237,7 @@ set( ENGINE_SOURCES
 	framework/async/MsgChannel.cpp
 	framework/async/NetworkSystem.cpp
 	framework/async/ServerScan.cpp
+	renderer/cg_explicit.cpp
 	renderer/Cinematic.cpp
 	renderer/draw_arb.cpp
 	renderer/draw_arb2.cpp
@@ -298,7 +303,7 @@ set( ENGINE_SOURCES
 	sound/OggVorbis/oggsrc/bitwise.c
 	sound/OggVorbis/oggsrc/framing.c
 	sound/OggVorbis/vorbissrc/analysis.c
-	sound/OggVorbis/vorbissrc/barkmel.c
+	// barkmel.c is a standalone bark scale test utility with its own main()
 	sound/OggVorbis/vorbissrc/bitrate.c
 	sound/OggVorbis/vorbissrc/block.c
 	sound/OggVorbis/vorbissrc/codebook.c
@@ -497,7 +502,9 @@ else()
 	endif()
 	# release optimizations from SConstruct BUILD="release"
 	target_compile_options( doom3 PRIVATE
-		"$<$<CONFIG:Release>:-ffast-math;-fno-unsafe-math-optimizations;-fomit-frame-pointer;-Winline>" )
+		# -Winline is left off: the SCons-era GCC never printed these inlining notes and
+	# the current optimizer decisions would flood the release build with them
+		"$<$<CONFIG:Release>:-ffast-math;-fno-unsafe-math-optimizations;-fomit-frame-pointer>" )
 	if( CMAKE_SIZEOF_VOID_P EQUAL 4 )
 		target_compile_options( doom3 PRIVATE "$<$<CONFIG:Release>:-march=pentium3>" )
 	endif()
