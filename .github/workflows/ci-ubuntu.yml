@@ -18,6 +18,10 @@ jobs:
   build:
     name: ${{ matrix.os }}-${{ matrix.arch }}-${{ matrix.config }}
     runs-on: ${{ matrix.os }}
+    env:
+      # the content based ccache hashing must not depend on absolute paths
+      CCACHE_BASEDIR: ${{ github.workspace }}
+      CCACHE_NOHASHDIR: 'true'
     strategy:
       # one failing leg cancels the remaining legs of this OS, the other
       # OS workflow keeps running for redundancy
@@ -36,6 +40,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
+      - name: ccache cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ccache
+          # the exact key misses on every new commit on purpose: the
+          # restore-keys prefix hands the previous cache over so each run
+          # starts from the newest state and saves its own
+          key: ccache-ubuntu-${{ matrix.arch }}-${{ github.sha }}
+          restore-keys: |
+            ccache-ubuntu-${{ matrix.arch }}-
       - name: install linux deps
         shell: bash
         run: |
@@ -43,7 +57,7 @@ jobs:
           sudo dpkg --add-architecture i386 || true
           sudo apt-get update -qq 2>&1 | tee -a build.log
           sudo apt-get install -y -qq gcc-multilib g++-multilib 2>&1 | tee -a build.log
-          sudo apt-get install -y -qq ninja-build m4 2>&1 | tee -a build.log
+          sudo apt-get install -y -qq ninja-build m4 ccache 2>&1 | tee -a build.log
           # the renderer dlopens libGL, so only X11, ALSA and zlib are
           # needed at link time, all in 32-bit for the -m32 build, plus the
           # GL, OpenAL and OpenSSL dev files the engine and curl include
@@ -57,10 +71,13 @@ jobs:
             release) config="Release" ;;
           esac
           # -m32 keeps CMake's pointer-size probe at 4 so the products get
-          # the x86 names the engine loads at runtime
+          # the x86 names the engine loads at runtime. The compiler
+          # launchers route every compile through ccache so a redundant
+          # checkout does not rebuild the untouched objects
           cmake -S neo -B build -G Ninja -DCMAKE_BUILD_TYPE="$config" \
             -DCMAKE_C_FLAGS=-m32 -DCMAKE_CXX_FLAGS=-m32 \
             -DCMAKE_EXE_LINKER_FLAGS=-m32 -DCMAKE_SHARED_LINKER_FLAGS=-m32 \
+            -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache \
             2>&1 | tee -a build.log
       - name: build
         shell: bash
@@ -68,6 +85,10 @@ jobs:
           set -o pipefail
           # -k 0 keeps going so the digest lists every failing file in one run
           cmake --build build --parallel 4 -- -k 0 2>&1 | tee -a build.log
+      - name: ccache stats
+        if: always()
+        shell: bash
+        run: ccache -s >> build.log 2>&1 || true
       - name: digest
         if: always()
         shell: bash
