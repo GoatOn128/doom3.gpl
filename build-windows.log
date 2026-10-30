@@ -15,7 +15,7 @@ C:              150G  120G   31G  80% /c
 -- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/18/Enterprise/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x86/cl.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Configuring done (30.1s)
+-- Configuring done (11.5s)
 -- Generating done (0.1s)
 -- Build files have been written to: D:/a/doom3.gpl/doom3.gpl/build
 MSBuild version 18.11.1-1.26513.3+940033be3 for .NET Framework
@@ -82,29 +82,255 @@ MSBuild version 18.11.1-1.26513.3+940033be3 for .NET Framework
   Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/TypeInfo/CMakeLists.txt
   main.cpp
   TypeInfoGen.cpp
-D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\main.cpp(272,23): error C3688: invalid literal suffix 'SOURCE_CODE_BASE_FOLDER'; literal operator or literal operator template 'operator ""SOURCE_CODE_BASE_FOLDER' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\main.cpp(274,16): error C3688: invalid literal suffix 'SOURCE_CODE_BASE_FOLDER'; literal operator or literal operator template 'operator ""SOURCE_CODE_BASE_FOLDER' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\main.cpp(278,21): error C3688: invalid literal suffix 'SOURCE_CODE_BASE_FOLDER'; literal operator or literal operator template 'operator ""SOURCE_CODE_BASE_FOLDER' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\main.cpp(280,14): error C3688: invalid literal suffix 'SOURCE_CODE_BASE_FOLDER'; literal operator or literal operator template 'operator ""SOURCE_CODE_BASE_FOLDER' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\TypeInfoGen.cpp(805,18): error C3688: invalid literal suffix 'TYPE_INFO_GEN_VERSION'; literal operator or literal operator template 'operator ""TYPE_INFO_GEN_VERSION' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\TypeInfoGen.cpp(900,3): error C3688: invalid literal suffix 'TYPE_INFO_GEN_VERSION'; literal operator or literal operator template 'operator ""TYPE_INFO_GEN_VERSION' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
   CmdSystem.cpp
   CVarSystem.cpp
   File.cpp
   FileSystem.cpp
-D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3598,72): error C2039: '_file': is not a member of '_iobuf' [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\mbstring.h(24,20):
-      see declaration of '_iobuf'
-  
-D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3644,66): error C2039: '_file': is not a member of '_iobuf' [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\mbstring.h(24,20):
-      see declaration of '_iobuf'
-  
   Unzip.cpp
+  Generating Code...
+  typeinfo.vcxproj -> D:\a\doom3.gpl\doom3.gpl\typeinfo.exe
+  Running typeinfo to generate d3xp GameTypeInfo.h
+  ------ Initializing File System ------
+  Current search path:
+  D:\a\doom3.gpl\doom3.gpl/base
+  game DLL: 0x0 in pak: 0x0
+  Addon pk4s:
+  file system initialized.
+  --------------------------------------
+CUSTOMBUILD : warning : idFileSystemLocal::StartBackgroundDownloadThread: failed [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+  Type Info Generator v1.0 (c) 2004 id Software
+  ../neo/d3xp
+  processing 'D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp\Actor.cpp' for type info...
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../idlib/Heap.h, line 174: unknown value 'blockSize' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../idlib/containers/StaticList.h, line 79: unknown value 'size' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../idlib/containers/VectorSet.h, line 64: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../idlib/containers/VectorSet.h, line 65: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../idlib/containers/VectorSet.h, line 188: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../idlib/containers/VectorSet.h, line 189: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../idlib/MapFile.h, line 117: multiple inheritance not supported for 'idMapPatch' [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../game/Game_local.h, line 116: unknown value 'idMath::BitsForInteger' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../game/Game_local.h, line 689: unknown value 'idMath::FtoiFast' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../game/Game_local.h, line 689: unknown value 'idMath::M_SEC2MS' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../game/Player.h, line 69: unknown value 'idMath::BitsForInteger' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp\Actor.cpp, line 30: #pragma directive not supported [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+  1124 constants
+  122 enums
+  509 classes/structs/unions
+  36 templates
+  6 max inheritance level for 'idPlayer'
+  writing D:\a\doom3.gpl\doom3.gpl\base\..\neo\game\gamesys\GameTypeInfo.h...
+  Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/d3xp/CMakeLists.txt
+C:\Program Files\Microsoft Visual Studio\18\Enterprise\MSBuild\Microsoft\VC\v180\Microsoft.CppCommon.targets(254,5): warning MSB8065: Custom build for item "D:\a\doom3.gpl\doom3.gpl\build\CMakeFiles\b3ce64a169b1f3c5a7a63879f4a76493\GameTypeInfo.h.rule" succeeded, but specified output "d:\a\doom3.gpl\doom3.gpl\neo\d3xp\gamesys\gametypeinfo.h" has not been created. This may cause incremental build to work incorrectly. [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+  AAS.cpp
+  AAS_debug.cpp
+  AAS_pathing.cpp
+  AAS_routing.cpp
+  AI.cpp
+  AI_events.cpp
+  AI_pathing.cpp
+  AI_Vagary.cpp
+  Anim.cpp
+  Anim_Blend.cpp
+  Anim_Import.cpp
+  Anim_Testmodel.cpp
+  Class.cpp
+  DebugGraph.cpp
+  Event.cpp
+  SaveGame.cpp
+  SysCmds.cpp
+  SysCvar.cpp
+D:\a\doom3.gpl\doom3.gpl\neo\d3xp\gamesys\SysCmds.cpp(338,31): warning C4293: '<<': shift count negative or too big, undefined behavior [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+  TypeInfo.cpp
+C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h(321,9): warning C4005: 'private': macro redefinition [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+  (compiling source file '../../neo/d3xp/gamesys/TypeInfo.cpp')
+      D:\a\doom3.gpl\doom3.gpl\neo\d3xp\gamesys\TypeInfo.cpp(30,9):
+      see previous definition of 'private'
+  
+C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h(322,1): error C1189: #error:  The C++ Standard Library forbids macroizing the keyword "private". Enable warning C4005 to find the forbidden define. [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+  (compiling source file '../../neo/d3xp/gamesys/TypeInfo.cpp')
+  
+  Clip.cpp
+  Generating Code...
+  Compiling...
+  Force.cpp
+  Force_Constant.cpp
+  Force_Drag.cpp
+  Force_Field.cpp
+  Force_Grab.cpp
+  Force_Spring.cpp
+  Physics.cpp
+  Physics_Actor.cpp
+  Physics_AF.cpp
+  Physics_Base.cpp
+  Physics_Monster.cpp
+  Physics_Parametric.cpp
+  Physics_Player.cpp
+  Physics_RigidBody.cpp
+  Physics_Static.cpp
+  Physics_StaticMulti.cpp
+  Push.cpp
+  Script_Compiler.cpp
+D:\a\doom3.gpl\doom3.gpl\neo\d3xp\script\Script_Compiler.cpp(233,13): error C2440: '=': cannot convert from 'const char *[37]' to 'char **' [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\d3xp\script\Script_Compiler.cpp(233,13):
+      Conversion loses qualifiers
+  
+  Script_Interpreter.cpp
+  Script_Program.cpp
+  Generating Code...
+  Compiling...
+  Script_Thread.cpp
+  Actor.cpp
+  AF.cpp
+  AFEntity.cpp
+  BrittleFracture.cpp
+  Camera.cpp
+  Entity.cpp
+  Fx.cpp
+  Game_local.cpp
+  Game_network.cpp
+  GameEdit.cpp
+  Grabber.cpp
+  IK.cpp
+  Item.cpp
+  Light.cpp
+  Misc.cpp
+  Moveable.cpp
+  Mover.cpp
+  MultiplayerGame.cpp
+  Player.cpp
+  Generating Code...
+  Compiling...
+  PlayerIcon.cpp
+  PlayerView.cpp
+  Projectile.cpp
+  Pvs.cpp
+  SecurityCamera.cpp
+  SmokeParticles.cpp
+  Sound.cpp
+  Target.cpp
+  Trigger.cpp
+  Weapon.cpp
+  WorldSpawn.cpp
+  precompiled.cpp
+  Generating Code...
+  Running typeinfo to generate GameTypeInfo.h
+  ------ Initializing File System ------
+  Current search path:
+  D:\a\doom3.gpl\doom3.gpl/base
+  game DLL: 0x0 in pak: 0x0
+  Addon pk4s:
+  file system initialized.
+  --------------------------------------
+CUSTOMBUILD : warning : idFileSystemLocal::StartBackgroundDownloadThread: failed [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+  Type Info Generator v1.0 (c) 2004 id Software
+  ../neo/game
+  processing 'D:\a\doom3.gpl\doom3.gpl\base\..\neo\game\Actor.cpp' for type info...
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../idlib/Heap.h, line 174: unknown value 'blockSize' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../idlib/containers/StaticList.h, line 79: unknown value 'size' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../idlib/containers/VectorSet.h, line 64: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../idlib/containers/VectorSet.h, line 65: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../idlib/containers/VectorSet.h, line 188: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../idlib/containers/VectorSet.h, line 189: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../idlib/MapFile.h, line 117: multiple inheritance not supported for 'idMapPatch' [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../game/Game_local.h, line 116: unknown value 'idMath::BitsForInteger' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../game/Game_local.h, line 689: unknown value 'idMath::FtoiFast' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../game/Game_local.h, line 689: unknown value 'idMath::M_SEC2MS' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../game/Player.h, line 69: unknown value 'idMath::BitsForInteger' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game\Actor.cpp, line 30: #pragma directive not supported [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+  1124 constants
+  122 enums
+  509 classes/structs/unions
+  36 templates
+  6 max inheritance level for 'idPlayer'
+  writing D:\a\doom3.gpl\doom3.gpl\base\..\neo\game\gamesys\GameTypeInfo.h...
+  Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/game/CMakeLists.txt
+  AAS.cpp
+  AAS_debug.cpp
+  AAS_pathing.cpp
+  AAS_routing.cpp
+  AI.cpp
+  AI_events.cpp
+  AI_pathing.cpp
+  AI_Vagary.cpp
+  Anim.cpp
+  Anim_Blend.cpp
+  Anim_Import.cpp
+  Anim_Testmodel.cpp
+  Class.cpp
+  DebugGraph.cpp
+  Event.cpp
+  SaveGame.cpp
+  SysCmds.cpp
+  SysCvar.cpp
+  TypeInfo.cpp
+C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h(321,9): warning C4005: 'private': macro redefinition [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+  (compiling source file '../../neo/game/gamesys/TypeInfo.cpp')
+      D:\a\doom3.gpl\doom3.gpl\neo\game\gamesys\TypeInfo.cpp(30,9):
+      see previous definition of 'private'
+  
+C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h(322,1): error C1189: #error:  The C++ Standard Library forbids macroizing the keyword "private". Enable warning C4005 to find the forbidden define. [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+  (compiling source file '../../neo/game/gamesys/TypeInfo.cpp')
+  
+  Clip.cpp
+  Generating Code...
+  Compiling...
+  Force.cpp
+  Force_Constant.cpp
+  Force_Drag.cpp
+  Force_Field.cpp
+  Force_Spring.cpp
+  Physics.cpp
+  Physics_Actor.cpp
+  Physics_AF.cpp
+  Physics_Base.cpp
+  Physics_Monster.cpp
+  Physics_Parametric.cpp
+  Physics_Player.cpp
+  Physics_RigidBody.cpp
+  Physics_Static.cpp
+  Physics_StaticMulti.cpp
+  Push.cpp
+  Script_Compiler.cpp
+  Script_Interpreter.cpp
+  Script_Program.cpp
+  Script_Thread.cpp
+  Generating Code...
+  Compiling...
+  Actor.cpp
+  AF.cpp
+  AFEntity.cpp
+  BrittleFracture.cpp
+  Camera.cpp
+  Entity.cpp
+  Fx.cpp
+  Game_local.cpp
+  Game_network.cpp
+  GameEdit.cpp
+  IK.cpp
+  Item.cpp
+  Light.cpp
+  Misc.cpp
+  Moveable.cpp
+  Mover.cpp
+  MultiplayerGame.cpp
+  Player.cpp
+  PlayerIcon.cpp
+  PlayerView.cpp
+  Generating Code...
+  Compiling...
+  Projectile.cpp
+  Pvs.cpp
+  SecurityCamera.cpp
+  SmokeParticles.cpp
+  Sound.cpp
+  Target.cpp
+  Trigger.cpp
+  Weapon.cpp
+  WorldSpawn.cpp
   Generating Code...
 
 
-==== windows-latest-x86-release (failure) ====
+==== windows-latest-x86-release (cancelled) ====
 
 Filesystem      Size  Used Avail Use% Mounted on
 C:              150G  120G   31G  80% /c
@@ -121,7 +347,7 @@ C:              150G  120G   31G  80% /c
 -- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/18/Enterprise/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x86/cl.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Configuring done (14.7s)
+-- Configuring done (14.1s)
 -- Generating done (0.1s)
 -- Build files have been written to: D:/a/doom3.gpl/doom3.gpl/build
 MSBuild version 18.11.1-1.26513.3+940033be3 for .NET Framework
@@ -188,25 +414,240 @@ MSBuild version 18.11.1-1.26513.3+940033be3 for .NET Framework
   Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/TypeInfo/CMakeLists.txt
   main.cpp
   TypeInfoGen.cpp
-D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\main.cpp(272,23): error C3688: invalid literal suffix 'SOURCE_CODE_BASE_FOLDER'; literal operator or literal operator template 'operator ""SOURCE_CODE_BASE_FOLDER' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\main.cpp(274,16): error C3688: invalid literal suffix 'SOURCE_CODE_BASE_FOLDER'; literal operator or literal operator template 'operator ""SOURCE_CODE_BASE_FOLDER' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\main.cpp(278,21): error C3688: invalid literal suffix 'SOURCE_CODE_BASE_FOLDER'; literal operator or literal operator template 'operator ""SOURCE_CODE_BASE_FOLDER' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\main.cpp(280,14): error C3688: invalid literal suffix 'SOURCE_CODE_BASE_FOLDER'; literal operator or literal operator template 'operator ""SOURCE_CODE_BASE_FOLDER' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\TypeInfoGen.cpp(805,18): error C3688: invalid literal suffix 'TYPE_INFO_GEN_VERSION'; literal operator or literal operator template 'operator ""TYPE_INFO_GEN_VERSION' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-D:\a\doom3.gpl\doom3.gpl\neo\TypeInfo\TypeInfoGen.cpp(900,3): error C3688: invalid literal suffix 'TYPE_INFO_GEN_VERSION'; literal operator or literal operator template 'operator ""TYPE_INFO_GEN_VERSION' not found [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
   CmdSystem.cpp
   CVarSystem.cpp
   File.cpp
   FileSystem.cpp
-D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3598,72): error C2039: '_file': is not a member of '_iobuf' [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\mbstring.h(24,20):
-      see declaration of '_iobuf'
-  
-D:\a\doom3.gpl\doom3.gpl\neo\framework\FileSystem.cpp(3644,66): error C2039: '_file': is not a member of '_iobuf' [D:\a\doom3.gpl\doom3.gpl\build\TypeInfo\typeinfo.vcxproj]
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\mbstring.h(24,20):
-      see declaration of '_iobuf'
-  
   Unzip.cpp
+  Generating Code...
+  typeinfo.vcxproj -> D:\a\doom3.gpl\doom3.gpl\typeinfo.exe
+  Running typeinfo to generate d3xp GameTypeInfo.h
+  ------ Initializing File System ------
+  Current search path:
+  D:\a\doom3.gpl\doom3.gpl/base
+  game DLL: 0x0 in pak: 0x0
+  Addon pk4s:
+  file system initialized.
+  --------------------------------------
+CUSTOMBUILD : warning : idFileSystemLocal::StartBackgroundDownloadThread: failed [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+  Type Info Generator v1.0 (c) 2004 id Software
+  ../neo/d3xp
+  processing 'D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp\Actor.cpp' for type info...
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../idlib/Heap.h, line 174: unknown value 'blockSize' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../idlib/containers/StaticList.h, line 79: unknown value 'size' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../idlib/containers/VectorSet.h, line 64: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../idlib/containers/VectorSet.h, line 65: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../idlib/containers/VectorSet.h, line 188: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../idlib/containers/VectorSet.h, line 189: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../idlib/MapFile.h, line 117: multiple inheritance not supported for 'idMapPatch' [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../game/Game_local.h, line 116: unknown value 'idMath::BitsForInteger' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../game/Game_local.h, line 689: unknown value 'idMath::FtoiFast' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../game/Game_local.h, line 689: unknown value 'idMath::M_SEC2MS' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp/../idlib/../game/Player.h, line 69: unknown value 'idMath::BitsForInteger' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\d3xp\Actor.cpp, line 30: #pragma directive not supported [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+  1124 constants
+  122 enums
+  509 classes/structs/unions
+  36 templates
+  6 max inheritance level for 'idPlayer'
+  writing D:\a\doom3.gpl\doom3.gpl\base\..\neo\game\gamesys\GameTypeInfo.h...
+  Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/d3xp/CMakeLists.txt
+C:\Program Files\Microsoft Visual Studio\18\Enterprise\MSBuild\Microsoft\VC\v180\Microsoft.CppCommon.targets(254,5): warning MSB8065: Custom build for item "D:\a\doom3.gpl\doom3.gpl\build\CMakeFiles\b3ce64a169b1f3c5a7a63879f4a76493\GameTypeInfo.h.rule" succeeded, but specified output "d:\a\doom3.gpl\doom3.gpl\neo\d3xp\gamesys\gametypeinfo.h" has not been created. This may cause incremental build to work incorrectly. [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+  AAS.cpp
+  AAS_debug.cpp
+  AAS_pathing.cpp
+  AAS_routing.cpp
+  AI.cpp
+  AI_events.cpp
+  AI_pathing.cpp
+  AI_Vagary.cpp
+  Anim.cpp
+  Anim_Blend.cpp
+  Anim_Import.cpp
+  Anim_Testmodel.cpp
+  Class.cpp
+  DebugGraph.cpp
+  Event.cpp
+  SaveGame.cpp
+  SysCmds.cpp
+  SysCvar.cpp
+D:\a\doom3.gpl\doom3.gpl\neo\d3xp\gamesys\SysCmds.cpp(338,31): warning C4293: '<<': shift count negative or too big, undefined behavior [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+  TypeInfo.cpp
+C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h(321,9): warning C4005: 'private': macro redefinition [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+  (compiling source file '../../neo/d3xp/gamesys/TypeInfo.cpp')
+      D:\a\doom3.gpl\doom3.gpl\neo\d3xp\gamesys\TypeInfo.cpp(30,9):
+      see previous definition of 'private'
+  
+C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h(322,1): error C1189: #error:  The C++ Standard Library forbids macroizing the keyword "private". Enable warning C4005 to find the forbidden define. [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+  (compiling source file '../../neo/d3xp/gamesys/TypeInfo.cpp')
+  
+  Clip.cpp
+  Generating Code...
+  Compiling...
+  Force.cpp
+  Force_Constant.cpp
+  Force_Drag.cpp
+  Force_Field.cpp
+  Force_Grab.cpp
+  Force_Spring.cpp
+  Physics.cpp
+  Physics_Actor.cpp
+  Physics_AF.cpp
+  Physics_Base.cpp
+  Physics_Monster.cpp
+  Physics_Parametric.cpp
+  Physics_Player.cpp
+  Physics_RigidBody.cpp
+  Physics_Static.cpp
+  Physics_StaticMulti.cpp
+  Push.cpp
+  Script_Compiler.cpp
+D:\a\doom3.gpl\doom3.gpl\neo\d3xp\script\Script_Compiler.cpp(233,13): error C2440: '=': cannot convert from 'const char *[37]' to 'char **' [D:\a\doom3.gpl\doom3.gpl\build\d3xp\d3xp.vcxproj]
+      D:\a\doom3.gpl\doom3.gpl\neo\d3xp\script\Script_Compiler.cpp(233,13):
+      Conversion loses qualifiers
+  
+  Script_Interpreter.cpp
+  Script_Program.cpp
+  Generating Code...
+  Compiling...
+  Script_Thread.cpp
+  Actor.cpp
+  AF.cpp
+  AFEntity.cpp
+  BrittleFracture.cpp
+  Camera.cpp
+  Entity.cpp
+  Fx.cpp
+  Game_local.cpp
+  Game_network.cpp
+  GameEdit.cpp
+  Grabber.cpp
+  IK.cpp
+  Item.cpp
+  Light.cpp
+  Misc.cpp
+  Moveable.cpp
+  Mover.cpp
+  MultiplayerGame.cpp
+  Player.cpp
+  Generating Code...
+  Compiling...
+  PlayerIcon.cpp
+  PlayerView.cpp
+  Projectile.cpp
+  Pvs.cpp
+  SecurityCamera.cpp
+  SmokeParticles.cpp
+  Sound.cpp
+  Target.cpp
+  Trigger.cpp
+  Weapon.cpp
+  WorldSpawn.cpp
+  precompiled.cpp
+  Generating Code...
+  Running typeinfo to generate GameTypeInfo.h
+  ------ Initializing File System ------
+  Current search path:
+  D:\a\doom3.gpl\doom3.gpl/base
+  game DLL: 0x0 in pak: 0x0
+  Addon pk4s:
+  file system initialized.
+  --------------------------------------
+CUSTOMBUILD : warning : idFileSystemLocal::StartBackgroundDownloadThread: failed [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+  Type Info Generator v1.0 (c) 2004 id Software
+  ../neo/game
+  processing 'D:\a\doom3.gpl\doom3.gpl\base\..\neo\game\Actor.cpp' for type info...
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../idlib/Heap.h, line 174: unknown value 'blockSize' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../idlib/containers/StaticList.h, line 79: unknown value 'size' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../idlib/containers/VectorSet.h, line 64: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../idlib/containers/VectorSet.h, line 65: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../idlib/containers/VectorSet.h, line 188: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../idlib/containers/VectorSet.h, line 189: unknown value 'dimension' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../idlib/MapFile.h, line 117: multiple inheritance not supported for 'idMapPatch' [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../game/Game_local.h, line 116: unknown value 'idMath::BitsForInteger' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../game/Game_local.h, line 689: unknown value 'idMath::FtoiFast' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../game/Game_local.h, line 689: unknown value 'idMath::M_SEC2MS' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game/../idlib/../game/Player.h, line 69: unknown value 'idMath::BitsForInteger' in constant expression [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+CUSTOMBUILD : warning : file D:\a\doom3.gpl\doom3.gpl\base\..\neo\game\Actor.cpp, line 30: #pragma directive not supported [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+  1124 constants
+  122 enums
+  509 classes/structs/unions
+  36 templates
+  6 max inheritance level for 'idPlayer'
+  writing D:\a\doom3.gpl\doom3.gpl\base\..\neo\game\gamesys\GameTypeInfo.h...
+  Building Custom Rule D:/a/doom3.gpl/doom3.gpl/neo/game/CMakeLists.txt
+  AAS.cpp
+  AAS_debug.cpp
+  AAS_pathing.cpp
+  AAS_routing.cpp
+  AI.cpp
+  AI_events.cpp
+  AI_pathing.cpp
+  AI_Vagary.cpp
+  Anim.cpp
+  Anim_Blend.cpp
+  Anim_Import.cpp
+  Anim_Testmodel.cpp
+  Class.cpp
+  DebugGraph.cpp
+  Event.cpp
+  SaveGame.cpp
+  SysCmds.cpp
+  SysCvar.cpp
+  TypeInfo.cpp
+C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h(321,9): warning C4005: 'private': macro redefinition [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+  (compiling source file '../../neo/game/gamesys/TypeInfo.cpp')
+      D:\a\doom3.gpl\doom3.gpl\neo\game\gamesys\TypeInfo.cpp(30,9):
+      see previous definition of 'private'
+  
+C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\xkeycheck.h(322,1): error C1189: #error:  The C++ Standard Library forbids macroizing the keyword "private". Enable warning C4005 to find the forbidden define. [D:\a\doom3.gpl\doom3.gpl\build\game\game.vcxproj]
+  (compiling source file '../../neo/game/gamesys/TypeInfo.cpp')
+  
+  Clip.cpp
+  Generating Code...
+  Compiling...
+  Force.cpp
+  Force_Constant.cpp
+  Force_Drag.cpp
+  Force_Field.cpp
+  Force_Spring.cpp
+  Physics.cpp
+  Physics_Actor.cpp
+  Physics_AF.cpp
+  Physics_Base.cpp
+  Physics_Monster.cpp
+  Physics_Parametric.cpp
+  Physics_Player.cpp
+  Physics_RigidBody.cpp
+  Physics_Static.cpp
+  Physics_StaticMulti.cpp
+  Push.cpp
+  Script_Compiler.cpp
+  Script_Interpreter.cpp
+  Script_Program.cpp
+  Script_Thread.cpp
+  Generating Code...
+  Compiling...
+  Actor.cpp
+  AF.cpp
+  AFEntity.cpp
+  BrittleFracture.cpp
+  Camera.cpp
+  Entity.cpp
+  Fx.cpp
+  Game_local.cpp
+  Game_network.cpp
+  GameEdit.cpp
+  IK.cpp
+  Item.cpp
+  Light.cpp
+  Misc.cpp
+  Moveable.cpp
+  Mover.cpp
+  MultiplayerGame.cpp
+  Player.cpp
+  PlayerIcon.cpp
+  PlayerView.cpp
   Generating Code...
 
 
