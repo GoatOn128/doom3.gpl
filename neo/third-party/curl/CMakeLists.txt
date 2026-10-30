@@ -15,6 +15,13 @@ target_include_directories( curllib PUBLIC include lib )
 # PUBLIC so consumers of the public headers ( FileSystem.cpp ) get the same
 # linkage the library itself was built with
 target_compile_definitions( curllib PUBLIC CURL_STATICLIB )
+# LDAP support would need the wldap32 import library the original tree never
+# linked, Doom3 does not use ldap:// URLs
+target_compile_definitions( curllib PRIVATE CURL_DISABLE_LDAP CURL_DISABLE_LDAPS )
+if( WIN32 )
+	# the Win32 random provider in curlx uses BCryptGenRandom
+	target_link_libraries( curllib PUBLIC bcrypt )
+endif()
 if( MSVC )
 	target_compile_options( curllib PRIVATE /W3 )
 endif()
