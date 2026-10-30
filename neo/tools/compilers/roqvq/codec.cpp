@@ -30,8 +30,12 @@ If you have questions concerning this license or the applicable additional terms
 
 #include "codec.h"
 
-// MSVC defines HUGE_VAL in terms of INFINITY, which is only provided by <cmath>
-#include <cmath>
+// MSVC expands HUGE_VAL through the C99 INFINITY macro, which its CRT headers
+// do not provide to C++ translation units, so provide it here
+#include <float.h>
+#ifndef INFINITY
+#define INFINITY FLT_MAX
+#endif
 
 float glimit( const float val ) {
 	if (val<0) return 0;
