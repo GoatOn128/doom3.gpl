@@ -7,8 +7,8 @@
 #include "NVCtrlLib.h"
 #include "nv_control.h"
 
-#if !defined(XTRHEADS)
-#warning XTRHEADS not defined -- this libXNVCtrl.a will not be thread safe!
+#if !defined(XTHREADS)
+#warning XTHREADS not defined -- this libXNVCtrl.a will not be thread safe!
 #endif
 
 static XExtensionInfo _nvctrl_ext_info_data;
@@ -20,8 +20,8 @@ static /* const */ char *nvctrl_extension_name = NV_CONTROL_NAME;
 #define XNVCTRLSimpleCheckExtension(dpy,i) \
   XextSimpleCheckExtension (dpy, i, nvctrl_extension_name)
 
-static int close_display();
-static Bool wire_to_event();
+static int close_display(Display *dpy, XExtCodes *codes);
+static Bool wire_to_event(Display *dpy, XEvent *host, xEvent *wire);
 static /* const */ XExtensionHooks nvctrl_extension_hooks = {
     NULL,                               /* create_gc */
     NULL,                               /* copy_gc */
