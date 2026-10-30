@@ -70,29 +70,30 @@ else()
 		-fpermissive
 		-fno-strict-aliasing
 		# warning kinds the SCons-era GCC builds did not act on; the sources
-		# are untouched 2011-era code so the kinds are turned off wholesale
+		# are untouched 2011-era code so the kinds are turned off wholesale.
+		# the C++-only kinds are wrapped so they stay off the C sources
 		-Wno-address
 		-Wno-char-subscripts
-		-Wno-class-memaccess
-		-Wno-c++20-compat
-		-Wno-conversion-null
+		"$<$<COMPILE_LANGUAGE:CXX>:-Wno-class-memaccess>"
+		"$<$<COMPILE_LANGUAGE:CXX>:-Wno-c++20-compat>"
+		"$<$<COMPILE_LANGUAGE:CXX>:-Wno-conversion-null>"
 		-Wno-dangling-else
-		-Wno-delete-non-virtual-dtor
+		"$<$<COMPILE_LANGUAGE:CXX>:-Wno-delete-non-virtual-dtor>"
 		-Wno-enum-compare
 		-Wno-format
 		-Wno-misleading-indentation
 		-Wno-nonnull-compare
-		-Wno-overloaded-virtual
+		"$<$<COMPILE_LANGUAGE:CXX>:-Wno-overloaded-virtual>"
 		-Wno-parentheses
 		-Wno-permissive
 		-Wno-pointer-arith
-		-Wno-register
+		"$<$<COMPILE_LANGUAGE:CXX>:-Wno-register>"
 		-Wno-sequence-point
 		-Wno-shift-count-overflow
 		-Wno-sign-compare
 		-Wno-sizeof-pointer-memaccess
 		-Wno-switch
-		-Wno-template-id-cdtor
+		"$<$<COMPILE_LANGUAGE:CXX>:-Wno-template-id-cdtor>"
 		-Wno-unused-but-set-variable
 		-Wno-unused-function
 		-Wno-unused-value

@@ -77,7 +77,9 @@ set( GAME_SOURCES
 
 if( MSVC )
 	add_library( game MODULE ${GAME_SOURCES} Game.def )
-	target_compile_definitions( game PRIVATE __DOOM__ GAME_DLL )
+	# gamesys/TypeInfo.cpp macroizes private/protected to inspect class members
+	# so modern MSVC needs _ALLOW_KEYWORD_MACROS
+	target_compile_definitions( game PRIVATE __DOOM__ GAME_DLL _ALLOW_KEYWORD_MACROS )
 	set_target_properties( game PROPERTIES
 		OUTPUT_NAME gamex86
 		RUNTIME_OUTPUT_DIRECTORY ${DOOM3_OUTPUT_DIR}/base )

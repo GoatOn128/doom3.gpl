@@ -79,7 +79,9 @@ set( D3XP_SOURCES
 
 if( MSVC )
 	add_library( d3xp MODULE ${D3XP_SOURCES} Game.def )
-	target_compile_definitions( d3xp PRIVATE __DOOM__ GAME_DLL _D3XP CTF )
+	# gamesys/TypeInfo.cpp macroizes private/protected to inspect class members
+	# so modern MSVC needs _ALLOW_KEYWORD_MACROS
+	target_compile_definitions( d3xp PRIVATE __DOOM__ GAME_DLL _D3XP CTF _ALLOW_KEYWORD_MACROS )
 	set_target_properties( d3xp PROPERTIES
 		OUTPUT_NAME gamex86
 		RUNTIME_OUTPUT_DIRECTORY ${DOOM3_OUTPUT_DIR}/d3xp )
