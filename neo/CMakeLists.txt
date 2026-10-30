@@ -68,7 +68,36 @@ else()
 		-Wno-unknown-pragmas
 		-fmessage-length=0
 		-fpermissive
-		-fno-strict-aliasing )
+		-fno-strict-aliasing
+		# warning kinds the SCons-era GCC builds did not act on; the sources
+		# are untouched 2011-era code so the kinds are turned off wholesale
+		-Wno-address
+		-Wno-char-subscripts
+		-Wno-class-memaccess
+		-Wno-c++20-compat
+		-Wno-conversion-null
+		-Wno-dangling-else
+		-Wno-delete-non-virtual-dtor
+		-Wno-enum-compare
+		-Wno-format
+		-Wno-misleading-indentation
+		-Wno-nonnull-compare
+		-Wno-overloaded-virtual
+		-Wno-parentheses
+		-Wno-permissive
+		-Wno-pointer-arith
+		-Wno-register
+		-Wno-sequence-point
+		-Wno-shift-count-overflow
+		-Wno-sign-compare
+		-Wno-sizeof-pointer-memaccess
+		-Wno-switch
+		-Wno-template-id-cdtor
+		-Wno-unused-but-set-variable
+		-Wno-unused-function
+		-Wno-unused-value
+		-Wno-unused-variable
+		-Wno-write-strings )
 endif()
 
 # products are placed in the repository root, the game dlls into the
