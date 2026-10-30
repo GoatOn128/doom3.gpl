@@ -28,8 +28,9 @@ If you have questions concerning this license or the applicable additional terms
 #include "../../idlib/precompiled.h"
 #pragma hdrstop
 
-// DirectX SDK
-#include <DxErr.h>
+// DxErr.h shipped with the legacy DirectX SDK, not with the Windows SDK; the
+// DXTRACE_ERR calls only logged, keep returning the HRESULT
+#define DXTRACE_ERR( str, hr ) ( hr )
 
 #include <ks.h>
 #include <ksmedia.h>

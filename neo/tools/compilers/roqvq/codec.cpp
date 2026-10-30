@@ -30,6 +30,9 @@ If you have questions concerning this license or the applicable additional terms
 
 #include "codec.h"
 
+// MSVC defines HUGE_VAL in terms of INFINITY, which is only provided by <cmath>
+#include <cmath>
+
 float glimit( const float val ) {
 	if (val<0) return 0;
 	if (val>255) return 255;
